@@ -2,7 +2,6 @@ package org.appiansc.plugins.spt.functions.lists;
 
 import com.appiancorp.ps.plugins.typetransformer.AppianElement;
 import com.appiancorp.ps.plugins.typetransformer.AppianList;
-import com.appiancorp.ps.plugins.typetransformer.AppianObject;
 import com.appiancorp.ps.plugins.typetransformer.AppianTypeFactory;
 import com.appiancorp.suiteapi.expression.annotations.Function;
 import com.appiancorp.suiteapi.expression.annotations.Parameter;
@@ -14,12 +13,11 @@ import org.apache.log4j.Logger;
 import org.appiansc.plugins.spt.AppianTypeHelper;
 import org.appiansc.plugins.spt.SptPluginCategory;
 
-import java.util.*;
+import java.util.LinkedHashMap;
 
 @SptPluginCategory
 public class SPT_List_Unique {
     private static final Logger LOG = Logger.getLogger(SPT_List_Unique.class);
-
 
     @Function
     public TypedValue spt_list_unique(
@@ -35,11 +33,12 @@ public class SPT_List_Unique {
         Gson gson = new Gson();
         assert appianList != null;
 
-        // Handle lists of Maps
+        // Handle lists of Maps by turning into Dictionaries
         if (list.getInstanceType() == AppianType.LIST_OF_MAP) {
             appianList = AppianTypeHelper.mapListToDictList(typeFactory, list);
         }
 
+        // Manually track unique objects by using toJson() to generate a string key
         for (AppianElement element : appianList) {
             String json = gson.toJson(element);
             if (!map.containsKey(json)) {

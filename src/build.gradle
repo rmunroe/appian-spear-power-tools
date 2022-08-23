@@ -8,7 +8,6 @@ plugins {
   id 'java'
   id 'groovy'
   id 'org.owasp.dependencycheck' version '6.5.3'
-//  id 'com.github.spotbugs' version '4.6.0'
 }
 
 repositories {
@@ -38,8 +37,6 @@ dependencies {
 
   testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
-
-//  spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.11.0'
 }
 
 test {
@@ -50,18 +47,6 @@ configurations {
   testImplementation.extendsFrom compileOnly
   implementation.transitive = false
 }
-
-//spotbugsMain {
-//  reports {
-//    html {
-//      enabled = true
-//      stylesheet = 'fancy-hist.xsl'
-//    }
-//    xml {
-//      enabled = false
-//    }
-//  }
-//}
 
 jar {
   dependsOn check
@@ -81,6 +66,8 @@ jar {
     attributes("Spring-Context": "*;publish-context:=false")
   }
 }
+
+archivesBaseName = "SPEaR Power Tools"
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8

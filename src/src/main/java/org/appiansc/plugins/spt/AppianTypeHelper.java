@@ -13,6 +13,11 @@ import java.util.*;
 
 @SuppressWarnings("unchecked")
 public class AppianTypeHelper {
+    /**
+     * @param typeFactory an AppianTypeFactory instance
+     * @param list the list of Map (as TypedValue)
+     * @return a list of Dictionaries (as AppianList)
+     */
     public static AppianList mapListToDictList(AppianTypeFactory typeFactory, TypedValue list) {
         Map<TypedValue, TypedValue>[] mapList = (Map<TypedValue, TypedValue>[]) list.getValue();
         AppianList listOfDict = typeFactory.createList(AppianType.LIST_OF_DICTIONARY);
@@ -25,6 +30,11 @@ public class AppianTypeHelper {
     }
 
 
+    /**
+     * @param typeFactory an AppianTypeFactory instance
+     * @param map a Map (as LinkedHashMap<TypedValue, TypedValue>)
+     * @return a Dictionary (as AppianObject)
+     */
     private static AppianObject mapToDict(AppianTypeFactory typeFactory, LinkedHashMap<TypedValue, TypedValue> map) {
         AppianObject dict = (AppianObject) typeFactory.createElement(AppianType.DICTIONARY);
         List<TypedValue> keySet = Arrays.asList(map.keySet().toArray(new TypedValue[0]));
@@ -55,14 +65,14 @@ public class AppianTypeHelper {
      * @param typedValue  the value
      * @return the list of field names
      */
-    public static String[] getFieldNames(TypeService typeService, TypedValue typedValue) throws Exception {
+    public static String[] getFieldNames(TypeService typeService, TypedValue typedValue) {
         Map<TypedValue, TypedValue> map = (HashMap<TypedValue, TypedValue>) typeService.cast(AppianTypeLong.LIST_OF_DICTIONARY, typedValue).getValue();
 
         Set<TypedValue> keySet = map.keySet();
         ArrayList<String> fieldNames = new ArrayList<>(keySet.size());
         for (TypedValue key : keySet) {
             String fieldName = key.getValue().toString();
-            fieldName = fieldName.replaceAll("[_]", " ");
+            fieldName = fieldName.replaceAll("_", " ");
             fieldNames.add(fieldName);
         }
 
@@ -113,12 +123,11 @@ public class AppianTypeHelper {
 
 
     /**
-     * @param typeService Injected TypeService instance
      * @param toCast The TypedValue instance to cast
      * @return a TypedValue instance
      * @throws InvalidTypeException when toCast could not be cast to a list of dictionary
      */
-    public static TypedValue toDictionaryList(TypeService typeService, ArrayList<HashMap<TypedValue, TypedValue>> toCast) throws InvalidTypeException {
+    public static TypedValue toDictionaryList(ArrayList<HashMap<TypedValue, TypedValue>> toCast) throws InvalidTypeException {
         try {
             return new TypedValue(AppianTypeLong.LIST_OF_DICTIONARY, toCast.toArray(new HashMap[0]));
         } catch (Exception e) {
@@ -133,9 +142,8 @@ public class AppianTypeHelper {
      * @throws Exception
      */
     public static HashMap<TypedValue, TypedValue> toHashMap(TypedValue fieldsAndValues) throws Exception {
-        HashMap<TypedValue, TypedValue> returnMap = new HashMap<TypedValue, TypedValue>();
         try {
-            returnMap.putAll((HashMap<TypedValue, TypedValue>) fieldsAndValues.getValue());
+            HashMap<TypedValue, TypedValue> returnMap = new HashMap<>((HashMap<TypedValue, TypedValue>) fieldsAndValues.getValue());
             return (HashMap<TypedValue, TypedValue>) returnMap.clone();
         } catch (Exception e) {
             throw new Exception("Invalid dictionary");
