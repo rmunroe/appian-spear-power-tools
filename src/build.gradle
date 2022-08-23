@@ -1,0 +1,89 @@
+buildscript {
+  dependencies {
+    classpath 'org.hidetake:gradle-ssh-plugin:2.10.1'
+  }
+}
+
+plugins {
+  id 'java'
+  id 'groovy'
+  id 'org.owasp.dependencycheck' version '6.5.3'
+//  id 'com.github.spotbugs' version '4.6.0'
+}
+
+repositories {
+  mavenCentral()
+  maven {
+    url 'https://repo.clojars.org'
+  }
+  maven {
+    url "https://oss.sonatype.org/content/repositories/snapshots/"
+  }
+
+  flatDir {
+    dirs 'lib-compile'
+  }
+}
+
+dependencies {
+	implementation 'com.google.code.gson:gson:2.9.0'
+
+  compileOnly fileTree(dir: 'lib-compile', include: '*.jar')
+  implementation fileTree(dir: 'lib-include', include: '*.jar')
+
+  implementation group: 'net.jodah', name: 'expiringmap', version: '0.5.10'
+  implementation group: 'com.github.f4b6a3', name: 'uuid-creator', version: '5.1.0'
+
+  compileOnly 'org.apache.logging.log4j:log4j-1.2-api:2.17.1'
+
+  testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+//  spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.11.0'
+}
+
+test {
+  useJUnitPlatform()
+}
+
+configurations {
+  testImplementation.extendsFrom compileOnly
+  implementation.transitive = false
+}
+
+//spotbugsMain {
+//  reports {
+//    html {
+//      enabled = true
+//      stylesheet = 'fancy-hist.xsl'
+//    }
+//    xml {
+//      enabled = false
+//    }
+//  }
+//}
+
+jar {
+  dependsOn check
+  duplicatesStrategy = DuplicatesStrategy.FAIL
+
+  configurations.implementation.setCanBeResolved(true)
+
+  into('META-INF/lib') {
+    from(configurations.implementation)
+  }
+
+  into('src') {
+    from (sourceSets.main.allJava)
+  }
+
+  manifest {
+    attributes("Spring-Context": "*;publish-context:=false")
+  }
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+// If this shows as an error in IntelliJ, simply ignore
+version = new XmlSlurper().parse(file('src/main/resources/appian-plugin.xml')).'plugin-info'.version

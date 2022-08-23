@@ -1,0 +1,37 @@
+<appian-plugin name="SPEaR Power Tools" key="org.appiansc.plugins.spt">
+
+  <plugin-info>
+    <description>SPEaR Power Tools</description>
+    <vendor name="Appian SPEaR Team" url="http://www.appian.com"/>
+    <version>1.0.0</version>
+    <application-version min="22.2"/>
+  </plugin-info>
+
+  <function-category key="SptPluginCategory" name="SPEaR Power Tools"/>
+
+
+  <!-- APPIAN METADATA FUNCTIONS -->
+  <function key="SPT_Appian_GetApplications" class="org.appiansc.plugins.spt.functions.appian.SPT_Appian_GetApplications"/>
+  <function key="SPT_Appian_GetObjects" class="org.appiansc.plugins.spt.functions.appian.SPT_Appian_GetObjects"/>
+
+  <!-- LIST FUNCTIONS -->
+  <function key="SPT_List_Count" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Count"/>
+  <function key="SPT_List_First" class="org.appiansc.plugins.spt.functions.lists.SPT_List_First"/>
+  <function key="SPT_List_IsList" class="org.appiansc.plugins.spt.functions.lists.SPT_List_IsList"/>
+  <function key="SPT_List_Last" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Last"/>
+  <function key="SPT_List_RandomElement" class="org.appiansc.plugins.spt.functions.lists.SPT_List_RandomElement"/>
+  <function key="SPT_List_Randomize" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Randomize"/>
+  <function key="SPT_List_Slice" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Slice"/>
+  <function key="SPT_List_Unique" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Unique"/>
+
+  <!-- DOCUMENT FUNCTIONS -->
+  <function key="SPT_Docs_FromUUID" class="org.appiansc.plugins.spt.functions.documents.SPT_Docs_FromUUID"/>
+  <function key="SPT_Docs_GetUUID" class="org.appiansc.plugins.spt.functions.documents.SPT_Docs_GetUUID"/>
+
+  <!-- UTILITY FUNCTIONS -->
+  <function key="SPT_Uuid_Bulk" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_Bulk"/>
+  <function key="SPT_Uuid_FromString" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_FromString"/>
+  <function key="SPT_Uuid_FromStrings" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_FromStrings"/>
+
+
+</appian-plugin>
