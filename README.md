@@ -1,1 +1,1 @@
-# appian-spear-plugin
+# Appian SPEaR Team - Power Tools
