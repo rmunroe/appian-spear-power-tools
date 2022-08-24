@@ -12,7 +12,6 @@
 
   <!-- APPIAN METADATA FUNCTIONS -->
   <function key="SPT_Appian_GetApplications" class="org.appiansc.plugins.spt.functions.appian.SPT_Appian_GetApplications"/>
-  <function key="SPT_Appian_GetObjects" class="org.appiansc.plugins.spt.functions.appian.SPT_Appian_GetObjects"/>
 
   <!-- LIST FUNCTIONS -->
   <function key="SPT_List_Count" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Count"/>
@@ -23,6 +22,7 @@
   <function key="SPT_List_Randomize" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Randomize"/>
   <function key="SPT_List_Slice" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Slice"/>
   <function key="SPT_List_Unique" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Unique"/>
+  <function key="SPT_List_RemoveNulls" class="org.appiansc.plugins.spt.functions.lists.SPT_List_RemoveNulls"/>
 
   <!-- DOCUMENT FUNCTIONS -->
   <function key="SPT_Docs_FromUUID" class="org.appiansc.plugins.spt.functions.documents.SPT_Docs_FromUUID"/>

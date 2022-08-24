@@ -7,7 +7,23 @@ import com.appiancorp.suiteapi.type.DatatypeProperties;
 import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class ListHelper {
+    /**
+     * @param list Any List type in Appian
+     * @return the list with null values removed
+     */
+    public static TypedValue removeNulls(TypedValue list) {
+        list.setValue(
+                Arrays.stream((Object[]) list.getValue())
+                        .filter(Objects::nonNull)
+                        .toArray()
+        );
+        return list;
+    }
+
     /**
      * Returns true if the TypedValue passed in is a List type.
      * @param typeService TypeService instance (usually injected)

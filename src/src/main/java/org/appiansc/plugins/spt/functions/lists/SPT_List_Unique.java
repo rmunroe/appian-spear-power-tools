@@ -22,7 +22,8 @@ public class SPT_List_Unique {
     @Function
     public TypedValue spt_list_unique(
             TypeService typeService,          // injected dependency
-            @Parameter TypedValue list
+            @Parameter TypedValue list,
+            @Parameter(required = false) boolean keepNulls
     ) {
         if (!ListHelper.isList(typeService, list)) return null;
         AppianTypeFactory typeFactory = AppianTypeFactory.newInstance(typeService);
