@@ -14,8 +14,8 @@ import org.apache.log4j.Logger;
 
 
 @SptPluginCategory
-public class SPT_Docs_GetUUID {
-    private static final Logger LOG = Logger.getLogger(SPT_Docs_GetUUID.class);
+public class SPT_Docs_GetUuid {
+    private static final Logger LOG = Logger.getLogger(SPT_Docs_GetUuid.class);
 
     @Function
     public String spt_docs_getuuid(

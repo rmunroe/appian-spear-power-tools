@@ -9,8 +9,8 @@ import org.appiansc.plugins.spt.SptPluginCategory;
 
 
 @SptPluginCategory
-public class SPT_Docs_FromUUID {
-    private static final Logger LOG = Logger.getLogger(SPT_Docs_FromUUID.class);
+public class SPT_Docs_FromUuid {
+    private static final Logger LOG = Logger.getLogger(SPT_Docs_FromUuid.class);
 
     @Function
     public @DocumentDataType Long spt_docs_fromuuid(

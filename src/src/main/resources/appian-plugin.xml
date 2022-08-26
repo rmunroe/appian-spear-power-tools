@@ -9,9 +9,9 @@
 
   <function-category key="SptPluginCategory" name="SPEaR Power Tools"/>
 
-
-  <!-- APPIAN METADATA FUNCTIONS -->
-  <function key="SPT_Appian_GetApplications" class="org.appiansc.plugins.spt.functions.appian.SPT_Appian_GetApplications"/>
+  <!-- DOCUMENT FUNCTIONS -->
+  <function key="SPT_Docs_FromUuid" class="org.appiansc.plugins.spt.functions.documents.SPT_Docs_FromUuid"/>
+  <function key="SPT_Docs_GetUuid" class="org.appiansc.plugins.spt.functions.documents.SPT_Docs_GetUuid"/>
 
   <!-- LIST FUNCTIONS -->
   <function key="SPT_List_Count" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Count"/>
@@ -20,18 +20,14 @@
   <function key="SPT_List_Last" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Last"/>
   <function key="SPT_List_RandomElement" class="org.appiansc.plugins.spt.functions.lists.SPT_List_RandomElement"/>
   <function key="SPT_List_Randomize" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Randomize"/>
+  <function key="SPT_List_RemoveNulls" class="org.appiansc.plugins.spt.functions.lists.SPT_List_RemoveNulls"/>
   <function key="SPT_List_Slice" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Slice"/>
   <function key="SPT_List_Unique" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Unique"/>
-  <function key="SPT_List_RemoveNulls" class="org.appiansc.plugins.spt.functions.lists.SPT_List_RemoveNulls"/>
 
   <!-- OBJECT FUNCTIONS -->
+  <function key="SPT_Object_RemoveNulls" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_RemoveNulls"/>
   <function key="SPT_Object_ToDictionary" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_ToDictionary"/>
   <function key="SPT_Object_ToMap" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_ToMap"/>
-  <function key="SPT_Object_RemoveNulls" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_RemoveNulls"/>
-
-  <!-- DOCUMENT FUNCTIONS -->
-  <function key="SPT_Docs_FromUUID" class="org.appiansc.plugins.spt.functions.documents.SPT_Docs_FromUUID"/>
-  <function key="SPT_Docs_GetUUID" class="org.appiansc.plugins.spt.functions.documents.SPT_Docs_GetUUID"/>
 
   <!-- UTILITY FUNCTIONS -->
   <function key="SPT_Uuid_Bulk" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_Bulk"/>
