@@ -1,5 +1,6 @@
 package org.appiansc.plugins.spt;
 
+import com.appiancorp.ix.UnsupportedTypeException;
 import com.appiancorp.ps.plugins.typetransformer.AppianList;
 import com.appiancorp.ps.plugins.typetransformer.AppianObject;
 import com.appiancorp.ps.plugins.typetransformer.AppianTypeFactory;
@@ -8,17 +9,20 @@ import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
 import com.appiancorp.suiteapi.type.exceptions.InvalidTypeException;
 import com.appiancorp.type.AppianTypeLong;
+import org.apache.log4j.Logger;
 
 import java.util.*;
 
 @SuppressWarnings("unchecked")
 public class AppianTypeHelper {
+    private static final Logger LOG = Logger.getLogger(AppianTypeHelper.class);
+
     /**
      * @param typeFactory an AppianTypeFactory instance
-     * @param list the list of Map (as TypedValue)
+     * @param list        the list of Map (as TypedValue)
      * @return a list of Dictionaries (as AppianList)
      */
-    public static AppianList mapListToDictList(AppianTypeFactory typeFactory, TypedValue list) {
+    public static AppianList mapListToDictList(AppianTypeFactory typeFactory, TypedValue list) throws UnsupportedTypeException {
         Map<TypedValue, TypedValue>[] mapList = (Map<TypedValue, TypedValue>[]) list.getValue();
         AppianList listOfDict = typeFactory.createList(AppianType.LIST_OF_DICTIONARY);
 
@@ -32,10 +36,10 @@ public class AppianTypeHelper {
 
     /**
      * @param typeFactory an AppianTypeFactory instance
-     * @param map a Map (as LinkedHashMap<TypedValue, TypedValue>)
+     * @param map         a Map (as LinkedHashMap<TypedValue, TypedValue>)
      * @return a Dictionary (as AppianObject)
      */
-    private static AppianObject mapToDict(AppianTypeFactory typeFactory, LinkedHashMap<TypedValue, TypedValue> map) {
+    private static AppianObject mapToDict(AppianTypeFactory typeFactory, LinkedHashMap<TypedValue, TypedValue> map) throws UnsupportedTypeException {
         AppianObject dict = (AppianObject) typeFactory.createElement(AppianType.DICTIONARY);
         List<TypedValue> keySet = Arrays.asList(map.keySet().toArray(new TypedValue[0]));
         List<String> keys = new ArrayList<>();
@@ -56,6 +60,38 @@ public class AppianTypeHelper {
 
         return dict;
     }
+
+
+    public static List<String> getKeys(AppianObject object) {
+        List<TypedValue> keySet = Arrays.asList(object.keySet().toArray(new TypedValue[0]));
+        List<String> keys = new ArrayList<>();
+        keySet.forEach(k -> keys.add(k.getValue().toString()));
+        return keys;
+    }
+
+
+//    private static AppianObject dictToMap(AppianTypeFactory typeFactory, TypedValue dict) {
+//        innerDict = dict.getValue();
+//        AppianObject temp = (AppianObject) typeFactory.createElement(AppianType.MAP);
+//        List<TypedValue> keySet = Arrays.asList(dict.keySet().toArray(new TypedValue[0]));
+//        List<String> keys = new ArrayList<>();
+//        keySet.forEach(k -> keys.add(k.getValue().toString()));
+//
+//        for (int i = 0; i < keySet.size(); i++) {
+//            String key = keys.get(i);
+//            TypedValue value = dict.get(keySet.get(i));
+//            // Check if it is a Map
+//
+//            if (value.getInstanceType() == AppianType.MAP) {
+//                LinkedHashMap<TypedValue, TypedValue> entry = (LinkedHashMap<TypedValue, TypedValue>) value.getValue();
+//                temp.put(key, mapToDict(typeFactory, entry));
+//            } else {
+//                temp.put(key, typeFactory.toAppianElement(value));
+//            }
+//        }
+//
+//        return temp;
+//    }
 
 
     /**

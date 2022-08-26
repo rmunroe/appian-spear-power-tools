@@ -24,6 +24,11 @@
   <function key="SPT_List_Unique" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Unique"/>
   <function key="SPT_List_RemoveNulls" class="org.appiansc.plugins.spt.functions.lists.SPT_List_RemoveNulls"/>
 
+  <!-- OBJECT FUNCTIONS -->
+  <function key="SPT_Object_ToDictionary" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_ToDictionary"/>
+  <function key="SPT_Object_ToMap" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_ToMap"/>
+  <function key="SPT_Object_RemoveNulls" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_RemoveNulls"/>
+
   <!-- DOCUMENT FUNCTIONS -->
   <function key="SPT_Docs_FromUUID" class="org.appiansc.plugins.spt.functions.documents.SPT_Docs_FromUUID"/>
   <function key="SPT_Docs_GetUUID" class="org.appiansc.plugins.spt.functions.documents.SPT_Docs_GetUUID"/>
