@@ -1,12 +1,12 @@
 package org.appiansc.plugins.spt.functions.lists;
 
 import com.appiancorp.ps.plugins.typetransformer.AppianList;
-import com.appiancorp.ps.plugins.typetransformer.AppianTypeFactory;
 import com.appiancorp.suiteapi.expression.annotations.Function;
 import com.appiancorp.suiteapi.expression.annotations.Parameter;
 import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
 import org.apache.log4j.Logger;
+import org.appiansc.plugins.spt.AppianListHelper;
 import org.appiansc.plugins.spt.AppianTypeHelper;
 import org.appiansc.plugins.spt.SptPluginCategory;
 
@@ -16,16 +16,17 @@ public class SPT_List_Slice {
 
     @Function
     public TypedValue spt_list_slice(
-            TypeService typeService,          // injected dependency
+            TypeService ts,
             @Parameter TypedValue list,
             @Parameter int startIndex,
             @Parameter(required = false) int endIndex
     ) throws Exception {
-        if (!ListHelper.isList(typeService, list)) return null; // not a list!
+        if (!AppianListHelper.isList(ts, list)) return null; // not a list!
+
         if (startIndex < 1) throw new Exception("startIndex cannot be less than 1"); // Appian Lists are 1-based
         if (endIndex != 0 && endIndex < startIndex) throw new Exception("endIndex cannot be less than startIndex");
 
-        AppianList appianList = ListHelper.getList(typeService, list);
+        AppianList appianList = AppianListHelper.getList(ts, list);
         assert appianList != null;
 
         if (endIndex == 0) endIndex = appianList.size();
@@ -38,6 +39,6 @@ public class SPT_List_Slice {
                 appianList.remove(i);
         }
 
-        return AppianTypeHelper.getTypeFactory(typeService).toTypedValue(appianList);
+        return AppianTypeHelper.getTypeFactory(ts).toTypedValue(appianList);
     }
 }

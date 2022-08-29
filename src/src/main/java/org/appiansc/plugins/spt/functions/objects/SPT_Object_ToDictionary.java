@@ -17,18 +17,18 @@ public class SPT_Object_ToDictionary {
 
     @Function
     public TypedValue spt_object_todictionary(
-            TypeService typeService,          // injected dependency
+            TypeService ts,
             @Parameter TypedValue object
     ) {
-        DatatypeProperties props = typeService.getDatatypeProperties(object.getInstanceType());
+        DatatypeProperties props = ts.getDatatypeProperties(object.getInstanceType());
         if (!props.isRecordType()   // CDT
-                && !(props.isListType() && typeService.getDatatypeProperties(props.getTypeof()).isRecordType()) // List of CDT
+                && !(props.isListType() && ts.getDatatypeProperties(props.getTypeof()).isRecordType()) // List of CDT
                 && object.getInstanceType() != (long) AppianType.MAP
                 && object.getInstanceType() != (long) AppianType.LIST_OF_MAP
                 && object.getInstanceType() != (long) AppianType.DICTIONARY
                 && object.getInstanceType() != (long) AppianType.LIST_OF_DICTIONARY)
             throw new UnsupportedTypeException("Only Maps, Dictionaries, and CDTs are supported");
 
-        return AppianTypeConverter.convert(typeService, object, (long) AppianType.DICTIONARY);
+        return AppianTypeConverter.convert(ts, object, (long) AppianType.DICTIONARY);
     }
 }

@@ -16,6 +16,7 @@
   <!-- LIST FUNCTIONS -->
   <function key="SPT_List_Count" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Count"/>
   <function key="SPT_List_First" class="org.appiansc.plugins.spt.functions.lists.SPT_List_First"/>
+  <function key="SPT_List_HasDuplicates" class="org.appiansc.plugins.spt.functions.lists.SPT_List_HasDuplicates"/>
   <function key="SPT_List_IsList" class="org.appiansc.plugins.spt.functions.lists.SPT_List_IsList"/>
   <function key="SPT_List_Last" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Last"/>
   <function key="SPT_List_RandomElement" class="org.appiansc.plugins.spt.functions.lists.SPT_List_RandomElement"/>

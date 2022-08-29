@@ -10,19 +10,21 @@ import org.appiansc.plugins.spt.AppianListHelper;
 import org.appiansc.plugins.spt.SptPluginCategory;
 
 @SptPluginCategory
-public class SPT_List_RemoveNulls {
-    private static final Logger LOG = Logger.getLogger(SPT_List_RemoveNulls.class);
+public class SPT_List_HasDuplicates {
+    private static final Logger LOG = Logger.getLogger(SPT_List_HasDuplicates.class);
 
     @Function
-    public TypedValue spt_list_removenulls(
+    public boolean spt_list_hasduplicates(
             TypeService ts,
             @Parameter TypedValue list
     ) {
-        if (!AppianListHelper.isList(ts, list)) return list;
+        if (!AppianListHelper.isList(ts, list) || list.getValue() == null) return false;
 
-        AppianList appianList = AppianListHelper.getList(ts, list);
-        if (appianList == null || appianList.size() == 0) return null;
+        AppianList inputList = AppianListHelper.getList(ts, list);
+        if (inputList.size() == 0) return false;
 
-        return AppianListHelper.removeNulls(list);
+        AppianList uniqueList = AppianListHelper.getList(ts, AppianListHelper.getUniqueListValues(ts, list));
+
+        return inputList.size() != uniqueList.size();
     }
 }

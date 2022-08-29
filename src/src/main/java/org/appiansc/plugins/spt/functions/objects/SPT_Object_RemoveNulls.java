@@ -19,7 +19,7 @@ public class SPT_Object_RemoveNulls {
 
     @Function
     public TypedValue spt_object_removenulls(
-            TypeService typeService,          // injected dependency
+            TypeService ts,
             @Parameter TypedValue object,
             @Parameter(required = false) Boolean recursive
     ) {
@@ -28,10 +28,10 @@ public class SPT_Object_RemoveNulls {
 
         if (recursive == null) recursive = true;
 
-        return removeNulls(typeService, object, recursive);
+        return removeNulls(ts, object, recursive);
     }
 
-    private TypedValue removeNulls(TypeService typeService, TypedValue object, Boolean recursive) {
+    private TypedValue removeNulls(TypeService ts, TypedValue object, Boolean recursive) {
         LinkedHashMap<TypedValue, TypedValue> objectValue = (LinkedHashMap<TypedValue, TypedValue>) object.getValue();
         LinkedHashMap<TypedValue, TypedValue> newValue = new LinkedHashMap<>();
 
@@ -47,7 +47,7 @@ public class SPT_Object_RemoveNulls {
             // Is this a list of child HashMaps?
             if (recursive && propertyValue.getValue() instanceof Map[]) {
                 // get the Lists base type ID
-                Long baseType = typeService.getType(propertyValue.getInstanceType()).getTypeof();
+                Long baseType = ts.getType(propertyValue.getInstanceType()).getTypeof();
 
                 for (int i = 0; i < ((Object[]) propertyValue.getValue()).length; i++) {
                     Object childObj = ((Object[]) propertyValue.getValue())[i];
@@ -58,7 +58,7 @@ public class SPT_Object_RemoveNulls {
                     newTv.setInstanceType(baseType);
                     newTv.setValue(child);
 
-                    removeNulls(typeService, newTv, recursive);
+                    removeNulls(ts, newTv, recursive);
 
                     // then retrieve the HashMap and replace the value
                     child = (LinkedHashMap<TypedValue, TypedValue>) newTv.getValue();
@@ -68,7 +68,7 @@ public class SPT_Object_RemoveNulls {
 
             // Recurse?
             if (recursive && propertyValue.getValue() instanceof LinkedHashMap<?, ?>) {
-                removeNulls(typeService, propertyValue, true);
+                removeNulls(ts, propertyValue, true);
             }
 
             // Store the non-null value on the new TypedValue
