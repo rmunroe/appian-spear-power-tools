@@ -19,7 +19,7 @@ public class SPT_Object_ToDictionary {
     public TypedValue spt_object_todictionary(
             TypeService typeService,          // injected dependency
             @Parameter TypedValue object
-    ) throws Exception {
+    ) {
         DatatypeProperties props = typeService.getDatatypeProperties(object.getInstanceType());
         if (!props.isRecordType()   // CDT
                 && !(props.isListType() && typeService.getDatatypeProperties(props.getTypeof()).isRecordType()) // List of CDT
