@@ -14,12 +14,14 @@ public class SPT_Docs_FromUuid {
 
     @Function
     public @DocumentDataType Long spt_docs_fromuuid(
-            ContentService contentService,     // injected dependency
+            ContentService cs,
             @Parameter String uuid
-    ) throws Exception {
-        Long id = contentService.getIdByUuid(uuid);
-        if (id == 0)
-            throw new Exception("There was no Document found in Appian with UUID " + uuid);
+    ) {
+        Long id = cs.getIdByUuid(uuid);
+        if (id == 0) {
+            LOG.error("No Document found in Appian with UUID " + uuid);
+            return null;
+        }
         return id;
     }
 }
