@@ -13,6 +13,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @SptPluginCategory
+@SuppressWarnings("unchecked")
 public class SPT_Object_RemoveNulls {
     private static final Logger LOG = Logger.getLogger(SPT_Object_RemoveNulls.class);
 
@@ -40,7 +41,7 @@ public class SPT_Object_RemoveNulls {
 
             // Here is the actual null check that covers non-lists
             if (propertyValue.getValue() == null
-                    || (propertyValue.getValue() instanceof LinkedHashMap<?, ?> && ((LinkedHashMap<?, ?>)propertyValue.getValue()).size() == 0) // empty child object
+                    || (propertyValue.getValue() instanceof LinkedHashMap<?, ?> && ((LinkedHashMap<?, ?>) propertyValue.getValue()).size() == 0) // empty child object
             ) continue;
 
             // Is this a list of child HashMaps?
@@ -48,9 +49,9 @@ public class SPT_Object_RemoveNulls {
                 // get the Lists base type ID
                 Long baseType = typeService.getType(propertyValue.getInstanceType()).getTypeof();
 
-                for (int i = 0; i < ((Object[])propertyValue.getValue()).length; i++) {
-                    Object childObj = ((Object[])propertyValue.getValue())[i];
-                    LinkedHashMap<TypedValue, TypedValue> child = (LinkedHashMap<TypedValue, TypedValue>)childObj;
+                for (int i = 0; i < ((Object[]) propertyValue.getValue()).length; i++) {
+                    Object childObj = ((Object[]) propertyValue.getValue())[i];
+                    LinkedHashMap<TypedValue, TypedValue> child = (LinkedHashMap<TypedValue, TypedValue>) childObj;
 
                     // We will use a temporary TypedValue to recurse
                     TypedValue newTv = new TypedValue();
@@ -61,7 +62,7 @@ public class SPT_Object_RemoveNulls {
 
                     // then retrieve the HashMap and replace the value
                     child = (LinkedHashMap<TypedValue, TypedValue>) newTv.getValue();
-                    ((Object[])propertyValue.getValue())[i] = child;
+                    ((Object[]) propertyValue.getValue())[i] = child;
                 }
             }
 

@@ -7,6 +7,7 @@ import com.appiancorp.suiteapi.expression.annotations.Parameter;
 import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
 import org.apache.log4j.Logger;
+import org.appiansc.plugins.spt.AppianTypeHelper;
 import org.appiansc.plugins.spt.SptPluginCategory;
 
 @SptPluginCategory
@@ -24,7 +25,7 @@ public class SPT_List_Slice {
         if (startIndex < 1) throw new Exception("startIndex cannot be less than 1"); // Appian Lists are 1-based
         if (endIndex != 0 && endIndex < startIndex) throw new Exception("endIndex cannot be less than startIndex");
 
-        AppianList appianList = ListHelper.getList(typeService, list, false);
+        AppianList appianList = ListHelper.getList(typeService, list);
         assert appianList != null;
 
         if (endIndex == 0) endIndex = appianList.size();
@@ -37,6 +38,6 @@ public class SPT_List_Slice {
                 appianList.remove(i);
         }
 
-        return AppianTypeFactory.newInstance(typeService).toTypedValue(appianList);
+        return AppianTypeHelper.getTypeFactory(typeService).toTypedValue(appianList);
     }
 }

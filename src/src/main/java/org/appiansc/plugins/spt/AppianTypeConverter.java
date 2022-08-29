@@ -10,6 +10,7 @@ import com.appiancorp.suiteapi.type.DatatypeProperties;
 import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
 import org.apache.log4j.Logger;
+import org.appiansc.plugins.spt.functions.lists.ListHelper;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -39,21 +40,52 @@ public class AppianTypeConverter {
         DatatypeProperties props = typeService.getDatatypeProperties(object.getInstanceType());
 
         if (props.isListType()) {
-            // TODO: HANDLE LISTS
-            LOG.debug("List");
-            return object;
-        } else {
-            if (props.isRecordType()) {  // Is a CDT
-                TypedValue dict = convertCdtToDict(typeService, object);
-                if (toType != AppianType.DICTIONARY)
-                    return convertMapOrDict(typeService, dict, toType);
+            // HANDLE LISTS
+            AppianTypeFactory typeFactory = AppianTypeHelper.getTypeFactory(typeService);
 
-            } else if (MAP_OR_DICTIONARY.contains(object.getInstanceType())) {
-                return convertMapOrDict(typeService, object, toType);
+            AppianList inputList = ListHelper.getList(typeService, object);
+            AppianList outputList = typeFactory.createList(toType);
+
+            for (AppianElement inputValue : inputList) {
+                TypedValue inputTv = typeFactory.toTypedValue(inputValue);
+                DatatypeProperties subProps = typeService.getDatatypeProperties(inputTv.getInstanceType());
+
+                TypedValue converted = convertSingle(typeService, inputTv, toType, subProps);
+
+                outputList.add(typeFactory.toAppianElement(converted));
             }
+
+            return typeFactory.toTypedValue(outputList);
+
+        } else {
+            return convertSingle(typeService, object, toType, props);
+        }
+    }
+
+
+    /**
+     * Converts a Map, Dictionary, or CDT to a Map or Dictionary, recursively
+     *
+     * @param typeService an injected Appian TypeService instance
+     * @param object      the Map(s), Dictionarie(s), or CDT(s) to convert
+     * @param toType      the Long type ID of the type to change them to (Map or Dictionary)
+     * @param props       a DatatypeProperties instance for object
+     * @return the converted object
+     * @throws UnsupportedTypeException If an unsupported type is provided
+     */
+    private static TypedValue convertSingle(TypeService typeService, TypedValue object, Long toType, DatatypeProperties props) throws UnsupportedTypeException {
+        if (props.isRecordType()) {  // Is a CDT
+            TypedValue dict = convertCdtToDict(typeService, object);
+            if (toType != AppianType.DICTIONARY)
+                return convertMapOrDict(typeService, dict, toType);
+            else
+                return dict;
+
+        } else if (MAP_OR_DICTIONARY.contains(object.getInstanceType())) {
+            return convertMapOrDict(typeService, object, toType);
         }
 
-        throw new UnsupportedTypeException("Unsupported types");
+        throw new UnsupportedTypeException("Unsupported types - was not a single or list of Map, Dictionary, or CDT");
     }
 
 
@@ -65,7 +97,7 @@ public class AppianTypeConverter {
      * @return the converted object
      */
     private static TypedValue convertCdtToDict(TypeService typeService, TypedValue object) {
-        AppianTypeFactory typeFactory = AppianTypeFactory.newInstance(typeService);
+        AppianTypeFactory typeFactory = AppianTypeHelper.getTypeFactory(typeService);
 
         // Cast to toType and create AppianObject from the result
         AppianObject element = (AppianObject) typeFactory.toAppianElement(typeService.cast((long) AppianType.DICTIONARY, object));
@@ -173,7 +205,7 @@ public class AppianTypeConverter {
 
                 // check for empty lists
                 if (rawValue instanceof Object[] && ((Object[]) rawValue).length == 0) {
-                    AppianTypeFactory typeFactory = AppianTypeFactory.newInstance(typeService);
+                    AppianTypeFactory typeFactory = AppianTypeHelper.getTypeFactory(typeService);
                     TypedValue emptyList = typeFactory.toTypedValue(typeFactory.createElement(toType));
                     objectValue.put(key, emptyList);
                     continue;

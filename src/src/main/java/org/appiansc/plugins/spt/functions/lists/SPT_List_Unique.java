@@ -8,8 +8,8 @@ import com.appiancorp.suiteapi.expression.annotations.Parameter;
 import com.appiancorp.suiteapi.type.AppianType;
 import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
-import com.google.gson.Gson;
 import org.apache.log4j.Logger;
+import org.appiansc.plugins.spt.AppianTypeConverter;
 import org.appiansc.plugins.spt.AppianTypeHelper;
 import org.appiansc.plugins.spt.SptPluginCategory;
 
@@ -26,25 +26,22 @@ public class SPT_List_Unique {
             @Parameter(required = false) boolean keepNulls
     ) {
         if (!ListHelper.isList(typeService, list)) return null;
-        AppianTypeFactory typeFactory = AppianTypeFactory.newInstance(typeService);
+        AppianTypeFactory typeFactory = AppianTypeHelper.getTypeFactory(typeService);
 
-        AppianList appianList = ListHelper.getList(typeService, list, false);
+        AppianList appianList = ListHelper.getList(typeService, list);
 
-        LinkedHashMap<String, AppianElement> map = new LinkedHashMap<>();
-        Gson gson = new Gson();
+        LinkedHashMap<TypedValue, AppianElement> map = new LinkedHashMap<>();
         assert appianList != null;
 
         // Handle lists of Maps by turning into Dictionaries
         if (list.getInstanceType() == AppianType.LIST_OF_MAP) {
-            appianList = AppianTypeHelper.mapListToDictList(typeFactory, list);
+            list = AppianTypeConverter.convert(typeService, list, (long) AppianType.DICTIONARY);
+            appianList = ListHelper.getList(typeService, list);
         }
 
-        // Manually track unique objects by using toJson() to generate a string key
+        assert appianList != null;
         for (AppianElement element : appianList) {
-            String json = gson.toJson(element);
-            if (!map.containsKey(json)) {
-                map.put(json, element);
-            }
+            map.put(typeFactory.toTypedValue(element), element); // TypedValue has proper equals() so the map will contain unique values
         }
 
         AppianList newList = typeFactory.createList(list.getInstanceType());

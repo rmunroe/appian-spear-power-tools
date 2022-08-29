@@ -7,6 +7,7 @@ import com.appiancorp.suiteapi.expression.annotations.Parameter;
 import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
 import org.apache.log4j.Logger;
+import org.appiansc.plugins.spt.AppianTypeHelper;
 import org.appiansc.plugins.spt.SptPluginCategory;
 
 import java.util.Collections;
@@ -23,14 +24,14 @@ public class SPT_List_RandomElement {
             @Parameter(required = false) boolean unique
     ) throws Exception {
         if (!ListHelper.isList(typeService, list)) return null;
-        AppianList inputList = ListHelper.getList(typeService, list, false);
+        AppianList inputList = ListHelper.getList(typeService, list);
         if (inputList == null || inputList.size() == 0) return null;
         if (count == 0) count = 1;
 
         if (unique && count > inputList.size())
             throw new Exception("Cannot return " + count + " unique elements when the list count is less (" + inputList.size() + ")");
 
-        AppianTypeFactory typeFactory = AppianTypeFactory.newInstance(typeService);
+        AppianTypeFactory typeFactory = AppianTypeHelper.getTypeFactory(typeService);
 
         if (count == 1) {
             Collections.shuffle(inputList);                    // randomize the array

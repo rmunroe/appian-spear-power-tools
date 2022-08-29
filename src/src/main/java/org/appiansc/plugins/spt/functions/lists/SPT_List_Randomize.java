@@ -7,6 +7,7 @@ import com.appiancorp.suiteapi.expression.annotations.Parameter;
 import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
 import org.apache.log4j.Logger;
+import org.appiansc.plugins.spt.AppianTypeHelper;
 import org.appiansc.plugins.spt.SptPluginCategory;
 
 import java.util.Collections;
@@ -21,11 +22,11 @@ public class SPT_List_Randomize {
             @Parameter TypedValue list
     ) {
         if (!ListHelper.isList(typeService, list)) return null;
-        AppianList inputList = ListHelper.getList(typeService, list, false);
+        AppianList inputList = ListHelper.getList(typeService, list);
 
         assert inputList != null;
         Collections.shuffle(inputList); // randomize the array
 
-        return AppianTypeFactory.newInstance(typeService).toTypedValue(inputList);
+        return AppianTypeHelper.getTypeFactory(typeService).toTypedValue(inputList);
     }
 }

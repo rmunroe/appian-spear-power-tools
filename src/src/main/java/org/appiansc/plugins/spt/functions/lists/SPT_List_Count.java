@@ -18,7 +18,7 @@ public class SPT_List_Count {
             @Parameter TypedValue list
     ) {
         if (!ListHelper.isList(typeService, list)) return 0L;
-        AppianList appianList = ListHelper.getList(typeService, list, false);
+        AppianList appianList = ListHelper.getList(typeService, list);
         if (appianList == null || appianList.size() == 0) return 0L;
         return (long) appianList.size();
     }

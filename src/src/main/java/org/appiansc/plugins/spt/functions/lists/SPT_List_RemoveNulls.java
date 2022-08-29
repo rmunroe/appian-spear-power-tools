@@ -26,7 +26,7 @@ public class SPT_List_RemoveNulls {
             @Parameter TypedValue list
     ) {
         if (!ListHelper.isList(typeService, list)) return list;
-        AppianList appianList = ListHelper.getList(typeService, list, false);
+        AppianList appianList = ListHelper.getList(typeService, list);
         if (appianList == null || appianList.size() == 0) return null;
 
         return ListHelper.removeNulls(list);

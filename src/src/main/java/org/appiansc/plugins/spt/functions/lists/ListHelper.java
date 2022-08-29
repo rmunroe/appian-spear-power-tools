@@ -6,6 +6,7 @@ import com.appiancorp.ps.plugins.typetransformer.AppianTypeFactory;
 import com.appiancorp.suiteapi.type.DatatypeProperties;
 import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
+import org.appiansc.plugins.spt.AppianTypeHelper;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -26,30 +27,46 @@ public class ListHelper {
 
     /**
      * Returns true if the TypedValue passed in is a List type.
+     *
      * @param typeService TypeService instance (usually injected)
-     * @param tv any Appian TypedValue (any type)
+     * @param tv          any Appian TypedValue (any type)
      * @return true is type is a List
      */
     public static boolean isList(TypeService typeService, TypedValue tv) {
-        AppianTypeFactory typeFactory = AppianTypeFactory.newInstance(typeService);
-
-        AppianElement element = typeFactory.toAppianElement(tv);
+        AppianElement element = AppianTypeHelper.getTypeFactory(typeService).toAppianElement(tv);
         long typeId = element.getTypeId();
         DatatypeProperties props = typeService.getDatatypeProperties(typeId);
 
         return props.isListType();
     }
 
+
     /**
      * Returns an AppianList given a TypedValue. If the TV is a List type, the TV is converted to AppianList.
      * If it is not a List type, a new List is created with the TV as its single element.
      * If an empty string is passed in, null is returned.
+     *
      * @param typeService TypeService instance (usually injected)
-     * @param tv any Appian TypedValue (any type)
+     * @param tv          any Appian TypedValue (any type)
+     * @return A List (array)
+     */
+    public static AppianList getList(TypeService typeService, TypedValue tv) {
+        return getList(typeService, tv, false);
+    }
+
+
+    /**
+     * Returns an AppianList given a TypedValue. If the TV is a List type, the TV is converted to AppianList.
+     * If it is not a List type, a new List is created with the TV as its single element.
+     * If an empty string is passed in, null is returned.
+     *
+     * @param typeService    TypeService instance (usually injected)
+     * @param tv             any Appian TypedValue (any type)
+     * @param createIfSingle if true and tv is not a list, create a list with one element
      * @return A List (array)
      */
     public static AppianList getList(TypeService typeService, TypedValue tv, boolean createIfSingle) {
-        AppianTypeFactory typeFactory = AppianTypeFactory.newInstance(typeService);
+        AppianTypeFactory typeFactory = AppianTypeHelper.getTypeFactory(typeService);
 
         AppianElement element = typeFactory.toAppianElement(tv);
         long typeId = element.getTypeId();
