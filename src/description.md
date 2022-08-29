@@ -1,5 +1,3 @@
-# Appian SPEaR Team - Power Tools
-
 ## SPT_Docs_FromUuid
 Returns the Appian Document that has the given UUID. Returns null if no Document is found for the given UUID.
 
@@ -131,5 +129,4 @@ Creates a list of UUIDs using the given strings as a seed. The UUIDs will always
 | Parameter | Description |
 | ----------- | ----------- |
 | strings | The list of string values to create the UUIDs from  |
-
 
