@@ -14,6 +14,7 @@
   <function key="SPT_Docs_GetUuid" class="org.appiansc.plugins.spt.functions.documents.SPT_Docs_GetUuid"/>
 
   <!-- LIST FUNCTIONS -->
+  <function key="SPT_List_AppendAny" class="org.appiansc.plugins.spt.functions.lists.SPT_List_AppendAny"/>
   <function key="SPT_List_Count" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Count"/>
   <function key="SPT_List_First" class="org.appiansc.plugins.spt.functions.lists.SPT_List_First"/>
   <function key="SPT_List_HasDuplicates" class="org.appiansc.plugins.spt.functions.lists.SPT_List_HasDuplicates"/>
@@ -34,6 +35,5 @@
   <function key="SPT_Uuid_Bulk" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_Bulk"/>
   <function key="SPT_Uuid_FromString" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_FromString"/>
   <function key="SPT_Uuid_FromStrings" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_FromStrings"/>
-
 
 </appian-plugin>

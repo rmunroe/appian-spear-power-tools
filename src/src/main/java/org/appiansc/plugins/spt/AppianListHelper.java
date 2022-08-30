@@ -53,11 +53,7 @@ public class AppianListHelper {
      * @return true is type is a List
      */
     public static boolean isList(TypeService ts, TypedValue tv) {
-        AppianElement element = AppianTypeHelper.getTypeFactory(ts).toAppianElement(tv);
-        long typeId = element.getTypeId();
-        DatatypeProperties props = ts.getDatatypeProperties(typeId);
-
-        return props.isListType();
+        return ts.getDatatypeProperties(tv.getInstanceType()).isListType();
     }
 
 
