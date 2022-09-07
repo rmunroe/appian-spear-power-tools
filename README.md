@@ -27,20 +27,6 @@ This section discusses all Expression language functions included in the plugin.
 ## Date and Time Functions
 
 
-### SPT_DateTime_FromEpoch
-Converts the epoch value (the number of seconds since January 1, 1970, 00:00:00 GMT) to a Date and Time.
-
-| Parameter | Description |
-| ----------- | ----------- |
-| epoch | The epoch time in seconds to get a Date and Time for |
-
-### Example
-```
-spt_datetime_fromepoch(208600200) = datetime(1976, 8, 11, 8, 30)
-```
-Returns `true`
-
-
 ### SPT_DateTime_ToEpoch
 Returns the number of seconds since the standard base time known as "the epoch", namely January 1, 1970, 00:00:00 GMT.
 
@@ -57,6 +43,44 @@ a!localVariables(
 ```
 Returns `true`
 
+
+### SPT_DateTime_FromEpoch
+Converts the epoch value (the number of seconds since January 1, 1970, 00:00:00 GMT) to a Date and Time.
+
+| Parameter | Description |
+| ----------- | ----------- |
+| epoch | The epoch time in seconds to get a Date and Time for |
+
+### Example
+```
+spt_datetime_fromepoch(208600200) = datetime(1976, 8, 11, 8, 30)
+```
+Returns `true`
+
+
+### SPT_DateTime_TimeAgo
+Returns a text description of the relative duration a given Date and Time was or is from Now.
+
+| Parameter | Description                                                          |
+| ----------- |----------------------------------------------------------------------|
+| dateTime | The Date and Time to describe                                        |
+| locale | Optional locale abbreviation supported by [the PrettyTime library](https://github.com/ocpsoft/prettytime/tree/master/core/src/main/java/org/ocpsoft/prettytime/i18n) |
+
+### Examples
+```
+a!localVariables(
+  local!time: now() - 100,
+  spt_datetime_timeago(local!time)
+)
+```
+Returns `"3 months ago"`
+```
+a!localVariables(
+  local!time: now() - 100,
+  spt_datetime_timeago(local!time, "de")
+)
+```
+Returns `"vor 3 Monaten"`
 
 ## Document Functions
 
@@ -82,10 +106,14 @@ Returns the Appian Document that has the given UUID. Returns null if no Document
 | uuid | The Appian Document's UUID |
 
 ### Example
+In this example, we are resolving a Document from its UUID as stored in a database and retrieved as a CDT. For further 
+illustration we are building a display name from the actual, resolved Document.
 ```
 a!localVariables(
-  local!time: datetime(1976, 8, 11, 8, 30, 0, 10),
-  spt_datetime_toepoch(local!time) == 208600200
+  local!myCdt: rule!ABC_getDocumentCdtById(id: ri!docCdtId),
+  local!document: spt_docs_fromuuid(local!myCdt.docUuid),
+  local!docDisplay: document(local!document, "name") & "." & document(local!document, "extension"),
+  ...
 )
 ```
 Returns `true`
@@ -97,6 +125,23 @@ Returns the UUID for the given Appian Document
 | Parameter | Description |
 | ----------- | ----------- |
 | document | The Appian Document |
+
+### Example
+In this example, we are populating a CDT used to store doc info in a database table with some metadata for quick access, 
+and the provided Document's UUID. This CDT would then be saved to the database for later use.
+```
+a!localVariables(
+  local!myCdt: 'type!{urn:com:appian:types:ABC}ABC_Document'(
+    docName: document(ri!docToSave, "name"),
+    docExt: document(ri!docToSave, "extension"),
+    docSize: document(ri!docToSave, "size"),
+    docUuid: spt_docs_getuuid(ri!docToSave)
+  )
+  
+  ...
+)
+```
+Returns `true`
 
 
 ## List Functions

@@ -9,6 +9,11 @@
 
   <function-category key="SptPluginCategory" name="SPEaR Power Tools"/>
 
+  <!-- DATE AND TIME FUNCTIONS -->
+  <function key="SPT_DateTime_ToEpoch" class="org.appiansc.plugins.spt.functions.dateTime.SPT_DateTime_ToEpoch"/>
+  <function key="SPT_DateTime_FromEpoch" class="org.appiansc.plugins.spt.functions.dateTime.SPT_DateTime_FromEpoch"/>
+  <function key="SPT_DateTime_TimeAgo" class="org.appiansc.plugins.spt.functions.dateTime.SPT_DateTime_TimeAgo"/>
+
   <!-- DOCUMENT FUNCTIONS -->
   <function key="SPT_Docs_FromUuid" class="org.appiansc.plugins.spt.functions.documents.SPT_Docs_FromUuid"/>
   <function key="SPT_Docs_GetUuid" class="org.appiansc.plugins.spt.functions.documents.SPT_Docs_GetUuid"/>
