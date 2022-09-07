@@ -19,6 +19,17 @@ public class AppianTypeHelper {
 
 
     /**
+     * Converts an empty string to null
+     *
+     * @param value any TypedValue
+     */
+    public static void fixNull(TypedValue value) {
+        if (value.getInstanceType() == AppianType.STRING && value.getValue().equals(""))
+            value.setInstanceType((long) AppianType.NULL);
+    }
+
+
+    /**
      * Static singleton AppianTypeFactory
      *
      * @param ts an injected TypeService instance

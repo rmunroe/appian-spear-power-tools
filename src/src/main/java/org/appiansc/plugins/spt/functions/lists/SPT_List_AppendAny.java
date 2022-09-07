@@ -25,6 +25,7 @@ public class SPT_List_AppendAny {
             @Parameter TypedValue value
     ) {
         if (!AppianListHelper.isList(ts, list)) return value;
+        AppianTypeHelper.fixNull(value);
 
         // Check if the type of 'value' is the same as the base type of the list
         if (!Objects.equals(ts.getType(list.getInstanceType()).getTypeof(), value.getInstanceType())) {
