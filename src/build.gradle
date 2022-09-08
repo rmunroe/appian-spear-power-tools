@@ -26,6 +26,7 @@ repositories {
 
 dependencies {
     implementation 'org.ocpsoft.prettytime:prettytime:5.0.3.Final'
+    implementation 'commons-codec:commons-codec:1.15'
 
     compileOnly fileTree(dir: 'lib-compile', include: '*.jar')
     implementation fileTree(dir: 'lib-include', include: '*.jar')

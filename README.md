@@ -10,7 +10,7 @@ Brought to you by the Strategic Presales Execution and Readiness (SPEaR) Team in
 
 # Introduction
 
-This plugin is the results of over a decade of experience working in the Appian Expression language.  While the Expression language is extremely powerful and capable as-is, there are some edge cases that "power users" Appian Designers may run into that require some sophisticated Expression rules to overcome. We have taken some of these sophisticated Expression rules and reimplemented them as a plugin for ease of use and speed, both in execution as well as time-to-market.
+This plugin is the results of over a decade of experience working in the Appian Expression language.  While the Expression language is extremely powerful and capable as-is, there are some edge cases that "power user" Appian Designers may run into that require some sophisticated Expression rules to overcome. We have taken some of these sophisticated Expression rules and reimplemented them as a plugin for ease of use and speed, both in execution and time-to-market.
 
 
 ## Issues or Feedback
@@ -45,6 +45,9 @@ If you encounter any issues with the plugin, please post in the Appian Community
 * [SPT_Object_RemoveNullProperties](#SPT_Object_RemoveNullProperties)
 * [SPT_Object_ToDictionary](#SPT_Object_ToDictionary)
 * [SPT_Object_ToMap](#SPT_Object_ToMap)
+
+### Text Functions
+* [SPT_Text_GetMetaphone](#SPT_Text_GetMetaphone)
 
 ### UUID Generation Functions
 * [SPT_Uuid_Bulk](#SPT_Uuid_Bulk)
@@ -746,6 +749,40 @@ a!map(
   )
 )
 ```
+
+
+## Text Functions
+
+These functions are for working with Text input values.
+
+
+### SPT_Text_GetMetaphone
+
+Returns the Metaphone value for the given text value. Alternatively uses Double Metaphone if doubleMetaphone is true.
+
+| Parameter       | Description                                               |
+|-----------------|-----------------------------------------------------------|
+| text            | The text to generate a Metaphone value for                |
+| doubleMetaphone | Use Double Metaphone instead (optional; default is false) |
+
+Metaphone is a phonetic algorithm used for matching similar sounding English words and names. This can be used to help create a "fuzzy search" in Appian. 
+
+Double Metaphone is an improvement upon Metaphone and supports more languages than only English.
+
+See [the Wikipedia Metaphone page](https://en.wikipedia.org/wiki/Metaphone) for more info.
+
+#### Example 1 - Get Metaphone for a last name
+```
+fn!spt_text_getmetaphone("Gomez-Hernandez")
+```
+Returns `"KMSH"`
+
+#### Example 2 - Get Double Metaphone for a last name
+```
+fn!spt_text_getmetaphone("Gomez-Hernandez", true)
+```
+Returns `"KMSR"`
+
 
 
 ## UUID Generation Functions

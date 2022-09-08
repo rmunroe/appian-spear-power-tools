@@ -3,7 +3,7 @@
   <plugin-info>
     <description>SPEaR Power Tools</description>
     <vendor name="Appian SPEaR Team" url="http://www.appian.com"/>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <application-version min="22.2"/>
   </plugin-info>
 
@@ -35,6 +35,9 @@
   <function key="SPT_Object_RemoveNullProperties" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_RemoveNullProperties"/>
   <function key="SPT_Object_ToDictionary" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_ToDictionary"/>
   <function key="SPT_Object_ToMap" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_ToMap"/>
+
+  <!-- TEXT FUNCTIONS -->
+  <function key="SPT_Text_GetMetaphone" class="org.appiansc.plugins.spt.functions.text.SPT_Text_GetMetaphone"/>
 
   <!-- UTILITY FUNCTIONS -->
   <function key="SPT_Uuid_Bulk" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_Bulk"/>
