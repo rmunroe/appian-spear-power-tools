@@ -1,4 +1,4 @@
-![Appian SPEaR Team](resources/img/spear_logo.png "")
+![Appian SPEaR Team](https://raw.githubusercontent.com/rmunroe/appian-spear-power-tools/main/resources/img/spear_logo.png "")
 
 
 # Appian SPEaR Team - Power Tools
