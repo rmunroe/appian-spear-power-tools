@@ -10,18 +10,12 @@ Brought to you by the Strategic Presales Execution and Readiness (SPEaR) Team in
 
 # Introduction
 
-This plugin is the results of over a decade of experience working in the Appian Expression language. 
-While the Expression language is extremely powerful and capable as-is, there are some edge cases that "power users" Appian Designers
-may run into that require some sophisticated Expression rules to overcome. We have taken some of these sophisticated 
-Expression rules and reimplemented them as a plugin for ease of use and speed, both in execution as well as 
-time-to-market.
+This plugin is the results of over a decade of experience working in the Appian Expression language.  While the Expression language is extremely powerful and capable as-is, there are some edge cases that "power users" Appian Designers may run into that require some sophisticated Expression rules to overcome. We have taken some of these sophisticated Expression rules and reimplemented them as a plugin for ease of use and speed, both in execution as well as time-to-market.
 
 
 ## Issues or Feedback
 
-If you encounter any issues with the plugin, please post in the Appian Community's App Market page for this plugin. 
-Additionally, please let us know if there is any additional functionality you would like to see in this plugin and
-we will see about getting it added.
+If you encounter any issues with the plugin, please post in the Appian Community's App Market page for this plugin.  Additionally, please let us know if there is any additional functionality you would like to see in this plugin and we will see about getting it added.
 
 # Table of Contents
 ## Functions
@@ -76,11 +70,11 @@ Returns the number of seconds since the standard base time known as "the epoch",
 #### Example
 ```
 a!localVariables(
-  local!time: datetime(1976, 8, 11, 8, 30, 0, 10),
-  fn!spt_datetime_toepoch(local!time) == 208600200
+  local!time: datetime(2017, 7, 5, 8, 30),
+  fn!spt_datetime_toepoch(local!time)
 )
 ```
-Returns `true`
+Returns `1499243400`
 
 
 ### SPT_DateTime_FromEpoch
@@ -92,7 +86,7 @@ Converts the epoch value (the number of seconds since January 1, 1970, 00:00:00 
 
 #### Example
 ```
-fn!spt_datetime_fromepoch(208600200) = datetime(1976, 8, 11, 8, 30)
+fn!spt_datetime_fromepoch(1499243400) = datetime(2017, 7, 5, 8, 30)
 ```
 Returns `true`
 
@@ -105,7 +99,7 @@ Returns a text description of the relative duration a given Date and Time was or
 | dateTime | The Date and Time to describe                                        |
 | locale | Optional locale abbreviation supported by [the PrettyTime library](https://github.com/ocpsoft/prettytime/tree/master/core/src/main/java/org/ocpsoft/prettytime/i18n) |
 
-#### Examples
+#### Example 1 - 100 days ago
 ```
 a!localVariables(
   local!time: now() - 100,
@@ -113,6 +107,8 @@ a!localVariables(
 )
 ```
 Returns `"3 months ago"`
+
+#### Example 2 - 100 days ago, but in German
 ```
 a!localVariables(
   local!time: now() - 100,
@@ -124,19 +120,15 @@ Returns `"vor 3 Monaten"`
 
 ## Document Functions
 
-These functions are related to working with Documents in Appian's internal content management system
+These functions are related to working with Documents in Appian's internal content management system.
 
-Both [SPT_Docs_GetUuid](#SPT_Docs_GetUuid) and [SPT_Docs_FromUuid](#SPT_Docs_FromUuid) come from the need for creating 
-demonstration Applications that need to be ported to many different Appian instances - something that is rather rare in 
-typical Appian production environments - but may be valuable in your use cases as well. When moving Documents from one 
-Appian instance to another, the integer Document ID is *not* consistent. Therefore, saving the integer ID to a 
-database, then porting that data and the Documents to another instance and using the stored ID to retrieve the Document 
-will likely not produce the correct Document, as IDs are assigned at import time. To avoid this, the Document's UUID 
-can be used as a unique identifier (as is the intention of a UUID) to quickly retrieve the Document. UUIDs of Documents 
-do not ever change, regardless of how many different Appian instances they are deployed to (assuming you are not 
-re-importing the raw document file). Consider retrieving a Document's UUID and storing that in a VARCHAR(50) field in 
-the database instead of it's integer Document ID. Then use that UUID to fetch a Document instance and use it as you 
-would when storing an integer Document ID.
+Both [SPT_Docs_GetUuid](#SPT_Docs_GetUuid) and [SPT_Docs_FromUuid](#SPT_Docs_FromUuid) come from the need for creating demonstration Applications that need to be ported to many different Appian instances - something that is rather rare in typical Appian production environments, but may be valuable in your use cases as well.
+
+When moving Documents from one Appian instance to another (via Export or Compare & Deploy), the integer Document ID is *not* consistent. Therefore, saving the integer ID to a database, then porting that data and the Documents to another instance and using the stored ID to retrieve the Document will likely not produce the correct Document, as new IDs are assigned at import time. To avoid this, the Document's UUID can be used as a unique identifier (as is the intention of a UUID) to quickly retrieve the Document. UUIDs of Documents are assigned at the time of upload and do not ever change, regardless of how many different Appian instances they are deployed to (assuming you are not re-uploading the raw document file).
+
+To store Document references in databases and keep these links across Appian instances, consider retrieving a Document's UUID and storing that in a `VARCHAR(50)` field in the database instead of its integer Document ID. Then use that UUID to fetch a Document instance and use it as you would when storing an integer Document ID. This gives the consistency of a Constant when using a database.
+
+As a performance note, [SPT_Docs_GetUuid](#SPT_Docs_GetUuid) takes around 4 ms to execute, while [SPT_Docs_FromUuid](#SPT_Docs_FromUuid) takes around 3 ms.
 
 
 ### SPT_Docs_GetUuid
@@ -147,8 +139,7 @@ Returns the UUID for the given Appian Document
 | document | The Appian Document |
 
 #### Example
-In this example, we are populating a CDT used to store doc info in a database table with some metadata for quick access, 
-and the provided Document's UUID. This CDT would then be saved to the database for later use.
+In this example, we are populating a CDT used to store doc info in a database table with some metadata for quick access, and the provided Document's UUID. This CDT would then be saved to the database for later use.
 ```
 a!localVariables(
   local!myCdt: 'type!{urn:com:appian:types:ABC}ABC_Document'(
@@ -170,8 +161,7 @@ Returns the Appian Document that has the given UUID. Returns null if no Document
 | uuid | The Appian Document's UUID |
 
 #### Example
-In this example, we are resolving a Document from its UUID as stored in a database and retrieved as a CDT. For further
-illustration we are building a display name from the actual, resolved Document.
+In this example, we are resolving a Document from its UUID as stored in a database and retrieved as a CDT. For further illustration we are building a display name from the actual, resolved Document.
 ```
 a!localVariables(
   local!myCdt: rule!ABC_getDocumentCdtById(id: ri!docCdtId),
@@ -184,8 +174,7 @@ a!localVariables(
 
 ## List (Array) Functions
 
-These functions are for working with Lists in Appian, aka arrays. Several of them will have similar names to existing 
-List functions, but will have specific caveats that help make Lists easier.
+These functions are for working with Lists in Appian, aka arrays. Several of them will have similar names to existing List functions, but will have specific caveats that help make Lists easier.
 
 
 ### SPT_List_AppendAny
@@ -199,15 +188,14 @@ Appends any value to a List without changing the value's type. If the type of th
 
 #### NOTE: Nulls and Empty Strings
 
-Appian converts the `null` value to an empty string `""` when providing the value to a function plugin. It is therefore
-impossible to tell which value (`null` vs `""`) the user actually meant.
+Appian converts the `null` value to an empty string `""` when providing the value to a function plugin. It is therefore impossible to tell which value (`null` vs `""`) the user actually meant.
 
 _**When an `Any Type` value is provided, this plugin will default to both `null` and `""` being intended as `null`.**_
 
-For instance if you use [SPT_List_AppendAny](#SPT_List_AppendAny) to append `""` onto a List, instead of an empty string `""`
-being appended, the value `null` is used. See the example given below.
+For instance if you use [SPT_List_AppendAny](#SPT_List_AppendAny) to append `""` onto a List, instead of an empty string `""` being appended, the value `null` is used. See the example given below.
 
-#### Examples
+#### Example 1 - Append an integer on a List of Text
+If using the built-in `append()`, Appian would convert `4` to `"4"`.
 ```
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
@@ -216,6 +204,8 @@ a!localVariables(
 )
 ```
 Returns (List of Variant) `{"one", "two", "three", 4}`
+
+#### Example 2 - Empty string is converted to `null`
 ```
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
@@ -233,7 +223,8 @@ Returns the element count (including null elements) in a list. If the passed in 
 | ----------- | ----------- |
 | list | The list to count |
 
-#### Examples
+#### Example 1 - Counting `null`
+(If using the built-in `count()`, Appian would instead return `1`, which can be very confusing.)
 ```
 a!localVariables(
   local!nullValue: null,
@@ -241,6 +232,9 @@ a!localVariables(
 )
 ```
 Returns `0`
+
+#### Example 2 - Counting a non-list value
+(If using the built-in `count()`, Appian would instead return `1`, which can be very confusing.)
 ```
 a!localVariables(
   local!stringValue: "stringValue",
@@ -248,6 +242,8 @@ a!localVariables(
 )
 ```
 Returns `0`
+
+#### Example 3 - Counting a List
 ```
 a!localVariables(
   local!hundredElementArray: enumerate(100),
@@ -264,7 +260,7 @@ Returns the first element of the list. Returns null if list is null or empty. If
 | ----------- | ----------- |
 | list | The list to choose from |
 
-#### Examples
+#### Example 1 - Getting the first element from a List
 ```
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
@@ -272,6 +268,8 @@ a!localVariables(
 )
 ```
 Returns `"one"`
+
+#### Example 2 - Getting the first element from a non-List
 ```
 a!localVariables(
   local!notAnArray: "notAnArray",
@@ -282,13 +280,12 @@ Returns `"notAnArray"`
 
 
 ### SPT_List_HasDuplicates
-Returns true if all items in the List are unique. If not a list or the list is null or empty, returns false.
-
+Returns true if there are duplicate items in the List. If all items are unique, or the value passed in is not a list or the list is null or empty, returns false.
 | Parameter | Description |
 | ----------- | ----------- |
 | list | The list to check |
 
-#### Examples
+#### Example 1 - List of Integers with duplicate values
 ```
 a!localVariables(
   local!listOfPrimitive: { 1, 2, 3, 5, 3, 3, 4, 5, 5, 5 },
@@ -296,6 +293,8 @@ a!localVariables(
 )
 ```
 Returns `true`
+
+#### Example 2 - List of CDTs with duplicate values
 ```
 a!localVariables(
   local!listOfCdt: {
@@ -310,14 +309,20 @@ a!localVariables(
 )
 ```
 Returns `true`
+
+#### Example 3 - List of Integers with no duplicates
 ```
 fn!spt_list_hasduplicates(enumerate(10))
 ```
 Returns `false`
+
+#### Example 4 - Passing in a non-List
 ```
 fn!spt_list_hasduplicates(123)
 ```
 Returns `false`
+
+#### Example 5 - Passing in `null`
 ```
 fn!spt_list_hasduplicates(null)
 ```
@@ -331,7 +336,7 @@ Returns true if the value passed in is a List type. If the passed in value is nu
 | ----------- | ----------- |
 | list | The value to check |
 
-#### Examples
+#### Example 1 - Passing in a List of CDT
 ```
 a!localVariables(
   local!listOfCdt: {
@@ -343,6 +348,8 @@ a!localVariables(
 )
 ```
 Returns `true`
+
+#### Example 2 - Passing in a List of Integers
 ```
 a!localVariables(
   local!hundredElementList: enumerate(100),
@@ -350,6 +357,8 @@ a!localVariables(
 )
 ```
 Returns `true`
+
+#### Example 3 - Passing in an empty List
 ```
 a!localVariables(
   local!emptyList: {},
@@ -357,6 +366,8 @@ a!localVariables(
 )
 ```
 Returns `true`
+
+#### Example 4 - Passing in a List of CDT
 ```
 a!localVariables(
   local!stringValue: "stringValue",
@@ -364,6 +375,8 @@ a!localVariables(
 )
 ```
 Returns `false`
+
+#### Example 5 - Passing in `null`
 ```
 a!localVariables(
   local!nullValue: null,
@@ -380,7 +393,7 @@ Returns the last element of the list. Returns null if list is null or empty. If 
 | ----------- | ----------- |
 | list | The list to choose from |
 
-#### Examples
+#### Example 1 - Grab the last element of a List of Text
 ```
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
@@ -388,6 +401,8 @@ a!localVariables(
 )
 ```
 Returns `"three"`
+
+#### Example 2 - Grab the last element of non-List
 ```
 a!localVariables(
   local!notAnArray: "notAnArray",
@@ -406,7 +421,7 @@ Returns a random element in the provided list. If not a List, returns what was p
 | count | The number of elements to include (optional; default is 1) |
 | unique | If selecting multiple, ensure that the elements are unique. Will throw an error if count is greater than the number of elements in the array. |
 
-#### Example
+#### Example - Grab several random elements
 ```
 a!localVariables(
   local!listOfMap: {
@@ -427,7 +442,7 @@ a!localVariables(
 ```
 Returns a Map with:
 * a single random element
-* 3 unique elements
+* 3 unique, random elements
 * a List of 10 random elements
 
 
@@ -438,7 +453,7 @@ Returns the provided list in a randomized order (shuffled). If not a List, retur
 | ----------- | ----------- |
 | list | The list to randomize |
 
-#### Example
+#### Example - Retrieve Map `id` properties in a randomized order 
 ```
 a!localVariables(
   local!listOfMap: {
@@ -462,7 +477,7 @@ Removes all null elements from the given list. If a List of Text (string) is pas
 | ----------- | ----------- |
 | list | The list to remove nulls from |
 
-#### Examples
+#### Example 1 - Remove nulls from a List of Integers
 ```
 a!localVariables(
   local!listOfPrimitive: { 1, null, 2, 3, null, 4, null, 5, null },
@@ -470,6 +485,8 @@ a!localVariables(
 )
 ```
 Returns `{1, 2, 3, 4, 5}`
+
+#### Example 2 - Remove nulls from a List of CDTs
 ```
 a!localVariables(
   local!listOfCdt: {
@@ -483,6 +500,8 @@ a!localVariables(
 )
 ```
 Returns the list of `id` properties from non-null elements. E.g. `{1, 2, 3}`
+
+#### Example 3 - Remove nulls from a List of only null
 ```
 a!localVariables(
   local!justNull: {null},
@@ -490,6 +509,8 @@ a!localVariables(
 )
 ```
 Returns an empty List of Text String (due to how Appian treats `null` internally)
+
+#### Example 4 - Remove nulls from a non-List
 ```
 a!localVariables(
   local!notAList: "one",
@@ -508,7 +529,7 @@ Returns a subset of the provided list, starting with and including startIndex an
 | startIndex | The first index to include in the slice |
 | endIndex | The last index to include in the slice. If omitted, the rest of the list is included. |
 
-#### Examples
+#### Example 1 - Get elements 10-15 (inclusive)
 ```
 a!localVariables(
   local!hundredElementArray: enumerate(100) + 1,
@@ -516,6 +537,8 @@ a!localVariables(
 )
 ```
 Returns `{10, 11, 12, 13, 14, 15}`
+
+#### Example 2 - Get element 8 and on 
 ```
 a!localVariables(
   local!remaining: enumerate(10) + 1,
@@ -523,6 +546,8 @@ a!localVariables(
 )
 ```
 Returns `{8, 9, 10}`
+
+#### Example 3 - Slice a non-List
 ```
 a!localVariables(
   local!stringValue: "stringValue",
@@ -530,6 +555,8 @@ a!localVariables(
 )
 ```
 Returns `null`
+
+#### Example 4 - Slice a `null` value
 ```
 a!localVariables(
   local!nullValue: null,
@@ -547,7 +574,7 @@ Returns the unique elements found in the provided list. If the list is null or e
 | list | The list to unique |
 | keepNulls | If true, keeps null values (uniqued, so 1 at most) |
 
-#### Example
+#### Example - Get only unique values
 ```
 a!localVariables(
   local!listOfPrimitive: { 1, 2, 3, 5, 3, 3, 4, 5, 5, 5 },
@@ -570,7 +597,7 @@ Removes properties from a Map or Dictionary where the value is null. If the pass
 | object | The object to remove nulls from |
 | recursive | If true (default), will recurse into nested objects and remove nulls from them as well |
 
-#### Example
+#### Example - Remove nulls from a Dictionary
 ```
 a!localVariables(
   local!dictionary: {
@@ -607,7 +634,7 @@ Converts the given object (Map(s), Dictionary(s) or CDT(s)) to a Dictionary, inc
 | ----------- | ----------- |
 | object | The object to convert to a Dictionary |
 
-#### Example
+#### Example - Convert a Map (with nested Maps) to a Dictionary
 ```
 a!localVariables(
   local!map: a!map(
@@ -655,10 +682,9 @@ Converts the given object (Map(s), Dictionary(s) or CDT(s)) to a Map, including 
 | ----------- | ----------- |
 | object | The object to convert to a Map |
 
-This function can be used to store any dynamic data structure into a Process Variable as a Map. When used in conjunction 
-with `a!fromJson()` it can store the result of a REST service call as a PV without any additional data massaging (see example 2).
+This function can be used to store any dynamic data structure into a Process Variable as a Map. When used in conjunction with `a!fromJson()` it can store the result of a REST service call as a PV without any additional data massaging (see example 2).
 
-#### Examples
+#### Example 1 - Convert a Dictionary (with nested Dictionaries) to a Map
 ```
 a!localVariables(
   local!dict: {
@@ -703,7 +729,7 @@ a!map(
   }
 )
 ```
-Deserializing JSON to a Map:
+#### Example 2 - Deserializing JSON to a Map
 ```
 a!localVariables(
   local!json: "{""id"":123,""value"":""This was JSON, now it's a Map"",""nestedObject"":{""message"":""A nested object, also now a Map""}}",
@@ -734,7 +760,7 @@ Creates a list of UUIDs in bulk. Best practice is to know the number of UUIDs to
 | ----------- | ----------- |
 | count | The number of UUIDs to generate |
 
-#### Examples
+#### Example 1 - Generate 3 UUIDs at once
 ```
 fn!spt_uuid_bulk(3)
 ```
@@ -748,6 +774,7 @@ Returns:
 ```
 (Note: your UUIDs will be unique.)
 
+#### Example 2 - Update a List of Dictionary with newly generated UUIDs
 If you need to loop over many objects and add/update UUIDs:
 ```
 a!localVariables(
@@ -813,7 +840,7 @@ Creates a UUID using the given string as a seed. The UUID will always be the sam
 | ----------- | ----------- |
 | string | The string value to create the UUID from |
 
-#### Examples
+#### Example 1 - Retrieve the unchanging UUID for a Text value
 ```
 fn!spt_uuid_fromstring(
   "This will always produce the same UUID unless this text is changed"
@@ -821,7 +848,7 @@ fn!spt_uuid_fromstring(
 ```
 Returns: `"af587b80-7ce1-3f19-ba1c-08c8ae551bd0"`
 
-Using existing UUIDs to generate new UUID based on some additional text
+#### Example 2 - Use a existing UUID to generate new UUID based on some additional text
 ```
 fn!spt_uuid_fromstring(
   concat(
@@ -841,7 +868,7 @@ Creates a list of UUIDs using the given strings as a seed. The UUIDs will always
 | ----------- | ----------- |
 | strings | The list of string values to create the UUIDs from |
 
-#### Examples
+#### Example - Generate 3 unchanging UUIDs from a List of Text
 ```
 fn!spt_uuid_fromstrings({ "One", "Two", "Three" })
 ```
