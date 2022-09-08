@@ -2,8 +2,7 @@
   <img src="https://raw.githubusercontent.com/rmunroe/appian-spear-power-tools/main/resources/img/spear_logo.png">
 </p>
 
-
-# SPEaR Power Tools
+<p style="text-align: center; font-size: 30pt;">SPEaR Power Tools</p>
 
 Brought to you by the Strategic Presales Execution and Readiness (SPEaR) Team in Appian Solutions Consulting
 
