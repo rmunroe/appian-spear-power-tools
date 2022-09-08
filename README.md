@@ -23,6 +23,40 @@ If you encounter any issues with the plugin, please post in the Appian Community
 Additionally, please let us know if there is any additional functionality you would like to see in this plugin and
 we will see about getting it added.
 
+# Table of Contents
+## Functions
+### Date and Time Functions
+* [SPT_DateTime_ToEpoch](#SPT_DateTime_ToEpoch)
+* [SPT_DateTime_FromEpoch](#SPT_DateTime_FromEpoch)
+* [SPT_DateTime_TimeAgo](#SPT_DateTime_TimeAgo)
+
+### Document Functions
+* [SPT_Docs_GetUuid](#SPT_Docs_GetUuid)
+* [SPT_Docs_FromUuid](#SPT_Docs_FromUuid)
+
+### List (Array) Functions
+* [SPT_List_AppendAny](#SPT_List_AppendAny)
+* [SPT_List_Count](#SPT_List_Count)
+* [SPT_List_First](#SPT_List_First)
+* [SPT_List_HasDuplicates](#SPT_List_HasDuplicates)
+* [SPT_List_IsList](#SPT_List_IsList)
+* [SPT_List_Last](#SPT_List_Last)
+* [SPT_List_RandomElement](#SPT_List_RandomElement)
+* [SPT_List_Randomize](#SPT_List_Randomize)
+* [SPT_List_RemoveNulls](#SPT_List_RemoveNulls)
+* [SPT_List_Slice](#SPT_List_Slice)
+* [SPT_List_Unique](#SPT_List_Unique)
+
+### Object Functions
+* [SPT_Object_RemoveNullProperties](#SPT_Object_RemoveNullProperties)
+* [SPT_Object_ToDictionary](#SPT_Object_ToDictionary)
+* [SPT_Object_ToMap](#SPT_Object_ToMap)
+
+### UUID Generation Functions
+* [SPT_Uuid_Bulk](#SPT_Uuid_Bulk)
+* [SPT_Uuid_FromString](#SPT_Uuid_FromString)
+* [SPT_Uuid_FromStrings](#SPT_Uuid_FromStrings)
+
 
 # Functions
 
