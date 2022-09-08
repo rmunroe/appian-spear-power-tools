@@ -168,7 +168,7 @@ _**When an `Any Type` value is provided, this plugin will default to both `null`
 For instance if you use [SPT_List_AppendAny](#SPT_List_AppendAny) to append `""` onto a List, instead of an empty string `""`
 being appended, the value `null` is used. See the example given below.
 
-#### Example
+#### Examples
 ```
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
@@ -249,7 +249,7 @@ Returns true if all items in the List are unique. If not a list or the list is n
 | ----------- | ----------- |
 | list | The list to check |
 
-#### Example
+#### Examples
 ```
 a!localVariables(
   local!listOfPrimitive: { 1, 2, 3, 5, 3, 3, 4, 5, 5, 5 },
@@ -292,7 +292,7 @@ Returns true if the value passed in is a List type. If the passed in value is nu
 | ----------- | ----------- |
 | list | The value to check |
 
-#### Example
+#### Examples
 ```
 a!localVariables(
   local!listOfCdt: {
@@ -367,7 +367,7 @@ Returns a random element in the provided list. If not a List, returns what was p
 | count | The number of elements to include (optional; default is 1) |
 | unique | If selecting multiple, ensure that the elements are unique. Will throw an error if count is greater than the number of elements in the array. |
 
-#### Examples
+#### Example
 ```
 a!localVariables(
   local!listOfMap: {
@@ -399,7 +399,7 @@ Returns the provided list in a randomized order (shuffled). If not a List, retur
 | ----------- | ----------- |
 | list | The list to randomize |
 
-#### Examples
+#### Example
 ```
 a!localVariables(
   local!listOfMap: {
@@ -508,7 +508,7 @@ Returns the unique elements found in the provided list. If the list is null or e
 | list | The list to unique |
 | keepNulls | The list to unique |
 
-#### Examples
+#### Example
 ```
 a!localVariables(
   local!listOfPrimitive: { 1, 2, 3, 5, 3, 3, 4, 5, 5, 5 },
@@ -531,6 +531,35 @@ Removes properties from a Map or Dictionary where the value is null. If the pass
 | object | The object to remove nulls from |
 | recursive | If true (default), will recurse into nested objects and remove nulls from them as well |
 
+#### Example
+```
+a!localVariables(
+  local!dictionary: {
+    id: 1,
+    value: "foo",
+    unused: null,
+    nested: {
+      id: 2,
+      value: "bar",
+      unused: null
+    }
+  },
+  
+  spt_object_removenullproperties(local!dictionary)
+)
+```
+Returns:
+```
+{
+  id: 1,
+  value: "foo",
+  nested: {
+    id: 2,
+    value: "bar"
+  }
+}
+```
+
 
 ### SPT_Object_ToDictionary
 Converts the given object (Map(s), Dictionary(s) or CDT(s)) to a Dictionary, including nested objects (unlike the cast() function). If the passed in value is not a Map, Dictionary, or CDT (or a List of them) an error is thrown.
@@ -538,6 +567,46 @@ Converts the given object (Map(s), Dictionary(s) or CDT(s)) to a Dictionary, inc
 | Parameter | Description |
 | ----------- | ----------- |
 | object | The object to convert to a Dictionary |
+
+#### Example
+```
+a!localVariables(
+  local!map: a!map(
+    id: 1,
+    value: "This was a Map",
+    nestedMap: a!map(id: 2, value: "This was a nested Map"),
+    nestedMapArray: {
+      a!map(
+        id: 3,
+        value: "This was a Map in an array 1"
+      ),
+      a!map(
+        id: 4,
+        value: "This was a Map in an array 2"
+      )
+    }
+  ),
+  spt_object_todictionary(local!map)
+)
+```
+Returns (Dictionary):
+```
+{
+  id: 1,
+  value: "This was a Map",
+  nestedMap: { id: 2, value: "This was a nested Map" },
+  nestedMapArray: {
+    {
+      id: 3,
+      value: "This was a Map in an array 1"
+    },
+    {
+      id: 4,
+      value: "This was a Map in an array 2"
+    }
+  }
+}
+```
 
 
 ### SPT_Object_ToMap
@@ -547,6 +616,71 @@ Converts the given object (Map(s), Dictionary(s) or CDT(s)) to a Map, including 
 | ----------- | ----------- |
 | object | The object to convert to a Map |
 
+This function can be used to store any dynamic data structure into a Process Variable as a Map. When used in conjunction 
+with `a!fromJson()` it can store the result of a REST service call as a PV without any additional data massaging (see example 2).
+
+#### Examples
+```
+a!localVariables(
+  local!dict: {
+    id: 1,
+    value: "This was a Dictionary",
+    nested: {
+      id: 2,
+      value: "This was a nested Dictionary"
+    },
+    nestedArray: {
+      {
+        id: 3,
+        value: "This was a Dictionary in an array 1"
+      },
+      {
+        id: 4,
+        value: "This was a Dictionary in an array 2"
+      }
+    }
+  },
+  spt_object_tomap(local!dict)
+)
+```
+Returns:
+```
+a!map(
+  id: 1,
+  value: "This was a Dictionary",
+  nested: a!map(
+    id: 2,
+    value: "This was a nested Dictionary"
+  ),
+  nestedArray: {
+    a!map(
+      id: 3,
+      value: "This was a Dictionary in an array 1"
+    ),
+    a!map(
+      id: 4,
+      value: "This was a Dictionary in an array 2"
+    )
+  }
+)
+```
+Deserializing JSON to a Map:
+```
+a!localVariables(
+  local!json: "{""id"":123,""value"":""This was JSON, now it's a Map"",""nestedObject"":{""message"":""A nested object, also now a Map""}}",
+  spt_object_tomap(a!fromJson(local!json))
+)
+```
+Returns:
+```
+a!map(
+  id: 123,
+  value: "This was JSON, now it's a Map",
+  nestedObject: a!map(
+    message: "A nested object, also now a Map"
+  )
+)
+```
 
 
 ## UUID Generation Functions
@@ -561,6 +695,77 @@ Creates a list of UUIDs in bulk. Best practice is to know the number of UUIDs to
 | ----------- | ----------- |
 | count | The number of UUIDs to generate |
 
+#### Examples
+```
+spt_uuid_bulk(3)
+```
+Returns:
+```
+{
+  "36cda050-9514-4c8e-a2e5-4bc6ce475d9d",
+  "161e14e7-993c-40be-a986-30c1c287d274",
+  "aea18a72-f196-440c-8089-32ff525f4e97"
+}
+```
+(Note: your UUIDs will be unique.)
+
+If you need to loop over many objects and add/update UUIDs:
+```
+a!localVariables(
+  local!list: {
+    {id: 1, name: "One"},
+    {id: 2, name: "Two"},
+    {id: 3, name: "Three"},
+    {id: 4, name: "Four"},
+    {id: 5, name: "Five"},
+  },
+  
+  local!uuids: spt_uuid_bulk(count(local!list)),
+  
+  local!updated: a!forEach(
+    items: local!list,
+    expression: a!update(
+      fv!item,
+      "uuid",
+      local!uuids[fv!index]
+    )
+  ),
+  
+  local!updated
+)
+```
+Returns:
+```
+{
+  {
+    id: 1,
+    name: "One",
+    uuid: "54b643e5-c4ff-42f2-8155-946174b845a5"
+  },
+  {
+    id: 2,
+    name: "Two",
+    uuid: "86efc76e-6ec4-4478-a30c-69b9b40f3134"
+  },
+  {
+    id: 3,
+    name: "Three",
+    uuid: "43426143-812f-4ac7-a55a-998c5124d96f"
+  },
+  {
+    id: 4,
+    name: "Four",
+    uuid: "6f678028-49f3-49ce-84dc-2cc336638c08"
+  },
+  {
+    id: 5,
+    name: "Five",
+    uuid: "e3323b18-2370-4b99-966f-d9928665c002"
+  }
+}
+```
+(Note: your UUIDs will be unique.)
+
 
 ### SPT_Uuid_FromString
 Creates a UUID using the given string as a seed. The UUID will always be the same for any given string input value.
@@ -568,6 +773,26 @@ Creates a UUID using the given string as a seed. The UUID will always be the sam
 | Parameter | Description |
 | ----------- | ----------- |
 | string | The string value to create the UUID from |
+
+#### Examples
+```
+spt_uuid_fromstring(
+  "This will always produce the same UUID unless this text is changed"
+)
+```
+Returns: `"af587b80-7ce1-3f19-ba1c-08c8ae551bd0"`
+
+Using existing UUIDs to generate new UUID based on some additional text
+```
+spt_uuid_fromstring(
+  concat(
+    "af587b80-7ce1-3f19-ba1c-08c8ae551bd0",
+    "|",
+    "Rob Munroe"
+  )
+)
+```
+Returns: `"d2a16e0d-594c-3d14-8b81-f39b68219a89"`
 
 
 ### SPT_Uuid_FromStrings
@@ -577,3 +802,15 @@ Creates a list of UUIDs using the given strings as a seed. The UUIDs will always
 | ----------- | ----------- |
 | strings | The list of string values to create the UUIDs from |
 
+#### Examples
+```
+spt_uuid_fromstrings({ "One", "Two", "Three" })
+```
+Returns
+```
+{
+  "6855d98a-8356-3d8f-a0dd-231f6eca10ce",
+  "b7b76aa4-fa73-31c9-8d2b-9fa56117bc5d",
+  "fb5b4b07-2102-3d0f-9dbf-579140656173"
+}
+```
