@@ -1,4 +1,6 @@
-![Appian SPEaR Team](https://raw.githubusercontent.com/rmunroe/appian-spear-power-tools/main/resources/img/spear_logo.png "")
+<p align="center">
+  <img src="https://raw.githubusercontent.com/rmunroe/appian-spear-power-tools/main/resources/img/spear_logo.png">
+</p>
 
 
 # SPEaR Power Tools
@@ -41,7 +43,7 @@ Returns the number of seconds since the standard base time known as "the epoch",
 ```
 a!localVariables(
   local!time: datetime(1976, 8, 11, 8, 30, 0, 10),
-  spt_datetime_toepoch(local!time) == 208600200
+  fn!spt_datetime_toepoch(local!time) == 208600200
 )
 ```
 Returns `true`
@@ -56,7 +58,7 @@ Converts the epoch value (the number of seconds since January 1, 1970, 00:00:00 
 
 #### Example
 ```
-spt_datetime_fromepoch(208600200) = datetime(1976, 8, 11, 8, 30)
+fn!spt_datetime_fromepoch(208600200) = datetime(1976, 8, 11, 8, 30)
 ```
 Returns `true`
 
@@ -73,14 +75,14 @@ Returns a text description of the relative duration a given Date and Time was or
 ```
 a!localVariables(
   local!time: now() - 100,
-  spt_datetime_timeago(local!time)
+  fn!spt_datetime_timeago(local!time)
 )
 ```
 Returns `"3 months ago"`
 ```
 a!localVariables(
   local!time: now() - 100,
-  spt_datetime_timeago(local!time, "de")
+  fn!spt_datetime_timeago(local!time, "de")
 )
 ```
 Returns `"vor 3 Monaten"`
@@ -119,7 +121,7 @@ a!localVariables(
     docName: document(ri!docToSave, "name"),
     docExt: document(ri!docToSave, "extension"),
     docSize: document(ri!docToSave, "size"),
-    docUuid: spt_docs_getuuid(ri!docToSave)
+    docUuid: fn!spt_docs_getuuid(ri!docToSave)
   ),
   
 ...
@@ -139,7 +141,7 @@ illustration we are building a display name from the actual, resolved Document.
 ```
 a!localVariables(
   local!myCdt: rule!ABC_getDocumentCdtById(id: ri!docCdtId),
-  local!document: spt_docs_fromuuid(local!myCdt.docUuid),
+  local!document: fn!spt_docs_fromuuid(local!myCdt.docUuid),
   local!docDisplay: document(local!document, "name") & "." & document(local!document, "extension"),
 
 ...
@@ -176,7 +178,7 @@ being appended, the value `null` is used. See the example given below.
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
   
-  spt_list_appendany(local!listOfTextString, 4)
+  fn!spt_list_appendany(local!listOfTextString, 4)
 )
 ```
 Returns (List of Variant) `{"one", "two", "three", 4}`
@@ -184,7 +186,7 @@ Returns (List of Variant) `{"one", "two", "three", 4}`
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
   
-  spt_list_appendany(local!listOfTextString, "")
+  fn!spt_list_appendany(local!listOfTextString, "")
 )
 ```
 Returns (List of Variant) `{"one", "two", "three", null}`
@@ -201,21 +203,21 @@ Returns the element count (including null elements) in a list. If the passed in 
 ```
 a!localVariables(
   local!nullValue: null,
-  spt_list_count(local!nullValue)
+  fn!spt_list_count(local!nullValue)
 )
 ```
 Returns `0`
 ```
 a!localVariables(
   local!stringValue: "stringValue",
-  spt_list_count(local!stringValue)
+  fn!spt_list_count(local!stringValue)
 )
 ```
 Returns `0`
 ```
 a!localVariables(
   local!hundredElementArray: enumerate(100),
-  spt_list_count(local!hundredElementArray)
+  fn!spt_list_count(local!hundredElementArray)
 )
 ```
 Returns `100`
@@ -232,14 +234,14 @@ Returns the first element of the list. Returns null if list is null or empty. If
 ```
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
-  spt_list_first(local!listOfTextString)
+  fn!spt_list_first(local!listOfTextString)
 )
 ```
 Returns `"one"`
 ```
 a!localVariables(
   local!notAnArray: "notAnArray",
-  spt_list_first(local!notAnArray)
+  fn!spt_list_first(local!notAnArray)
 )
 ```
 Returns `"notAnArray"`
@@ -256,7 +258,7 @@ Returns true if all items in the List are unique. If not a list or the list is n
 ```
 a!localVariables(
   local!listOfPrimitive: { 1, 2, 3, 5, 3, 3, 4, 5, 5, 5 },
-  spt_list_hasduplicates(local!listOfPrimitive)
+  fn!spt_list_hasduplicates(local!listOfPrimitive)
 )
 ```
 Returns `true`
@@ -270,20 +272,20 @@ a!localVariables(
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 2, value: "second cdt"),
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 3, value: "third cdt"),
   },
-  spt_list_hasduplicates(local!listOfCdt)
+  fn!spt_list_hasduplicates(local!listOfCdt)
 )
 ```
 Returns `true`
 ```
-spt_list_hasduplicates(enumerate(10))
+fn!spt_list_hasduplicates(enumerate(10))
 ```
 Returns `false`
 ```
-spt_list_hasduplicates(123)
+fn!spt_list_hasduplicates(123)
 ```
 Returns `false`
 ```
-spt_list_hasduplicates(null)
+fn!spt_list_hasduplicates(null)
 ```
 Returns `false`
 
@@ -303,35 +305,35 @@ a!localVariables(
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 2, value: "second cdt"),
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 3, value: "third cdt"),
   },
-  spt_list_islist(local!listOfCdt)
+  fn!spt_list_islist(local!listOfCdt)
 )
 ```
 Returns `true`
 ```
 a!localVariables(
   local!hundredElementList: enumerate(100),
-  spt_list_islist(local!hundredElementList)
+  fn!spt_list_islist(local!hundredElementList)
 )
 ```
 Returns `true`
 ```
 a!localVariables(
   local!emptyList: {},
-  spt_list_islist(local!emptyList)
+  fn!spt_list_islist(local!emptyList)
 )
 ```
 Returns `true`
 ```
 a!localVariables(
   local!stringValue: "stringValue",
-  spt_list_islist(local!stringValue)
+  fn!spt_list_islist(local!stringValue)
 )
 ```
 Returns `false`
 ```
 a!localVariables(
   local!nullValue: null,
-  spt_list_islist(local!nullValue)
+  fn!spt_list_islist(local!nullValue)
 )
 ```
 Returns `false`
@@ -348,14 +350,14 @@ Returns the last element of the list. Returns null if list is null or empty. If 
 ```
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
-  spt_list_last(local!listOfTextString)
+  fn!spt_list_last(local!listOfTextString)
 )
 ```
 Returns `"three"`
 ```
 a!localVariables(
   local!notAnArray: "notAnArray",
-  spt_list_last(local!notAnArray)
+  fn!spt_list_last(local!notAnArray)
 )
 ```
 Returns `"notAnArray"`
@@ -383,9 +385,9 @@ a!localVariables(
   },
   
   a!map(
-    one: spt_list_randomelement(local!listOfMap),
-    unique3: spt_list_randomelement(local!listOfMap, 3, true),
-    ten: spt_list_randomelement(local!listOfMap, 10)
+    one: fn!spt_list_randomelement(local!listOfMap),
+    unique3: fn!spt_list_randomelement(local!listOfMap, 3, true),
+    ten: fn!spt_list_randomelement(local!listOfMap, 10)
   )
 )
 ```
@@ -414,7 +416,7 @@ a!localVariables(
     a!map(id: 6, value: "sixth map"),
   },
   
-  spt_list_randomize(local!listOfMap).id
+  fn!spt_list_randomize(local!listOfMap).id
 )
 ```
 Returns the list of `id` properties, in random order. E.g. `{2, 3, 6, 4, 1, 5}`
@@ -430,7 +432,7 @@ Removes all null elements from the given list. If a List of Text (string) is pas
 ```
 a!localVariables(
   local!listOfPrimitive: { 1, null, 2, 3, null, 4, null, 5, null },
-  spt_list_removenulls(local!listOfPrimitive)
+  fn!spt_list_removenulls(local!listOfPrimitive)
 )
 ```
 Returns `{1, 2, 3, 4, 5}`
@@ -443,21 +445,21 @@ a!localVariables(
     null,
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 3, value: "third cdt"),
   },
-  spt_list_removenulls(local!listOfCdt).id
+  fn!spt_list_removenulls(local!listOfCdt).id
 )
 ```
 Returns the list of `id` properties from non-null elements. E.g. `{1, 2, 3}`
 ```
 a!localVariables(
   local!justNull: {null},
-  spt_list_removenulls(local!justNull)
+  fn!spt_list_removenulls(local!justNull)
 )
 ```
 Returns an empty List of Text String (due to how Appian treats `null` internally)
 ```
 a!localVariables(
   local!notAList: "one",
-  spt_list_removenulls(local!notAList)
+  fn!spt_list_removenulls(local!notAList)
 )
 ```
 Returns `"one"`
@@ -476,28 +478,28 @@ Returns a subset of the provided list, starting with and including startIndex an
 ```
 a!localVariables(
   local!hundredElementArray: enumerate(100) + 1,
-  spt_list_slice(local!hundredElementArray, 10, 15)
+  fn!spt_list_slice(local!hundredElementArray, 10, 15)
 )
 ```
 Returns `{10, 11, 12, 13, 14, 15}`
 ```
 a!localVariables(
   local!remaining: enumerate(10) + 1,
-  spt_list_slice(local!remaining, 8)
+  fn!spt_list_slice(local!remaining, 8)
 )
 ```
 Returns `{8, 9, 10}`
 ```
 a!localVariables(
   local!stringValue: "stringValue",
-  spt_list_slice(local!stringValue, 1, 5)
+  fn!spt_list_slice(local!stringValue, 1, 5)
 )
 ```
 Returns `null`
 ```
 a!localVariables(
   local!nullValue: null,
-  spt_list_slice(local!nullValue, 1, 2)
+  fn!spt_list_slice(local!nullValue, 1, 2)
 )
 ```
 Returns `null`
@@ -509,13 +511,13 @@ Returns the unique elements found in the provided list. If the list is null or e
 | Parameter | Description |
 | ----------- | ----------- |
 | list | The list to unique |
-| keepNulls | The list to unique |
+| keepNulls | If true, keeps null values (uniqued, so 1 at most) |
 
 #### Example
 ```
 a!localVariables(
   local!listOfPrimitive: { 1, 2, 3, 5, 3, 3, 4, 5, 5, 5 },
-  spt_list_unique(local!listOfPrimitive)
+  fn!spt_list_unique(local!listOfPrimitive)
 )
 ```
 Returns `{1, 2, 3, 5, 4}`
@@ -548,7 +550,7 @@ a!localVariables(
     }
   },
   
-  spt_object_removenullproperties(local!dictionary)
+  fn!spt_object_removenullproperties(local!dictionary)
 )
 ```
 Returns:
@@ -589,7 +591,7 @@ a!localVariables(
       )
     }
   ),
-  spt_object_todictionary(local!map)
+  fn!spt_object_todictionary(local!map)
 )
 ```
 Returns (Dictionary):
@@ -643,7 +645,7 @@ a!localVariables(
       }
     }
   },
-  spt_object_tomap(local!dict)
+  fn!spt_object_tomap(local!dict)
 )
 ```
 Returns:
@@ -671,7 +673,7 @@ Deserializing JSON to a Map:
 ```
 a!localVariables(
   local!json: "{""id"":123,""value"":""This was JSON, now it's a Map"",""nestedObject"":{""message"":""A nested object, also now a Map""}}",
-  spt_object_tomap(a!fromJson(local!json))
+  fn!spt_object_tomap(a!fromJson(local!json))
 )
 ```
 Returns:
@@ -700,7 +702,7 @@ Creates a list of UUIDs in bulk. Best practice is to know the number of UUIDs to
 
 #### Examples
 ```
-spt_uuid_bulk(3)
+fn!spt_uuid_bulk(3)
 ```
 Returns:
 ```
@@ -723,7 +725,7 @@ a!localVariables(
     {id: 5, name: "Five"},
   },
   
-  local!uuids: spt_uuid_bulk(count(local!list)),
+  local!uuids: fn!spt_uuid_bulk(count(local!list)),
   
   local!updated: a!forEach(
     items: local!list,
@@ -779,7 +781,7 @@ Creates a UUID using the given string as a seed. The UUID will always be the sam
 
 #### Examples
 ```
-spt_uuid_fromstring(
+fn!spt_uuid_fromstring(
   "This will always produce the same UUID unless this text is changed"
 )
 ```
@@ -787,7 +789,7 @@ Returns: `"af587b80-7ce1-3f19-ba1c-08c8ae551bd0"`
 
 Using existing UUIDs to generate new UUID based on some additional text
 ```
-spt_uuid_fromstring(
+fn!spt_uuid_fromstring(
   concat(
     "af587b80-7ce1-3f19-ba1c-08c8ae551bd0",
     "|",
@@ -807,7 +809,7 @@ Creates a list of UUIDs using the given strings as a seed. The UUIDs will always
 
 #### Examples
 ```
-spt_uuid_fromstrings({ "One", "Two", "Three" })
+fn!spt_uuid_fromstrings({ "One", "Two", "Three" })
 ```
 Returns
 ```
@@ -817,3 +819,5 @@ Returns
   "fb5b4b07-2102-3d0f-9dbf-579140656173"
 }
 ```
+
+
