@@ -1,3 +1,6 @@
+![Appian SPEaR Team](resources/img/spear_logo.png "")
+
+
 # Appian SPEaR Team - Power Tools
 
 Brought to you by the Strategic Presales Execution and Readiness (SPEaR) Team in Appian Solutions Consulting
