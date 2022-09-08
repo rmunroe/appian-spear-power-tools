@@ -8,11 +8,11 @@ import org.apache.log4j.Logger;
 import org.appiansc.plugins.spt.SptPluginCategory;
 
 @SptPluginCategory
-public class SPT_Uuid_FromString {
-    private static final Logger LOG = Logger.getLogger(SPT_Uuid_FromString.class);
+public class SPT_Uuid_FromText {
+    private static final Logger LOG = Logger.getLogger(SPT_Uuid_FromText.class);
 
     @Function
-    public String spt_uuid_fromstring(@Parameter String string) {
-        return UuidCreator.getNameBasedMd5(UuidNamespace.NAMESPACE_OID, string).toString();
+    public String spt_uuid_fromtext(@Parameter String text) {
+        return UuidCreator.getNameBasedMd5(UuidNamespace.NAMESPACE_OID, text).toString();
     }
 }

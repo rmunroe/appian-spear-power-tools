@@ -59,8 +59,7 @@ If you encounter any issues with the plugin, please post in the Appian Community
 
 ### UUID Generation Functions
 * [SPT_Uuid_Bulk](#SPT_Uuid_Bulk)
-* [SPT_Uuid_FromString](#SPT_Uuid_FromString)
-* [SPT_Uuid_FromStrings](#SPT_Uuid_FromStrings)
+* [SPT_Uuid_FromText](#SPT_Uuid_FromText)
 
 
 
@@ -621,9 +620,9 @@ Returns a words-based description of the provided numeric value, e.g. for when w
 | number        | The Integer or Decimal number to convert into words |
 | converterName | The name of the converter to use. See below.        |
 
-This function requires you specify which converter to use. Typically, for Integer input values, an `*_INTEGER` converter is used, and for Decimal values a `*_BANKING_MONEY_VALUE` converter is used.
+This function requires you specify which converter to use. Typically, for Integer input values, an `*_INTEGER` converter is used, and for Decimal values a `*_BANKING_MONEY_VALUE` converter is used, however any combination can be used.
 
-#### Integer Converter Values
+#### Integer Converter Names
 * `BRAZILIAN_PORTUGUESE_INTEGER`
 * `BULGARIAN_INTEGER`
 * `CZECH_INTEGER`
@@ -642,7 +641,7 @@ This function requires you specify which converter to use. Typically, for Intege
 * `UKRAINIAN_INTEGER`
 
 
-#### Banking Money Value Converters
+#### Banking Money Value Converter Names
 * `AMERICAN_ENGLISH_BANKING_MONEY_VALUE`
 * `BRAZILIAN_PORTUGUESE_BANKING_MONEY_VALUE`
 * `BULGARIAN_BANKING_MONEY_VALUE`
@@ -667,13 +666,13 @@ fn!spt_num_aswords(123456789, "ENGLISH_INTEGER")
 ```
 Returns: `"one hundred twenty-three million four hundred fifty-six thousand seven hundred eighty-nine"`
 
-#### Example 2 - Decimal to US English money words
+#### Example 2 - Decimal to US English money words (dollars)
 ```
 fn!spt_num_aswords(123456.78, "AMERICAN_ENGLISH_BANKING_MONEY_VALUE")
 ```
 Returns: `"one hundred twenty-three thousand four hundred fifty-six $ 78/100"`
 
-#### Example 2 - Decimal to French money words
+#### Example 2 - Decimal to French money words (euros)
 ```
 fn!spt_num_aswords(123456.78, "FRENCH_BANKING_MONEY_VALUE")
 ```
@@ -969,24 +968,24 @@ Returns:
 (Note: your UUIDs will be unique.)
 
 
-### SPT_Uuid_FromString
-Creates a UUID using the given string as a seed. The UUID will always be the same for any given string input value.
+### SPT_Uuid_FromText
+Creates a UUID using the given Text value as a seed. The UUID will always be the same for any given Text value.
 
-| Parameter  | Description                              |
-|------------|------------------------------------------|
-| string     | The string value to create the UUID from |
+| Parameter | Description                            |
+|-----------|----------------------------------------|
+| text      | The Text value to create the UUID from |
 
 #### Example 1 - Retrieve the unchanging UUID for a Text value
 ```
-fn!spt_uuid_fromstring(
+fn!spt_uuid_fromtext(
   "This will always produce the same UUID unless this text is changed"
 )
 ```
 Returns: `"af587b80-7ce1-3f19-ba1c-08c8ae551bd0"`
 
-#### Example 2 - Use a existing UUID to generate new UUID based on some additional text
+#### Example 2 - Use an existing UUID to generate new UUID based on some additional text
 ```
-fn!spt_uuid_fromstring(
+fn!spt_uuid_fromtext(
   concat(
     "af587b80-7ce1-3f19-ba1c-08c8ae551bd0",
     "|",
@@ -995,26 +994,5 @@ fn!spt_uuid_fromstring(
 )
 ```
 Returns: `"d2a16e0d-594c-3d14-8b81-f39b68219a89"`
-
-
-### SPT_Uuid_FromStrings
-Creates a list of UUIDs using the given strings as a seed. The UUIDs will always be the same for any given string input value.
-
-| Parameter  | Description                                        |
-|------------|----------------------------------------------------|
-| strings    | The list of string values to create the UUIDs from |
-
-#### Example - Generate 3 unchanging UUIDs from a List of Text
-```
-fn!spt_uuid_fromstrings({ "One", "Two", "Three" })
-```
-Returns
-```
-{
-  "6855d98a-8356-3d8f-a0dd-231f6eca10ce",
-  "b7b76aa4-fa73-31c9-8d2b-9fa56117bc5d",
-  "fb5b4b07-2102-3d0f-9dbf-579140656173"
-}
-```
 
 

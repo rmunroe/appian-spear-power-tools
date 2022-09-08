@@ -44,7 +44,6 @@
 
   <!-- UTILITY FUNCTIONS -->
   <function key="SPT_Uuid_Bulk" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_Bulk"/>
-  <function key="SPT_Uuid_FromString" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_FromString"/>
-  <function key="SPT_Uuid_FromStrings" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_FromStrings"/>
+  <function key="SPT_Uuid_FromText" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_FromText"/>
 
 </appian-plugin>
