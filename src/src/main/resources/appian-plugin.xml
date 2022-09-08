@@ -31,6 +31,9 @@
   <function key="SPT_List_Slice" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Slice"/>
   <function key="SPT_List_Unique" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Unique"/>
 
+  <!-- NUMBER FUNCTIONS -->
+  <function key="SPT_Num_AsWords" class="org.appiansc.plugins.spt.functions.numbers.SPT_Num_AsWords"/>
+
   <!-- OBJECT FUNCTIONS -->
   <function key="SPT_Object_RemoveNullProperties" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_RemoveNullProperties"/>
   <function key="SPT_Object_ToDictionary" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_ToDictionary"/>

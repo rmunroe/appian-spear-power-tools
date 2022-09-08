@@ -17,8 +17,13 @@ This plugin is the results of over a decade of experience working in the Appian 
 
 If you encounter any issues with the plugin, please post in the Appian Community's App Market page for this plugin.  Additionally, please let us know if there is any additional functionality you would like to see in this plugin and we will see about getting it added.
 
+
+------------------------------------------------------------------------------
+
 # Table of Contents
+
 ## Functions
+
 ### Date and Time Functions
 * [SPT_DateTime_ToEpoch](#SPT_DateTime_ToEpoch)
 * [SPT_DateTime_FromEpoch](#SPT_DateTime_FromEpoch)
@@ -41,6 +46,9 @@ If you encounter any issues with the plugin, please post in the Appian Community
 * [SPT_List_Slice](#SPT_List_Slice)
 * [SPT_List_Unique](#SPT_List_Unique)
 
+### Number Functions
+* [SPT_Num_AsWords](#SPT_Num_AsWords)
+
 ### Object Functions
 * [SPT_Object_RemoveNullProperties](#SPT_Object_RemoveNullProperties)
 * [SPT_Object_ToDictionary](#SPT_Object_ToDictionary)
@@ -55,6 +63,9 @@ If you encounter any issues with the plugin, please post in the Appian Community
 * [SPT_Uuid_FromStrings](#SPT_Uuid_FromStrings)
 
 
+
+------------------------------------------------------------------------------
+
 # Functions
 
 This section discusses all Expression language functions included in the plugin.
@@ -66,9 +77,9 @@ This section discusses all Expression language functions included in the plugin.
 ### SPT_DateTime_ToEpoch
 Returns the number of seconds since the standard base time known as "the epoch", namely January 1, 1970, 00:00:00 GMT.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| dateTime | The Date and Time to get the epoch time for |
+| Parameter | Description                                 |
+|-----------|---------------------------------------------|
+| dateTime  | The Date and Time to get the epoch time for |
 
 #### Example
 ```
@@ -83,9 +94,9 @@ Returns `1499243400`
 ### SPT_DateTime_FromEpoch
 Converts the epoch value (the number of seconds since January 1, 1970, 00:00:00 GMT) to a Date and Time.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| epoch | The epoch time in seconds to get a Date and Time for |
+| Parameter  | Description                                          |
+|------------|------------------------------------------------------|
+| epoch      | The epoch time in seconds to get a Date and Time for |
 
 #### Example
 ```
@@ -97,10 +108,10 @@ Returns `true`
 ### SPT_DateTime_TimeAgo
 Returns a text description of the relative duration a given Date and Time was or is from Now.
 
-| Parameter | Description                                                          |
-| ----------- |----------------------------------------------------------------------|
-| dateTime | The Date and Time to describe                                        |
-| locale | Optional locale abbreviation supported by [the PrettyTime library](https://github.com/ocpsoft/prettytime/tree/master/core/src/main/java/org/ocpsoft/prettytime/i18n) |
+| Parameter  | Description                                                                                                                                                           |
+|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| dateTime   | The Date and Time to describe                                                                                                                                         |
+| locale     | Optional locale abbreviation supported by [the PrettyTime library](https://github.com/ocpsoft/prettytime/tree/master/core/src/main/java/org/ocpsoft/prettytime/i18n)  |
 
 #### Example 1 - 100 days ago
 ```
@@ -121,6 +132,9 @@ a!localVariables(
 Returns `"vor 3 Monaten"`
 
 
+
+------------------------------------------------------------------------------
+
 ## Document Functions
 
 These functions are related to working with Documents in Appian's internal content management system.
@@ -137,9 +151,9 @@ As a performance note, [SPT_Docs_GetUuid](#SPT_Docs_GetUuid) takes around 4 ms t
 ### SPT_Docs_GetUuid
 Returns the UUID for the given Appian Document
 
-| Parameter | Description |
-| ----------- | ----------- |
-| document | The Appian Document |
+| Parameter  | Description         |
+|------------|---------------------|
+| document   | The Appian Document |
 
 #### Example
 In this example, we are populating a CDT used to store doc info in a database table with some metadata for quick access, and the provided Document's UUID. This CDT would then be saved to the database for later use.
@@ -159,9 +173,9 @@ a!localVariables(
 ### SPT_Docs_FromUuid
 Returns the Appian Document that has the given UUID. Returns null if no Document is found for the given UUID.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| uuid | The Appian Document's UUID |
+| Parameter | Description                |
+|-----------|----------------------------|
+| uuid      | The Appian Document's UUID |
 
 #### Example
 In this example, we are resolving a Document from its UUID as stored in a database and retrieved as a CDT. For further illustration we are building a display name from the actual, resolved Document.
@@ -175,6 +189,8 @@ a!localVariables(
 ```
 
 
+------------------------------------------------------------------------------
+
 ## List (Array) Functions
 
 These functions are for working with Lists in Appian, aka arrays. Several of them will have similar names to existing List functions, but will have specific caveats that help make Lists easier.
@@ -183,10 +199,10 @@ These functions are for working with Lists in Appian, aka arrays. Several of the
 ### SPT_List_AppendAny
 Appends any value to a List without changing the value's type. If the type of the list and the value being appended do not match, the List is cast to a List of Variant.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| list | The list to append to |
-| value | The value to append |
+| Parameter | Description           |
+|-----------|-----------------------|
+| list      | The list to append to |
+| value     | The value to append   |
 
 
 #### NOTE: Nulls and Empty Strings
@@ -222,9 +238,9 @@ Returns (List of Variant) `{"one", "two", "three", null}`
 ### SPT_List_Count
 Returns the element count (including null elements) in a list. If the passed in value is not a list, or the list is null or empty, returns 0.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| list | The list to count |
+| Parameter | Description       |
+|-----------|-------------------|
+| list      | The list to count |
 
 #### Example 1 - Counting `null`
 (If using the built-in `count()`, Appian would instead return `1`, which can be very confusing.)
@@ -259,9 +275,9 @@ Returns `100`
 ### SPT_List_First
 Returns the first element of the list. Returns null if list is null or empty. If not a List, returns what was passed in.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| list | The list to choose from |
+| Parameter | Description             |
+|-----------|-------------------------|
+| list      | The list to choose from |
 
 #### Example 1 - Getting the first element from a List
 ```
@@ -284,9 +300,10 @@ Returns `"notAnArray"`
 
 ### SPT_List_HasDuplicates
 Returns true if there are duplicate items in the List. If all items are unique, or the value passed in is not a list or the list is null or empty, returns false.
-| Parameter | Description |
-| ----------- | ----------- |
-| list | The list to check |
+
+| Parameter  | Description       |
+|------------|-------------------|
+| list       | The list to check |
 
 #### Example 1 - List of Integers with duplicate values
 ```
@@ -335,9 +352,9 @@ Returns `false`
 ### SPT_List_IsList
 Returns true if the value passed in is a List type. If the passed in value is null, returns false.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| list | The value to check |
+| Parameter  | Description        |
+|------------|--------------------|
+| list       | The value to check |
 
 #### Example 1 - Passing in a List of CDT
 ```
@@ -392,9 +409,9 @@ Returns `false`
 ### SPT_List_Last
 Returns the last element of the list. Returns null if list is null or empty. If not a List, returns what was passed in.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| list | The list to choose from |
+| Parameter  | Description             |
+|------------|-------------------------|
+| list       | The list to choose from |
 
 #### Example 1 - Grab the last element of a List of Text
 ```
@@ -418,11 +435,11 @@ Returns `"notAnArray"`
 ### SPT_List_RandomElement
 Returns a random element in the provided list. If not a List, returns what was passed in.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| list | The list to select from |
-| count | The number of elements to include (optional; default is 1) |
-| unique | If selecting multiple, ensure that the elements are unique. Will throw an error if count is greater than the number of elements in the array. |
+| Parameter  | Description                                                                                                                                   |
+|------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| list       | The list to select from                                                                                                                       |
+| count      | The number of elements to include (optional; default is 1)                                                                                    |
+| unique     | If selecting multiple, ensure that the elements are unique. Will throw an error if count is greater than the number of elements in the array. |
 
 #### Example - Grab several random elements
 ```
@@ -452,9 +469,9 @@ Returns a Map with:
 ### SPT_List_Randomize
 Returns the provided list in a randomized order (shuffled). If not a List, returns what was passed in.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| list | The list to randomize |
+| Parameter  | Description           |
+|------------|-----------------------|
+| list       | The list to randomize |
 
 #### Example - Retrieve Map `id` properties in a randomized order 
 ```
@@ -476,9 +493,9 @@ Returns the list of `id` properties, in random order. E.g. `{2, 3, 6, 4, 1, 5}`
 ### SPT_List_RemoveNulls
 Removes all null elements from the given list. If a List of Text (string) is passed it, removes empty strings ("") as well. If not a List, returns what was passed in.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| list | The list to remove nulls from |
+| Parameter  | Description                   |
+|------------|-------------------------------|
+| list       | The list to remove nulls from |
 
 #### Example 1 - Remove nulls from a List of Integers
 ```
@@ -526,11 +543,11 @@ Returns `"one"`
 ### SPT_List_Slice
 Returns a subset of the provided list, starting with and including startIndex and ending with and including endIndex. Returns null if list is not a List type.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| list | The list to slice |
-| startIndex | The first index to include in the slice |
-| endIndex | The last index to include in the slice. If omitted, the rest of the list is included. |
+| Parameter  | Description                                                                           |
+|------------|---------------------------------------------------------------------------------------|
+| list       | The list to slice                                                                     |
+| startIndex | The first index to include in the slice                                               |
+| endIndex   | The last index to include in the slice. If omitted, the rest of the list is included. |
 
 #### Example 1 - Get elements 10-15 (inclusive)
 ```
@@ -572,9 +589,9 @@ Returns `null`
 ### SPT_List_Unique
 Returns the unique elements found in the provided list. If the list is null or empty, returns null. If not a List, returns what was passed in. By default, null elements are removed but can be kept by setting keepNulls to true.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| list | The list to unique |
+| Parameter | Description                                        |
+|-----------|----------------------------------------------------|
+| list      | The list to unique                                 |
 | keepNulls | If true, keeps null values (uniqued, so 1 at most) |
 
 #### Example - Get only unique values
@@ -587,6 +604,84 @@ a!localVariables(
 Returns `{1, 2, 3, 5, 4}`
 
 
+
+------------------------------------------------------------------------------
+
+## Number Functions
+
+These functions are for working with Integer or Decimal input values.
+
+
+### SPT_Num_AsWords
+
+Returns a words-based description of the provided numeric value, e.g. for when writing checks.
+
+| Parameter     | Description                                         |
+|---------------|-----------------------------------------------------|
+| number        | The Integer or Decimal number to convert into words |
+| converterName | The name of the converter to use. See below.        |
+
+This function requires you specify which converter to use. Typically, for Integer input values, an `*_INTEGER` converter is used, and for Decimal values a `*_BANKING_MONEY_VALUE` converter is used.
+
+#### Integer Converter Values
+* `BRAZILIAN_PORTUGUESE_INTEGER`
+* `BULGARIAN_INTEGER`
+* `CZECH_INTEGER`
+* `ENGLISH_INTEGER`
+* `FRENCH_INTEGER`
+* `GERMAN_INTEGER`
+* `ITALIAN_INTEGER`
+* `KAZAKH_INTEGER`
+* `LATVIAN_INTEGER`
+* `POLISH_INTEGER`
+* `RUSSIAN_INTEGER`
+* `SERBIAN_CYRILLIC_INTEGER`
+* `SERBIAN_INTEGER`
+* `SLOVAK_INTEGER`
+* `TURKISH_INTEGER`
+* `UKRAINIAN_INTEGER`
+
+
+#### Banking Money Value Converters
+* `AMERICAN_ENGLISH_BANKING_MONEY_VALUE`
+* `BRAZILIAN_PORTUGUESE_BANKING_MONEY_VALUE`
+* `BULGARIAN_BANKING_MONEY_VALUE`
+* `CZECH_BANKING_MONEY_VALUE`
+* `ENGLISH_BANKING_MONEY_VALUE`
+* `FRENCH_BANKING_MONEY_VALUE`
+* `GERMAN_BANKING_MONEY_VALUE`
+* `ITALIAN_BANKING_MONEY_VALUE`
+* `KAZAKH_BANKING_MONEY_VALUE`
+* `LATVIAN_BANKING_MONEY_VALUE`
+* `POLISH_BANKING_MONEY_VALUE`
+* `RUSSIAN_BANKING_MONEY_VALUE`
+* `SERBIAN_BANKING_MONEY_VALUE`
+* `SERBIAN_CYRILLIC_BANKING_MONEY_VALUE`
+* `SLOVAK_BANKING_MONEY_VALUE`
+* `TURKISH_BANKING_MONEY_VALUE`
+* `UKRAINIAN_BANKING_MONEY_VALUE`
+
+#### Example 1 - Integer to English words
+```
+fn!spt_num_aswords(123456789, "ENGLISH_INTEGER")
+```
+Returns: `"one hundred twenty-three million four hundred fifty-six thousand seven hundred eighty-nine"`
+
+#### Example 2 - Decimal to US English money words
+```
+fn!spt_num_aswords(123456.78, "AMERICAN_ENGLISH_BANKING_MONEY_VALUE")
+```
+Returns: `"one hundred twenty-three thousand four hundred fifty-six $ 78/100"`
+
+#### Example 2 - Decimal to French money words
+```
+fn!spt_num_aswords(123456.78, "FRENCH_BANKING_MONEY_VALUE")
+```
+Returns: `"cent vingt-trois mille quatre cent cinquante-six € 78/100"`
+
+
+------------------------------------------------------------------------------
+
 ## Object Functions
 
 These functions are for working with data structures in Appian, namely Dictionaries, Maps, and Custom Data Types (CDTs).
@@ -595,9 +690,9 @@ These functions are for working with data structures in Appian, namely Dictionar
 ### SPT_Object_RemoveNullProperties
 Removes properties from a Map or Dictionary where the value is null. If the passed in value is not a Map or Dictionary an error is thrown.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| object | The object to remove nulls from |
+| Parameter | Description                                                                            |
+|-----------|----------------------------------------------------------------------------------------|
+| object    | The object to remove nulls from                                                        |
 | recursive | If true (default), will recurse into nested objects and remove nulls from them as well |
 
 #### Example - Remove nulls from a Dictionary
@@ -633,9 +728,9 @@ Returns:
 ### SPT_Object_ToDictionary
 Converts the given object (Map(s), Dictionary(s) or CDT(s)) to a Dictionary, including nested objects (unlike the cast() function). If the passed in value is not a Map, Dictionary, or CDT (or a List of them) an error is thrown.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| object | The object to convert to a Dictionary |
+| Parameter  | Description                           |
+|------------|---------------------------------------|
+| object     | The object to convert to a Dictionary |
 
 #### Example - Convert a Map (with nested Maps) to a Dictionary
 ```
@@ -681,9 +776,9 @@ Returns (Dictionary):
 ### SPT_Object_ToMap
 Converts the given object (Map(s), Dictionary(s) or CDT(s)) to a Map, including nested objects (unlike the cast() function). If the passed in value is not a Map, Dictionary, or CDT (or a List of them) an error is thrown.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| object | The object to convert to a Map |
+| Parameter | Description                    |
+|-----------|--------------------------------|
+| object    | The object to convert to a Map |
 
 This function can be used to store any dynamic data structure into a Process Variable as a Map. When used in conjunction with `a!fromJson()` it can store the result of a REST service call as a PV without any additional data massaging (see example 2).
 
@@ -751,6 +846,8 @@ a!map(
 ```
 
 
+------------------------------------------------------------------------------
+
 ## Text Functions
 
 These functions are for working with Text input values.
@@ -785,6 +882,8 @@ Returns `"KMSR"`
 
 
 
+------------------------------------------------------------------------------
+
 ## UUID Generation Functions
 
 These functions are for generating UUIDs in Appian.
@@ -793,9 +892,9 @@ These functions are for generating UUIDs in Appian.
 ### SPT_Uuid_Bulk
 Creates a list of UUIDs in bulk. Best practice is to know the number of UUIDs to be generated and call this method once in any given Expression evaluation, in order to avoid Appian's caching. (I.e. do not call in a forEach using count of 1 or you will get the same UUID for each call.)
 
-| Parameter | Description |
-| ----------- | ----------- |
-| count | The number of UUIDs to generate |
+| Parameter  | Description                     |
+|------------|---------------------------------|
+| count      | The number of UUIDs to generate |
 
 #### Example 1 - Generate 3 UUIDs at once
 ```
@@ -873,9 +972,9 @@ Returns:
 ### SPT_Uuid_FromString
 Creates a UUID using the given string as a seed. The UUID will always be the same for any given string input value.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| string | The string value to create the UUID from |
+| Parameter  | Description                              |
+|------------|------------------------------------------|
+| string     | The string value to create the UUID from |
 
 #### Example 1 - Retrieve the unchanging UUID for a Text value
 ```
@@ -901,9 +1000,9 @@ Returns: `"d2a16e0d-594c-3d14-8b81-f39b68219a89"`
 ### SPT_Uuid_FromStrings
 Creates a list of UUIDs using the given strings as a seed. The UUIDs will always be the same for any given string input value.
 
-| Parameter | Description |
-| ----------- | ----------- |
-| strings | The list of string values to create the UUIDs from |
+| Parameter  | Description                                        |
+|------------|----------------------------------------------------|
+| strings    | The list of string values to create the UUIDs from |
 
 #### Example - Generate 3 unchanging UUIDs from a List of Text
 ```
