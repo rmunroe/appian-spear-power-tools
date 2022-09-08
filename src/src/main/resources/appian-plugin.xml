@@ -33,6 +33,7 @@
 
   <!-- NUMBER FUNCTIONS -->
   <function key="SPT_Num_AsWords" class="org.appiansc.plugins.spt.functions.numbers.SPT_Num_AsWords"/>
+  <function key="SPT_Num_RandInRange" class="org.appiansc.plugins.spt.functions.numbers.SPT_Num_RandInRange"/>
 
   <!-- OBJECT FUNCTIONS -->
   <function key="SPT_Object_RemoveNullProperties" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_RemoveNullProperties"/>

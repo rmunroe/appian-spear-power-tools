@@ -48,6 +48,7 @@ If you encounter any issues with the plugin, please post in the Appian Community
 
 ### Number Functions
 * [SPT_Num_AsWords](#SPT_Num_AsWords)
+* [SPT_Num_RandInRange](#SPT_Num_RandInRange)
 
 ### Object Functions
 * [SPT_Object_RemoveNullProperties](#SPT_Object_RemoveNullProperties)
@@ -677,6 +678,30 @@ Returns: `"one hundred twenty-three thousand four hundred fifty-six $ 78/100"`
 fn!spt_num_aswords(123456.78, "FRENCH_BANKING_MONEY_VALUE")
 ```
 Returns: `"cent vingt-trois mille quatre cent cinquante-six € 78/100"`
+
+
+### SPT_Num_RandInRange
+
+Returns random value(s) in the given range. The value type will be either Integer or Decimal, determined by the types used for min and max.
+
+| Parameter | Description                                                                           |
+|-----------|---------------------------------------------------------------------------------------|
+| min       | The minimum number to be used in the range (Integer or Decimal)                       |
+| max       | The maximum number to be used in the range (Integer or Decimal)                       |
+| count     | The number of random values to produce (defaults to a single; if set, returns a List) |
+| places    | If returning Decimals, optionally set the number of places to include                 |
+
+#### Example 1 - Generate a single Integer
+```
+fn!spt_num_randinrange(10, 20)
+```
+Returns (e.g.) `14`
+
+#### Example 2 - Generate 5 Decimals, with 2 decimal places
+```
+fn!spt_num_randinrange(10.0, 20.0, 5, 2)
+```
+Returns (e.g.) `{11.33, 12.22, 12.78, 16.53, 16.82}`
 
 
 ------------------------------------------------------------------------------
