@@ -93,6 +93,7 @@ Returns the number of seconds since the standard base time known as [the epoch](
 ```REXX
 a!localVariables(
   local!time: datetime(2017, 7, 5, 8, 30),
+
   spt_datetime_toepoch(local!time)
 )
 ```
