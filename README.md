@@ -90,7 +90,7 @@ Returns the number of seconds since the standard base time known as [the epoch](
 | dateTime  | The Date and Time to get the epoch time for |
 
 #### Example
-```GN
+```REXX
 a!localVariables(
   local!time: datetime(2017, 7, 5, 8, 30),
   fn!spt_datetime_toepoch(local!time)
@@ -109,7 +109,7 @@ Converts [the epoch](https://en.wikipedia.org/wiki/Unix_time) value (the number 
 | epoch     | The epoch time in seconds to get a Date and Time for |
 
 #### Example
-```GN
+```REXX
 fn!spt_datetime_fromepoch(1499243400) = datetime(2017, 7, 5, 8, 30)
 ```
 Returns `true`
@@ -144,7 +144,7 @@ Returns the UUID for the given Appian Document
 
 #### Example
 In this example, we are populating a CDT used to store doc info in a database table with some metadata for quick access, and the provided Document's UUID. This CDT would then be saved to the database for later use.
-```GN
+```REXX
 a!localVariables(
   local!myCdt: 'type!{urn:com:appian:types:ABC}ABC_Document'(
     docName: document(ri!docToSave, "name"),
@@ -168,7 +168,7 @@ Returns the Appian Document that has the given UUID. Returns null if no Document
 
 #### Example
 In this example, we are resolving a Document from its UUID as stored in a database and retrieved as a CDT. For further illustration we are building a display name from the actual, resolved Document.
-```GN
+```REXX
 a!localVariables(
   local!myCdt: rule!ABC_getDocumentCdtById(id: ri!docCdtId),
   local!document: fn!spt_docs_fromuuid(local!myCdt.docUuid),
@@ -239,19 +239,19 @@ This function requires you specify which converter to use. Typically, for Intege
 * `UKRAINIAN_BANKING_MONEY_VALUE`
 
 #### Example 1 - Integer to English words
-```GN
+```REXX
 fn!spt_fmt_aswords(123456789, "ENGLISH_INTEGER")
 ```
 Returns: `"one hundred twenty-three million four hundred fifty-six thousand seven hundred eighty-nine"`
 
 #### Example 2 - Decimal to US English money words (dollars)
-```GN
+```REXX
 fn!spt_fmt_aswords(123456.78, "AMERICAN_ENGLISH_BANKING_MONEY_VALUE")
 ```
 Returns: `"one hundred twenty-three thousand four hundred fifty-six $ 78/100"`
 
 #### Example 3 - Decimal to French money words (euros)
-```GN
+```REXX
 fn!spt_fmt_aswords(123456.78, "FRENCH_BANKING_MONEY_VALUE")
 ```
 Returns: `"cent vingt-trois mille quatre cent cinquante-six € 78/100"`
@@ -268,13 +268,13 @@ Returns a friendly display size for the given number of bytes. Useful when used 
 | binary    | If set to true, uses base `1024` instead of `1000` and returns values e.g. `"123 KiB"` |
 
 #### Example 1 - Show the "standard" size for a byte value
-```GN
+```REXX
 fn!spt_fmt_bytesdisplaysize(987654321)
 ```
 Returns `"987.7 MB"`
 
 #### Example 2 - Show the binary-based size for a byte value, retrieved from a Document
-```GN
+```REXX
 a!localVariables(
   local!docSize: document(cons!SPTT_TEST_IMAGE_FILE, "size"),
   
@@ -298,7 +298,7 @@ Returns a text description of the relative duration a given Date and Time was or
 | locale    | Optional locale abbreviation supported by [the PrettyTime library](https://github.com/ocpsoft/prettytime/tree/master/core/src/main/java/org/ocpsoft/prettytime/i18n) |
 
 #### Example 1 - 100 days ago
-```GN
+```REXX
 a!localVariables(
   local!time: now() - 100,
   fn!spt_fmt_timeago(local!time)
@@ -307,7 +307,7 @@ a!localVariables(
 Returns `"3 months ago"`
 
 #### Example 2 - 100 days ago, but in German
-```GN
+```REXX
 a!localVariables(
   local!time: now() - 100,
   fn!spt_fmt_timeago(local!time, "de")
@@ -347,7 +347,7 @@ For instance if you use [SPT_List_AppendAny](#SPT_List_AppendAny) to append `""`
 
 #### Example 1 - Append an integer on a List of Text
 If using the built-in `append()`, Appian would convert `4` to `"4"`.
-```GN
+```REXX
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
   
@@ -357,7 +357,7 @@ a!localVariables(
 Returns (List of Variant) `{"one", "two", "three", 4}`
 
 #### Example 2 - Empty string is converted to `null`
-```GN
+```REXX
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
   
@@ -378,7 +378,7 @@ Returns the element count (including null elements) in a list. If the passed in 
 
 #### Example 1 - Counting `null`
 (If using the built-in `count()`, Appian would instead return `1`, which can be very confusing.)
-```GN
+```REXX
 a!localVariables(
   local!nullValue: null,
   fn!spt_list_count(local!nullValue)
@@ -388,7 +388,7 @@ Returns `0`
 
 #### Example 2 - Counting a non-list value
 (If using the built-in `count()`, Appian would instead return `1`, which can be very confusing.)
-```GN
+```REXX
 a!localVariables(
   local!stringValue: "stringValue",
   fn!spt_list_count(local!stringValue)
@@ -397,7 +397,7 @@ a!localVariables(
 Returns `0`
 
 #### Example 3 - Counting a List
-```GN
+```REXX
 a!localVariables(
   local!hundredElementArray: enumerate(100),
   fn!spt_list_count(local!hundredElementArray)
@@ -416,7 +416,7 @@ Returns the first element of the list. Returns null if list is null or empty. If
 | list      | The list to choose from |
 
 #### Example 1 - Getting the first element from a List
-```GN
+```REXX
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
   fn!spt_list_first(local!listOfTextString)
@@ -425,7 +425,7 @@ a!localVariables(
 Returns `"one"`
 
 #### Example 2 - Getting the first element from a non-List
-```GN
+```REXX
 a!localVariables(
   local!notAnArray: "notAnArray",
   fn!spt_list_first(local!notAnArray)
@@ -444,7 +444,7 @@ Returns true if there are duplicate items in the List. If all items are unique, 
 | list      | The list to check |
 
 #### Example 1 - List of Integers with duplicate values
-```GN
+```REXX
 a!localVariables(
   local!listOfPrimitive: { 1, 2, 3, 5, 3, 3, 4, 5, 5, 5 },
   fn!spt_list_hasduplicates(local!listOfPrimitive)
@@ -453,7 +453,7 @@ a!localVariables(
 Returns `true`
 
 #### Example 2 - List of CDTs with duplicate values
-```GN
+```REXX
 a!localVariables(
   local!listOfCdt: {
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 1, value: "first cdt"),
@@ -469,19 +469,19 @@ a!localVariables(
 Returns `true`
 
 #### Example 3 - List of Integers with no duplicates
-```GN
+```REXX
 fn!spt_list_hasduplicates(enumerate(10))
 ```
 Returns `false`
 
 #### Example 4 - Passing in a non-List
-```GN
+```REXX
 fn!spt_list_hasduplicates(123)
 ```
 Returns `false`
 
 ##### Example 5 - Passing in `null`
-```GN
+```REXX
 fn!spt_list_hasduplicates(null)
 ```
 Returns `false`
@@ -497,7 +497,7 @@ Returns the last element of the list. Returns null if list is null or empty. If 
 | list      | The list to choose from |
 
 #### Example 1 - Grab the last element of a List of Text
-```GN
+```REXX
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
   fn!spt_list_last(local!listOfTextString)
@@ -506,7 +506,7 @@ a!localVariables(
 Returns `"three"`
 
 #### Example 2 - Grab the last element of non-List
-```GN
+```REXX
 a!localVariables(
   local!notAnArray: "notAnArray",
   fn!spt_list_last(local!notAnArray)
@@ -527,7 +527,7 @@ Returns a random element in the provided list. If not a List, returns what was p
 | unique    | If selecting multiple, ensure that the elements are unique. Will throw an error if count is greater than the number of elements in the array. |
 
 #### Example - Grab several random elements
-```GN
+```REXX
 a!localVariables(
   local!listOfMap: {
     a!map(id: 1, value: a!map(subValue: "first map")),
@@ -561,7 +561,7 @@ Returns the provided list in a randomized order (shuffled). If not a List, retur
 | list      | The list to randomize |
 
 #### Example - Retrieve Map `id` properties in a randomized order 
-```GN
+```REXX
 a!localVariables(
   local!listOfMap: {
     a!map(id: 1, value: a!map(subValue: "first map")),
@@ -587,7 +587,7 @@ Removes all null elements from the given list. If a List of Text (string) is pas
 | list      | The list to remove nulls from |
 
 #### Example 1 - Remove nulls from a List of Integers
-```GN
+```REXX
 a!localVariables(
   local!listOfPrimitive: { 1, null, 2, 3, null, 4, null, 5, null },
   fn!spt_list_removenulls(local!listOfPrimitive)
@@ -596,7 +596,7 @@ a!localVariables(
 Returns `{1, 2, 3, 4, 5}`
 
 #### Example 2 - Remove nulls from a List of CDTs
-```GN
+```REXX
 a!localVariables(
   local!listOfCdt: {
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 1, value: "first cdt"),
@@ -611,7 +611,7 @@ a!localVariables(
 Returns the list of `id` properties from non-null elements. E.g. `{1, 2, 3}`
 
 #### Example 3 - Remove nulls from a List of only null
-```GN
+```REXX
 a!localVariables(
   local!justNull: {null},
   fn!spt_list_removenulls(local!justNull)
@@ -620,7 +620,7 @@ a!localVariables(
 Returns an empty List of Text String (due to how Appian treats `null` internally)
 
 #### Example 4 - Remove nulls from a non-List
-```GN
+```REXX
 a!localVariables(
   local!notAList: "one",
   fn!spt_list_removenulls(local!notAList)
@@ -641,7 +641,7 @@ Returns a subset of the provided list, starting with and including startIndex an
 | endIndex   | The last index to include in the slice. If omitted, the rest of the list is included. |
 
 #### Example 1 - Get elements 10-15 (inclusive)
-```GN
+```REXX
 a!localVariables(
   local!hundredElementArray: enumerate(100) + 1,
   fn!spt_list_slice(local!hundredElementArray, 10, 15)
@@ -650,7 +650,7 @@ a!localVariables(
 Returns `{10, 11, 12, 13, 14, 15}`
 
 #### Example 2 - Get element 8 and on 
-```GN
+```REXX
 a!localVariables(
   local!remaining: enumerate(10) + 1,
   fn!spt_list_slice(local!remaining, 8)
@@ -659,7 +659,7 @@ a!localVariables(
 Returns `{8, 9, 10}`
 
 #### Example 3 - Slice a non-List
-```GN
+```REXX
 a!localVariables(
   local!stringValue: "stringValue",
   fn!spt_list_slice(local!stringValue, 1, 5)
@@ -668,7 +668,7 @@ a!localVariables(
 Returns `null`
 
 #### Example 4 - Slice a `null` value
-```GN
+```REXX
 a!localVariables(
   local!nullValue: null,
   fn!spt_list_slice(local!nullValue, 1, 2)
@@ -688,7 +688,7 @@ Returns the unique elements found in the provided list. If the list is null or e
 | keepNulls | If true, keeps null values (uniqued, so 1 at most) |
 
 #### Example - Get only unique values
-```GN
+```REXX
 a!localVariables(
   local!listOfPrimitive: { 1, 2, 3, 5, 3, 3, 4, 5, 5, 5 },
   fn!spt_list_unique(local!listOfPrimitive)
@@ -720,13 +720,13 @@ Returns random value(s) in the given range. The value type will be either Intege
 | places    | If returning Decimals, optionally set the number of places to include                 |
 
 #### Example 1 - Generate a single Integer
-```GN
+```REXX
 fn!spt_num_randinrange(10, 20)
 ```
 Returns (e.g.) `14`
 
 #### Example 2 - Generate 5 Decimals, with 2 decimal places
-```GN
+```REXX
 fn!spt_num_randinrange(10.0, 20.0, 5, 2)
 ```
 Returns (e.g.) `{11.33, 12.22, 12.78, 16.53, 16.82}`
@@ -753,7 +753,7 @@ Removes properties from a Map or Dictionary where the value is null. If the pass
 | recursive | If true (default), will recurse into nested objects and remove nulls from them as well |
 
 #### Example - Remove nulls from a Dictionary
-```GN
+```REXX
 a!localVariables(
   local!dictionary: {
     id: 1,
@@ -770,7 +770,7 @@ a!localVariables(
 )
 ```
 Returns:
-```GN
+```REXX
 {
   id: 1,
   value: "foo",
@@ -792,7 +792,7 @@ Converts the given object (Map(s), Dictionary(s) or CDT(s)) to a Dictionary, inc
 | object    | The object to convert to a Dictionary |
 
 #### Example - Convert a Map (with nested Maps) to a Dictionary
-```GN
+```REXX
 a!localVariables(
   local!map: a!map(
     id: 1,
@@ -813,7 +813,7 @@ a!localVariables(
 )
 ```
 Returns (Dictionary):
-```GN
+```REXX
 {
   id: 1,
   value: "This was a Map",
@@ -844,7 +844,7 @@ Converts the given object (Map, Dictionary, or CDT) to a Map, including Lists an
 This function can be used to store any dynamic data structure into a Process Variable as a Map. When used in conjunction with `a!fromJson()` it can store the result of a REST service call as a PV without any additional data massaging (see example 2).
 
 #### Example 1 - Convert a Dictionary (with nested Dictionaries) to a Map
-```GN
+```REXX
 a!localVariables(
   local!dict: {
     id: 1,
@@ -868,7 +868,7 @@ a!localVariables(
 )
 ```
 Returns:
-```GN
+```REXX
 a!map(
   id: 1,
   value: "This was a Dictionary",
@@ -889,14 +889,14 @@ a!map(
 )
 ```
 #### Example 2 - Deserializing JSON to a Map
-```GN
+```REXX
 a!localVariables(
   local!json: "{""id"":123,""value"":""This was JSON, now it's a Map"",""nestedObject"":{""message"":""A nested object, also now a Map""}}",
   fn!spt_object_tomap(a!fromJson(local!json))
 )
 ```
 Returns:
-```GN
+```REXX
 a!map(
   id: 123,
   value: "This was JSON, now it's a Map",
@@ -934,13 +934,13 @@ Double Metaphone is an improvement upon Metaphone and supports more languages th
 See [the Wikipedia Metaphone page](https://en.wikipedia.org/wiki/Metaphone) for more info.
 
 #### Example 1 - Get Metaphone for a last name
-```GN
+```REXX
 fn!spt_text_getmetaphone("Gomez-Hernandez")
 ```
 Returns `"KMSH"`
 
 #### Example 2 - Get Double Metaphone for a last name
-```GN
+```REXX
 fn!spt_text_getmetaphone("Gomez-Hernandez", true)
 ```
 Returns `"KMSR"`
@@ -956,19 +956,19 @@ Parses the given Text value to an Integer or Decimal. If the value cannot be par
 | text      | The text value to be parsed |
 
 #### Example 1 - Text is non-numeric
-```GN
+```REXX
 fn!spt_text_tonumber("Bad text")
 ```
 Returns `null`
 
 #### Example 2 - Text is of a valid Integer
-```GN
+```REXX
 fn!spt_text_tonumber("123")
 ```
 Returns `123`
 
 #### Example 3 - Text is of a valid Decimal
-```GN
+```REXX
 fn!spt_text_tonumber("4.56")
 ```
 Returns `4.56`
@@ -994,49 +994,49 @@ Returns `true` if the passed in value is Text that can be interpolated as a Deci
 | value     | The value to check |
 
 #### Example 1 - Text is non-numeric
-```GN
+```REXX
 fn!spt_type_isdecimal("Bad text")
 ```
 Returns `false`
 
 #### Example 2 - Text is of a valid Integer
-```GN
+```REXX
 fn!spt_type_isdecimal("123")
 ```
 Returns `false`
 
 #### Example 3 - Text is of a valid Decimal
-```GN
+```REXX
 fn!spt_type_isdecimal("4.56")
 ```
 Returns `true`
 
 #### Example 4 - Value is an Integer
-```GN
+```REXX
 fn!spt_type_isdecimal(123)
 ```
 Returns `false`
 
 #### Example 5 - Value is a Decimal
-```GN
+```REXX
 fn!spt_type_isdecimal(4.56)
 ```
 Returns `true`
 
 #### Example 6 - Value is a List of Integer
-```GN
+```REXX
 fn!spt_type_isdecimal({1, 2, 3})
 ```
 Returns `false`
 
 #### Example 7 - Value is a List of Decimal
-```GN
+```REXX
 fn!spt_type_isdecimal({1.1, 2.2, 3.3})
 ```
 Returns `true`
 
 #### Example 8 - Value is a List of Text
-```GN
+```REXX
 fn!spt_type_isdecimal({"one", "two", "three"})
 ```
 Returns `false`
@@ -1052,49 +1052,49 @@ Returns `true` if the passed in value is Text that can be interpolated as an Int
 | value     | The value to check |
 
 #### Example 1 - Text is non-numeric
-```GN
+```REXX
 fn!spt_type_isinteger("Bad text")
 ```
 Returns `false`
 
 #### Example 2 - Text is of a valid Integer
-```GN
+```REXX
 fn!spt_type_isinteger("123")
 ```
 Returns `true`
 
 #### Example 3 - Text is of a valid Decimal
-```GN
+```REXX
 fn!spt_type_isinteger("4.56")
 ```
 Returns `false`
 
 #### Example 4 - Value is an Integer
-```GN
+```REXX
 fn!spt_type_isinteger(123)
 ```
 Returns `true`
 
 #### Example 5 - Value is a Decimal
-```GN
+```REXX
 fn!spt_type_isinteger(4.56)
 ```
 Returns `false`
 
 #### Example 6 - Value is a List of Integer
-```GN
+```REXX
 fn!spt_type_isinteger({1, 2, 3})
 ```
 Returns `true`
 
 #### Example 7 - Value is a List of Decimal
-```GN
+```REXX
 fn!spt_type_isinteger({1.1, 2.2, 3.3})
 ```
 Returns `false`
 
 #### Example 8 - Value is a List of Text
-```GN
+```REXX
 fn!spt_type_isinteger({"one", "two", "three"})
 ```
 Returns `false`
@@ -1110,7 +1110,7 @@ Returns true if the value passed in is a List type. If the passed in value is nu
 | value     | The value to check |
 
 #### Example 1 - Passing in a List of CDT
-```GN
+```REXX
 a!localVariables(
   local!listOfCdt: {
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 1, value: "first cdt"),
@@ -1123,7 +1123,7 @@ a!localVariables(
 Returns `true`
 
 #### Example 2 - Passing in a List of Integers
-```GN
+```REXX
 a!localVariables(
   local!hundredElementList: enumerate(100),
   fn!spt_type_islist(local!hundredElementList)
@@ -1132,7 +1132,7 @@ a!localVariables(
 Returns `true`
 
 #### Example 3 - Passing in an empty List
-```GN
+```REXX
 a!localVariables(
   local!emptyList: {},
   fn!spt_type_islist(local!emptyList)
@@ -1141,7 +1141,7 @@ a!localVariables(
 Returns `true`
 
 #### Example 4 - Passing in a non-List
-```GN
+```REXX
 a!localVariables(
   local!stringValue: "stringValue",
   fn!spt_type_islist(local!stringValue)
@@ -1150,7 +1150,7 @@ a!localVariables(
 Returns `false`
 
 #### Example 5 - Passing in `null`
-```GN
+```REXX
 a!localVariables(
   local!nullValue: null,
   fn!spt_type_islist(local!nullValue)
@@ -1169,7 +1169,7 @@ Returns true if the value passed in is a List of Dictionaries, Maps, or CDTs. If
 | value     | The value to check |
 
 #### Example 1 - Passing in a List of CDT
-```GN
+```REXX
 a!localVariables(
   local!listOfCdt: {
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 1, value: "first cdt"),
@@ -1182,7 +1182,7 @@ a!localVariables(
 Returns `true`
 
 #### Example 2 - Passing in a List of Integers
-```GN
+```REXX
 a!localVariables(
   local!hundredElementList: enumerate(100),
   fn!spt_type_islistofobjects(local!hundredElementList)
@@ -1191,7 +1191,7 @@ a!localVariables(
 Returns `false`
 
 #### Example 3 - Passing in an empty List
-```GN
+```REXX
 a!localVariables(
   local!emptyList: {},
   fn!spt_type_islistofobjects(local!emptyList)
@@ -1200,7 +1200,7 @@ a!localVariables(
 Returns `false`
 
 #### Example 4 - Passing in a non-List
-```GN
+```REXX
 a!localVariables(
   local!stringValue: "stringValue",
   fn!spt_type_islistofobjects(local!stringValue)
@@ -1209,7 +1209,7 @@ a!localVariables(
 Returns `false`
 
 #### Example 5 - Passing in `null`
-```GN
+```REXX
 a!localVariables(
   local!nullValue: null,
   fn!spt_type_islistofobjects(local!nullValue)
@@ -1229,49 +1229,49 @@ Returns `true` if the passed in value is Text that can be interpolated as a numb
 | value     | The value to check |
 
 #### Example 1 - Text is non-numeric
-```GN
+```REXX
 fn!spt_type_isnumeric("Bad text")
 ```
 Returns `false`
 
 #### Example 2 - Text is of a valid Integer
-```GN
+```REXX
 fn!spt_type_isnumeric("123")
 ```
 Returns `true`
 
 #### Example 3 - Text is of a valid Decimal
-```GN
+```REXX
 fn!spt_type_isnumeric("4.56")
 ```
 Returns `true`
 
 #### Example 4 - Value is an Integer
-```GN
+```REXX
 fn!spt_type_isnumeric(123)
 ```
 Returns `true`
 
 #### Example 5 - Value is a Decimal
-```GN
+```REXX
 fn!spt_type_isnumeric(4.56)
 ```
 Returns `true`
 
 #### Example 6 - Value is a List of Integer
-```GN
+```REXX
 fn!spt_type_isnumeric({1, 2, 3})
 ```
 Returns `true`
 
 #### Example 7 - Value is a List of Decimal
-```GN
+```REXX
 fn!spt_type_isnumeric({1.1, 2.2, 3.3})
 ```
 Returns `true`
 
 #### Example 8 - Value is a List of Text
-```GN
+```REXX
 fn!spt_type_isnumeric({"one", "two", "three"})
 ```
 Returns `false`
@@ -1288,25 +1288,25 @@ Returns `true` if the value passed in is a Dictionary, Map, or CDT.
 | value     | The value to check |
 
 #### Example 1 - Null is passed in
-```GN
+```REXX
 fn!spt_type_isobject(null)
 ```
 Returns `false`
 
 #### Example 2 - A Text value is passed in
-```GN
+```REXX
 fn!spt_type_isobject("ABC")
 ```
 Returns `false`
 
 #### Example 3 - Empty list is passed in
-```GN
+```REXX
 fn!spt_type_isobject({})
 ```
 Returns `false`
 
 #### Example 4 - A CDT is passed in
-```GN
+```REXX
 a!localVariables(
   local!cdt: 'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 1, value: "a cdt"),
   fn!spt_type_isobject(local!cdt)
@@ -1315,7 +1315,7 @@ a!localVariables(
 Returns `true`
 
 #### Example 5 - A Dictionary is passed in
-```GN
+```REXX
 a!localVariables(
   local!dict: { id: 1, value: { subValue: "a dict" } },
   fn!spt_type_isobject(local!dict)
@@ -1324,7 +1324,7 @@ a!localVariables(
 Returns `true`
 
 #### Example 6 - A Map is passed in
-```GN
+```REXX
 a!localVariables(
   local!map: a!map(id: 1, value: a!map(subValue: "a map")),
   fn!spt_type_isobject(local!map)
@@ -1353,11 +1353,11 @@ Creates a list of UUIDs in bulk. Best practice is to know the number of UUIDs to
 | count     | The number of UUIDs to generate |
 
 #### Example 1 - Generate 3 UUIDs at once
-```GN
+```REXX
 fn!spt_uuid_bulk(3)
 ```
 Returns:
-```GN
+```REXX
 {
   "36cda050-9514-4c8e-a2e5-4bc6ce475d9d",
   "161e14e7-993c-40be-a986-30c1c287d274",
@@ -1368,7 +1368,7 @@ Returns:
 
 #### Example 2 - Update a List of Dictionary with newly generated UUIDs
 If you need to loop over many objects and add/update UUIDs:
-```GN
+```REXX
 a!localVariables(
   local!list: {
     {id: 1, name: "One"},
@@ -1393,7 +1393,7 @@ a!localVariables(
 )
 ```
 Returns:
-```GN
+```REXX
 {
   {
     id: 1,
@@ -1435,7 +1435,7 @@ Creates a UUID using the given Text value as a seed. The UUID will always be the
 | text      | The Text value to create the UUID from |
 
 #### Example 1 - Retrieve the unchanging UUID for a Text value
-```GN
+```REXX
 fn!spt_uuid_fromtext(
   "This will always produce the same UUID unless this text is changed"
 )
@@ -1443,7 +1443,7 @@ fn!spt_uuid_fromtext(
 Returns: `"af587b80-7ce1-3f19-ba1c-08c8ae551bd0"`
 
 #### Example 2 - Use an existing UUID to generate new UUID based on some additional text
-```GN
+```REXX
 fn!spt_uuid_fromtext(
   concat(
     "af587b80-7ce1-3f19-ba1c-08c8ae551bd0",
