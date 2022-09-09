@@ -298,7 +298,17 @@ Returns a text description of the relative duration a given Date and Time was or
 | dateTime  | The Date and Time to describe                                                                                                                                        |
 | locale    | Optional locale abbreviation supported by [the PrettyTime library](https://github.com/ocpsoft/prettytime/tree/master/core/src/main/java/org/ocpsoft/prettytime/i18n) |
 
-#### Example 1 - 100 days ago
+#### Example 1 - 18 minutes, 30 seconds ago
+```REXX
+a!localVariables(
+  local!time: now() - intervalds(0, 18, 30),
+
+  spt_fmt_timeago(local!time)
+)
+```
+Returns `"19 minutes ago"`
+
+#### Example 2 - 100 days ago
 ```REXX
 a!localVariables(
   local!time: now() - 100,
@@ -308,7 +318,7 @@ a!localVariables(
 ```
 Returns `"3 months ago"`
 
-#### Example 2 - 100 days ago, but in German
+#### Example 3 - 100 days ago, but in German
 ```REXX
 a!localVariables(
   local!time: now() - 100,
