@@ -298,6 +298,7 @@ Returns a text description of the relative duration a given Date and Time was or
 ```REXX
 a!localVariables(
   local!time: now() - 100,
+
   spt_fmt_timeago(local!time)
 )
 ```
@@ -307,6 +308,7 @@ Returns `"3 months ago"`
 ```REXX
 a!localVariables(
   local!time: now() - 100,
+
   spt_fmt_timeago(local!time, "de")
 )
 ```
@@ -378,6 +380,7 @@ Returns the element count (including null elements) in a list. If the passed in 
 ```REXX
 a!localVariables(
   local!nullValue: null,
+
   spt_list_count(local!nullValue)
 )
 ```
@@ -388,6 +391,7 @@ Returns `0`
 ```REXX
 a!localVariables(
   local!stringValue: "stringValue",
+
   spt_list_count(local!stringValue)
 )
 ```
@@ -397,6 +401,7 @@ Returns `0`
 ```REXX
 a!localVariables(
   local!hundredElementArray: enumerate(100),
+
   spt_list_count(local!hundredElementArray)
 )
 ```
@@ -416,6 +421,7 @@ Returns the first element of the list. Returns null if list is null or empty. If
 ```REXX
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
+
   spt_list_first(local!listOfTextString)
 )
 ```
@@ -425,6 +431,7 @@ Returns `"one"`
 ```REXX
 a!localVariables(
   local!notAnArray: "notAnArray",
+
   spt_list_first(local!notAnArray)
 )
 ```
@@ -444,6 +451,7 @@ Returns true if there are duplicate items in the List. If all items are unique, 
 ```REXX
 a!localVariables(
   local!listOfPrimitive: { 1, 2, 3, 5, 3, 3, 4, 5, 5, 5 },
+
   spt_list_hasduplicates(local!listOfPrimitive)
 )
 ```
@@ -460,6 +468,7 @@ a!localVariables(
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 2, value: "second cdt"),
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 3, value: "third cdt"),
   },
+
   spt_list_hasduplicates(local!listOfCdt)
 )
 ```
@@ -497,6 +506,7 @@ Returns the last element of the list. Returns null if list is null or empty. If 
 ```REXX
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
+
   spt_list_last(local!listOfTextString)
 )
 ```
@@ -506,6 +516,7 @@ Returns `"three"`
 ```REXX
 a!localVariables(
   local!notAnArray: "notAnArray",
+
   spt_list_last(local!notAnArray)
 )
 ```
@@ -587,6 +598,7 @@ Removes all null elements from the given list. If a List of Text (string) is pas
 ```REXX
 a!localVariables(
   local!listOfPrimitive: { 1, null, 2, 3, null, 4, null, 5, null },
+
   spt_list_removenulls(local!listOfPrimitive)
 )
 ```
@@ -602,6 +614,7 @@ a!localVariables(
     null,
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 3, value: "third cdt"),
   },
+
   spt_list_removenulls(local!listOfCdt).id
 )
 ```
@@ -611,6 +624,7 @@ Returns the list of `id` properties from non-null elements. E.g. `{1, 2, 3}`
 ```REXX
 a!localVariables(
   local!justNull: {null},
+
   spt_list_removenulls(local!justNull)
 )
 ```
@@ -620,6 +634,7 @@ Returns an empty List of Text String (due to how Appian treats `null` internally
 ```REXX
 a!localVariables(
   local!notAList: "one",
+
   spt_list_removenulls(local!notAList)
 )
 ```
@@ -641,6 +656,7 @@ Returns a subset of the provided list, starting with and including startIndex an
 ```REXX
 a!localVariables(
   local!hundredElementArray: enumerate(100) + 1,
+
   spt_list_slice(local!hundredElementArray, 10, 15)
 )
 ```
@@ -650,6 +666,7 @@ Returns `{10, 11, 12, 13, 14, 15}`
 ```REXX
 a!localVariables(
   local!remaining: enumerate(10) + 1,
+
   spt_list_slice(local!remaining, 8)
 )
 ```
@@ -659,6 +676,7 @@ Returns `{8, 9, 10}`
 ```REXX
 a!localVariables(
   local!stringValue: "stringValue",
+
   spt_list_slice(local!stringValue, 1, 5)
 )
 ```
@@ -668,6 +686,7 @@ Returns `null`
 ```REXX
 a!localVariables(
   local!nullValue: null,
+
   spt_list_slice(local!nullValue, 1, 2)
 )
 ```
@@ -688,6 +707,7 @@ Returns the unique elements found in the provided list. If the list is null or e
 ```REXX
 a!localVariables(
   local!listOfPrimitive: { 1, 2, 3, 5, 3, 3, 4, 5, 5, 5 },
+
   spt_list_unique(local!listOfPrimitive)
 )
 ```
@@ -806,6 +826,7 @@ a!localVariables(
       )
     }
   ),
+
   spt_object_todictionary(local!map)
 )
 ```
@@ -861,6 +882,7 @@ a!localVariables(
       }
     }
   },
+
   spt_object_tomap(local!dict)
 )
 ```
@@ -885,10 +907,12 @@ a!map(
   }
 )
 ```
+
 #### Example 2 - Deserializing JSON to a Map
 ```REXX
 a!localVariables(
   local!json: "{""id"":123,""value"":""This was JSON, now it's a Map"",""nestedObject"":{""message"":""A nested object, also now a Map""}}",
+
   spt_object_tomap(a!fromJson(local!json))
 )
 ```
@@ -1114,6 +1138,7 @@ a!localVariables(
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 2, value: "second cdt"),
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 3, value: "third cdt"),
   },
+
   spt_type_islist(local!listOfCdt)
 )
 ```
@@ -1123,6 +1148,7 @@ Returns `true`
 ```REXX
 a!localVariables(
   local!hundredElementList: enumerate(100),
+
   spt_type_islist(local!hundredElementList)
 )
 ```
@@ -1132,6 +1158,7 @@ Returns `true`
 ```REXX
 a!localVariables(
   local!emptyList: {},
+
   spt_type_islist(local!emptyList)
 )
 ```
@@ -1141,6 +1168,7 @@ Returns `true`
 ```REXX
 a!localVariables(
   local!stringValue: "stringValue",
+
   spt_type_islist(local!stringValue)
 )
 ```
@@ -1150,6 +1178,7 @@ Returns `false`
 ```REXX
 a!localVariables(
   local!nullValue: null,
+
   spt_type_islist(local!nullValue)
 )
 ```
@@ -1173,6 +1202,7 @@ a!localVariables(
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 2, value: "second cdt"),
     'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 3, value: "third cdt"),
   },
+
   spt_type_islistofobjects(local!listOfCdt)
 )
 ```
@@ -1182,6 +1212,7 @@ Returns `true`
 ```REXX
 a!localVariables(
   local!hundredElementList: enumerate(100),
+
   spt_type_islistofobjects(local!hundredElementList)
 )
 ```
@@ -1191,6 +1222,7 @@ Returns `false`
 ```REXX
 a!localVariables(
   local!emptyList: {},
+
   spt_type_islistofobjects(local!emptyList)
 )
 ```
@@ -1200,6 +1232,7 @@ Returns `false`
 ```REXX
 a!localVariables(
   local!stringValue: "stringValue",
+
   spt_type_islistofobjects(local!stringValue)
 )
 ```
@@ -1209,6 +1242,7 @@ Returns `false`
 ```REXX
 a!localVariables(
   local!nullValue: null,
+
   spt_type_islistofobjects(local!nullValue)
 )
 ```
@@ -1306,6 +1340,7 @@ Returns `false`
 ```REXX
 a!localVariables(
   local!cdt: 'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 1, value: "a cdt"),
+
   spt_type_isobject(local!cdt)
 )
 ```
@@ -1315,6 +1350,7 @@ Returns `true`
 ```REXX
 a!localVariables(
   local!dict: { id: 1, value: { subValue: "a dict" } },
+
   spt_type_isobject(local!dict)
 )
 ```
@@ -1324,6 +1360,7 @@ Returns `true`
 ```REXX
 a!localVariables(
   local!map: a!map(id: 1, value: a!map(subValue: "a map")),
+  
   spt_type_isobject(local!map)
 )
 ```
