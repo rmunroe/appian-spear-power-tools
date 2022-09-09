@@ -90,7 +90,7 @@ Returns the number of seconds since the standard base time known as [the epoch](
 | dateTime  | The Date and Time to get the epoch time for |
 
 #### Example
-```TextMate Properties
+```JavaScript
 a!localVariables(
   local!time: datetime(2017, 7, 5, 8, 30),
   fn!spt_datetime_toepoch(local!time)
