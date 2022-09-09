@@ -487,7 +487,7 @@ a!localVariables(
 ```
 Returns `true`
 
-#### Example 4 - Passing in a List of CDT
+#### Example 4 - Passing in a non-List
 ```
 a!localVariables(
   local!stringValue: "stringValue",
