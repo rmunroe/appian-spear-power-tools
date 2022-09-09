@@ -1,3 +1,4 @@
+### 1C Enterprise
 ```1C Enterprise
 a!localVariables(
   local!listOfMap: {
@@ -17,6 +18,7 @@ a!localVariables(
 )
 ```
 
+### 2-Dimensional Array
 ```2-Dimensional Array
 a!localVariables(
   local!listOfMap: {
@@ -36,6 +38,7 @@ a!localVariables(
 )
 ```
 
+### 4D
 ```4D
 a!localVariables(
   local!listOfMap: {
@@ -55,6 +58,7 @@ a!localVariables(
 )
 ```
 
+### ABAP
 ```ABAP
 a!localVariables(
   local!listOfMap: {
@@ -74,6 +78,7 @@ a!localVariables(
 )
 ```
 
+### ABAP CDS
 ```ABAP CDS
 a!localVariables(
   local!listOfMap: {
@@ -93,6 +98,7 @@ a!localVariables(
 )
 ```
 
+### ABNF
 ```ABNF
 a!localVariables(
   local!listOfMap: {
@@ -112,6 +118,7 @@ a!localVariables(
 )
 ```
 
+### AGS Script
 ```AGS Script
 a!localVariables(
   local!listOfMap: {
@@ -131,6 +138,7 @@ a!localVariables(
 )
 ```
 
+### AIDL
 ```AIDL
 a!localVariables(
   local!listOfMap: {
@@ -150,6 +158,7 @@ a!localVariables(
 )
 ```
 
+### AL
 ```AL
 a!localVariables(
   local!listOfMap: {
@@ -169,6 +178,7 @@ a!localVariables(
 )
 ```
 
+### AMPL
 ```AMPL
 a!localVariables(
   local!listOfMap: {
@@ -188,6 +198,7 @@ a!localVariables(
 )
 ```
 
+### ANTLR
 ```ANTLR
 a!localVariables(
   local!listOfMap: {
@@ -207,6 +218,7 @@ a!localVariables(
 )
 ```
 
+### API Blueprint
 ```API Blueprint
 a!localVariables(
   local!listOfMap: {
@@ -226,6 +238,7 @@ a!localVariables(
 )
 ```
 
+### APL
 ```APL
 a!localVariables(
   local!listOfMap: {
@@ -245,6 +258,7 @@ a!localVariables(
 )
 ```
 
+### ASL
 ```ASL
 a!localVariables(
   local!listOfMap: {
@@ -264,6 +278,7 @@ a!localVariables(
 )
 ```
 
+### ASN.1
 ```ASN.1
 a!localVariables(
   local!listOfMap: {
@@ -283,6 +298,7 @@ a!localVariables(
 )
 ```
 
+### ASP.NET
 ```ASP.NET
 a!localVariables(
   local!listOfMap: {
@@ -302,6 +318,7 @@ a!localVariables(
 )
 ```
 
+### ATS
 ```ATS
 a!localVariables(
   local!listOfMap: {
@@ -321,6 +338,7 @@ a!localVariables(
 )
 ```
 
+### ActionScript
 ```ActionScript
 a!localVariables(
   local!listOfMap: {
@@ -340,6 +358,7 @@ a!localVariables(
 )
 ```
 
+### Ada
 ```Ada
 a!localVariables(
   local!listOfMap: {
@@ -359,6 +378,7 @@ a!localVariables(
 )
 ```
 
+### Adblock Filter List
 ```Adblock Filter List
 a!localVariables(
   local!listOfMap: {
@@ -378,6 +398,7 @@ a!localVariables(
 )
 ```
 
+### Adobe Font Metrics
 ```Adobe Font Metrics
 a!localVariables(
   local!listOfMap: {
@@ -397,6 +418,7 @@ a!localVariables(
 )
 ```
 
+### Agda
 ```Agda
 a!localVariables(
   local!listOfMap: {
@@ -416,6 +438,7 @@ a!localVariables(
 )
 ```
 
+### Alloy
 ```Alloy
 a!localVariables(
   local!listOfMap: {
@@ -435,6 +458,7 @@ a!localVariables(
 )
 ```
 
+### Alpine Abuild
 ```Alpine Abuild
 a!localVariables(
   local!listOfMap: {
@@ -454,6 +478,7 @@ a!localVariables(
 )
 ```
 
+### Altium Designer
 ```Altium Designer
 a!localVariables(
   local!listOfMap: {
@@ -473,6 +498,7 @@ a!localVariables(
 )
 ```
 
+### AngelScript
 ```AngelScript
 a!localVariables(
   local!listOfMap: {
@@ -492,6 +518,7 @@ a!localVariables(
 )
 ```
 
+### Ant Build System
 ```Ant Build System
 a!localVariables(
   local!listOfMap: {
@@ -511,6 +538,7 @@ a!localVariables(
 )
 ```
 
+### Antlers
 ```Antlers
 a!localVariables(
   local!listOfMap: {
@@ -530,6 +558,7 @@ a!localVariables(
 )
 ```
 
+### ApacheConf
 ```ApacheConf
 a!localVariables(
   local!listOfMap: {
@@ -549,6 +578,7 @@ a!localVariables(
 )
 ```
 
+### Apex
 ```Apex
 a!localVariables(
   local!listOfMap: {
@@ -568,6 +598,7 @@ a!localVariables(
 )
 ```
 
+### Apollo Guidance Computer
 ```Apollo Guidance Computer
 a!localVariables(
   local!listOfMap: {
@@ -587,6 +618,7 @@ a!localVariables(
 )
 ```
 
+### AppleScript
 ```AppleScript
 a!localVariables(
   local!listOfMap: {
@@ -606,6 +638,7 @@ a!localVariables(
 )
 ```
 
+### Arc
 ```Arc
 a!localVariables(
   local!listOfMap: {
@@ -625,6 +658,7 @@ a!localVariables(
 )
 ```
 
+### AsciiDoc
 ```AsciiDoc
 a!localVariables(
   local!listOfMap: {
@@ -644,6 +678,7 @@ a!localVariables(
 )
 ```
 
+### AspectJ
 ```AspectJ
 a!localVariables(
   local!listOfMap: {
@@ -663,6 +698,7 @@ a!localVariables(
 )
 ```
 
+### Assembly
 ```Assembly
 a!localVariables(
   local!listOfMap: {
@@ -682,6 +718,7 @@ a!localVariables(
 )
 ```
 
+### Astro
 ```Astro
 a!localVariables(
   local!listOfMap: {
@@ -701,6 +738,7 @@ a!localVariables(
 )
 ```
 
+### Asymptote
 ```Asymptote
 a!localVariables(
   local!listOfMap: {
@@ -720,6 +758,7 @@ a!localVariables(
 )
 ```
 
+### Augeas
 ```Augeas
 a!localVariables(
   local!listOfMap: {
@@ -739,6 +778,7 @@ a!localVariables(
 )
 ```
 
+### AutoHotkey
 ```AutoHotkey
 a!localVariables(
   local!listOfMap: {
@@ -758,6 +798,7 @@ a!localVariables(
 )
 ```
 
+### AutoIt
 ```AutoIt
 a!localVariables(
   local!listOfMap: {
@@ -777,6 +818,7 @@ a!localVariables(
 )
 ```
 
+### Avro IDL
 ```Avro IDL
 a!localVariables(
   local!listOfMap: {
@@ -796,6 +838,7 @@ a!localVariables(
 )
 ```
 
+### Awk
 ```Awk
 a!localVariables(
   local!listOfMap: {
@@ -815,6 +858,7 @@ a!localVariables(
 )
 ```
 
+### BASIC
 ```BASIC
 a!localVariables(
   local!listOfMap: {
@@ -834,6 +878,7 @@ a!localVariables(
 )
 ```
 
+### Ballerina
 ```Ballerina
 a!localVariables(
   local!listOfMap: {
@@ -853,6 +898,7 @@ a!localVariables(
 )
 ```
 
+### Batchfile
 ```Batchfile
 a!localVariables(
   local!listOfMap: {
@@ -872,6 +918,7 @@ a!localVariables(
 )
 ```
 
+### Beef
 ```Beef
 a!localVariables(
   local!listOfMap: {
@@ -891,6 +938,7 @@ a!localVariables(
 )
 ```
 
+### Befunge
 ```Befunge
 a!localVariables(
   local!listOfMap: {
@@ -910,6 +958,7 @@ a!localVariables(
 )
 ```
 
+### Berry
 ```Berry
 a!localVariables(
   local!listOfMap: {
@@ -929,6 +978,7 @@ a!localVariables(
 )
 ```
 
+### BibTeX
 ```BibTeX
 a!localVariables(
   local!listOfMap: {
@@ -948,6 +998,7 @@ a!localVariables(
 )
 ```
 
+### Bicep
 ```Bicep
 a!localVariables(
   local!listOfMap: {
@@ -967,6 +1018,7 @@ a!localVariables(
 )
 ```
 
+### Bikeshed
 ```Bikeshed
 a!localVariables(
   local!listOfMap: {
@@ -986,6 +1038,7 @@ a!localVariables(
 )
 ```
 
+### Bison
 ```Bison
 a!localVariables(
   local!listOfMap: {
@@ -1005,6 +1058,7 @@ a!localVariables(
 )
 ```
 
+### BitBake
 ```BitBake
 a!localVariables(
   local!listOfMap: {
@@ -1024,6 +1078,7 @@ a!localVariables(
 )
 ```
 
+### Blade
 ```Blade
 a!localVariables(
   local!listOfMap: {
@@ -1043,6 +1098,7 @@ a!localVariables(
 )
 ```
 
+### BlitzBasic
 ```BlitzBasic
 a!localVariables(
   local!listOfMap: {
@@ -1062,6 +1118,7 @@ a!localVariables(
 )
 ```
 
+### BlitzMax
 ```BlitzMax
 a!localVariables(
   local!listOfMap: {
@@ -1081,6 +1138,7 @@ a!localVariables(
 )
 ```
 
+### Bluespec
 ```Bluespec
 a!localVariables(
   local!listOfMap: {
@@ -1100,6 +1158,7 @@ a!localVariables(
 )
 ```
 
+### Boo
 ```Boo
 a!localVariables(
   local!listOfMap: {
@@ -1119,6 +1178,7 @@ a!localVariables(
 )
 ```
 
+### Boogie
 ```Boogie
 a!localVariables(
   local!listOfMap: {
@@ -1138,6 +1198,7 @@ a!localVariables(
 )
 ```
 
+### Brainfuck
 ```Brainfuck
 a!localVariables(
   local!listOfMap: {
@@ -1157,6 +1218,7 @@ a!localVariables(
 )
 ```
 
+### BrighterScript
 ```BrighterScript
 a!localVariables(
   local!listOfMap: {
@@ -1176,6 +1238,7 @@ a!localVariables(
 )
 ```
 
+### Brightscript
 ```Brightscript
 a!localVariables(
   local!listOfMap: {
@@ -1195,6 +1258,7 @@ a!localVariables(
 )
 ```
 
+### Browserslist
 ```Browserslist
 a!localVariables(
   local!listOfMap: {
@@ -1214,6 +1278,7 @@ a!localVariables(
 )
 ```
 
+### C
 ```C
 a!localVariables(
   local!listOfMap: {
@@ -1233,6 +1298,7 @@ a!localVariables(
 )
 ```
 
+### C#
 ```C#
 a!localVariables(
   local!listOfMap: {
@@ -1252,6 +1318,7 @@ a!localVariables(
 )
 ```
 
+### C++
 ```C++
 a!localVariables(
   local!listOfMap: {
@@ -1271,6 +1338,7 @@ a!localVariables(
 )
 ```
 
+### C-ObjDump
 ```C-ObjDump
 a!localVariables(
   local!listOfMap: {
@@ -1290,6 +1358,7 @@ a!localVariables(
 )
 ```
 
+### C2hs Haskell
 ```C2hs Haskell
 a!localVariables(
   local!listOfMap: {
@@ -1309,6 +1378,7 @@ a!localVariables(
 )
 ```
 
+### CAP CDS
 ```CAP CDS
 a!localVariables(
   local!listOfMap: {
@@ -1328,6 +1398,7 @@ a!localVariables(
 )
 ```
 
+### CIL
 ```CIL
 a!localVariables(
   local!listOfMap: {
@@ -1347,6 +1418,7 @@ a!localVariables(
 )
 ```
 
+### CLIPS
 ```CLIPS
 a!localVariables(
   local!listOfMap: {
@@ -1366,6 +1438,7 @@ a!localVariables(
 )
 ```
 
+### CMake
 ```CMake
 a!localVariables(
   local!listOfMap: {
@@ -1385,6 +1458,7 @@ a!localVariables(
 )
 ```
 
+### COBOL
 ```COBOL
 a!localVariables(
   local!listOfMap: {
@@ -1404,6 +1478,7 @@ a!localVariables(
 )
 ```
 
+### CODEOWNERS
 ```CODEOWNERS
 a!localVariables(
   local!listOfMap: {
@@ -1423,6 +1498,7 @@ a!localVariables(
 )
 ```
 
+### COLLADA
 ```COLLADA
 a!localVariables(
   local!listOfMap: {
@@ -1442,6 +1518,7 @@ a!localVariables(
 )
 ```
 
+### CSON
 ```CSON
 a!localVariables(
   local!listOfMap: {
@@ -1461,6 +1538,7 @@ a!localVariables(
 )
 ```
 
+### CSS
 ```CSS
 a!localVariables(
   local!listOfMap: {
@@ -1480,6 +1558,7 @@ a!localVariables(
 )
 ```
 
+### CSV
 ```CSV
 a!localVariables(
   local!listOfMap: {
@@ -1499,6 +1578,7 @@ a!localVariables(
 )
 ```
 
+### CUE
 ```CUE
 a!localVariables(
   local!listOfMap: {
@@ -1518,6 +1598,7 @@ a!localVariables(
 )
 ```
 
+### CWeb
 ```CWeb
 a!localVariables(
   local!listOfMap: {
@@ -1537,6 +1618,7 @@ a!localVariables(
 )
 ```
 
+### Cabal Config
 ```Cabal Config
 a!localVariables(
   local!listOfMap: {
@@ -1556,6 +1638,7 @@ a!localVariables(
 )
 ```
 
+### Cadence
 ```Cadence
 a!localVariables(
   local!listOfMap: {
@@ -1575,6 +1658,7 @@ a!localVariables(
 )
 ```
 
+### Cairo
 ```Cairo
 a!localVariables(
   local!listOfMap: {
@@ -1594,6 +1678,7 @@ a!localVariables(
 )
 ```
 
+### CameLIGO
 ```CameLIGO
 a!localVariables(
   local!listOfMap: {
@@ -1613,6 +1698,7 @@ a!localVariables(
 )
 ```
 
+### Cap'n Proto
 ```Cap'n Proto
 a!localVariables(
   local!listOfMap: {
@@ -1632,6 +1718,7 @@ a!localVariables(
 )
 ```
 
+### CartoCSS
 ```CartoCSS
 a!localVariables(
   local!listOfMap: {
@@ -1651,6 +1738,7 @@ a!localVariables(
 )
 ```
 
+### Ceylon
 ```Ceylon
 a!localVariables(
   local!listOfMap: {
@@ -1670,6 +1758,7 @@ a!localVariables(
 )
 ```
 
+### Chapel
 ```Chapel
 a!localVariables(
   local!listOfMap: {
@@ -1689,6 +1778,7 @@ a!localVariables(
 )
 ```
 
+### Charity
 ```Charity
 a!localVariables(
   local!listOfMap: {
@@ -1708,6 +1798,7 @@ a!localVariables(
 )
 ```
 
+### Checksums
 ```Checksums
 a!localVariables(
   local!listOfMap: {
@@ -1727,6 +1818,7 @@ a!localVariables(
 )
 ```
 
+### ChucK
 ```ChucK
 a!localVariables(
   local!listOfMap: {
@@ -1746,6 +1838,7 @@ a!localVariables(
 )
 ```
 
+### Cirru
 ```Cirru
 a!localVariables(
   local!listOfMap: {
@@ -1765,6 +1858,7 @@ a!localVariables(
 )
 ```
 
+### Clarion
 ```Clarion
 a!localVariables(
   local!listOfMap: {
@@ -1784,6 +1878,7 @@ a!localVariables(
 )
 ```
 
+### Clarity
 ```Clarity
 a!localVariables(
   local!listOfMap: {
@@ -1803,6 +1898,7 @@ a!localVariables(
 )
 ```
 
+### Classic ASP
 ```Classic ASP
 a!localVariables(
   local!listOfMap: {
@@ -1822,6 +1918,7 @@ a!localVariables(
 )
 ```
 
+### Clean
 ```Clean
 a!localVariables(
   local!listOfMap: {
@@ -1841,6 +1938,7 @@ a!localVariables(
 )
 ```
 
+### Click
 ```Click
 a!localVariables(
   local!listOfMap: {
@@ -1860,6 +1958,7 @@ a!localVariables(
 )
 ```
 
+### Clojure
 ```Clojure
 a!localVariables(
   local!listOfMap: {
@@ -1879,6 +1978,7 @@ a!localVariables(
 )
 ```
 
+### Closure Templates
 ```Closure Templates
 a!localVariables(
   local!listOfMap: {
@@ -1898,6 +1998,7 @@ a!localVariables(
 )
 ```
 
+### Cloud Firestore Security Rules
 ```Cloud Firestore Security Rules
 a!localVariables(
   local!listOfMap: {
@@ -1917,6 +2018,7 @@ a!localVariables(
 )
 ```
 
+### CoNLL-U
 ```CoNLL-U
 a!localVariables(
   local!listOfMap: {
@@ -1936,6 +2038,7 @@ a!localVariables(
 )
 ```
 
+### CodeQL
 ```CodeQL
 a!localVariables(
   local!listOfMap: {
@@ -1955,6 +2058,7 @@ a!localVariables(
 )
 ```
 
+### CoffeeScript
 ```CoffeeScript
 a!localVariables(
   local!listOfMap: {
@@ -1974,6 +2078,7 @@ a!localVariables(
 )
 ```
 
+### ColdFusion
 ```ColdFusion
 a!localVariables(
   local!listOfMap: {
@@ -1993,6 +2098,7 @@ a!localVariables(
 )
 ```
 
+### ColdFusion CFC
 ```ColdFusion CFC
 a!localVariables(
   local!listOfMap: {
@@ -2012,6 +2118,7 @@ a!localVariables(
 )
 ```
 
+### Common Lisp
 ```Common Lisp
 a!localVariables(
   local!listOfMap: {
@@ -2031,6 +2138,7 @@ a!localVariables(
 )
 ```
 
+### Common Workflow Language
 ```Common Workflow Language
 a!localVariables(
   local!listOfMap: {
@@ -2050,6 +2158,7 @@ a!localVariables(
 )
 ```
 
+### Component Pascal
 ```Component Pascal
 a!localVariables(
   local!listOfMap: {
@@ -2069,6 +2178,7 @@ a!localVariables(
 )
 ```
 
+### Cool
 ```Cool
 a!localVariables(
   local!listOfMap: {
@@ -2088,6 +2198,7 @@ a!localVariables(
 )
 ```
 
+### Coq
 ```Coq
 a!localVariables(
   local!listOfMap: {
@@ -2107,6 +2218,7 @@ a!localVariables(
 )
 ```
 
+### Cpp-ObjDump
 ```Cpp-ObjDump
 a!localVariables(
   local!listOfMap: {
@@ -2126,6 +2238,7 @@ a!localVariables(
 )
 ```
 
+### Creole
 ```Creole
 a!localVariables(
   local!listOfMap: {
@@ -2145,6 +2258,7 @@ a!localVariables(
 )
 ```
 
+### Crystal
 ```Crystal
 a!localVariables(
   local!listOfMap: {
@@ -2164,6 +2278,7 @@ a!localVariables(
 )
 ```
 
+### Csound
 ```Csound
 a!localVariables(
   local!listOfMap: {
@@ -2183,6 +2298,7 @@ a!localVariables(
 )
 ```
 
+### Csound Document
 ```Csound Document
 a!localVariables(
   local!listOfMap: {
@@ -2202,6 +2318,7 @@ a!localVariables(
 )
 ```
 
+### Csound Score
 ```Csound Score
 a!localVariables(
   local!listOfMap: {
@@ -2221,6 +2338,7 @@ a!localVariables(
 )
 ```
 
+### Cuda
 ```Cuda
 a!localVariables(
   local!listOfMap: {
@@ -2240,6 +2358,7 @@ a!localVariables(
 )
 ```
 
+### Cue Sheet
 ```Cue Sheet
 a!localVariables(
   local!listOfMap: {
@@ -2259,6 +2378,7 @@ a!localVariables(
 )
 ```
 
+### Curry
 ```Curry
 a!localVariables(
   local!listOfMap: {
@@ -2278,6 +2398,7 @@ a!localVariables(
 )
 ```
 
+### Cycript
 ```Cycript
 a!localVariables(
   local!listOfMap: {
@@ -2297,6 +2418,7 @@ a!localVariables(
 )
 ```
 
+### Cython
 ```Cython
 a!localVariables(
   local!listOfMap: {
@@ -2316,6 +2438,7 @@ a!localVariables(
 )
 ```
 
+### D
 ```D
 a!localVariables(
   local!listOfMap: {
@@ -2335,6 +2458,7 @@ a!localVariables(
 )
 ```
 
+### D-ObjDump
 ```D-ObjDump
 a!localVariables(
   local!listOfMap: {
@@ -2354,6 +2478,7 @@ a!localVariables(
 )
 ```
 
+### DIGITAL Command Language
 ```DIGITAL Command Language
 a!localVariables(
   local!listOfMap: {
@@ -2373,6 +2498,7 @@ a!localVariables(
 )
 ```
 
+### DM
 ```DM
 a!localVariables(
   local!listOfMap: {
@@ -2392,6 +2518,7 @@ a!localVariables(
 )
 ```
 
+### DNS Zone
 ```DNS Zone
 a!localVariables(
   local!listOfMap: {
@@ -2411,6 +2538,7 @@ a!localVariables(
 )
 ```
 
+### DTrace
 ```DTrace
 a!localVariables(
   local!listOfMap: {
@@ -2430,6 +2558,7 @@ a!localVariables(
 )
 ```
 
+### Dafny
 ```Dafny
 a!localVariables(
   local!listOfMap: {
@@ -2449,6 +2578,7 @@ a!localVariables(
 )
 ```
 
+### Darcs Patch
 ```Darcs Patch
 a!localVariables(
   local!listOfMap: {
@@ -2468,6 +2598,7 @@ a!localVariables(
 )
 ```
 
+### Dart
 ```Dart
 a!localVariables(
   local!listOfMap: {
@@ -2487,6 +2618,7 @@ a!localVariables(
 )
 ```
 
+### DataWeave
 ```DataWeave
 a!localVariables(
   local!listOfMap: {
@@ -2506,6 +2638,7 @@ a!localVariables(
 )
 ```
 
+### Debian Package Control File
 ```Debian Package Control File
 a!localVariables(
   local!listOfMap: {
@@ -2525,6 +2658,7 @@ a!localVariables(
 )
 ```
 
+### DenizenScript
 ```DenizenScript
 a!localVariables(
   local!listOfMap: {
@@ -2544,6 +2678,7 @@ a!localVariables(
 )
 ```
 
+### Dhall
 ```Dhall
 a!localVariables(
   local!listOfMap: {
@@ -2563,6 +2698,7 @@ a!localVariables(
 )
 ```
 
+### Diff
 ```Diff
 a!localVariables(
   local!listOfMap: {
@@ -2582,6 +2718,7 @@ a!localVariables(
 )
 ```
 
+### DirectX 3D File
 ```DirectX 3D File
 a!localVariables(
   local!listOfMap: {
@@ -2601,6 +2738,7 @@ a!localVariables(
 )
 ```
 
+### Dockerfile
 ```Dockerfile
 a!localVariables(
   local!listOfMap: {
@@ -2620,6 +2758,7 @@ a!localVariables(
 )
 ```
 
+### Dogescript
 ```Dogescript
 a!localVariables(
   local!listOfMap: {
@@ -2639,6 +2778,7 @@ a!localVariables(
 )
 ```
 
+### Dylan
 ```Dylan
 a!localVariables(
   local!listOfMap: {
@@ -2658,6 +2798,7 @@ a!localVariables(
 )
 ```
 
+### E
 ```E
 a!localVariables(
   local!listOfMap: {
@@ -2677,6 +2818,7 @@ a!localVariables(
 )
 ```
 
+### E-mail
 ```E-mail
 a!localVariables(
   local!listOfMap: {
@@ -2696,6 +2838,7 @@ a!localVariables(
 )
 ```
 
+### EBNF
 ```EBNF
 a!localVariables(
   local!listOfMap: {
@@ -2715,6 +2858,7 @@ a!localVariables(
 )
 ```
 
+### ECL
 ```ECL
 a!localVariables(
   local!listOfMap: {
@@ -2734,6 +2878,7 @@ a!localVariables(
 )
 ```
 
+### ECLiPSe
 ```ECLiPSe
 a!localVariables(
   local!listOfMap: {
@@ -2753,6 +2898,7 @@ a!localVariables(
 )
 ```
 
+### EJS
 ```EJS
 a!localVariables(
   local!listOfMap: {
@@ -2772,6 +2918,7 @@ a!localVariables(
 )
 ```
 
+### EQ
 ```EQ
 a!localVariables(
   local!listOfMap: {
@@ -2791,6 +2938,7 @@ a!localVariables(
 )
 ```
 
+### Eagle
 ```Eagle
 a!localVariables(
   local!listOfMap: {
@@ -2810,6 +2958,7 @@ a!localVariables(
 )
 ```
 
+### Earthly
 ```Earthly
 a!localVariables(
   local!listOfMap: {
@@ -2829,6 +2978,7 @@ a!localVariables(
 )
 ```
 
+### Easybuild
 ```Easybuild
 a!localVariables(
   local!listOfMap: {
@@ -2848,6 +2998,7 @@ a!localVariables(
 )
 ```
 
+### Ecere Projects
 ```Ecere Projects
 a!localVariables(
   local!listOfMap: {
@@ -2867,6 +3018,7 @@ a!localVariables(
 )
 ```
 
+### EditorConfig
 ```EditorConfig
 a!localVariables(
   local!listOfMap: {
@@ -2886,6 +3038,7 @@ a!localVariables(
 )
 ```
 
+### Edje Data Collection
 ```Edje Data Collection
 a!localVariables(
   local!listOfMap: {
@@ -2905,6 +3058,7 @@ a!localVariables(
 )
 ```
 
+### Eiffel
 ```Eiffel
 a!localVariables(
   local!listOfMap: {
@@ -2924,6 +3078,7 @@ a!localVariables(
 )
 ```
 
+### Elixir
 ```Elixir
 a!localVariables(
   local!listOfMap: {
@@ -2943,6 +3098,7 @@ a!localVariables(
 )
 ```
 
+### Elm
 ```Elm
 a!localVariables(
   local!listOfMap: {
@@ -2962,6 +3118,7 @@ a!localVariables(
 )
 ```
 
+### Elvish
 ```Elvish
 a!localVariables(
   local!listOfMap: {
@@ -2981,6 +3138,7 @@ a!localVariables(
 )
 ```
 
+### Emacs Lisp
 ```Emacs Lisp
 a!localVariables(
   local!listOfMap: {
@@ -3000,6 +3158,7 @@ a!localVariables(
 )
 ```
 
+### EmberScript
 ```EmberScript
 a!localVariables(
   local!listOfMap: {
@@ -3019,6 +3178,7 @@ a!localVariables(
 )
 ```
 
+### Erlang
 ```Erlang
 a!localVariables(
   local!listOfMap: {
@@ -3038,6 +3198,7 @@ a!localVariables(
 )
 ```
 
+### Euphoria
 ```Euphoria
 a!localVariables(
   local!listOfMap: {
@@ -3057,6 +3218,7 @@ a!localVariables(
 )
 ```
 
+### F#
 ```F#
 a!localVariables(
   local!listOfMap: {
@@ -3076,6 +3238,7 @@ a!localVariables(
 )
 ```
 
+### F*
 ```F*
 a!localVariables(
   local!listOfMap: {
@@ -3095,6 +3258,7 @@ a!localVariables(
 )
 ```
 
+### FIGlet Font
 ```FIGlet Font
 a!localVariables(
   local!listOfMap: {
@@ -3114,6 +3278,7 @@ a!localVariables(
 )
 ```
 
+### FLUX
 ```FLUX
 a!localVariables(
   local!listOfMap: {
@@ -3133,6 +3298,7 @@ a!localVariables(
 )
 ```
 
+### Factor
 ```Factor
 a!localVariables(
   local!listOfMap: {
@@ -3152,6 +3318,7 @@ a!localVariables(
 )
 ```
 
+### Fancy
 ```Fancy
 a!localVariables(
   local!listOfMap: {
@@ -3171,6 +3338,7 @@ a!localVariables(
 )
 ```
 
+### Fantom
 ```Fantom
 a!localVariables(
   local!listOfMap: {
@@ -3190,6 +3358,7 @@ a!localVariables(
 )
 ```
 
+### Faust
 ```Faust
 a!localVariables(
   local!listOfMap: {
@@ -3209,6 +3378,7 @@ a!localVariables(
 )
 ```
 
+### Fennel
 ```Fennel
 a!localVariables(
   local!listOfMap: {
@@ -3228,6 +3398,7 @@ a!localVariables(
 )
 ```
 
+### Filebench WML
 ```Filebench WML
 a!localVariables(
   local!listOfMap: {
@@ -3247,6 +3418,7 @@ a!localVariables(
 )
 ```
 
+### Filterscript
 ```Filterscript
 a!localVariables(
   local!listOfMap: {
@@ -3266,6 +3438,7 @@ a!localVariables(
 )
 ```
 
+### Fluent
 ```Fluent
 a!localVariables(
   local!listOfMap: {
@@ -3285,6 +3458,7 @@ a!localVariables(
 )
 ```
 
+### Formatted
 ```Formatted
 a!localVariables(
   local!listOfMap: {
@@ -3304,6 +3478,7 @@ a!localVariables(
 )
 ```
 
+### Forth
 ```Forth
 a!localVariables(
   local!listOfMap: {
@@ -3323,6 +3498,7 @@ a!localVariables(
 )
 ```
 
+### Fortran
 ```Fortran
 a!localVariables(
   local!listOfMap: {
@@ -3342,6 +3518,7 @@ a!localVariables(
 )
 ```
 
+### Fortran Free Form
 ```Fortran Free Form
 a!localVariables(
   local!listOfMap: {
@@ -3361,6 +3538,7 @@ a!localVariables(
 )
 ```
 
+### FreeBasic
 ```FreeBasic
 a!localVariables(
   local!listOfMap: {
@@ -3380,6 +3558,7 @@ a!localVariables(
 )
 ```
 
+### FreeMarker
 ```FreeMarker
 a!localVariables(
   local!listOfMap: {
@@ -3399,6 +3578,7 @@ a!localVariables(
 )
 ```
 
+### Frege
 ```Frege
 a!localVariables(
   local!listOfMap: {
@@ -3418,6 +3598,7 @@ a!localVariables(
 )
 ```
 
+### Futhark
 ```Futhark
 a!localVariables(
   local!listOfMap: {
@@ -3437,6 +3618,7 @@ a!localVariables(
 )
 ```
 
+### G-code
 ```G-code
 a!localVariables(
   local!listOfMap: {
@@ -3456,6 +3638,7 @@ a!localVariables(
 )
 ```
 
+### GAML
 ```GAML
 a!localVariables(
   local!listOfMap: {
@@ -3475,6 +3658,7 @@ a!localVariables(
 )
 ```
 
+### GAMS
 ```GAMS
 a!localVariables(
   local!listOfMap: {
@@ -3494,6 +3678,7 @@ a!localVariables(
 )
 ```
 
+### GAP
 ```GAP
 a!localVariables(
   local!listOfMap: {
@@ -3513,6 +3698,7 @@ a!localVariables(
 )
 ```
 
+### GCC Machine Description
 ```GCC Machine Description
 a!localVariables(
   local!listOfMap: {
@@ -3532,6 +3718,7 @@ a!localVariables(
 )
 ```
 
+### GDB
 ```GDB
 a!localVariables(
   local!listOfMap: {
@@ -3551,6 +3738,7 @@ a!localVariables(
 )
 ```
 
+### GDScript
 ```GDScript
 a!localVariables(
   local!listOfMap: {
@@ -3570,6 +3758,7 @@ a!localVariables(
 )
 ```
 
+### GEDCOM
 ```GEDCOM
 a!localVariables(
   local!listOfMap: {
@@ -3589,6 +3778,7 @@ a!localVariables(
 )
 ```
 
+### GLSL
 ```GLSL
 a!localVariables(
   local!listOfMap: {
@@ -3608,6 +3798,7 @@ a!localVariables(
 )
 ```
 
+### GN
 ```GN
 a!localVariables(
   local!listOfMap: {
@@ -3627,6 +3818,7 @@ a!localVariables(
 )
 ```
 
+### GSC
 ```GSC
 a!localVariables(
   local!listOfMap: {
@@ -3646,6 +3838,7 @@ a!localVariables(
 )
 ```
 
+### Game Maker Language
 ```Game Maker Language
 a!localVariables(
   local!listOfMap: {
@@ -3665,6 +3858,7 @@ a!localVariables(
 )
 ```
 
+### Gemfile.lock
 ```Gemfile.lock
 a!localVariables(
   local!listOfMap: {
@@ -3684,6 +3878,7 @@ a!localVariables(
 )
 ```
 
+### Gemini
 ```Gemini
 a!localVariables(
   local!listOfMap: {
@@ -3703,6 +3898,7 @@ a!localVariables(
 )
 ```
 
+### Genero
 ```Genero
 a!localVariables(
   local!listOfMap: {
@@ -3722,6 +3918,7 @@ a!localVariables(
 )
 ```
 
+### Genero Forms
 ```Genero Forms
 a!localVariables(
   local!listOfMap: {
@@ -3741,6 +3938,7 @@ a!localVariables(
 )
 ```
 
+### Genie
 ```Genie
 a!localVariables(
   local!listOfMap: {
@@ -3760,6 +3958,7 @@ a!localVariables(
 )
 ```
 
+### Genshi
 ```Genshi
 a!localVariables(
   local!listOfMap: {
@@ -3779,6 +3978,7 @@ a!localVariables(
 )
 ```
 
+### Gentoo Ebuild
 ```Gentoo Ebuild
 a!localVariables(
   local!listOfMap: {
@@ -3798,6 +3998,7 @@ a!localVariables(
 )
 ```
 
+### Gentoo Eclass
 ```Gentoo Eclass
 a!localVariables(
   local!listOfMap: {
@@ -3817,6 +4018,7 @@ a!localVariables(
 )
 ```
 
+### Gerber Image
 ```Gerber Image
 a!localVariables(
   local!listOfMap: {
@@ -3836,6 +4038,7 @@ a!localVariables(
 )
 ```
 
+### Gettext Catalog
 ```Gettext Catalog
 a!localVariables(
   local!listOfMap: {
@@ -3855,6 +4058,7 @@ a!localVariables(
 )
 ```
 
+### Gherkin
 ```Gherkin
 a!localVariables(
   local!listOfMap: {
@@ -3874,6 +4078,7 @@ a!localVariables(
 )
 ```
 
+### Git Attributes
 ```Git Attributes
 a!localVariables(
   local!listOfMap: {
@@ -3893,6 +4098,7 @@ a!localVariables(
 )
 ```
 
+### Git Config
 ```Git Config
 a!localVariables(
   local!listOfMap: {
@@ -3912,6 +4118,7 @@ a!localVariables(
 )
 ```
 
+### Git Revision List
 ```Git Revision List
 a!localVariables(
   local!listOfMap: {
@@ -3931,6 +4138,7 @@ a!localVariables(
 )
 ```
 
+### Gleam
 ```Gleam
 a!localVariables(
   local!listOfMap: {
@@ -3950,6 +4158,7 @@ a!localVariables(
 )
 ```
 
+### Glyph
 ```Glyph
 a!localVariables(
   local!listOfMap: {
@@ -3969,6 +4178,7 @@ a!localVariables(
 )
 ```
 
+### Glyph Bitmap Distribution Format
 ```Glyph Bitmap Distribution Format
 a!localVariables(
   local!listOfMap: {
@@ -3988,6 +4198,7 @@ a!localVariables(
 )
 ```
 
+### Gnuplot
 ```Gnuplot
 a!localVariables(
   local!listOfMap: {
@@ -4007,6 +4218,7 @@ a!localVariables(
 )
 ```
 
+### Go
 ```Go
 a!localVariables(
   local!listOfMap: {
@@ -4026,6 +4238,7 @@ a!localVariables(
 )
 ```
 
+### Go Checksums
 ```Go Checksums
 a!localVariables(
   local!listOfMap: {
@@ -4045,6 +4258,7 @@ a!localVariables(
 )
 ```
 
+### Go Module
 ```Go Module
 a!localVariables(
   local!listOfMap: {
@@ -4064,6 +4278,7 @@ a!localVariables(
 )
 ```
 
+### Golo
 ```Golo
 a!localVariables(
   local!listOfMap: {
@@ -4083,6 +4298,7 @@ a!localVariables(
 )
 ```
 
+### Gosu
 ```Gosu
 a!localVariables(
   local!listOfMap: {
@@ -4102,6 +4318,7 @@ a!localVariables(
 )
 ```
 
+### Grace
 ```Grace
 a!localVariables(
   local!listOfMap: {
@@ -4121,6 +4338,7 @@ a!localVariables(
 )
 ```
 
+### Gradle
 ```Gradle
 a!localVariables(
   local!listOfMap: {
@@ -4140,6 +4358,7 @@ a!localVariables(
 )
 ```
 
+### Grammatical Framework
 ```Grammatical Framework
 a!localVariables(
   local!listOfMap: {
@@ -4159,6 +4378,7 @@ a!localVariables(
 )
 ```
 
+### Graph Modeling Language
 ```Graph Modeling Language
 a!localVariables(
   local!listOfMap: {
@@ -4178,6 +4398,7 @@ a!localVariables(
 )
 ```
 
+### GraphQL
 ```GraphQL
 a!localVariables(
 a!localVariables(
@@ -4213,6 +4434,7 @@ a!localVariables(
 )
 ```
 
+### Graphviz (DOT)
 ```Graphviz (DOT)
 a!localVariables(
   local!listOfMap: {
@@ -4232,6 +4454,7 @@ a!localVariables(
 )
 ```
 
+### Groovy
 ```Groovy
 a!localVariables(
   local!listOfMap: {
@@ -4251,6 +4474,7 @@ a!localVariables(
 )
 ```
 
+### Groovy Server Pages
 ```Groovy Server Pages
 a!localVariables(
   local!listOfMap: {
@@ -4270,6 +4494,7 @@ a!localVariables(
 )
 ```
 
+### HAProxy
 ```HAProxy
 a!localVariables(
   local!listOfMap: {
@@ -4289,6 +4514,7 @@ a!localVariables(
 )
 ```
 
+### HCL
 ```HCL
 a!localVariables(
   local!listOfMap: {
@@ -4308,6 +4534,7 @@ a!localVariables(
 )
 ```
 
+### HLSL
 ```HLSL
 a!localVariables(
   local!listOfMap: {
@@ -4327,6 +4554,7 @@ a!localVariables(
 )
 ```
 
+### HOCON
 ```HOCON
 a!localVariables(
   local!listOfMap: {
@@ -4346,6 +4574,7 @@ a!localVariables(
 )
 ```
 
+### HTML
 ```HTML
 a!localVariables(
   local!listOfMap: {
@@ -4365,6 +4594,7 @@ a!localVariables(
 )
 ```
 
+### HTML+ECR
 ```HTML+ECR
 a!localVariables(
   local!listOfMap: {
@@ -4384,6 +4614,7 @@ a!localVariables(
 )
 ```
 
+### HTML+EEX
 ```HTML+EEX
 a!localVariables(
   local!listOfMap: {
@@ -4403,6 +4634,7 @@ a!localVariables(
 )
 ```
 
+### HTML+ERB
 ```HTML+ERB
 a!localVariables(
   local!listOfMap: {
@@ -4422,6 +4654,7 @@ a!localVariables(
 )
 ```
 
+### HTML+PHP
 ```HTML+PHP
 a!localVariables(
   local!listOfMap: {
@@ -4441,6 +4674,7 @@ a!localVariables(
 )
 ```
 
+### HTML+Razor
 ```HTML+Razor
 a!localVariables(
   local!listOfMap: {
@@ -4460,6 +4694,7 @@ a!localVariables(
 )
 ```
 
+### HTTP
 ```HTTP
 a!localVariables(
   local!listOfMap: {
@@ -4479,6 +4714,7 @@ a!localVariables(
 )
 ```
 
+### HXML
 ```HXML
 a!localVariables(
   local!listOfMap: {
@@ -4498,6 +4734,7 @@ a!localVariables(
 )
 ```
 
+### Hack
 ```Hack
 a!localVariables(
   local!listOfMap: {
@@ -4517,6 +4754,7 @@ a!localVariables(
 )
 ```
 
+### Haml
 ```Haml
 a!localVariables(
   local!listOfMap: {
@@ -4536,6 +4774,7 @@ a!localVariables(
 )
 ```
 
+### Handlebars
 ```Handlebars
 a!localVariables(
   local!listOfMap: {
@@ -4555,6 +4794,7 @@ a!localVariables(
 )
 ```
 
+### Harbour
 ```Harbour
 a!localVariables(
   local!listOfMap: {
@@ -4574,6 +4814,7 @@ a!localVariables(
 )
 ```
 
+### Haskell
 ```Haskell
 a!localVariables(
   local!listOfMap: {
@@ -4593,6 +4834,7 @@ a!localVariables(
 )
 ```
 
+### Haxe
 ```Haxe
 a!localVariables(
   local!listOfMap: {
@@ -4612,6 +4854,7 @@ a!localVariables(
 )
 ```
 
+### HiveQL
 ```HiveQL
 a!localVariables(
   local!listOfMap: {
@@ -4631,6 +4874,7 @@ a!localVariables(
 )
 ```
 
+### HolyC
 ```HolyC
 a!localVariables(
   local!listOfMap: {
@@ -4650,6 +4894,7 @@ a!localVariables(
 )
 ```
 
+### Hy
 ```Hy
 a!localVariables(
   local!listOfMap: {
@@ -4669,6 +4914,7 @@ a!localVariables(
 )
 ```
 
+### HyPhy
 ```HyPhy
 a!localVariables(
   local!listOfMap: {
@@ -4688,6 +4934,7 @@ a!localVariables(
 )
 ```
 
+### IDL
 ```IDL
 a!localVariables(
   local!listOfMap: {
@@ -4707,6 +4954,7 @@ a!localVariables(
 )
 ```
 
+### IGOR Pro
 ```IGOR Pro
 a!localVariables(
   local!listOfMap: {
@@ -4726,6 +4974,7 @@ a!localVariables(
 )
 ```
 
+### INI
 ```INI
 a!localVariables(
   local!listOfMap: {
@@ -4745,6 +4994,7 @@ a!localVariables(
 )
 ```
 
+### IRC log
 ```IRC log
 a!localVariables(
   local!listOfMap: {
@@ -4764,6 +5014,7 @@ a!localVariables(
 )
 ```
 
+### Idris
 ```Idris
 a!localVariables(
   local!listOfMap: {
@@ -4783,6 +5034,7 @@ a!localVariables(
 )
 ```
 
+### Ignore List
 ```Ignore List
 a!localVariables(
   local!listOfMap: {
@@ -4802,6 +5054,7 @@ a!localVariables(
 )
 ```
 
+### ImageJ Macro
 ```ImageJ Macro
 a!localVariables(
   local!listOfMap: {
@@ -4821,6 +5074,7 @@ a!localVariables(
 )
 ```
 
+### Inform 7
 ```Inform 7
 a!localVariables(
   local!listOfMap: {
@@ -4840,6 +5094,7 @@ a!localVariables(
 )
 ```
 
+### Inno Setup
 ```Inno Setup
 a!localVariables(
   local!listOfMap: {
@@ -4859,6 +5114,7 @@ a!localVariables(
 )
 ```
 
+### Io
 ```Io
 a!localVariables(
   local!listOfMap: {
@@ -4878,6 +5134,7 @@ a!localVariables(
 )
 ```
 
+### Ioke
 ```Ioke
 a!localVariables(
   local!listOfMap: {
@@ -4897,6 +5154,7 @@ a!localVariables(
 )
 ```
 
+### Isabelle
 ```Isabelle
 a!localVariables(
   local!listOfMap: {
@@ -4916,6 +5174,7 @@ a!localVariables(
 )
 ```
 
+### Isabelle ROOT
 ```Isabelle ROOT
 a!localVariables(
   local!listOfMap: {
@@ -4935,6 +5194,7 @@ a!localVariables(
 )
 ```
 
+### J
 ```J
 a!localVariables(
   local!listOfMap: {
@@ -4954,6 +5214,7 @@ a!localVariables(
 )
 ```
 
+### JAR Manifest
 ```JAR Manifest
 a!localVariables(
   local!listOfMap: {
@@ -4973,6 +5234,7 @@ a!localVariables(
 )
 ```
 
+### JFlex
 ```JFlex
 a!localVariables(
   local!listOfMap: {
@@ -4992,6 +5254,7 @@ a!localVariables(
 )
 ```
 
+### JSON
 ```JSON
 a!localVariables(
   local!listOfMap: {
@@ -5011,6 +5274,7 @@ a!localVariables(
 )
 ```
 
+### JSON with Comments
 ```JSON with Comments
 a!localVariables(
   local!listOfMap: {
@@ -5030,6 +5294,7 @@ a!localVariables(
 )
 ```
 
+### JSON5
 ```JSON5
 a!localVariables(
   local!listOfMap: {
@@ -5049,6 +5314,7 @@ a!localVariables(
 )
 ```
 
+### JSONLD
 ```JSONLD
 a!localVariables(
   local!listOfMap: {
@@ -5068,6 +5334,7 @@ a!localVariables(
 )
 ```
 
+### JSONiq
 ```JSONiq
 a!localVariables(
   local!listOfMap: {
@@ -5087,6 +5354,7 @@ a!localVariables(
 )
 ```
 
+### Janet
 ```Janet
 a!localVariables(
   local!listOfMap: {
@@ -5106,6 +5374,7 @@ a!localVariables(
 )
 ```
 
+### Jasmin
 ```Jasmin
 a!localVariables(
   local!listOfMap: {
@@ -5125,6 +5394,7 @@ a!localVariables(
 )
 ```
 
+### Java
 ```Java
 a!localVariables(
   local!listOfMap: {
@@ -5144,6 +5414,7 @@ a!localVariables(
 )
 ```
 
+### Java Properties
 ```Java Properties
 a!localVariables(
   local!listOfMap: {
@@ -5163,6 +5434,7 @@ a!localVariables(
 )
 ```
 
+### Java Server Pages
 ```Java Server Pages
 a!localVariables(
   local!listOfMap: {
@@ -5182,6 +5454,7 @@ a!localVariables(
 )
 ```
 
+### JavaScript
 ```JavaScript
 a!localVariables(
   local!listOfMap: {
@@ -5201,6 +5474,7 @@ a!localVariables(
 )
 ```
 
+### JavaScript+ERB
 ```JavaScript+ERB
 a!localVariables(
   local!listOfMap: {
@@ -5220,6 +5494,7 @@ a!localVariables(
 )
 ```
 
+### Jest Snapshot
 ```Jest Snapshot
 a!localVariables(
   local!listOfMap: {
@@ -5239,6 +5514,7 @@ a!localVariables(
 )
 ```
 
+### JetBrains MPS
 ```JetBrains MPS
 a!localVariables(
   local!listOfMap: {
@@ -5258,6 +5534,7 @@ a!localVariables(
 )
 ```
 
+### Jinja
 ```Jinja
 a!localVariables(
   local!listOfMap: {
@@ -5277,6 +5554,7 @@ a!localVariables(
 )
 ```
 
+### Jison
 ```Jison
 a!localVariables(
   local!listOfMap: {
@@ -5296,6 +5574,7 @@ a!localVariables(
 )
 ```
 
+### Jison Lex
 ```Jison Lex
 a!localVariables(
   local!listOfMap: {
@@ -5315,6 +5594,7 @@ a!localVariables(
 )
 ```
 
+### Jolie
 ```Jolie
 a!localVariables(
   local!listOfMap: {
@@ -5334,6 +5614,7 @@ a!localVariables(
 )
 ```
 
+### Jsonnet
 ```Jsonnet
 a!localVariables(
   local!listOfMap: {
@@ -5353,6 +5634,7 @@ a!localVariables(
 )
 ```
 
+### Julia
 ```Julia
 a!localVariables(
   local!listOfMap: {
@@ -5372,6 +5654,7 @@ a!localVariables(
 )
 ```
 
+### Jupyter Notebook
 ```Jupyter Notebook
 a!localVariables(
   local!listOfMap: {
@@ -5391,6 +5674,7 @@ a!localVariables(
 )
 ```
 
+### KRL
 ```KRL
 a!localVariables(
   local!listOfMap: {
@@ -5410,6 +5694,7 @@ a!localVariables(
 )
 ```
 
+### Kaitai Struct
 ```Kaitai Struct
 a!localVariables(
   local!listOfMap: {
@@ -5429,6 +5714,7 @@ a!localVariables(
 )
 ```
 
+### KakouneScript
 ```KakouneScript
 a!localVariables(
   local!listOfMap: {
@@ -5448,6 +5734,7 @@ a!localVariables(
 )
 ```
 
+### KiCad Layout
 ```KiCad Layout
 a!localVariables(
   local!listOfMap: {
@@ -5467,6 +5754,7 @@ a!localVariables(
 )
 ```
 
+### KiCad Legacy Layout
 ```KiCad Legacy Layout
 a!localVariables(
   local!listOfMap: {
@@ -5486,6 +5774,7 @@ a!localVariables(
 )
 ```
 
+### KiCad Schematic
 ```KiCad Schematic
 a!localVariables(
   local!listOfMap: {
@@ -5505,6 +5794,7 @@ a!localVariables(
 )
 ```
 
+### Kit
 ```Kit
 a!localVariables(
   local!listOfMap: {
@@ -5524,6 +5814,7 @@ a!localVariables(
 )
 ```
 
+### Kotlin
 ```Kotlin
 a!localVariables(
   local!listOfMap: {
@@ -5543,6 +5834,7 @@ a!localVariables(
 )
 ```
 
+### Kusto
 ```Kusto
 a!localVariables(
   local!listOfMap: {
@@ -5562,6 +5854,7 @@ a!localVariables(
 )
 ```
 
+### LFE
 ```LFE
 a!localVariables(
   local!listOfMap: {
@@ -5581,6 +5874,7 @@ a!localVariables(
 )
 ```
 
+### LLVM
 ```LLVM
 a!localVariables(
   local!listOfMap: {
@@ -5600,6 +5894,7 @@ a!localVariables(
 )
 ```
 
+### LOLCODE
 ```LOLCODE
 a!localVariables(
   local!listOfMap: {
@@ -5619,6 +5914,7 @@ a!localVariables(
 )
 ```
 
+### LSL
 ```LSL
 a!localVariables(
   local!listOfMap: {
@@ -5638,6 +5934,7 @@ a!localVariables(
 )
 ```
 
+### LTspice Symbol
 ```LTspice Symbol
 a!localVariables(
   local!listOfMap: {
@@ -5657,6 +5954,7 @@ a!localVariables(
 )
 ```
 
+### LabVIEW
 ```LabVIEW
 a!localVariables(
   local!listOfMap: {
@@ -5676,6 +5974,7 @@ a!localVariables(
 )
 ```
 
+### Lark
 ```Lark
 a!localVariables(
   local!listOfMap: {
@@ -5695,6 +5994,7 @@ a!localVariables(
 )
 ```
 
+### Lasso
 ```Lasso
 a!localVariables(
   local!listOfMap: {
@@ -5714,6 +6014,7 @@ a!localVariables(
 )
 ```
 
+### Latte
 ```Latte
 a!localVariables(
   local!listOfMap: {
@@ -5733,6 +6034,7 @@ a!localVariables(
 )
 ```
 
+### Lean
 ```Lean
 a!localVariables(
   local!listOfMap: {
@@ -5752,6 +6054,7 @@ a!localVariables(
 )
 ```
 
+### Less
 ```Less
 a!localVariables(
   local!listOfMap: {
@@ -5771,6 +6074,7 @@ a!localVariables(
 )
 ```
 
+### Lex
 ```Lex
 a!localVariables(
   local!listOfMap: {
@@ -5790,6 +6094,7 @@ a!localVariables(
 )
 ```
 
+### LigoLANG
 ```LigoLANG
 a!localVariables(
   local!listOfMap: {
@@ -5809,6 +6114,7 @@ a!localVariables(
 )
 ```
 
+### LilyPond
 ```LilyPond
 a!localVariables(
   local!listOfMap: {
@@ -5828,6 +6134,7 @@ a!localVariables(
 )
 ```
 
+### Limbo
 ```Limbo
 a!localVariables(
   local!listOfMap: {
@@ -5847,6 +6154,7 @@ a!localVariables(
 )
 ```
 
+### Linker Script
 ```Linker Script
 a!localVariables(
   local!listOfMap: {
@@ -5866,6 +6174,7 @@ a!localVariables(
 )
 ```
 
+### Linux Kernel Module
 ```Linux Kernel Module
 a!localVariables(
   local!listOfMap: {
@@ -5885,6 +6194,7 @@ a!localVariables(
 )
 ```
 
+### Liquid
 ```Liquid
 a!localVariables(
   local!listOfMap: {
@@ -5904,6 +6214,7 @@ a!localVariables(
 )
 ```
 
+### Literate Agda
 ```Literate Agda
 a!localVariables(
   local!listOfMap: {
@@ -5923,6 +6234,7 @@ a!localVariables(
 )
 ```
 
+### Literate CoffeeScript
 ```Literate CoffeeScript
 a!localVariables(
   local!listOfMap: {
@@ -5942,6 +6254,7 @@ a!localVariables(
 )
 ```
 
+### Literate Haskell
 ```Literate Haskell
 a!localVariables(
   local!listOfMap: {
@@ -5961,6 +6274,7 @@ a!localVariables(
 )
 ```
 
+### LiveScript
 ```LiveScript
 a!localVariables(
   local!listOfMap: {
@@ -5980,6 +6294,7 @@ a!localVariables(
 )
 ```
 
+### Logos
 ```Logos
 a!localVariables(
   local!listOfMap: {
@@ -5999,6 +6314,7 @@ a!localVariables(
 )
 ```
 
+### Logtalk
 ```Logtalk
 a!localVariables(
   local!listOfMap: {
@@ -6018,6 +6334,7 @@ a!localVariables(
 )
 ```
 
+### LookML
 ```LookML
 a!localVariables(
   local!listOfMap: {
@@ -6037,6 +6354,7 @@ a!localVariables(
 )
 ```
 
+### LoomScript
 ```LoomScript
 a!localVariables(
   local!listOfMap: {
@@ -6056,6 +6374,7 @@ a!localVariables(
 )
 ```
 
+### Lua
 ```Lua
 a!localVariables(
   local!listOfMap: {
@@ -6075,6 +6394,7 @@ a!localVariables(
 )
 ```
 
+### M
 ```M
 a!localVariables(
   local!listOfMap: {
@@ -6094,6 +6414,7 @@ a!localVariables(
 )
 ```
 
+### M4
 ```M4
 a!localVariables(
   local!listOfMap: {
@@ -6113,6 +6434,7 @@ a!localVariables(
 )
 ```
 
+### M4Sugar
 ```M4Sugar
 a!localVariables(
   local!listOfMap: {
@@ -6132,6 +6454,7 @@ a!localVariables(
 )
 ```
 
+### MATLAB
 ```MATLAB
 a!localVariables(
   local!listOfMap: {
@@ -6151,6 +6474,7 @@ a!localVariables(
 )
 ```
 
+### MAXScript
 ```MAXScript
 a!localVariables(
   local!listOfMap: {
@@ -6170,6 +6494,7 @@ a!localVariables(
 )
 ```
 
+### MLIR
 ```MLIR
 a!localVariables(
   local!listOfMap: {
@@ -6189,6 +6514,7 @@ a!localVariables(
 )
 ```
 
+### MQL4
 ```MQL4
 a!localVariables(
   local!listOfMap: {
@@ -6208,6 +6534,7 @@ a!localVariables(
 )
 ```
 
+### MQL5
 ```MQL5
 a!localVariables(
   local!listOfMap: {
@@ -6227,6 +6554,7 @@ a!localVariables(
 )
 ```
 
+### MTML
 ```MTML
 a!localVariables(
   local!listOfMap: {
@@ -6246,6 +6574,7 @@ a!localVariables(
 )
 ```
 
+### MUF
 ```MUF
 a!localVariables(
   local!listOfMap: {
@@ -6265,6 +6594,7 @@ a!localVariables(
 )
 ```
 
+### Macaulay2
 ```Macaulay2
 a!localVariables(
   local!listOfMap: {
@@ -6284,6 +6614,7 @@ a!localVariables(
 )
 ```
 
+### Makefile
 ```Makefile
 a!localVariables(
   local!listOfMap: {
@@ -6303,6 +6634,7 @@ a!localVariables(
 )
 ```
 
+### Mako
 ```Mako
 a!localVariables(
   local!listOfMap: {
@@ -6322,6 +6654,7 @@ a!localVariables(
 )
 ```
 
+### Markdown
 ```Markdown
 a!localVariables(
   local!listOfMap: {
@@ -6341,6 +6674,7 @@ a!localVariables(
 )
 ```
 
+### Marko
 ```Marko
 a!localVariables(
   local!listOfMap: {
@@ -6360,6 +6694,7 @@ a!localVariables(
 )
 ```
 
+### Mask
 ```Mask
 a!localVariables(
   local!listOfMap: {
@@ -6379,6 +6714,7 @@ a!localVariables(
 )
 ```
 
+### Mathematica
 ```Mathematica
 a!localVariables(
   local!listOfMap: {
@@ -6398,6 +6734,7 @@ a!localVariables(
 )
 ```
 
+### Maven POM
 ```Maven POM
 a!localVariables(
   local!listOfMap: {
@@ -6417,6 +6754,7 @@ a!localVariables(
 )
 ```
 
+### Max
 ```Max
 a!localVariables(
   local!listOfMap: {
@@ -6436,6 +6774,7 @@ a!localVariables(
 )
 ```
 
+### Mercury
 ```Mercury
 a!localVariables(
   local!listOfMap: {
@@ -6455,6 +6794,7 @@ a!localVariables(
 )
 ```
 
+### Meson
 ```Meson
 a!localVariables(
   local!listOfMap: {
@@ -6474,6 +6814,7 @@ a!localVariables(
 )
 ```
 
+### Metal
 ```Metal
 a!localVariables(
   local!listOfMap: {
@@ -6493,6 +6834,7 @@ a!localVariables(
 )
 ```
 
+### Microsoft Developer Studio Project
 ```Microsoft Developer Studio Project
 a!localVariables(
   local!listOfMap: {
@@ -6512,6 +6854,7 @@ a!localVariables(
 )
 ```
 
+### Microsoft Visual Studio Solution
 ```Microsoft Visual Studio Solution
 a!localVariables(
   local!listOfMap: {
@@ -6531,6 +6874,7 @@ a!localVariables(
 )
 ```
 
+### MiniD
 ```MiniD
 a!localVariables(
   local!listOfMap: {
@@ -6550,6 +6894,7 @@ a!localVariables(
 )
 ```
 
+### MiniYAML
 ```MiniYAML
 a!localVariables(
   local!listOfMap: {
@@ -6569,6 +6914,7 @@ a!localVariables(
 )
 ```
 
+### Mint
 ```Mint
 a!localVariables(
   local!listOfMap: {
@@ -6588,6 +6934,7 @@ a!localVariables(
 )
 ```
 
+### Mirah
 ```Mirah
 a!localVariables(
   local!listOfMap: {
@@ -6607,6 +6954,7 @@ a!localVariables(
 )
 ```
 
+### Modelica
 ```Modelica
 a!localVariables(
   local!listOfMap: {
@@ -6626,6 +6974,7 @@ a!localVariables(
 )
 ```
 
+### Modula-2
 ```Modula-2
 a!localVariables(
   local!listOfMap: {
@@ -6645,6 +6994,7 @@ a!localVariables(
 )
 ```
 
+### Modula-3
 ```Modula-3
 a!localVariables(
   local!listOfMap: {
@@ -6664,6 +7014,7 @@ a!localVariables(
 )
 ```
 
+### Module Management System
 ```Module Management System
 a!localVariables(
   local!listOfMap: {
@@ -6683,6 +7034,7 @@ a!localVariables(
 )
 ```
 
+### Monkey
 ```Monkey
 a!localVariables(
   local!listOfMap: {
@@ -6702,6 +7054,7 @@ a!localVariables(
 )
 ```
 
+### Monkey C
 ```Monkey C
 a!localVariables(
   local!listOfMap: {
@@ -6721,6 +7074,7 @@ a!localVariables(
 )
 ```
 
+### Moocode
 ```Moocode
 a!localVariables(
   local!listOfMap: {
@@ -6740,6 +7094,7 @@ a!localVariables(
 )
 ```
 
+### MoonScript
 ```MoonScript
 a!localVariables(
   local!listOfMap: {
@@ -6759,6 +7114,7 @@ a!localVariables(
 )
 ```
 
+### Motoko
 ```Motoko
 a!localVariables(
   local!listOfMap: {
@@ -6778,6 +7134,7 @@ a!localVariables(
 )
 ```
 
+### Motorola 68K Assembly
 ```Motorola 68K Assembly
 a!localVariables(
   local!listOfMap: {
@@ -6797,6 +7154,7 @@ a!localVariables(
 )
 ```
 
+### Move
 ```Move
 a!localVariables(
   local!listOfMap: {
@@ -6816,6 +7174,7 @@ a!localVariables(
 )
 ```
 
+### Muse
 ```Muse
 a!localVariables(
   local!listOfMap: {
@@ -6835,6 +7194,7 @@ a!localVariables(
 )
 ```
 
+### Mustache
 ```Mustache
 a!localVariables(
   local!listOfMap: {
@@ -6854,6 +7214,7 @@ a!localVariables(
 )
 ```
 
+### Myghty
 ```Myghty
 a!localVariables(
   local!listOfMap: {
@@ -6873,6 +7234,7 @@ a!localVariables(
 )
 ```
 
+### NASL
 ```NASL
 a!localVariables(
   local!listOfMap: {
@@ -6892,6 +7254,7 @@ a!localVariables(
 )
 ```
 
+### NCL
 ```NCL
 a!localVariables(
   local!listOfMap: {
@@ -6911,6 +7274,7 @@ a!localVariables(
 )
 ```
 
+### NEON
 ```NEON
 a!localVariables(
   local!listOfMap: {
@@ -6930,6 +7294,7 @@ a!localVariables(
 )
 ```
 
+### NL
 ```NL
 a!localVariables(
   local!listOfMap: {
@@ -6949,6 +7314,7 @@ a!localVariables(
 )
 ```
 
+### NPM Config
 ```NPM Config
 a!localVariables(
   local!listOfMap: {
@@ -6968,6 +7334,7 @@ a!localVariables(
 )
 ```
 
+### NSIS
 ```NSIS
 a!localVariables(
   local!listOfMap: {
@@ -6987,6 +7354,7 @@ a!localVariables(
 )
 ```
 
+### NWScript
 ```NWScript
 a!localVariables(
   local!listOfMap: {
@@ -7006,6 +7374,7 @@ a!localVariables(
 )
 ```
 
+### Nasal
 ```Nasal
 a!localVariables(
   local!listOfMap: {
@@ -7025,6 +7394,7 @@ a!localVariables(
 )
 ```
 
+### Nearley
 ```Nearley
 a!localVariables(
   local!listOfMap: {
@@ -7044,6 +7414,7 @@ a!localVariables(
 )
 ```
 
+### Nemerle
 ```Nemerle
 a!localVariables(
   local!listOfMap: {
@@ -7063,6 +7434,7 @@ a!localVariables(
 )
 ```
 
+### NetLinx
 ```NetLinx
 a!localVariables(
   local!listOfMap: {
@@ -7082,6 +7454,7 @@ a!localVariables(
 )
 ```
 
+### NetLinx+ERB
 ```NetLinx+ERB
 a!localVariables(
   local!listOfMap: {
@@ -7101,6 +7474,7 @@ a!localVariables(
 )
 ```
 
+### NetLogo
 ```NetLogo
 a!localVariables(
   local!listOfMap: {
@@ -7120,6 +7494,7 @@ a!localVariables(
 )
 ```
 
+### NewLisp
 ```NewLisp
 a!localVariables(
   local!listOfMap: {
@@ -7139,6 +7514,7 @@ a!localVariables(
 )
 ```
 
+### Nextflow
 ```Nextflow
 a!localVariables(
   local!listOfMap: {
@@ -7158,6 +7534,7 @@ a!localVariables(
 )
 ```
 
+### Nginx
 ```Nginx
 a!localVariables(
   local!listOfMap: {
@@ -7177,6 +7554,7 @@ a!localVariables(
 )
 ```
 
+### Nim
 ```Nim
 a!localVariables(
   local!listOfMap: {
@@ -7196,6 +7574,7 @@ a!localVariables(
 )
 ```
 
+### Ninja
 ```Ninja
 a!localVariables(
   local!listOfMap: {
@@ -7215,6 +7594,7 @@ a!localVariables(
 )
 ```
 
+### Nit
 ```Nit
 a!localVariables(
   local!listOfMap: {
@@ -7234,6 +7614,7 @@ a!localVariables(
 )
 ```
 
+### Nix
 ```Nix
 a!localVariables(
   local!listOfMap: {
@@ -7253,6 +7634,7 @@ a!localVariables(
 )
 ```
 
+### Nu
 ```Nu
 a!localVariables(
   local!listOfMap: {
@@ -7272,6 +7654,7 @@ a!localVariables(
 )
 ```
 
+### NumPy
 ```NumPy
 a!localVariables(
   local!listOfMap: {
@@ -7291,6 +7674,7 @@ a!localVariables(
 )
 ```
 
+### Nunjucks
 ```Nunjucks
 a!localVariables(
   local!listOfMap: {
@@ -7310,6 +7694,7 @@ a!localVariables(
 )
 ```
 
+### OCaml
 ```OCaml
 a!localVariables(
   local!listOfMap: {
@@ -7329,6 +7714,7 @@ a!localVariables(
 )
 ```
 
+### ObjDump
 ```ObjDump
 a!localVariables(
   local!listOfMap: {
@@ -7348,6 +7734,7 @@ a!localVariables(
 )
 ```
 
+### Object Data Instance Notation
 ```Object Data Instance Notation
 a!localVariables(
   local!listOfMap: {
@@ -7367,6 +7754,7 @@ a!localVariables(
 )
 ```
 
+### ObjectScript
 ```ObjectScript
 a!localVariables(
   local!listOfMap: {
@@ -7386,6 +7774,7 @@ a!localVariables(
 )
 ```
 
+### Objective-C
 ```Objective-C
 a!localVariables(
   local!listOfMap: {
@@ -7405,6 +7794,7 @@ a!localVariables(
 )
 ```
 
+### Objective-C++
 ```Objective-C++
 a!localVariables(
   local!listOfMap: {
@@ -7424,6 +7814,7 @@ a!localVariables(
 )
 ```
 
+### Objective-J
 ```Objective-J
 a!localVariables(
   local!listOfMap: {
@@ -7443,6 +7834,7 @@ a!localVariables(
 )
 ```
 
+### Odin
 ```Odin
 a!localVariables(
   local!listOfMap: {
@@ -7462,6 +7854,7 @@ a!localVariables(
 )
 ```
 
+### Omgrofl
 ```Omgrofl
 a!localVariables(
   local!listOfMap: {
@@ -7481,6 +7874,7 @@ a!localVariables(
 )
 ```
 
+### Opa
 ```Opa
 a!localVariables(
   local!listOfMap: {
@@ -7500,6 +7894,7 @@ a!localVariables(
 )
 ```
 
+### Opal
 ```Opal
 a!localVariables(
   local!listOfMap: {
@@ -7519,6 +7914,7 @@ a!localVariables(
 )
 ```
 
+### Open Policy Agent
 ```Open Policy Agent
 a!localVariables(
   local!listOfMap: {
@@ -7538,6 +7934,7 @@ a!localVariables(
 )
 ```
 
+### OpenCL
 ```OpenCL
 a!localVariables(
   local!listOfMap: {
@@ -7557,6 +7954,7 @@ a!localVariables(
 )
 ```
 
+### OpenEdge ABL
 ```OpenEdge ABL
 a!localVariables(
   local!listOfMap: {
@@ -7576,6 +7974,7 @@ a!localVariables(
 )
 ```
 
+### OpenQASM
 ```OpenQASM
 a!localVariables(
   local!listOfMap: {
@@ -7595,6 +7994,7 @@ a!localVariables(
 )
 ```
 
+### OpenRC runscript
 ```OpenRC runscript
 a!localVariables(
   local!listOfMap: {
@@ -7614,6 +8014,7 @@ a!localVariables(
 )
 ```
 
+### OpenSCAD
 ```OpenSCAD
 a!localVariables(
   local!listOfMap: {
@@ -7633,6 +8034,7 @@ a!localVariables(
 )
 ```
 
+### OpenStep Property List
 ```OpenStep Property List
 a!localVariables(
   local!listOfMap: {
@@ -7652,6 +8054,7 @@ a!localVariables(
 )
 ```
 
+### OpenType Feature File
 ```OpenType Feature File
 a!localVariables(
   local!listOfMap: {
@@ -7671,6 +8074,7 @@ a!localVariables(
 )
 ```
 
+### Org
 ```Org
 a!localVariables(
   local!listOfMap: {
@@ -7690,6 +8094,7 @@ a!localVariables(
 )
 ```
 
+### Ox
 ```Ox
 a!localVariables(
   local!listOfMap: {
@@ -7709,6 +8114,7 @@ a!localVariables(
 )
 ```
 
+### Oxygene
 ```Oxygene
 a!localVariables(
   local!listOfMap: {
@@ -7728,6 +8134,7 @@ a!localVariables(
 )
 ```
 
+### Oz
 ```Oz
 a!localVariables(
   local!listOfMap: {
@@ -7747,6 +8154,7 @@ a!localVariables(
 )
 ```
 
+### P4
 ```P4
 a!localVariables(
   local!listOfMap: {
@@ -7766,6 +8174,7 @@ a!localVariables(
 )
 ```
 
+### PEG.js
 ```PEG.js
 a!localVariables(
   local!listOfMap: {
@@ -7785,6 +8194,7 @@ a!localVariables(
 )
 ```
 
+### PHP
 ```PHP
 a!localVariables(
   local!listOfMap: {
@@ -7804,6 +8214,7 @@ a!localVariables(
 )
 ```
 
+### PLSQL
 ```PLSQL
 a!localVariables(
   local!listOfMap: {
@@ -7823,6 +8234,7 @@ a!localVariables(
 )
 ```
 
+### PLpgSQL
 ```PLpgSQL
 a!localVariables(
   local!listOfMap: {
@@ -7842,6 +8254,7 @@ a!localVariables(
 )
 ```
 
+### POV-Ray SDL
 ```POV-Ray SDL
 a!localVariables(
   local!listOfMap: {
@@ -7861,6 +8274,7 @@ a!localVariables(
 )
 ```
 
+### Pan
 ```Pan
 a!localVariables(
   local!listOfMap: {
@@ -7880,6 +8294,7 @@ a!localVariables(
 )
 ```
 
+### Papyrus
 ```Papyrus
 a!localVariables(
   local!listOfMap: {
@@ -7899,6 +8314,7 @@ a!localVariables(
 )
 ```
 
+### Parrot
 ```Parrot
 a!localVariables(
   local!listOfMap: {
@@ -7918,6 +8334,7 @@ a!localVariables(
 )
 ```
 
+### Parrot Assembly
 ```Parrot Assembly
 a!localVariables(
   local!listOfMap: {
@@ -7937,6 +8354,7 @@ a!localVariables(
 )
 ```
 
+### Parrot Internal Representation
 ```Parrot Internal Representation
 a!localVariables(
   local!listOfMap: {
@@ -7956,6 +8374,7 @@ a!localVariables(
 )
 ```
 
+### Pascal
 ```Pascal
 a!localVariables(
   local!listOfMap: {
@@ -7975,6 +8394,7 @@ a!localVariables(
 )
 ```
 
+### Pawn
 ```Pawn
 a!localVariables(
   local!listOfMap: {
@@ -7994,6 +8414,7 @@ a!localVariables(
 )
 ```
 
+### Pep8
 ```Pep8
 a!localVariables(
   local!listOfMap: {
@@ -8013,6 +8434,7 @@ a!localVariables(
 )
 ```
 
+### Perl
 ```Perl
 a!localVariables(
   local!listOfMap: {
@@ -8032,6 +8454,7 @@ a!localVariables(
 )
 ```
 
+### Pic
 ```Pic
 a!localVariables(
   local!listOfMap: {
@@ -8051,6 +8474,7 @@ a!localVariables(
 )
 ```
 
+### Pickle
 ```Pickle
 a!localVariables(
   local!listOfMap: {
@@ -8070,6 +8494,7 @@ a!localVariables(
 )
 ```
 
+### PicoLisp
 ```PicoLisp
 a!localVariables(
   local!listOfMap: {
@@ -8089,6 +8514,7 @@ a!localVariables(
 )
 ```
 
+### PigLatin
 ```PigLatin
 a!localVariables(
   local!listOfMap: {
@@ -8108,6 +8534,7 @@ a!localVariables(
 )
 ```
 
+### Pike
 ```Pike
 a!localVariables(
   local!listOfMap: {
@@ -8127,6 +8554,7 @@ a!localVariables(
 )
 ```
 
+### PlantUML
 ```PlantUML
 a!localVariables(
   local!listOfMap: {
@@ -8146,6 +8574,7 @@ a!localVariables(
 )
 ```
 
+### Pod
 ```Pod
 a!localVariables(
   local!listOfMap: {
@@ -8165,6 +8594,7 @@ a!localVariables(
 )
 ```
 
+### Pod 6
 ```Pod 6
 a!localVariables(
   local!listOfMap: {
@@ -8184,6 +8614,7 @@ a!localVariables(
 )
 ```
 
+### PogoScript
 ```PogoScript
 a!localVariables(
   local!listOfMap: {
@@ -8203,6 +8634,7 @@ a!localVariables(
 )
 ```
 
+### Pony
 ```Pony
 a!localVariables(
   local!listOfMap: {
@@ -8222,6 +8654,7 @@ a!localVariables(
 )
 ```
 
+### Portugol
 ```Portugol
 a!localVariables(
   local!listOfMap: {
@@ -8241,6 +8674,7 @@ a!localVariables(
 )
 ```
 
+### PostCSS
 ```PostCSS
 a!localVariables(
   local!listOfMap: {
@@ -8260,6 +8694,7 @@ a!localVariables(
 )
 ```
 
+### PostScript
 ```PostScript
 a!localVariables(
   local!listOfMap: {
@@ -8279,6 +8714,7 @@ a!localVariables(
 )
 ```
 
+### PowerBuilder
 ```PowerBuilder
 a!localVariables(
   local!listOfMap: {
@@ -8298,6 +8734,7 @@ a!localVariables(
 )
 ```
 
+### PowerShell
 ```PowerShell
 a!localVariables(
   local!listOfMap: {
@@ -8317,6 +8754,7 @@ a!localVariables(
 )
 ```
 
+### Prisma
 ```Prisma
 a!localVariables(
   local!listOfMap: {
@@ -8336,6 +8774,7 @@ a!localVariables(
 )
 ```
 
+### Processing
 ```Processing
 a!localVariables(
   local!listOfMap: {
@@ -8355,6 +8794,7 @@ a!localVariables(
 )
 ```
 
+### Procfile
 ```Procfile
 a!localVariables(
   local!listOfMap: {
@@ -8374,6 +8814,7 @@ a!localVariables(
 )
 ```
 
+### Proguard
 ```Proguard
 a!localVariables(
   local!listOfMap: {
@@ -8393,6 +8834,7 @@ a!localVariables(
 )
 ```
 
+### Prolog
 ```Prolog
 a!localVariables(
   local!listOfMap: {
@@ -8412,6 +8854,7 @@ a!localVariables(
 )
 ```
 
+### Promela
 ```Promela
 a!localVariables(
   local!listOfMap: {
@@ -8431,6 +8874,7 @@ a!localVariables(
 )
 ```
 
+### Propeller Spin
 ```Propeller Spin
 a!localVariables(
   local!listOfMap: {
@@ -8450,6 +8894,7 @@ a!localVariables(
 )
 ```
 
+### Protocol Buffer
 ```Protocol Buffer
 a!localVariables(
   local!listOfMap: {
@@ -8469,6 +8914,7 @@ a!localVariables(
 )
 ```
 
+### Protocol Buffer Text Format
 ```Protocol Buffer Text Format
 a!localVariables(
   local!listOfMap: {
@@ -8488,6 +8934,7 @@ a!localVariables(
 )
 ```
 
+### Public Key
 ```Public Key
 a!localVariables(
   local!listOfMap: {
@@ -8507,6 +8954,7 @@ a!localVariables(
 )
 ```
 
+### Pug
 ```Pug
 a!localVariables(
   local!listOfMap: {
@@ -8526,6 +8974,7 @@ a!localVariables(
 )
 ```
 
+### Puppet
 ```Puppet
 a!localVariables(
   local!listOfMap: {
@@ -8545,6 +8994,7 @@ a!localVariables(
 )
 ```
 
+### Pure Data
 ```Pure Data
 a!localVariables(
   local!listOfMap: {
@@ -8564,6 +9014,7 @@ a!localVariables(
 )
 ```
 
+### PureBasic
 ```PureBasic
 a!localVariables(
   local!listOfMap: {
@@ -8583,6 +9034,7 @@ a!localVariables(
 )
 ```
 
+### PureScript
 ```PureScript
 a!localVariables(
   local!listOfMap: {
@@ -8602,6 +9054,7 @@ a!localVariables(
 )
 ```
 
+### Python
 ```Python
 a!localVariables(
   local!listOfMap: {
@@ -8621,6 +9074,7 @@ a!localVariables(
 )
 ```
 
+### Python console
 ```Python console
 a!localVariables(
   local!listOfMap: {
@@ -8640,6 +9094,7 @@ a!localVariables(
 )
 ```
 
+### Python traceback
 ```Python traceback
 a!localVariables(
   local!listOfMap: {
@@ -8659,6 +9114,7 @@ a!localVariables(
 )
 ```
 
+### Q#
 ```Q#
 a!localVariables(
   local!listOfMap: {
@@ -8678,6 +9134,7 @@ a!localVariables(
 )
 ```
 
+### QML
 ```QML
 a!localVariables(
   local!listOfMap: {
@@ -8697,6 +9154,7 @@ a!localVariables(
 )
 ```
 
+### QMake
 ```QMake
 a!localVariables(
   local!listOfMap: {
@@ -8716,6 +9174,7 @@ a!localVariables(
 )
 ```
 
+### Qt Script
 ```Qt Script
 a!localVariables(
   local!listOfMap: {
@@ -8735,6 +9194,7 @@ a!localVariables(
 )
 ```
 
+### Quake
 ```Quake
 a!localVariables(
   local!listOfMap: {
@@ -8754,6 +9214,7 @@ a!localVariables(
 )
 ```
 
+### R
 ```R
 a!localVariables(
   local!listOfMap: {
@@ -8773,6 +9234,7 @@ a!localVariables(
 )
 ```
 
+### RAML
 ```RAML
 a!localVariables(
   local!listOfMap: {
@@ -8792,6 +9254,7 @@ a!localVariables(
 )
 ```
 
+### RDoc
 ```RDoc
 a!localVariables(
   local!listOfMap: {
@@ -8811,6 +9274,7 @@ a!localVariables(
 )
 ```
 
+### REALbasic
 ```REALbasic
 a!localVariables(
   local!listOfMap: {
@@ -8830,6 +9294,7 @@ a!localVariables(
 )
 ```
 
+### REXX
 ```REXX
 a!localVariables(
   local!listOfMap: {
@@ -8849,6 +9314,7 @@ a!localVariables(
 )
 ```
 
+### RMarkdown
 ```RMarkdown
 a!localVariables(
   local!listOfMap: {
@@ -8868,6 +9334,7 @@ a!localVariables(
 )
 ```
 
+### RPC
 ```RPC
 a!localVariables(
   local!listOfMap: {
@@ -8887,6 +9354,7 @@ a!localVariables(
 )
 ```
 
+### RPGLE
 ```RPGLE
 a!localVariables(
   local!listOfMap: {
@@ -8906,6 +9374,7 @@ a!localVariables(
 )
 ```
 
+### RPM Spec
 ```RPM Spec
 a!localVariables(
   local!listOfMap: {
@@ -8925,6 +9394,7 @@ a!localVariables(
 )
 ```
 
+### RUNOFF
 ```RUNOFF
 a!localVariables(
   local!listOfMap: {
@@ -8944,6 +9414,7 @@ a!localVariables(
 )
 ```
 
+### Racket
 ```Racket
 a!localVariables(
   local!listOfMap: {
@@ -8963,6 +9434,7 @@ a!localVariables(
 )
 ```
 
+### Ragel
 ```Ragel
 a!localVariables(
   local!listOfMap: {
@@ -8982,6 +9454,7 @@ a!localVariables(
 )
 ```
 
+### Raku
 ```Raku
 a!localVariables(
   local!listOfMap: {
@@ -9001,6 +9474,7 @@ a!localVariables(
 )
 ```
 
+### Rascal
 ```Rascal
 a!localVariables(
   local!listOfMap: {
@@ -9020,6 +9494,7 @@ a!localVariables(
 )
 ```
 
+### Raw token data
 ```Raw token data
 a!localVariables(
   local!listOfMap: {
@@ -9039,6 +9514,7 @@ a!localVariables(
 )
 ```
 
+### ReScript
 ```ReScript
 a!localVariables(
   local!listOfMap: {
@@ -9058,6 +9534,7 @@ a!localVariables(
 )
 ```
 
+### Readline Config
 ```Readline Config
 a!localVariables(
   local!listOfMap: {
@@ -9077,6 +9554,7 @@ a!localVariables(
 )
 ```
 
+### Reason
 ```Reason
 a!localVariables(
   local!listOfMap: {
@@ -9096,6 +9574,7 @@ a!localVariables(
 )
 ```
 
+### ReasonLIGO
 ```ReasonLIGO
 a!localVariables(
   local!listOfMap: {
@@ -9115,6 +9594,7 @@ a!localVariables(
 )
 ```
 
+### Rebol
 ```Rebol
 a!localVariables(
   local!listOfMap: {
@@ -9134,6 +9614,7 @@ a!localVariables(
 )
 ```
 
+### Record Jar
 ```Record Jar
 a!localVariables(
   local!listOfMap: {
@@ -9153,6 +9634,7 @@ a!localVariables(
 )
 ```
 
+### Red
 ```Red
 a!localVariables(
   local!listOfMap: {
@@ -9172,6 +9654,7 @@ a!localVariables(
 )
 ```
 
+### Redcode
 ```Redcode
 a!localVariables(
   local!listOfMap: {
@@ -9191,6 +9674,7 @@ a!localVariables(
 )
 ```
 
+### Redirect Rules
 ```Redirect Rules
 a!localVariables(
   local!listOfMap: {
@@ -9210,6 +9694,7 @@ a!localVariables(
 )
 ```
 
+### Regular Expression
 ```Regular Expression
 a!localVariables(
   local!listOfMap: {
@@ -9229,6 +9714,7 @@ a!localVariables(
 )
 ```
 
+### Ren'Py
 ```Ren'Py
 a!localVariables(
   local!listOfMap: {
@@ -9248,6 +9734,7 @@ a!localVariables(
 )
 ```
 
+### RenderScript
 ```RenderScript
 a!localVariables(
   local!listOfMap: {
@@ -9267,6 +9754,7 @@ a!localVariables(
 )
 ```
 
+### Rich Text Format
 ```Rich Text Format
 a!localVariables(
   local!listOfMap: {
@@ -9286,6 +9774,7 @@ a!localVariables(
 )
 ```
 
+### Ring
 ```Ring
 a!localVariables(
   local!listOfMap: {
@@ -9305,6 +9794,7 @@ a!localVariables(
 )
 ```
 
+### Riot
 ```Riot
 a!localVariables(
   local!listOfMap: {
@@ -9324,6 +9814,7 @@ a!localVariables(
 )
 ```
 
+### RobotFramework
 ```RobotFramework
 a!localVariables(
   local!listOfMap: {
@@ -9343,6 +9834,7 @@ a!localVariables(
 )
 ```
 
+### Roff
 ```Roff
 a!localVariables(
   local!listOfMap: {
@@ -9362,6 +9854,7 @@ a!localVariables(
 )
 ```
 
+### Roff Manpage
 ```Roff Manpage
 a!localVariables(
   local!listOfMap: {
@@ -9381,6 +9874,7 @@ a!localVariables(
 )
 ```
 
+### Rouge
 ```Rouge
 a!localVariables(
   local!listOfMap: {
@@ -9400,6 +9894,7 @@ a!localVariables(
 )
 ```
 
+### RouterOS Script
 ```RouterOS Script
 a!localVariables(
   local!listOfMap: {
@@ -9419,6 +9914,7 @@ a!localVariables(
 )
 ```
 
+### Ruby
 ```Ruby
 a!localVariables(
   local!listOfMap: {
@@ -9438,6 +9934,7 @@ a!localVariables(
 )
 ```
 
+### Rust
 ```Rust
 a!localVariables(
   local!listOfMap: {
@@ -9457,6 +9954,7 @@ a!localVariables(
 )
 ```
 
+### SAS
 ```SAS
 a!localVariables(
   local!listOfMap: {
@@ -9476,6 +9974,7 @@ a!localVariables(
 )
 ```
 
+### SCSS
 ```SCSS
 a!localVariables(
   local!listOfMap: {
@@ -9495,6 +9994,7 @@ a!localVariables(
 )
 ```
 
+### SELinux Policy
 ```SELinux Policy
 a!localVariables(
   local!listOfMap: {
@@ -9514,6 +10014,7 @@ a!localVariables(
 )
 ```
 
+### SMT
 ```SMT
 a!localVariables(
   local!listOfMap: {
@@ -9533,6 +10034,7 @@ a!localVariables(
 )
 ```
 
+### SPARQL
 ```SPARQL
 a!localVariables(
   local!listOfMap: {
@@ -9552,6 +10054,7 @@ a!localVariables(
 )
 ```
 
+### SQF
 ```SQF
 a!localVariables(
   local!listOfMap: {
@@ -9571,6 +10074,7 @@ a!localVariables(
 )
 ```
 
+### SQL
 ```SQL
 a!localVariables(
   local!listOfMap: {
@@ -9590,6 +10094,7 @@ a!localVariables(
 )
 ```
 
+### SQLPL
 ```SQLPL
 a!localVariables(
   local!listOfMap: {
@@ -9609,6 +10114,7 @@ a!localVariables(
 )
 ```
 
+### SRecode Template
 ```SRecode Template
 a!localVariables(
   local!listOfMap: {
@@ -9628,6 +10134,7 @@ a!localVariables(
 )
 ```
 
+### SSH Config
 ```SSH Config
 a!localVariables(
   local!listOfMap: {
@@ -9647,6 +10154,7 @@ a!localVariables(
 )
 ```
 
+### STAR
 ```STAR
 a!localVariables(
   local!listOfMap: {
@@ -9666,6 +10174,7 @@ a!localVariables(
 )
 ```
 
+### STL
 ```STL
 a!localVariables(
   local!listOfMap: {
@@ -9685,6 +10194,7 @@ a!localVariables(
 )
 ```
 
+### STON
 ```STON
 a!localVariables(
   local!listOfMap: {
@@ -9704,6 +10214,7 @@ a!localVariables(
 )
 ```
 
+### SVG
 ```SVG
 a!localVariables(
   local!listOfMap: {
@@ -9723,6 +10234,7 @@ a!localVariables(
 )
 ```
 
+### SWIG
 ```SWIG
 a!localVariables(
   local!listOfMap: {
@@ -9742,6 +10254,7 @@ a!localVariables(
 )
 ```
 
+### Sage
 ```Sage
 a!localVariables(
   local!listOfMap: {
@@ -9761,6 +10274,7 @@ a!localVariables(
 )
 ```
 
+### SaltStack
 ```SaltStack
 a!localVariables(
   local!listOfMap: {
@@ -9780,6 +10294,7 @@ a!localVariables(
 )
 ```
 
+### Sass
 ```Sass
 a!localVariables(
   local!listOfMap: {
@@ -9799,6 +10314,7 @@ a!localVariables(
 )
 ```
 
+### Scala
 ```Scala
 a!localVariables(
   local!listOfMap: {
@@ -9818,6 +10334,7 @@ a!localVariables(
 )
 ```
 
+### Scaml
 ```Scaml
 a!localVariables(
   local!listOfMap: {
@@ -9837,6 +10354,7 @@ a!localVariables(
 )
 ```
 
+### Scheme
 ```Scheme
 a!localVariables(
   local!listOfMap: {
@@ -9856,6 +10374,7 @@ a!localVariables(
 )
 ```
 
+### Scilab
 ```Scilab
 a!localVariables(
   local!listOfMap: {
@@ -9875,6 +10394,7 @@ a!localVariables(
 )
 ```
 
+### Self
 ```Self
 a!localVariables(
   local!listOfMap: {
@@ -9894,6 +10414,7 @@ a!localVariables(
 )
 ```
 
+### ShaderLab
 ```ShaderLab
 a!localVariables(
   local!listOfMap: {
@@ -9913,6 +10434,7 @@ a!localVariables(
 )
 ```
 
+### Shell
 ```Shell
 a!localVariables(
   local!listOfMap: {
@@ -9932,6 +10454,7 @@ a!localVariables(
 )
 ```
 
+### ShellCheck Config
 ```ShellCheck Config
 a!localVariables(
   local!listOfMap: {
@@ -9951,6 +10474,7 @@ a!localVariables(
 )
 ```
 
+### ShellSession
 ```ShellSession
 a!localVariables(
   local!listOfMap: {
@@ -9970,6 +10494,7 @@ a!localVariables(
 )
 ```
 
+### Shen
 ```Shen
 a!localVariables(
   local!listOfMap: {
@@ -9989,6 +10514,7 @@ a!localVariables(
 )
 ```
 
+### Sieve
 ```Sieve
 a!localVariables(
   local!listOfMap: {
@@ -10008,6 +10534,7 @@ a!localVariables(
 )
 ```
 
+### Singularity
 ```Singularity
 a!localVariables(
   local!listOfMap: {
@@ -10027,6 +10554,7 @@ a!localVariables(
 )
 ```
 
+### Slash
 ```Slash
 a!localVariables(
   local!listOfMap: {
@@ -10046,6 +10574,7 @@ a!localVariables(
 )
 ```
 
+### Slice
 ```Slice
 a!localVariables(
   local!listOfMap: {
@@ -10065,6 +10594,7 @@ a!localVariables(
 )
 ```
 
+### Slim
 ```Slim
 a!localVariables(
   local!listOfMap: {
@@ -10084,6 +10614,7 @@ a!localVariables(
 )
 ```
 
+### SmPL
 ```SmPL
 a!localVariables(
   local!listOfMap: {
@@ -10103,6 +10634,7 @@ a!localVariables(
 )
 ```
 
+### Smali
 ```Smali
 a!localVariables(
   local!listOfMap: {
@@ -10122,6 +10654,7 @@ a!localVariables(
 )
 ```
 
+### Smalltalk
 ```Smalltalk
 a!localVariables(
   local!listOfMap: {
@@ -10141,6 +10674,7 @@ a!localVariables(
 )
 ```
 
+### Smarty
 ```Smarty
 a!localVariables(
   local!listOfMap: {
@@ -10160,6 +10694,7 @@ a!localVariables(
 )
 ```
 
+### Solidity
 ```Solidity
 a!localVariables(
   local!listOfMap: {
@@ -10179,6 +10714,7 @@ a!localVariables(
 )
 ```
 
+### Soong
 ```Soong
 a!localVariables(
   local!listOfMap: {
@@ -10198,6 +10734,7 @@ a!localVariables(
 )
 ```
 
+### SourcePawn
 ```SourcePawn
 a!localVariables(
   local!listOfMap: {
@@ -10217,6 +10754,7 @@ a!localVariables(
 )
 ```
 
+### Spline Font Database
 ```Spline Font Database
 a!localVariables(
   local!listOfMap: {
@@ -10236,6 +10774,7 @@ a!localVariables(
 )
 ```
 
+### Squirrel
 ```Squirrel
 a!localVariables(
   local!listOfMap: {
@@ -10255,6 +10794,7 @@ a!localVariables(
 )
 ```
 
+### Stan
 ```Stan
 a!localVariables(
   local!listOfMap: {
@@ -10274,6 +10814,7 @@ a!localVariables(
 )
 ```
 
+### Standard ML
 ```Standard ML
 a!localVariables(
   local!listOfMap: {
@@ -10293,6 +10834,7 @@ a!localVariables(
 )
 ```
 
+### Starlark
 ```Starlark
 a!localVariables(
   local!listOfMap: {
@@ -10312,6 +10854,7 @@ a!localVariables(
 )
 ```
 
+### Stata
 ```Stata
 a!localVariables(
   local!listOfMap: {
@@ -10331,6 +10874,7 @@ a!localVariables(
 )
 ```
 
+### StringTemplate
 ```StringTemplate
 a!localVariables(
   local!listOfMap: {
@@ -10350,6 +10894,7 @@ a!localVariables(
 )
 ```
 
+### Stylus
 ```Stylus
 a!localVariables(
   local!listOfMap: {
@@ -10369,6 +10914,7 @@ a!localVariables(
 )
 ```
 
+### SubRip Text
 ```SubRip Text
 a!localVariables(
   local!listOfMap: {
@@ -10388,6 +10934,7 @@ a!localVariables(
 )
 ```
 
+### SugarSS
 ```SugarSS
 a!localVariables(
   local!listOfMap: {
@@ -10407,6 +10954,7 @@ a!localVariables(
 )
 ```
 
+### SuperCollider
 ```SuperCollider
 a!localVariables(
   local!listOfMap: {
@@ -10426,6 +10974,7 @@ a!localVariables(
 )
 ```
 
+### Svelte
 ```Svelte
 a!localVariables(
   local!listOfMap: {
@@ -10445,6 +10994,7 @@ a!localVariables(
 )
 ```
 
+### Swift
 ```Swift
 a!localVariables(
   local!listOfMap: {
@@ -10464,6 +11014,7 @@ a!localVariables(
 )
 ```
 
+### SystemVerilog
 ```SystemVerilog
 a!localVariables(
   local!listOfMap: {
@@ -10483,6 +11034,7 @@ a!localVariables(
 )
 ```
 
+### TI Program
 ```TI Program
 a!localVariables(
   local!listOfMap: {
@@ -10502,6 +11054,7 @@ a!localVariables(
 )
 ```
 
+### TLA
 ```TLA
 a!localVariables(
   local!listOfMap: {
@@ -10521,6 +11074,7 @@ a!localVariables(
 )
 ```
 
+### TOML
 ```TOML
 a!localVariables(
   local!listOfMap: {
@@ -10540,6 +11094,7 @@ a!localVariables(
 )
 ```
 
+### TSQL
 ```TSQL
 a!localVariables(
   local!listOfMap: {
@@ -10559,6 +11114,7 @@ a!localVariables(
 )
 ```
 
+### TSV
 ```TSV
 a!localVariables(
   local!listOfMap: {
@@ -10578,6 +11134,7 @@ a!localVariables(
 )
 ```
 
+### TSX
 ```TSX
 a!localVariables(
   local!listOfMap: {
@@ -10597,6 +11154,7 @@ a!localVariables(
 )
 ```
 
+### TXL
 ```TXL
 a!localVariables(
   local!listOfMap: {
@@ -10616,6 +11174,7 @@ a!localVariables(
 )
 ```
 
+### Talon
 ```Talon
 a!localVariables(
   local!listOfMap: {
@@ -10635,6 +11194,7 @@ a!localVariables(
 )
 ```
 
+### Tcl
 ```Tcl
 a!localVariables(
   local!listOfMap: {
@@ -10654,6 +11214,7 @@ a!localVariables(
 )
 ```
 
+### Tcsh
 ```Tcsh
 a!localVariables(
   local!listOfMap: {
@@ -10673,6 +11234,7 @@ a!localVariables(
 )
 ```
 
+### TeX
 ```TeX
 a!localVariables(
   local!listOfMap: {
@@ -10692,6 +11254,7 @@ a!localVariables(
 )
 ```
 
+### Tea
 ```Tea
 a!localVariables(
   local!listOfMap: {
@@ -10711,6 +11274,7 @@ a!localVariables(
 )
 ```
 
+### Terra
 ```Terra
 a!localVariables(
   local!listOfMap: {
@@ -10730,6 +11294,7 @@ a!localVariables(
 )
 ```
 
+### Texinfo
 ```Texinfo
 a!localVariables(
   local!listOfMap: {
@@ -10749,6 +11314,7 @@ a!localVariables(
 )
 ```
 
+### Text
 ```Text
 a!localVariables(
   local!listOfMap: {
@@ -10768,6 +11334,7 @@ a!localVariables(
 )
 ```
 
+### TextMate Properties
 ```TextMate Properties
 a!localVariables(
   local!listOfMap: {
@@ -10787,6 +11354,7 @@ a!localVariables(
 )
 ```
 
+### Textile
 ```Textile
 a!localVariables(
   local!listOfMap: {
@@ -10806,6 +11374,7 @@ a!localVariables(
 )
 ```
 
+### Thrift
 ```Thrift
 a!localVariables(
   local!listOfMap: {
@@ -10825,6 +11394,7 @@ a!localVariables(
 )
 ```
 
+### Turing
 ```Turing
 a!localVariables(
   local!listOfMap: {
@@ -10844,6 +11414,7 @@ a!localVariables(
 )
 ```
 
+### Turtle
 ```Turtle
 a!localVariables(
   local!listOfMap: {
@@ -10863,6 +11434,7 @@ a!localVariables(
 )
 ```
 
+### Twig
 ```Twig
 a!localVariables(
   local!listOfMap: {
@@ -10882,6 +11454,7 @@ a!localVariables(
 )
 ```
 
+### Type Language
 ```Type Language
 a!localVariables(
   local!listOfMap: {
@@ -10901,6 +11474,7 @@ a!localVariables(
 )
 ```
 
+### TypeScript
 ```TypeScript
 a!localVariables(
   local!listOfMap: {
@@ -10920,6 +11494,7 @@ a!localVariables(
 )
 ```
 
+### Unified Parallel C
 ```Unified Parallel C
 a!localVariables(
   local!listOfMap: {
@@ -10939,6 +11514,7 @@ a!localVariables(
 )
 ```
 
+### Unity3D Asset
 ```Unity3D Asset
 a!localVariables(
   local!listOfMap: {
@@ -10958,6 +11534,7 @@ a!localVariables(
 )
 ```
 
+### Unix Assembly
 ```Unix Assembly
 a!localVariables(
   local!listOfMap: {
@@ -10977,6 +11554,7 @@ a!localVariables(
 )
 ```
 
+### Uno
 ```Uno
 a!localVariables(
   local!listOfMap: {
@@ -10996,6 +11574,7 @@ a!localVariables(
 )
 ```
 
+### UnrealScript
 ```UnrealScript
 a!localVariables(
   local!listOfMap: {
@@ -11015,6 +11594,7 @@ a!localVariables(
 )
 ```
 
+### UrWeb
 ```UrWeb
 a!localVariables(
   local!listOfMap: {
@@ -11034,6 +11614,7 @@ a!localVariables(
 )
 ```
 
+### V
 ```V
 a!localVariables(
   local!listOfMap: {
@@ -11053,6 +11634,7 @@ a!localVariables(
 )
 ```
 
+### VBA
 ```VBA
 a!localVariables(
   local!listOfMap: {
@@ -11072,6 +11654,7 @@ a!localVariables(
 )
 ```
 
+### VBScript
 ```VBScript
 a!localVariables(
   local!listOfMap: {
@@ -11091,6 +11674,7 @@ a!localVariables(
 )
 ```
 
+### VCL
 ```VCL
 a!localVariables(
   local!listOfMap: {
@@ -11110,6 +11694,7 @@ a!localVariables(
 )
 ```
 
+### VHDL
 ```VHDL
 a!localVariables(
   local!listOfMap: {
@@ -11129,6 +11714,7 @@ a!localVariables(
 )
 ```
 
+### Vala
 ```Vala
 a!localVariables(
   local!listOfMap: {
@@ -11148,6 +11734,7 @@ a!localVariables(
 )
 ```
 
+### Valve Data Format
 ```Valve Data Format
 a!localVariables(
   local!listOfMap: {
@@ -11167,6 +11754,7 @@ a!localVariables(
 )
 ```
 
+### Velocity Template Language
 ```Velocity Template Language
 a!localVariables(
   local!listOfMap: {
@@ -11186,6 +11774,7 @@ a!localVariables(
 )
 ```
 
+### Verilog
 ```Verilog
 a!localVariables(
   local!listOfMap: {
@@ -11205,6 +11794,7 @@ a!localVariables(
 )
 ```
 
+### Vim Help File
 ```Vim Help File
 a!localVariables(
   local!listOfMap: {
@@ -11224,6 +11814,7 @@ a!localVariables(
 )
 ```
 
+### Vim Script
 ```Vim Script
 a!localVariables(
   local!listOfMap: {
@@ -11243,6 +11834,7 @@ a!localVariables(
 )
 ```
 
+### Vim Snippet
 ```Vim Snippet
 a!localVariables(
   local!listOfMap: {
@@ -11262,6 +11854,7 @@ a!localVariables(
 )
 ```
 
+### Visual Basic .NET
 ```Visual Basic .NET
 a!localVariables(
   local!listOfMap: {
@@ -11281,6 +11874,7 @@ a!localVariables(
 )
 ```
 
+### Volt
 ```Volt
 a!localVariables(
   local!listOfMap: {
@@ -11300,6 +11894,7 @@ a!localVariables(
 )
 ```
 
+### Vue
 ```Vue
 a!localVariables(
   local!listOfMap: {
@@ -11319,6 +11914,7 @@ a!localVariables(
 )
 ```
 
+### Vyper
 ```Vyper
 a!localVariables(
   local!listOfMap: {
@@ -11338,6 +11934,7 @@ a!localVariables(
 )
 ```
 
+### Wavefront Material
 ```Wavefront Material
 a!localVariables(
   local!listOfMap: {
@@ -11357,6 +11954,7 @@ a!localVariables(
 )
 ```
 
+### Wavefront Object
 ```Wavefront Object
 a!localVariables(
   local!listOfMap: {
@@ -11376,6 +11974,7 @@ a!localVariables(
 )
 ```
 
+### Web Ontology Language
 ```Web Ontology Language
 a!localVariables(
   local!listOfMap: {
@@ -11395,6 +11994,7 @@ a!localVariables(
 )
 ```
 
+### WebAssembly
 ```WebAssembly
 a!localVariables(
   local!listOfMap: {
@@ -11414,6 +12014,7 @@ a!localVariables(
 )
 ```
 
+### WebIDL
 ```WebIDL
 a!localVariables(
   local!listOfMap: {
@@ -11433,6 +12034,7 @@ a!localVariables(
 )
 ```
 
+### WebVTT
 ```WebVTT
 a!localVariables(
   local!listOfMap: {
@@ -11452,6 +12054,7 @@ a!localVariables(
 )
 ```
 
+### Wget Config
 ```Wget Config
 a!localVariables(
   local!listOfMap: {
@@ -11471,6 +12074,7 @@ a!localVariables(
 )
 ```
 
+### Whiley
 ```Whiley
 a!localVariables(
   local!listOfMap: {
@@ -11490,6 +12094,7 @@ a!localVariables(
 )
 ```
 
+### Wikitext
 ```Wikitext
 a!localVariables(
   local!listOfMap: {
@@ -11509,6 +12114,7 @@ a!localVariables(
 )
 ```
 
+### Win32 Message File
 ```Win32 Message File
 a!localVariables(
   local!listOfMap: {
@@ -11528,6 +12134,7 @@ a!localVariables(
 )
 ```
 
+### Windows Registry Entries
 ```Windows Registry Entries
 a!localVariables(
   local!listOfMap: {
@@ -11547,6 +12154,7 @@ a!localVariables(
 )
 ```
 
+### Witcher Script
 ```Witcher Script
 a!localVariables(
   local!listOfMap: {
@@ -11566,6 +12174,7 @@ a!localVariables(
 )
 ```
 
+### Wollok
 ```Wollok
 a!localVariables(
   local!listOfMap: {
@@ -11585,6 +12194,7 @@ a!localVariables(
 )
 ```
 
+### World of Warcraft Addon Data
 ```World of Warcraft Addon Data
 a!localVariables(
   local!listOfMap: {
@@ -11604,6 +12214,7 @@ a!localVariables(
 )
 ```
 
+### Wren
 ```Wren
 a!localVariables(
   local!listOfMap: {
@@ -11623,6 +12234,7 @@ a!localVariables(
 )
 ```
 
+### X BitMap
 ```X BitMap
 a!localVariables(
   local!listOfMap: {
@@ -11642,6 +12254,7 @@ a!localVariables(
 )
 ```
 
+### X Font Directory Index
 ```X Font Directory Index
 a!localVariables(
   local!listOfMap: {
@@ -11661,6 +12274,7 @@ a!localVariables(
 )
 ```
 
+### X PixMap
 ```X PixMap
 a!localVariables(
   local!listOfMap: {
@@ -11680,6 +12294,7 @@ a!localVariables(
 )
 ```
 
+### X10
 ```X10
 a!localVariables(
   local!listOfMap: {
@@ -11699,6 +12314,7 @@ a!localVariables(
 )
 ```
 
+### XC
 ```XC
 a!localVariables(
   local!listOfMap: {
@@ -11718,6 +12334,7 @@ a!localVariables(
 )
 ```
 
+### XCompose
 ```XCompose
 a!localVariables(
   local!listOfMap: {
@@ -11737,6 +12354,7 @@ a!localVariables(
 )
 ```
 
+### XML
 ```XML
 a!localVariables(
   local!listOfMap: {
@@ -11756,6 +12374,7 @@ a!localVariables(
 )
 ```
 
+### XML Property List
 ```XML Property List
 a!localVariables(
   local!listOfMap: {
@@ -11775,6 +12394,7 @@ a!localVariables(
 )
 ```
 
+### XPages
 ```XPages
 a!localVariables(
   local!listOfMap: {
@@ -11794,6 +12414,7 @@ a!localVariables(
 )
 ```
 
+### XProc
 ```XProc
 a!localVariables(
   local!listOfMap: {
@@ -11813,6 +12434,7 @@ a!localVariables(
 )
 ```
 
+### XQuery
 ```XQuery
 a!localVariables(
   local!listOfMap: {
@@ -11832,6 +12454,7 @@ a!localVariables(
 )
 ```
 
+### XS
 ```XS
 a!localVariables(
   local!listOfMap: {
@@ -11851,6 +12474,7 @@ a!localVariables(
 )
 ```
 
+### XSLT
 ```XSLT
 a!localVariables(
   local!listOfMap: {
@@ -11870,6 +12494,7 @@ a!localVariables(
 )
 ```
 
+### Xojo
 ```Xojo
 a!localVariables(
   local!listOfMap: {
@@ -11889,6 +12514,7 @@ a!localVariables(
 )
 ```
 
+### Xonsh
 ```Xonsh
 a!localVariables(
   local!listOfMap: {
@@ -11908,6 +12534,7 @@ a!localVariables(
 )
 ```
 
+### Xtend
 ```Xtend
 a!localVariables(
   local!listOfMap: {
@@ -11927,6 +12554,7 @@ a!localVariables(
 )
 ```
 
+### YAML
 ```YAML
 a!localVariables(
   local!listOfMap: {
@@ -11946,6 +12574,7 @@ a!localVariables(
 )
 ```
 
+### YANG
 ```YANG
 a!localVariables(
   local!listOfMap: {
@@ -11965,6 +12594,7 @@ a!localVariables(
 )
 ```
 
+### YARA
 ```YARA
 a!localVariables(
   local!listOfMap: {
@@ -11984,6 +12614,7 @@ a!localVariables(
 )
 ```
 
+### YASnippet
 ```YASnippet
 a!localVariables(
   local!listOfMap: {
@@ -12003,6 +12634,7 @@ a!localVariables(
 )
 ```
 
+### Yacc
 ```Yacc
 a!localVariables(
   local!listOfMap: {
@@ -12022,6 +12654,7 @@ a!localVariables(
 )
 ```
 
+### Yul
 ```Yul
 a!localVariables(
   local!listOfMap: {
@@ -12041,6 +12674,7 @@ a!localVariables(
 )
 ```
 
+### ZAP
 ```ZAP
 a!localVariables(
   local!listOfMap: {
@@ -12060,6 +12694,7 @@ a!localVariables(
 )
 ```
 
+### ZIL
 ```ZIL
 a!localVariables(
   local!listOfMap: {
@@ -12079,6 +12714,7 @@ a!localVariables(
 )
 ```
 
+### Zeek
 ```Zeek
 a!localVariables(
   local!listOfMap: {
@@ -12098,6 +12734,7 @@ a!localVariables(
 )
 ```
 
+### ZenScript
 ```ZenScript
 a!localVariables(
   local!listOfMap: {
@@ -12117,6 +12754,7 @@ a!localVariables(
 )
 ```
 
+### Zephir
 ```Zephir
 a!localVariables(
   local!listOfMap: {
@@ -12136,6 +12774,7 @@ a!localVariables(
 )
 ```
 
+### Zig
 ```Zig
 a!localVariables(
   local!listOfMap: {
@@ -12155,6 +12794,7 @@ a!localVariables(
 )
 ```
 
+### Zimpl
 ```Zimpl
 a!localVariables(
   local!listOfMap: {
@@ -12174,6 +12814,7 @@ a!localVariables(
 )
 ```
 
+### cURL Config
 ```cURL Config
 a!localVariables(
   local!listOfMap: {
@@ -12193,6 +12834,7 @@ a!localVariables(
 )
 ```
 
+### desktop
 ```desktop
 a!localVariables(
   local!listOfMap: {
@@ -12212,6 +12854,7 @@ a!localVariables(
 )
 ```
 
+### dircolors
 ```dircolors
 a!localVariables(
   local!listOfMap: {
@@ -12231,6 +12874,7 @@ a!localVariables(
 )
 ```
 
+### eC
 ```eC
 a!localVariables(
   local!listOfMap: {
@@ -12250,6 +12894,7 @@ a!localVariables(
 )
 ```
 
+### edn
 ```edn
 a!localVariables(
   local!listOfMap: {
@@ -12269,6 +12914,7 @@ a!localVariables(
 )
 ```
 
+### fish
 ```fish
 a!localVariables(
   local!listOfMap: {
@@ -12288,6 +12934,7 @@ a!localVariables(
 )
 ```
 
+### hoon
 ```hoon
 a!localVariables(
   local!listOfMap: {
@@ -12307,6 +12954,7 @@ a!localVariables(
 )
 ```
 
+### jq
 ```jq
 a!localVariables(
   local!listOfMap: {
@@ -12326,6 +12974,7 @@ a!localVariables(
 )
 ```
 
+### kvlang
 ```kvlang
 a!localVariables(
   local!listOfMap: {
@@ -12345,6 +12994,7 @@ a!localVariables(
 )
 ```
 
+### mIRC Script
 ```mIRC Script
 a!localVariables(
   local!listOfMap: {
@@ -12364,6 +13014,7 @@ a!localVariables(
 )
 ```
 
+### mcfunction
 ```mcfunction
 a!localVariables(
   local!listOfMap: {
@@ -12383,6 +13034,7 @@ a!localVariables(
 )
 ```
 
+### mupad
 ```mupad
 a!localVariables(
   local!listOfMap: {
@@ -12402,6 +13054,7 @@ a!localVariables(
 )
 ```
 
+### nanorc
 ```nanorc
 a!localVariables(
   local!listOfMap: {
@@ -12421,6 +13074,7 @@ a!localVariables(
 )
 ```
 
+### nesC
 ```nesC
 a!localVariables(
   local!listOfMap: {
@@ -12440,6 +13094,7 @@ a!localVariables(
 )
 ```
 
+### ooc
 ```ooc
 a!localVariables(
   local!listOfMap: {
@@ -12459,6 +13114,7 @@ a!localVariables(
 )
 ```
 
+### q
 ```q
 a!localVariables(
   local!listOfMap: {
@@ -12478,6 +13134,7 @@ a!localVariables(
 )
 ```
 
+### reStructuredText
 ```reStructuredText
 a!localVariables(
   local!listOfMap: {
@@ -12497,6 +13154,7 @@ a!localVariables(
 )
 ```
 
+### robots.txt
 ```robots.txt
 a!localVariables(
   local!listOfMap: {
@@ -12516,6 +13174,7 @@ a!localVariables(
 )
 ```
 
+### sed
 ```sed
 a!localVariables(
   local!listOfMap: {
@@ -12535,6 +13194,7 @@ a!localVariables(
 )
 ```
 
+### wdl
 ```wdl
 a!localVariables(
   local!listOfMap: {
@@ -12554,6 +13214,7 @@ a!localVariables(
 )
 ```
 
+### wisp
 ```wisp
 a!localVariables(
   local!listOfMap: {
@@ -12573,6 +13234,7 @@ a!localVariables(
 )
 ```
 
+### xBase
 ```xBase
 a!localVariables(
   local!listOfMap: {
