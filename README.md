@@ -945,7 +945,7 @@ These functions are for working with Text input values.
 
 ## SPT_Text_GetMetaphone
 
-Returns the Metaphone value for the given text value. Alternatively uses Double Metaphone if doubleMetaphone is true.
+Returns the Metaphone value for the given Text value. Alternatively uses Double Metaphone if doubleMetaphone is `true`.
 
 | Parameter       | Description                                               |
 | --------------- | --------------------------------------------------------- |
@@ -1006,7 +1006,7 @@ Returns `4.56`
 
 # Type Functions
 
-These functions provide information about the type of the values passed in.
+These functions provide information about the (data) type of the values passed in.
 
 
 
@@ -1128,7 +1128,7 @@ Returns `false`
 
 ## SPT_Type_IsList
 
-Returns true if the value passed in is a List type. If the passed in value is null, returns false.
+Returns `true` if the value passed in is a List type. If the passed in value is `null`, returns `false`.
 
 | Parameter | Description        |
 | --------- | ------------------ |
@@ -1192,7 +1192,7 @@ Returns `false`
 
 ## SPT_Type_IsListOfObjects
 
-Returns true if the value passed in is a List of Dictionaries, Maps, or CDTs. If the passed in value is null, returns false.
+Returns `true` if the value passed in is a List of Dictionaries, Maps, or CDTs. If the passed in value is `null`, returns `false`.
 
 | Parameter | Description        |
 | --------- | ------------------ |
@@ -1255,7 +1255,6 @@ Returns `false`
 
 
 ## SPT_Type_IsNumeric
-
 
 Returns `true` if the passed in value is Text that can be interpolated as a number (Integer or Decimal), or is an Integer, a Decimal, a List of Integers, or a List of Decimals.
 
@@ -1322,7 +1321,7 @@ Returns `true` if the value passed in is a Dictionary, Map, or CDT.
 | --------- | ------------------ |
 | value     | The value to check |
 
-#### Example 1 - Null is passed in
+#### Example 1 - `null` is passed in
 ```REXX
 spt_type_isobject(null)
 ```
@@ -1384,7 +1383,7 @@ These functions are for generating UUIDs in Appian.
 
 ## SPT_Uuid_Bulk
 
-Creates a list of UUIDs in bulk. Best practice is to know the number of UUIDs to be generated and call this method once in any given Expression evaluation, in order to avoid Appian's caching. (I.e. do not call in a forEach using count of 1 or you will get the same UUID for each call.)
+Creates a list of UUIDs in bulk. Best practice is to know the number of UUIDs to be generated and call this method once in any given Expression evaluation, in order to avoid Appian's caching. (I.e. do not call in a `a!forEach()` using count of `1` or you will get the same UUID for each call as the result is cached.)
 
 | Parameter | Description                     |
 | --------- | ------------------------------- |
@@ -1402,7 +1401,7 @@ Returns:
   "aea18a72-f196-440c-8089-32ff525f4e97"
 }
 ```
-(Note: your UUIDs will be unique.)
+(**Note**: your UUIDs will be unique.)
 
 #### Example 2 - Update a List of Dictionary with newly generated UUIDs
 If you need to loop over many objects and add/update UUIDs:
@@ -1460,7 +1459,7 @@ Returns:
   }
 }
 ```
-(Note: your UUIDs will be unique.)
+(**Note**: your UUIDs will be unique.)
 
 
 
