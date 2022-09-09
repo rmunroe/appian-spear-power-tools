@@ -276,14 +276,11 @@ Returns `"987.7 MB"`
 #### Example 2 - Show the binary-based size for a byte value, retrieved from a Document
 ```REXX
 a!localVariables(
-  local!docSize: document(cons!SPTT_TEST_IMAGE_FILE, "size"),
+  local!docSize: document(cons!SPTT_TEST_IMAGE_FILE, "size"), /* 203681 bytes */
   
   fn!spt_fmt_bytesdisplaysize(local!docSize, true)
 )
 ```
-
-(the test document size is 203681 bytes)
-
 Returns `"198.9 KiB"`
 
 
