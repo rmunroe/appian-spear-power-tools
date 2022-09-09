@@ -78,7 +78,7 @@ Returns the number of seconds since the standard base time known as "the epoch",
 |-----------|---------------------------------------------|
 | dateTime  | The Date and Time to get the epoch time for |
 
-### Example
+#### Example
 ```
 a!localVariables(
   local!time: datetime(2017, 7, 5, 8, 30),
@@ -95,7 +95,7 @@ Converts the epoch value (the number of seconds since January 1, 1970, 00:00:00 
 |------------|------------------------------------------------------|
 | epoch      | The epoch time in seconds to get a Date and Time for |
 
-### Example
+#### Example
 ```
 fn!spt_datetime_fromepoch(1499243400) = datetime(2017, 7, 5, 8, 30)
 ```
@@ -125,7 +125,7 @@ Returns the UUID for the given Appian Document
 |------------|---------------------|
 | document   | The Appian Document |
 
-### Example
+#### Example
 In this example, we are populating a CDT used to store doc info in a database table with some metadata for quick access, and the provided Document's UUID. This CDT would then be saved to the database for later use.
 ```
 a!localVariables(
@@ -147,7 +147,7 @@ Returns the Appian Document that has the given UUID. Returns null if no Document
 |-----------|----------------------------|
 | uuid      | The Appian Document's UUID |
 
-### Example
+#### Example
 In this example, we are resolving a Document from its UUID as stored in a database and retrieved as a CDT. For further illustration we are building a display name from the actual, resolved Document.
 ```
 a!localVariables(
@@ -216,19 +216,19 @@ This function requires you specify which converter to use. Typically, for Intege
 * `TURKISH_BANKING_MONEY_VALUE`
 * `UKRAINIAN_BANKING_MONEY_VALUE`
 
-### Example 1 - Integer to English words
+#### Example 1 - Integer to English words
 ```
 fn!spt_fmt_aswords(123456789, "ENGLISH_INTEGER")
 ```
 Returns: `"one hundred twenty-three million four hundred fifty-six thousand seven hundred eighty-nine"`
 
-### Example 2 - Decimal to US English money words (dollars)
+#### Example 2 - Decimal to US English money words (dollars)
 ```
 fn!spt_fmt_aswords(123456.78, "AMERICAN_ENGLISH_BANKING_MONEY_VALUE")
 ```
 Returns: `"one hundred twenty-three thousand four hundred fifty-six $ 78/100"`
 
-### Example 2 - Decimal to French money words (euros)
+#### Example 2 - Decimal to French money words (euros)
 ```
 fn!spt_fmt_aswords(123456.78, "FRENCH_BANKING_MONEY_VALUE")
 ```
@@ -244,13 +244,13 @@ Returns a friendly display size for the given number of bytes. Useful when used 
 | bytes     | The size in bytes to get a display value for (e.g. `"123 KB"`)                         |
 | binary    | If set to true, uses base `1024` instead of `1000` and returns values e.g. `"123 KiB"` |
 
-### Example 1 - Show the "standard" size for a byte value
+#### Example 1 - Show the "standard" size for a byte value
 ```
 fn!spt_fmt_bytesdisplaysize(987654321)
 ```
 Returns `"987.7 MB"`
 
-### Example 2 - Show the binary-based size for a byte value, retrieved from a Document
+#### Example 2 - Show the binary-based size for a byte value, retrieved from a Document
 ```
 a!localVariables(
   local!docSize: document(cons!SPTT_TEST_IMAGE_FILE, "size"), /* 203681 bytes */
@@ -269,7 +269,7 @@ Returns a text description of the relative duration a given Date and Time was or
 | dateTime   | The Date and Time to describe                                                                                                                                         |
 | locale     | Optional locale abbreviation supported by [the PrettyTime library](https://github.com/ocpsoft/prettytime/tree/master/core/src/main/java/org/ocpsoft/prettytime/i18n)  |
 
-### Example 1 - 100 days ago
+#### Example 1 - 100 days ago
 ```
 a!localVariables(
   local!time: now() - 100,
@@ -278,7 +278,7 @@ a!localVariables(
 ```
 Returns `"3 months ago"`
 
-### Example 2 - 100 days ago, but in German
+#### Example 2 - 100 days ago, but in German
 ```
 a!localVariables(
   local!time: now() - 100,
@@ -313,7 +313,7 @@ _**When an `Any Type` value is provided, this plugin will default to both `null`
 
 For instance if you use [SPT_List_AppendAny](#SPT_List_AppendAny) to append `""` onto a List, instead of an empty string `""` being appended, the value `null` is used. See the example given below.
 
-### Example 1 - Append an integer on a List of Text
+#### Example 1 - Append an integer on a List of Text
 If using the built-in `append()`, Appian would convert `4` to `"4"`.
 ```
 a!localVariables(
@@ -324,7 +324,7 @@ a!localVariables(
 ```
 Returns (List of Variant) `{"one", "two", "three", 4}`
 
-### Example 2 - Empty string is converted to `null`
+#### Example 2 - Empty string is converted to `null`
 ```
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
@@ -342,7 +342,7 @@ Returns the element count (including null elements) in a list. If the passed in 
 |-----------|-------------------|
 | list      | The list to count |
 
-### Example 1 - Counting `null`
+#### Example 1 - Counting `null`
 (If using the built-in `count()`, Appian would instead return `1`, which can be very confusing.)
 ```
 a!localVariables(
@@ -352,7 +352,7 @@ a!localVariables(
 ```
 Returns `0`
 
-### Example 2 - Counting a non-list value
+#### Example 2 - Counting a non-list value
 (If using the built-in `count()`, Appian would instead return `1`, which can be very confusing.)
 ```
 a!localVariables(
@@ -362,7 +362,7 @@ a!localVariables(
 ```
 Returns `0`
 
-### Example 3 - Counting a List
+#### Example 3 - Counting a List
 ```
 a!localVariables(
   local!hundredElementArray: enumerate(100),
@@ -379,7 +379,7 @@ Returns the first element of the list. Returns null if list is null or empty. If
 |-----------|-------------------------|
 | list      | The list to choose from |
 
-### Example 1 - Getting the first element from a List
+#### Example 1 - Getting the first element from a List
 ```
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
@@ -388,7 +388,7 @@ a!localVariables(
 ```
 Returns `"one"`
 
-### Example 2 - Getting the first element from a non-List
+#### Example 2 - Getting the first element from a non-List
 ```
 a!localVariables(
   local!notAnArray: "notAnArray",
@@ -405,7 +405,7 @@ Returns true if there are duplicate items in the List. If all items are unique, 
 |------------|-------------------|
 | list       | The list to check |
 
-### Example 1 - List of Integers with duplicate values
+#### Example 1 - List of Integers with duplicate values
 ```
 a!localVariables(
   local!listOfPrimitive: { 1, 2, 3, 5, 3, 3, 4, 5, 5, 5 },
@@ -414,7 +414,7 @@ a!localVariables(
 ```
 Returns `true`
 
-### Example 2 - List of CDTs with duplicate values
+#### Example 2 - List of CDTs with duplicate values
 ```
 a!localVariables(
   local!listOfCdt: {
@@ -430,19 +430,19 @@ a!localVariables(
 ```
 Returns `true`
 
-### Example 3 - List of Integers with no duplicates
+#### Example 3 - List of Integers with no duplicates
 ```
 fn!spt_list_hasduplicates(enumerate(10))
 ```
 Returns `false`
 
-### Example 4 - Passing in a non-List
+#### Example 4 - Passing in a non-List
 ```
 fn!spt_list_hasduplicates(123)
 ```
 Returns `false`
 
-#### Example 5 - Passing in `null`
+##### Example 5 - Passing in `null`
 ```
 fn!spt_list_hasduplicates(null)
 ```
@@ -456,7 +456,7 @@ Returns true if the value passed in is a List type. If the passed in value is nu
 |------------|--------------------|
 | list       | The value to check |
 
-### Example 1 - Passing in a List of CDT
+#### Example 1 - Passing in a List of CDT
 ```
 a!localVariables(
   local!listOfCdt: {
@@ -469,7 +469,7 @@ a!localVariables(
 ```
 Returns `true`
 
-### Example 2 - Passing in a List of Integers
+#### Example 2 - Passing in a List of Integers
 ```
 a!localVariables(
   local!hundredElementList: enumerate(100),
@@ -478,7 +478,7 @@ a!localVariables(
 ```
 Returns `true`
 
-### Example 3 - Passing in an empty List
+#### Example 3 - Passing in an empty List
 ```
 a!localVariables(
   local!emptyList: {},
@@ -487,7 +487,7 @@ a!localVariables(
 ```
 Returns `true`
 
-### Example 4 - Passing in a List of CDT
+#### Example 4 - Passing in a List of CDT
 ```
 a!localVariables(
   local!stringValue: "stringValue",
@@ -496,7 +496,7 @@ a!localVariables(
 ```
 Returns `false`
 
-### Example 5 - Passing in `null`
+#### Example 5 - Passing in `null`
 ```
 a!localVariables(
   local!nullValue: null,
@@ -513,7 +513,7 @@ Returns the last element of the list. Returns null if list is null or empty. If 
 |------------|-------------------------|
 | list       | The list to choose from |
 
-### Example 1 - Grab the last element of a List of Text
+#### Example 1 - Grab the last element of a List of Text
 ```
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
@@ -522,7 +522,7 @@ a!localVariables(
 ```
 Returns `"three"`
 
-### Example 2 - Grab the last element of non-List
+#### Example 2 - Grab the last element of non-List
 ```
 a!localVariables(
   local!notAnArray: "notAnArray",
@@ -541,7 +541,7 @@ Returns a random element in the provided list. If not a List, returns what was p
 | count      | The number of elements to include (optional; default is 1)                                                                                    |
 | unique     | If selecting multiple, ensure that the elements are unique. Will throw an error if count is greater than the number of elements in the array. |
 
-### Example - Grab several random elements
+#### Example - Grab several random elements
 ```
 a!localVariables(
   local!listOfMap: {
@@ -573,7 +573,7 @@ Returns the provided list in a randomized order (shuffled). If not a List, retur
 |------------|-----------------------|
 | list       | The list to randomize |
 
-### Example - Retrieve Map `id` properties in a randomized order 
+#### Example - Retrieve Map `id` properties in a randomized order 
 ```
 a!localVariables(
   local!listOfMap: {
@@ -597,7 +597,7 @@ Removes all null elements from the given list. If a List of Text (string) is pas
 |------------|-------------------------------|
 | list       | The list to remove nulls from |
 
-### Example 1 - Remove nulls from a List of Integers
+#### Example 1 - Remove nulls from a List of Integers
 ```
 a!localVariables(
   local!listOfPrimitive: { 1, null, 2, 3, null, 4, null, 5, null },
@@ -606,7 +606,7 @@ a!localVariables(
 ```
 Returns `{1, 2, 3, 4, 5}`
 
-### Example 2 - Remove nulls from a List of CDTs
+#### Example 2 - Remove nulls from a List of CDTs
 ```
 a!localVariables(
   local!listOfCdt: {
@@ -621,7 +621,7 @@ a!localVariables(
 ```
 Returns the list of `id` properties from non-null elements. E.g. `{1, 2, 3}`
 
-### Example 3 - Remove nulls from a List of only null
+#### Example 3 - Remove nulls from a List of only null
 ```
 a!localVariables(
   local!justNull: {null},
@@ -630,7 +630,7 @@ a!localVariables(
 ```
 Returns an empty List of Text String (due to how Appian treats `null` internally)
 
-### Example 4 - Remove nulls from a non-List
+#### Example 4 - Remove nulls from a non-List
 ```
 a!localVariables(
   local!notAList: "one",
@@ -649,7 +649,7 @@ Returns a subset of the provided list, starting with and including startIndex an
 | startIndex | The first index to include in the slice                                               |
 | endIndex   | The last index to include in the slice. If omitted, the rest of the list is included. |
 
-### Example 1 - Get elements 10-15 (inclusive)
+#### Example 1 - Get elements 10-15 (inclusive)
 ```
 a!localVariables(
   local!hundredElementArray: enumerate(100) + 1,
@@ -658,7 +658,7 @@ a!localVariables(
 ```
 Returns `{10, 11, 12, 13, 14, 15}`
 
-### Example 2 - Get element 8 and on 
+#### Example 2 - Get element 8 and on 
 ```
 a!localVariables(
   local!remaining: enumerate(10) + 1,
@@ -667,7 +667,7 @@ a!localVariables(
 ```
 Returns `{8, 9, 10}`
 
-### Example 3 - Slice a non-List
+#### Example 3 - Slice a non-List
 ```
 a!localVariables(
   local!stringValue: "stringValue",
@@ -676,7 +676,7 @@ a!localVariables(
 ```
 Returns `null`
 
-### Example 4 - Slice a `null` value
+#### Example 4 - Slice a `null` value
 ```
 a!localVariables(
   local!nullValue: null,
@@ -694,7 +694,7 @@ Returns the unique elements found in the provided list. If the list is null or e
 | list      | The list to unique                                 |
 | keepNulls | If true, keeps null values (uniqued, so 1 at most) |
 
-### Example - Get only unique values
+#### Example - Get only unique values
 ```
 a!localVariables(
   local!listOfPrimitive: { 1, 2, 3, 5, 3, 3, 4, 5, 5, 5 },
@@ -723,13 +723,13 @@ Returns random value(s) in the given range. The value type will be either Intege
 | count     | The number of random values to produce (defaults to a single; if set, returns a List) |
 | places    | If returning Decimals, optionally set the number of places to include                 |
 
-### Example 1 - Generate a single Integer
+#### Example 1 - Generate a single Integer
 ```
 fn!spt_num_randinrange(10, 20)
 ```
 Returns (e.g.) `14`
 
-### Example 2 - Generate 5 Decimals, with 2 decimal places
+#### Example 2 - Generate 5 Decimals, with 2 decimal places
 ```
 fn!spt_num_randinrange(10.0, 20.0, 5, 2)
 ```
@@ -752,7 +752,7 @@ Removes properties from a Map or Dictionary where the value is null. If the pass
 | object    | The object to remove nulls from                                                        |
 | recursive | If true (default), will recurse into nested objects and remove nulls from them as well |
 
-### Example - Remove nulls from a Dictionary
+#### Example - Remove nulls from a Dictionary
 ```
 a!localVariables(
   local!dictionary: {
@@ -789,7 +789,7 @@ Converts the given object (Map(s), Dictionary(s) or CDT(s)) to a Dictionary, inc
 |------------|---------------------------------------|
 | object     | The object to convert to a Dictionary |
 
-### Example - Convert a Map (with nested Maps) to a Dictionary
+#### Example - Convert a Map (with nested Maps) to a Dictionary
 ```
 a!localVariables(
   local!map: a!map(
@@ -839,7 +839,7 @@ Converts the given object (Map(s), Dictionary(s) or CDT(s)) to a Map, including 
 
 This function can be used to store any dynamic data structure into a Process Variable as a Map. When used in conjunction with `a!fromJson()` it can store the result of a REST service call as a PV without any additional data massaging (see example 2).
 
-### Example 1 - Convert a Dictionary (with nested Dictionaries) to a Map
+#### Example 1 - Convert a Dictionary (with nested Dictionaries) to a Map
 ```
 a!localVariables(
   local!dict: {
@@ -884,7 +884,7 @@ a!map(
   }
 )
 ```
-### Example 2 - Deserializing JSON to a Map
+#### Example 2 - Deserializing JSON to a Map
 ```
 a!localVariables(
   local!json: "{""id"":123,""value"":""This was JSON, now it's a Map"",""nestedObject"":{""message"":""A nested object, also now a Map""}}",
@@ -926,13 +926,13 @@ Double Metaphone is an improvement upon Metaphone and supports more languages th
 
 See [the Wikipedia Metaphone page](https://en.wikipedia.org/wiki/Metaphone) for more info.
 
-### Example 1 - Get Metaphone for a last name
+#### Example 1 - Get Metaphone for a last name
 ```
 fn!spt_text_getmetaphone("Gomez-Hernandez")
 ```
 Returns `"KMSH"`
 
-### Example 2 - Get Double Metaphone for a last name
+#### Example 2 - Get Double Metaphone for a last name
 ```
 fn!spt_text_getmetaphone("Gomez-Hernandez", true)
 ```
@@ -954,7 +954,7 @@ Creates a list of UUIDs in bulk. Best practice is to know the number of UUIDs to
 |------------|---------------------------------|
 | count      | The number of UUIDs to generate |
 
-### Example 1 - Generate 3 UUIDs at once
+#### Example 1 - Generate 3 UUIDs at once
 ```
 fn!spt_uuid_bulk(3)
 ```
@@ -968,7 +968,7 @@ Returns:
 ```
 (Note: your UUIDs will be unique.)
 
-### Example 2 - Update a List of Dictionary with newly generated UUIDs
+#### Example 2 - Update a List of Dictionary with newly generated UUIDs
 If you need to loop over many objects and add/update UUIDs:
 ```
 a!localVariables(
@@ -1034,7 +1034,7 @@ Creates a UUID using the given Text value as a seed. The UUID will always be the
 |-----------|----------------------------------------|
 | text      | The Text value to create the UUID from |
 
-### Example 1 - Retrieve the unchanging UUID for a Text value
+#### Example 1 - Retrieve the unchanging UUID for a Text value
 ```
 fn!spt_uuid_fromtext(
   "This will always produce the same UUID unless this text is changed"
@@ -1042,7 +1042,7 @@ fn!spt_uuid_fromtext(
 ```
 Returns: `"af587b80-7ce1-3f19-ba1c-08c8ae551bd0"`
 
-### Example 2 - Use an existing UUID to generate new UUID based on some additional text
+#### Example 2 - Use an existing UUID to generate new UUID based on some additional text
 ```
 fn!spt_uuid_fromtext(
   concat(
