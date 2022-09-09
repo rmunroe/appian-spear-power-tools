@@ -863,7 +863,7 @@ Converts the given object (Map, Dictionary, or CDT) to a Map, including nested o
 | --------- | ------------------------------ |
 | object    | The object to convert to a Map |
 
-This function can be used to store any dynamic data structure into a Process Variable as a Map. When used in conjunction with `a!fromJson()` it can store the result of a REST service call as a Process Variable without any additional data massaging (see [Example 2]()).
+This function can be used to store any dynamic data structure into a Process Variable as a Map. When used in conjunction with `a!fromJson()` it can store the result of a REST service call as a Process Variable without any additional data massaging (see [Example 2](#example-2---deserializing-json-to-a-map)).
 
 #### Example 1 - Convert a Dictionary (with nested Dictionaries) to a Map
 ```REXX
