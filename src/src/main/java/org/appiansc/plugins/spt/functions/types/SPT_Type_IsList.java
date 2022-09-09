@@ -6,9 +6,8 @@ import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
 import org.apache.log4j.Logger;
 import org.appiansc.plugins.spt.AppianTypeHelper;
-import org.appiansc.plugins.spt.SptPluginCategory;
 
-@SptPluginCategory
+@TypeCategory
 public class SPT_Type_IsList {
     private static final Logger LOG = Logger.getLogger(SPT_Type_IsList.class);
 

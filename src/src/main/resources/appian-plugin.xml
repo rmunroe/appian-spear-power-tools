@@ -7,46 +7,52 @@
     <application-version min="22.2"/>
   </plugin-info>
 
-  <function-category key="SptPluginCategory" name="SPEaR Power Tools"/>
-
   <!-- DATE AND TIME FUNCTIONS -->
+  <function-category key="DateTimeCategory" name="SPT Date and Time Functions"/>
   <function key="SPT_DateTime_ToEpoch" class="org.appiansc.plugins.spt.functions.dateTime.SPT_DateTime_ToEpoch"/>
   <function key="SPT_DateTime_FromEpoch" class="org.appiansc.plugins.spt.functions.dateTime.SPT_DateTime_FromEpoch"/>
 
   <!-- DOCUMENT FUNCTIONS -->
-  <function key="SPT_Docs_FromUuid" class="org.appiansc.plugins.spt.functions.documents.SPT_Docs_FromUuid"/>
-  <function key="SPT_Docs_GetUuid" class="org.appiansc.plugins.spt.functions.documents.SPT_Docs_GetUuid"/>
+  <function-category key="DocsCategory" name="SPT Document Functions"/>
+  <function key="SPT_Docs_FromUuid" class="org.appiansc.plugins.spt.functions.docs.SPT_Docs_FromUuid"/>
+  <function key="SPT_Docs_GetUuid" class="org.appiansc.plugins.spt.functions.docs.SPT_Docs_GetUuid"/>
 
   <!-- FORMATTING FUNCTIONS -->
-  <function key="SPT_Fmt_AsWords" class="org.appiansc.plugins.spt.functions.format.SPT_Fmt_AsWords"/>
-  <function key="SPT_Fmt_BytesDisplaySize" class="org.appiansc.plugins.spt.functions.format.SPT_Fmt_BytesDisplaySize"/>
-  <function key="SPT_Fmt_TimeAgo" class="org.appiansc.plugins.spt.functions.format.SPT_Fmt_TimeAgo"/>
+  <function-category key="FmtCategory" name="SPT Formatting Functions"/>
+  <function key="SPT_Fmt_AsWords" class="org.appiansc.plugins.spt.functions.fmt.SPT_Fmt_AsWords"/>
+  <function key="SPT_Fmt_BytesDisplaySize" class="org.appiansc.plugins.spt.functions.fmt.SPT_Fmt_BytesDisplaySize"/>
+  <function key="SPT_Fmt_TimeAgo" class="org.appiansc.plugins.spt.functions.fmt.SPT_Fmt_TimeAgo"/>
 
   <!-- LIST FUNCTIONS -->
-  <function key="SPT_List_AppendAny" class="org.appiansc.plugins.spt.functions.lists.SPT_List_AppendAny"/>
-  <function key="SPT_List_Count" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Count"/>
-  <function key="SPT_List_First" class="org.appiansc.plugins.spt.functions.lists.SPT_List_First"/>
-  <function key="SPT_List_HasDuplicates" class="org.appiansc.plugins.spt.functions.lists.SPT_List_HasDuplicates"/>
-  <function key="SPT_List_Last" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Last"/>
-  <function key="SPT_List_RandomElement" class="org.appiansc.plugins.spt.functions.lists.SPT_List_RandomElement"/>
-  <function key="SPT_List_Randomize" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Randomize"/>
-  <function key="SPT_List_RemoveNulls" class="org.appiansc.plugins.spt.functions.lists.SPT_List_RemoveNulls"/>
-  <function key="SPT_List_Slice" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Slice"/>
-  <function key="SPT_List_Unique" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Unique"/>
+  <function-category key="ListCategory" name="SPT List (Array) Functions"/>
+  <function key="SPT_List_AppendAny" class="org.appiansc.plugins.spt.functions.list.SPT_List_AppendAny"/>
+  <function key="SPT_List_Count" class="org.appiansc.plugins.spt.functions.list.SPT_List_Count"/>
+  <function key="SPT_List_First" class="org.appiansc.plugins.spt.functions.list.SPT_List_First"/>
+  <function key="SPT_List_HasDuplicates" class="org.appiansc.plugins.spt.functions.list.SPT_List_HasDuplicates"/>
+  <function key="SPT_List_Last" class="org.appiansc.plugins.spt.functions.list.SPT_List_Last"/>
+  <function key="SPT_List_RandomElement" class="org.appiansc.plugins.spt.functions.list.SPT_List_RandomElement"/>
+  <function key="SPT_List_Randomize" class="org.appiansc.plugins.spt.functions.list.SPT_List_Randomize"/>
+  <function key="SPT_List_RemoveNulls" class="org.appiansc.plugins.spt.functions.list.SPT_List_RemoveNulls"/>
+  <function key="SPT_List_Slice" class="org.appiansc.plugins.spt.functions.list.SPT_List_Slice"/>
+  <function key="SPT_List_Unique" class="org.appiansc.plugins.spt.functions.list.SPT_List_Unique"/>
 
   <!-- NUMBER FUNCTIONS -->
-  <function key="SPT_Num_RandInRange" class="org.appiansc.plugins.spt.functions.numbers.SPT_Num_RandInRange"/>
+  <function-category key="NumCategory" name="SPT Number Functions"/>
+  <function key="SPT_Num_RandInRange" class="org.appiansc.plugins.spt.functions.num.SPT_Num_RandInRange"/>
 
   <!-- OBJECT FUNCTIONS -->
-  <function key="SPT_Object_RemoveNullProperties" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_RemoveNullProperties"/>
-  <function key="SPT_Object_ToDictionary" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_ToDictionary"/>
-  <function key="SPT_Object_ToMap" class="org.appiansc.plugins.spt.functions.objects.SPT_Object_ToMap"/>
+  <function-category key="ObjectCategory" name="SPT Object Functions"/>
+  <function key="SPT_Object_RemoveNullProperties" class="org.appiansc.plugins.spt.functions.object.SPT_Object_RemoveNullProperties"/>
+  <function key="SPT_Object_ToDictionary" class="org.appiansc.plugins.spt.functions.object.SPT_Object_ToDictionary"/>
+  <function key="SPT_Object_ToMap" class="org.appiansc.plugins.spt.functions.object.SPT_Object_ToMap"/>
 
   <!-- TEXT FUNCTIONS -->
+  <function-category key="TextCategory" name="SPT Text Functions"/>
   <function key="SPT_Text_GetMetaphone" class="org.appiansc.plugins.spt.functions.text.SPT_Text_GetMetaphone"/>
   <function key="SPT_Text_ToNumber" class="org.appiansc.plugins.spt.functions.text.SPT_Text_ToNumber"/>
 
   <!-- TYPE FUNCTIONS -->
+  <function-category key="TypeCategory" name="SPT Type Functions"/>
   <function key="SPT_Type_IsDecimal" class="org.appiansc.plugins.spt.functions.types.SPT_Type_IsDecimal"/>
   <function key="SPT_Type_IsInteger" class="org.appiansc.plugins.spt.functions.types.SPT_Type_IsInteger"/>
   <function key="SPT_Type_IsList" class="org.appiansc.plugins.spt.functions.types.SPT_Type_IsList"/>
@@ -55,6 +61,7 @@
   <function key="SPT_Type_IsObject" class="org.appiansc.plugins.spt.functions.types.SPT_Type_IsObject"/>
 
   <!-- UTILITY FUNCTIONS -->
+  <function-category key="UuidCategory" name="SPT UUID Generation Functions"/>
   <function key="SPT_Uuid_Bulk" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_Bulk"/>
   <function key="SPT_Uuid_FromText" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_FromText"/>
 
