@@ -83,14 +83,14 @@ If you encounter any issues with the plugin, please post in the Appian Community
 
 ## SPT_DateTime_ToEpoch
 
-Returns the number of seconds since the standard base time known as "the epoch", namely January 1, 1970, 00:00:00 GMT.
+Returns the number of seconds since the standard base time known as [the epoch](https://en.wikipedia.org/wiki/Unix_time), namely January 1, 1970, 00:00:00 GMT.
 
 | Parameter | Description                                 |
 | --------- | ------------------------------------------- |
 | dateTime  | The Date and Time to get the epoch time for |
 
 #### Example
-```
+```TextMate Properties
 a!localVariables(
   local!time: datetime(2017, 7, 5, 8, 30),
   fn!spt_datetime_toepoch(local!time)
@@ -102,7 +102,7 @@ Returns `1499243400`
 
 ## SPT_DateTime_FromEpoch
 
-Converts the epoch value (the number of seconds since January 1, 1970, 00:00:00 GMT) to a Date and Time.
+Converts [the epoch](https://en.wikipedia.org/wiki/Unix_time) value (the number of seconds since January 1, 1970, 00:00:00 GMT) to a Date and Time.
 
 | Parameter | Description                                          |
 | --------- | ---------------------------------------------------- |
@@ -832,7 +832,7 @@ Returns (Dictionary):
 
 ## SPT_Object_ToMap
 
-Converts the given object (Map(s), Dictionary(s) or CDT(s)) to a Map, including nested objects (unlike the cast() function). If the passed in value is not a Map, Dictionary, or CDT (or a List of them) an error is thrown.
+Converts the given object (Map, Dictionary, or CDT) to a Map, including Lists and nested objects (unlike the `cast()` function). If the passed in value is not a Map, Dictionary, or CDT (or a List of them) an error is thrown.
 
 | Parameter | Description                    |
 | --------- | ------------------------------ |
