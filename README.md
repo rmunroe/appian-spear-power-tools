@@ -151,6 +151,7 @@ a!localVariables(
     docName: document(ri!docToSave, "name"),
     docExt: document(ri!docToSave, "extension"),
     docSize: document(ri!docToSave, "size"),
+
     docUuid: spt_docs_getuuid(ri!docToSave)
   ),
   
@@ -172,7 +173,9 @@ In this example, we are resolving a Document from its UUID as stored in a databa
 ```REXX
 a!localVariables(
   local!myCdt: rule!ABC_getDocumentCdtById(id: ri!docCdtId),
+
   local!document: spt_docs_fromuuid(local!myCdt.docUuid),
+
   local!docDisplay: document(local!document, "name") & "." & document(local!document, "extension"),
 
 ...
