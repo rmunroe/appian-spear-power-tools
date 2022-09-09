@@ -228,7 +228,7 @@ fn!spt_fmt_aswords(123456.78, "AMERICAN_ENGLISH_BANKING_MONEY_VALUE")
 ```
 Returns: `"one hundred twenty-three thousand four hundred fifty-six $ 78/100"`
 
-#### Example 2 - Decimal to French money words (euros)
+#### Example 3 - Decimal to French money words (euros)
 ```
 fn!spt_fmt_aswords(123456.78, "FRENCH_BANKING_MONEY_VALUE")
 ```
