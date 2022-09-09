@@ -1,4 +1,4 @@
-package org.appiansc.plugins.spt.functions.numbers;
+package org.appiansc.plugins.spt.functions.format;
 
 import com.appiancorp.suiteapi.expression.annotations.Function;
 import com.appiancorp.suiteapi.expression.annotations.Parameter;
@@ -11,11 +11,11 @@ import pl.allegro.finance.tradukisto.ValueConverters;
 import java.math.BigDecimal;
 
 @SptPluginCategory
-public class SPT_Num_AsWords {
-    private static final Logger LOG = Logger.getLogger(SPT_Num_AsWords.class);
+public class SPT_Fmt_AsWords {
+    private static final Logger LOG = Logger.getLogger(SPT_Fmt_AsWords.class);
 
     @Function
-    public String spt_num_aswords(
+    public String spt_fmt_aswords(
             @Parameter TypedValue number,
             @Parameter String converterName
     ) throws Exception {

@@ -24,11 +24,15 @@ If you encounter any issues with the plugin, please post in the Appian Community
 ## Date and Time Functions
 * [SPT_DateTime_ToEpoch](#SPT_DateTime_ToEpoch)
 * [SPT_DateTime_FromEpoch](#SPT_DateTime_FromEpoch)
-* [SPT_DateTime_TimeAgo](#SPT_DateTime_TimeAgo)
 
 ## Document Functions
 * [SPT_Docs_GetUuid](#SPT_Docs_GetUuid)
 * [SPT_Docs_FromUuid](#SPT_Docs_FromUuid)
+
+## Formatting Functions
+* [SPT_Fmt_AsWords](#SPT_Fmt_AsWords)
+* [SPT_Fmt_BytesDisplaySize](#SPT_Fmt_BytesDisplaySize)
+* [SPT_Fmt_TimeAgo](#SPT_Fmt_TimeAgo)
 
 ## List (Array) Functions
 * [SPT_List_AppendAny](#SPT_List_AppendAny)
@@ -44,7 +48,6 @@ If you encounter any issues with the plugin, please post in the Appian Community
 * [SPT_List_Unique](#SPT_List_Unique)
 
 ## Number Functions
-* [SPT_Num_AsWords](#SPT_Num_AsWords)
 * [SPT_Num_RandInRange](#SPT_Num_RandInRange)
 
 ## Object Functions
@@ -97,33 +100,6 @@ Converts the epoch value (the number of seconds since January 1, 1970, 00:00:00 
 fn!spt_datetime_fromepoch(1499243400) = datetime(2017, 7, 5, 8, 30)
 ```
 Returns `true`
-
-
-## SPT_DateTime_TimeAgo
-Returns a text description of the relative duration a given Date and Time was or is from Now.
-
-| Parameter  | Description                                                                                                                                                           |
-|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| dateTime   | The Date and Time to describe                                                                                                                                         |
-| locale     | Optional locale abbreviation supported by [the PrettyTime library](https://github.com/ocpsoft/prettytime/tree/master/core/src/main/java/org/ocpsoft/prettytime/i18n)  |
-
-### Example 1 - 100 days ago
-```
-a!localVariables(
-  local!time: now() - 100,
-  fn!spt_datetime_timeago(local!time)
-)
-```
-Returns `"3 months ago"`
-
-### Example 2 - 100 days ago, but in German
-```
-a!localVariables(
-  local!time: now() - 100,
-  fn!spt_datetime_timeago(local!time, "de")
-)
-```
-Returns `"vor 3 Monaten"`
 
 
 
@@ -181,6 +157,136 @@ a!localVariables(
 
 ...
 ```
+
+
+
+------------------------------------------------------------------------------
+
+# Formatting Functions
+
+These functions are for formatting different input values to Text values suitable for displaying.
+
+
+## SPT_Fmt_AsWords
+
+Returns a words-based description of the provided numeric value, e.g. for when writing checks.
+
+| Parameter     | Description                                         |
+|---------------|-----------------------------------------------------|
+| number        | The Integer or Decimal number to convert into words |
+| converterName | The name of the converter to use. See below.        |
+
+This function requires you specify which converter to use. Typically, for Integer input values, an `*_INTEGER` converter is used, and for Decimal values a `*_BANKING_MONEY_VALUE` converter is used, however any combination can be used.
+
+### Integer Converter Names
+* `BRAZILIAN_PORTUGUESE_INTEGER`
+* `BULGARIAN_INTEGER`
+* `CZECH_INTEGER`
+* `ENGLISH_INTEGER`
+* `FRENCH_INTEGER`
+* `GERMAN_INTEGER`
+* `ITALIAN_INTEGER`
+* `KAZAKH_INTEGER`
+* `LATVIAN_INTEGER`
+* `POLISH_INTEGER`
+* `RUSSIAN_INTEGER`
+* `SERBIAN_CYRILLIC_INTEGER`
+* `SERBIAN_INTEGER`
+* `SLOVAK_INTEGER`
+* `TURKISH_INTEGER`
+* `UKRAINIAN_INTEGER`
+
+
+### Banking Money Value Converter Names
+* `AMERICAN_ENGLISH_BANKING_MONEY_VALUE`
+* `BRAZILIAN_PORTUGUESE_BANKING_MONEY_VALUE`
+* `BULGARIAN_BANKING_MONEY_VALUE`
+* `CZECH_BANKING_MONEY_VALUE`
+* `ENGLISH_BANKING_MONEY_VALUE`
+* `FRENCH_BANKING_MONEY_VALUE`
+* `GERMAN_BANKING_MONEY_VALUE`
+* `ITALIAN_BANKING_MONEY_VALUE`
+* `KAZAKH_BANKING_MONEY_VALUE`
+* `LATVIAN_BANKING_MONEY_VALUE`
+* `POLISH_BANKING_MONEY_VALUE`
+* `RUSSIAN_BANKING_MONEY_VALUE`
+* `SERBIAN_BANKING_MONEY_VALUE`
+* `SERBIAN_CYRILLIC_BANKING_MONEY_VALUE`
+* `SLOVAK_BANKING_MONEY_VALUE`
+* `TURKISH_BANKING_MONEY_VALUE`
+* `UKRAINIAN_BANKING_MONEY_VALUE`
+
+### Example 1 - Integer to English words
+```
+fn!spt_fmt_aswords(123456789, "ENGLISH_INTEGER")
+```
+Returns: `"one hundred twenty-three million four hundred fifty-six thousand seven hundred eighty-nine"`
+
+### Example 2 - Decimal to US English money words (dollars)
+```
+fn!spt_fmt_aswords(123456.78, "AMERICAN_ENGLISH_BANKING_MONEY_VALUE")
+```
+Returns: `"one hundred twenty-three thousand four hundred fifty-six $ 78/100"`
+
+### Example 2 - Decimal to French money words (euros)
+```
+fn!spt_fmt_aswords(123456.78, "FRENCH_BANKING_MONEY_VALUE")
+```
+Returns: `"cent vingt-trois mille quatre cent cinquante-six € 78/100"`
+
+
+## SPT_Fmt_BytesDisplaySize
+
+Returns a friendly display size for the given number of bytes. Useful when used with `document(123, "size")`.
+
+| Parameter | Description                                                                            |
+|-----------|----------------------------------------------------------------------------------------|
+| bytes     | The size in bytes to get a display value for (e.g. `"123 KB"`)                         |
+| binary    | If set to true, uses base `1024` instead of `1000` and returns values e.g. `"123 KiB"` |
+
+### Example 1 - Show the "standard" size for a byte value
+```
+fn!spt_fmt_bytesdisplaysize(987654321)
+```
+Returns `"987.7 MB"`
+
+### Example 2 - Show the binary-based size for a byte value, retrieved from a Document
+```
+a!localVariables(
+  local!docSize: document(cons!SPTT_TEST_IMAGE_FILE, "size"), /* 203681 bytes */
+  
+  fn!spt_fmt_bytesdisplaysize(local!docSize, true)
+)
+```
+Returns `"198.9 KiB"`
+
+
+## SPT_Fmt_TimeAgo
+Returns a text description of the relative duration a given Date and Time was or is from Now.
+
+| Parameter  | Description                                                                                                                                                           |
+|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| dateTime   | The Date and Time to describe                                                                                                                                         |
+| locale     | Optional locale abbreviation supported by [the PrettyTime library](https://github.com/ocpsoft/prettytime/tree/master/core/src/main/java/org/ocpsoft/prettytime/i18n)  |
+
+### Example 1 - 100 days ago
+```
+a!localVariables(
+  local!time: now() - 100,
+  fn!spt_fmt_timeago(local!time)
+)
+```
+Returns `"3 months ago"`
+
+### Example 2 - 100 days ago, but in German
+```
+a!localVariables(
+  local!time: now() - 100,
+  fn!spt_fmt_timeago(local!time, "de")
+)
+```
+Returns `"vor 3 Monaten"`
+
 
 
 ------------------------------------------------------------------------------
@@ -603,75 +709,7 @@ Returns `{1, 2, 3, 5, 4}`
 
 # Number Functions
 
-These functions are for working with Integer or Decimal input values.
-
-
-## SPT_Num_AsWords
-
-Returns a words-based description of the provided numeric value, e.g. for when writing checks.
-
-| Parameter     | Description                                         |
-|---------------|-----------------------------------------------------|
-| number        | The Integer or Decimal number to convert into words |
-| converterName | The name of the converter to use. See below.        |
-
-This function requires you specify which converter to use. Typically, for Integer input values, an `*_INTEGER` converter is used, and for Decimal values a `*_BANKING_MONEY_VALUE` converter is used, however any combination can be used.
-
-### Integer Converter Names
-* `BRAZILIAN_PORTUGUESE_INTEGER`
-* `BULGARIAN_INTEGER`
-* `CZECH_INTEGER`
-* `ENGLISH_INTEGER`
-* `FRENCH_INTEGER`
-* `GERMAN_INTEGER`
-* `ITALIAN_INTEGER`
-* `KAZAKH_INTEGER`
-* `LATVIAN_INTEGER`
-* `POLISH_INTEGER`
-* `RUSSIAN_INTEGER`
-* `SERBIAN_CYRILLIC_INTEGER`
-* `SERBIAN_INTEGER`
-* `SLOVAK_INTEGER`
-* `TURKISH_INTEGER`
-* `UKRAINIAN_INTEGER`
-
-
-### Banking Money Value Converter Names
-* `AMERICAN_ENGLISH_BANKING_MONEY_VALUE`
-* `BRAZILIAN_PORTUGUESE_BANKING_MONEY_VALUE`
-* `BULGARIAN_BANKING_MONEY_VALUE`
-* `CZECH_BANKING_MONEY_VALUE`
-* `ENGLISH_BANKING_MONEY_VALUE`
-* `FRENCH_BANKING_MONEY_VALUE`
-* `GERMAN_BANKING_MONEY_VALUE`
-* `ITALIAN_BANKING_MONEY_VALUE`
-* `KAZAKH_BANKING_MONEY_VALUE`
-* `LATVIAN_BANKING_MONEY_VALUE`
-* `POLISH_BANKING_MONEY_VALUE`
-* `RUSSIAN_BANKING_MONEY_VALUE`
-* `SERBIAN_BANKING_MONEY_VALUE`
-* `SERBIAN_CYRILLIC_BANKING_MONEY_VALUE`
-* `SLOVAK_BANKING_MONEY_VALUE`
-* `TURKISH_BANKING_MONEY_VALUE`
-* `UKRAINIAN_BANKING_MONEY_VALUE`
-
-### Example 1 - Integer to English words
-```
-fn!spt_num_aswords(123456789, "ENGLISH_INTEGER")
-```
-Returns: `"one hundred twenty-three million four hundred fifty-six thousand seven hundred eighty-nine"`
-
-### Example 2 - Decimal to US English money words (dollars)
-```
-fn!spt_num_aswords(123456.78, "AMERICAN_ENGLISH_BANKING_MONEY_VALUE")
-```
-Returns: `"one hundred twenty-three thousand four hundred fifty-six $ 78/100"`
-
-### Example 2 - Decimal to French money words (euros)
-```
-fn!spt_num_aswords(123456.78, "FRENCH_BANKING_MONEY_VALUE")
-```
-Returns: `"cent vingt-trois mille quatre cent cinquante-six € 78/100"`
+These functions are for working with Integers or Decimals.
 
 
 ## SPT_Num_RandInRange
@@ -696,6 +734,7 @@ Returns (e.g.) `14`
 fn!spt_num_randinrange(10.0, 20.0, 5, 2)
 ```
 Returns (e.g.) `{11.33, 12.22, 12.78, 16.53, 16.82}`
+
 
 
 ------------------------------------------------------------------------------
@@ -862,6 +901,7 @@ a!map(
   )
 )
 ```
+
 
 
 ------------------------------------------------------------------------------

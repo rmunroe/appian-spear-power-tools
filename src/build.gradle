@@ -18,37 +18,30 @@ repositories {
     maven {
         url "https://oss.sonatype.org/content/repositories/snapshots/"
     }
-
     flatDir {
         dirs 'lib-compile'
     }
 }
 
 dependencies {
-    implementation 'org.ocpsoft.prettytime:prettytime:5.0.3.Final'
-    implementation 'commons-codec:commons-codec:1.15'
-    implementation 'pl.allegro.finance:tradukisto:1.12.0'
-
     compileOnly fileTree(dir: 'lib-compile', include: '*.jar')
     implementation fileTree(dir: 'lib-include', include: '*.jar')
 
-    implementation group: 'net.jodah', name: 'expiringmap', version: '0.5.10'
-    implementation group: 'com.github.f4b6a3', name: 'uuid-creator', version: '5.1.0'
+    implementation 'com.github.f4b6a3:uuid-creator:5.1.1'
+    implementation 'org.ocpsoft.prettytime:prettytime:5.0.3.Final'
+    implementation 'pl.allegro.finance:tradukisto:1.12.0'
 
+    // These are found in Appian's classpath (<APPIAN_HOME>/deployment/web.war/WEB-INF/lib)
     compileOnly 'org.apache.logging.log4j:log4j-1.2-api:2.17.1'
-
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    compileOnly 'commons-codec:commons-codec:1.13'
+    compileOnly 'commons-io:commons-io:2.9.0'
 }
 
-test {
-    useJUnitPlatform()
-}
 
 configurations {
-    testImplementation.extendsFrom compileOnly
     implementation.transitive = false
 }
+
 
 jar {
     dependsOn check
@@ -69,10 +62,12 @@ jar {
     }
 }
 
+
 archivesBaseName = "SPEaR Power Tools"
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
+
 // If this shows as an error in IntelliJ, simply ignore
- version = new XmlSlurper().parse(file('src/main/resources/appian-plugin.xml')).'plugin-info'.version
+version = new groovy.xml.XmlSlurper().parse(file('src/main/resources/appian-plugin.xml')).'plugin-info'.version

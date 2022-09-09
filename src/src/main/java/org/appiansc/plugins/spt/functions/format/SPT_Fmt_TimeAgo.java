@@ -1,4 +1,4 @@
-package org.appiansc.plugins.spt.functions.dateTime;
+package org.appiansc.plugins.spt.functions.format;
 
 import com.appiancorp.suiteapi.content.ContentService;
 import com.appiancorp.suiteapi.expression.annotations.Function;
@@ -12,11 +12,11 @@ import java.util.Locale;
 
 
 @SptPluginCategory
-public class SPT_DateTime_TimeAgo {
-    private static final Logger LOG = Logger.getLogger(SPT_DateTime_TimeAgo.class);
+public class SPT_Fmt_TimeAgo {
+    private static final Logger LOG = Logger.getLogger(SPT_Fmt_TimeAgo.class);
 
     @Function
-    public String spt_datetime_timeago(
+    public String spt_fmt_timeago(
             ContentService cs,
             @Parameter Timestamp dateTime,
             @Parameter(required = false) String locale
