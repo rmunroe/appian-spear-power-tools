@@ -342,11 +342,11 @@ These functions are for working with Lists in Appian, aka arrays. Several of the
 
 ## SPT_List_AppendAny
 
-Appends any value to a List without changing the value's type. If the type of the list and the value being appended do not match, the List is cast to a List of Variant.
+Appends any value to a List without changing the value's type. If the type of the List and the value being appended do not match, the List is cast to a List of Variant.
 
 | Parameter | Description           |
 | --------- | --------------------- |
-| list      | The list to append to |
+| list      | The List to append to |
 | value     | The value to append   |
 
 
@@ -358,7 +358,7 @@ _**When an `Any Type` value is provided, this plugin will default to both `null`
 
 For instance if you use [SPT_List_AppendAny](#SPT_List_AppendAny) to append `""` onto a List, instead of an empty string `""` being appended, the value `null` is used. See the example given below.
 
-#### Example 1 - Append an integer on a List of Text
+#### Example 1 - Append an Integer on a List of Text
 If using the built-in `append()`, Appian would convert `4` to `"4"`.
 ```REXX
 a!localVariables(
@@ -383,11 +383,11 @@ Returns (List of Variant) `{"one", "two", "three", null}`
 
 ## SPT_List_Count
 
-Returns the element count (including `null` elements) in a list. If the passed in value is not a List, or the List is `null` or empty, returns `0`.
+Returns the element count (including `null` elements) in a List. If the passed in value is not a List, or the List is `null` or empty, returns `0`.
 
 | Parameter | Description       |
 | --------- | ----------------- |
-| list      | The list to count |
+| list      | The List to count |
 
 #### Example 1 - Counting `null`
 (If using the built-in `count()`, Appian would instead return `1`, which can be very confusing.)
@@ -400,7 +400,7 @@ a!localVariables(
 ```
 Returns `0`
 
-#### Example 2 - Counting a non-list value
+#### Example 2 - Counting a non-List value
 (If using the built-in `count()`, Appian would instead return `1`, which can be very confusing.)
 ```REXX
 a!localVariables(
@@ -429,7 +429,7 @@ Returns the first element of the List. Returns `null` if List is `null` or empty
 
 | Parameter | Description             |
 | --------- | ----------------------- |
-| list      | The list to choose from |
+| list      | The List to choose from |
 
 #### Example 1 - Getting the first element from a List
 ```REXX
@@ -459,7 +459,7 @@ Returns `true` if there are duplicate items in the List. If all items are unique
 
 | Parameter | Description       |
 | --------- | ----------------- |
-| list      | The list to check |
+| list      | The List to check |
 
 #### Example 1 - List of Integers with duplicate values
 ```REXX
@@ -514,7 +514,7 @@ Returns the last element of the List. Returns `null` if List is `null` or empty.
 
 | Parameter | Description             |
 | --------- | ----------------------- |
-| list      | The list to choose from |
+| list      | The List to choose from |
 
 #### Example 1 - Grab the last element of a List of Text
 ```REXX
@@ -544,7 +544,7 @@ Returns a random element in the provided List. If not a List, returns what was p
 
 | Parameter | Description                                                                                                                                   |
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| list      | The list to select from                                                                                                                       |
+| list      | The List to select from                                                                                                                       |
 | count     | The number of elements to include (optional; default is 1)                                                                                    |
 | unique    | If selecting multiple, ensure that the elements are unique. Will throw an error if count is greater than the number of elements in the array. |
 
@@ -580,7 +580,7 @@ Returns the provided List in a randomized order (shuffled). If not a List, retur
 
 | Parameter | Description           |
 | --------- | --------------------- |
-| list      | The list to randomize |
+| list      | The List to randomize |
 
 #### Example - Retrieve Map `id` properties in a randomized order 
 ```REXX
@@ -606,7 +606,7 @@ Removes all `null` elements from the given List. If a List of Text is passed in,
 
 | Parameter | Description                   |
 | --------- | ----------------------------- |
-| list      | The list to remove nulls from |
+| list      | The List to remove nulls from |
 
 #### Example 1 - Remove nulls from a List of Integers
 ```REXX
@@ -662,9 +662,9 @@ Returns a subset of the provided List, starting with and including `startIndex` 
 
 | Parameter  | Description                                                                           |
 | ---------- | ------------------------------------------------------------------------------------- |
-| list       | The list to slice                                                                     |
+| list       | The List to slice                                                                     |
 | startIndex | The first index to include in the slice                                               |
-| endIndex   | The last index to include in the slice. If omitted, the rest of the list is included. |
+| endIndex   | The last index to include in the slice. If omitted, the rest of the List is included. |
 
 #### Example 1 - Get elements 10-15 (inclusive)
 ```REXX
@@ -714,7 +714,7 @@ Returns the unique elements found in the provided List. If `list` is null or emp
 
 | Parameter | Description                                        |
 | --------- | -------------------------------------------------- |
-| list      | The list to unique                                 |
+| list      | The List to unique                                 |
 | keepNulls | If true, keeps null values (uniqued, so 1 at most) |
 
 #### Example - Get only unique values
@@ -959,7 +959,7 @@ Returns the Metaphone value for the given Text value. Alternatively uses Double 
 
 | Parameter       | Description                                               |
 | --------------- | --------------------------------------------------------- |
-| text            | The text to generate a Metaphone value for                |
+| text            | The Text to generate a Metaphone value for                |
 | doubleMetaphone | Use Double Metaphone instead (optional; default is false) |
 
 Metaphone is a phonetic algorithm used for matching similar sounding English words and names. This can be used to help create a "fuzzy search" in Appian. 
@@ -988,7 +988,7 @@ Parses the given Text value to an Integer or Decimal. If the value cannot be par
 
 | Parameter | Description                 |
 | --------- | --------------------------- |
-| text      | The text value to be parsed |
+| text      | The Text value to be parsed |
 
 #### Example 1 - Text is non-numeric
 ```REXX
@@ -1343,7 +1343,7 @@ spt_type_isobject("ABC")
 ```
 Returns `false`
 
-#### Example 3 - Empty list is passed in
+#### Example 3 - Empty List is passed in
 ```REXX
 spt_type_isobject({})
 ```
@@ -1393,7 +1393,7 @@ These functions are for generating UUIDs in Appian.
 
 ## SPT_Uuid_Bulk
 
-Creates a list of UUIDs in bulk. Best practice is to know the number of UUIDs to be generated and call this method once in any given Expression evaluation, in order to avoid Appian's caching. (I.e. do not call in a `a!forEach()` using count of `1` or you will get the same UUID for each call as the result is cached.)
+Creates a List of UUIDs in bulk. Best practice is to know the number of UUIDs to be generated and call this method once in any given Expression evaluation, in order to avoid Appian's caching. (I.e. do not call in a `a!forEach()` using count of `1` or you will get the same UUID for each call as the result is cached.)
 
 | Parameter | Description                     |
 | --------- | ------------------------------- |
