@@ -500,7 +500,7 @@ spt_list_hasduplicates(123)
 ```
 Returns `false`
 
-##### Example 5 - Passing in `null`
+**Example 5 - Passing in `null`**
 ```REXX
 spt_list_hasduplicates(null)
 ```
