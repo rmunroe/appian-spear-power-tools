@@ -281,7 +281,9 @@ a!localVariables(
   fn!spt_fmt_bytesdisplaysize(local!docSize, true)
 )
 ```
+
 (the test document size is 203681 bytes)
+
 Returns `"198.9 KiB"`
 
 
