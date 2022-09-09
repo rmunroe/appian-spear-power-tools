@@ -21,7 +21,7 @@ public class SPT_List_Randomize {
             TypeService ts,
             @Parameter TypedValue list
     ) {
-        if (!AppianListHelper.isList(ts, list)) return list;
+        if (!AppianTypeHelper.isList(ts, list)) return list;
 
         AppianList inputList = AppianListHelper.getList(ts, list);
 

@@ -1,9 +1,9 @@
 package org.appiansc.plugins.spt;
 
-import com.appiancorp.ps.plugins.typetransformer.AppianElement;
 import com.appiancorp.ps.plugins.typetransformer.AppianObject;
 import com.appiancorp.ps.plugins.typetransformer.AppianTypeFactory;
 import com.appiancorp.suiteapi.type.AppianType;
+import com.appiancorp.suiteapi.type.DatatypeProperties;
 import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
 import org.apache.log4j.Logger;
@@ -16,6 +16,51 @@ public class AppianTypeHelper {
     private static final Logger LOG = Logger.getLogger(AppianTypeHelper.class);
 
     private static AppianTypeFactory typeFactory;
+
+
+    public static boolean isInteger(TypedValue value) {
+        if (value.getInstanceType() == AppianType.STRING) {
+            // Can we turn it into an Integer and is the value the same as the input when stringified?
+            try {
+                long parseLong = Long.parseLong(value.getValue().toString());
+                return Long.toString(parseLong).equals(value.getValue().toString());
+            } catch (Exception ignored) {
+            }
+            return false;
+        } else {
+            return value.getInstanceType() == AppianType.INTEGER
+                    || value.getInstanceType() == AppianType.LIST_OF_INTEGER;
+        }
+    }
+
+
+    public static boolean isDecimal(TypedValue value) {
+        if (value.getInstanceType() == AppianType.STRING) {
+            // Can we turn it into a Decimal and is the value the same as the input when stringified?
+            try {
+                double parseDouble = Double.parseDouble(value.getValue().toString());
+                return Double.toString(parseDouble).equals(value.getValue().toString());
+            } catch (Exception ignored) {
+            }
+            return false;
+        } else {
+            return value.getInstanceType() == AppianType.DOUBLE
+                    || value.getInstanceType() == AppianType.LIST_OF_DOUBLE;
+        }
+    }
+
+    public static boolean isNumeric(TypedValue value) {
+        return isInteger(value) || isDecimal(value);
+    }
+
+
+    public static boolean isObject(TypeService ts, TypedValue tv) {
+        DatatypeProperties props = ts.getDatatypeProperties(tv.getInstanceType());
+        return (props.isRecordType() // is CDT
+                || tv.getInstanceType() == (long) AppianType.MAP
+                || tv.getInstanceType() == (long) AppianType.DICTIONARY
+        );
+    }
 
 
     /**
@@ -51,7 +96,6 @@ public class AppianTypeHelper {
     public static TypedValue toMap(TypeService ts, AppianObject dictionary) {
         return toMap(ts, getTypeFactory(ts).toTypedValue(dictionary));
     }
-
 
 
     public static TypedValue removeNullProperties(TypeService ts, TypedValue object, Boolean recursive) {
@@ -101,6 +145,32 @@ public class AppianTypeHelper {
         object.setValue(newValue);
 
         return object;
+    }
+
+    /**
+     * Returns true if the TypedValue passed in is a List type.
+     *
+     * @param ts TypeService instance (usually injected)
+     * @param tv any Appian TypedValue (any type)
+     * @return true is type is a List
+     */
+    public static boolean isList(TypeService ts, TypedValue tv) {
+        return ts.getDatatypeProperties(tv.getInstanceType()).isListType();
+    }
+
+    /**
+     * Returns true if the TypedValue passed in is a List of Dictionaries, Maps, or CDTs.
+     *
+     * @param ts TypeService instance (usually injected)
+     * @param tv any Appian TypedValue (any type)
+     * @return true is type is a List of Dictionaries, Maps, or CDTs
+     */
+    public static boolean isListOfObjects(TypeService ts, TypedValue tv) {
+        DatatypeProperties props = ts.getDatatypeProperties(tv.getInstanceType());
+        return ((props.isListType() && ts.getDatatypeProperties(props.getTypeof()).isRecordType()) // List of CDT
+                || tv.getInstanceType() == (long) AppianType.LIST_OF_MAP
+                || tv.getInstanceType() == (long) AppianType.LIST_OF_DICTIONARY
+        );
     }
 }
 

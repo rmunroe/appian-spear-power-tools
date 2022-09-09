@@ -46,34 +46,6 @@ public class AppianListHelper {
 
 
     /**
-     * Returns true if the TypedValue passed in is a List type.
-     *
-     * @param ts TypeService instance (usually injected)
-     * @param tv any Appian TypedValue (any type)
-     * @return true is type is a List
-     */
-    public static boolean isList(TypeService ts, TypedValue tv) {
-        return ts.getDatatypeProperties(tv.getInstanceType()).isListType();
-    }
-
-
-    /**
-     * Returns true if the TypedValue passed in is a List of Dictionaries, Maps, or CDTs.
-     *
-     * @param ts TypeService instance (usually injected)
-     * @param tv any Appian TypedValue (any type)
-     * @return true is type is a List of Dictionaries, Maps, or CDTs
-     */
-    public static boolean isListOfObjects(TypeService ts, TypedValue tv) {
-        DatatypeProperties props = ts.getDatatypeProperties(tv.getInstanceType());
-        return ((props.isListType() && ts.getDatatypeProperties(props.getTypeof()).isRecordType()) // List of CDT
-                || tv.getInstanceType() == (long) AppianType.LIST_OF_MAP
-                || tv.getInstanceType() == (long) AppianType.LIST_OF_DICTIONARY
-        );
-    }
-
-
-    /**
      * Returns an AppianList given a TypedValue. If the TV is a List type, the TV is converted to AppianList.
      * If it is not a List type, a new List is created with the TV as its single element.
      * If an empty string is passed in, null is returned.

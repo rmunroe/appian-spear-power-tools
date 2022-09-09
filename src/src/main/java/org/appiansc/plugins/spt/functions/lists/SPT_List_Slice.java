@@ -21,7 +21,7 @@ public class SPT_List_Slice {
             @Parameter int startIndex,
             @Parameter(required = false) int endIndex
     ) throws Exception {
-        if (!AppianListHelper.isList(ts, list)) return null; // not a list!
+        if (!AppianTypeHelper.isList(ts, list)) return null; // not a list!
 
         if (startIndex < 1) throw new Exception("startIndex cannot be less than 1"); // Appian Lists are 1-based
         if (endIndex != 0 && endIndex < startIndex) throw new Exception("endIndex cannot be less than startIndex");

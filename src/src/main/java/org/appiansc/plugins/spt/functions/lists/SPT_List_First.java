@@ -20,7 +20,7 @@ public class SPT_List_First {
             TypeService ts,
             @Parameter TypedValue list
     ) {
-        if (!AppianListHelper.isList(ts, list)) return list;
+        if (!AppianTypeHelper.isList(ts, list)) return list;
 
         AppianTypeFactory typeFactory = AppianTypeHelper.getTypeFactory(ts);
         AppianList appianList = AppianListHelper.getList(ts, list, true);

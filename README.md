@@ -25,9 +25,6 @@ If you encounter any issues with the plugin, please post in the Appian Community
 * [SPT_DateTime_ToEpoch](#SPT_DateTime_ToEpoch)
 * [SPT_DateTime_FromEpoch](#SPT_DateTime_FromEpoch)
 
-## Data Type Functions
-* [SPT_Type_IsNumeric](#SPT_Type_IsNumeric)
-
 ## Document Functions
 * [SPT_Docs_GetUuid](#SPT_Docs_GetUuid)
 * [SPT_Docs_FromUuid](#SPT_Docs_FromUuid)
@@ -42,7 +39,6 @@ If you encounter any issues with the plugin, please post in the Appian Community
 * [SPT_List_Count](#SPT_List_Count)
 * [SPT_List_First](#SPT_List_First)
 * [SPT_List_HasDuplicates](#SPT_List_HasDuplicates)
-* [SPT_List_IsList](#SPT_List_IsList)
 * [SPT_List_Last](#SPT_List_Last)
 * [SPT_List_RandomElement](#SPT_List_RandomElement)
 * [SPT_List_Randomize](#SPT_List_Randomize)
@@ -60,6 +56,15 @@ If you encounter any issues with the plugin, please post in the Appian Community
 
 ## Text Functions
 * [SPT_Text_GetMetaphone](#SPT_Text_GetMetaphone)
+* [SPT_Text_ToNumber](#SPT_Text_ToNumber)
+
+## Type Functions
+* [SPT_Type_IsDecimal](#SPT_Type_IsDecimal)
+* [SPT_Type_IsInteger](#SPT_Type_IsInteger)
+* [SPT_Type_IsList](#SPT_Type_IsList)
+* [SPT_Type_IsListOfObjects](#SPT_Type_IsListOfObjects)
+* [SPT_Type_IsNumeric](#SPT_Type_IsNumeric)
+* [SPT_Type_IsObject](#SPT_Type_IsObject)
 
 ## UUID Generation Functions
 * [SPT_Uuid_Bulk](#SPT_Uuid_Bulk)
@@ -103,73 +108,6 @@ Converts the epoch value (the number of seconds since January 1, 1970, 00:00:00 
 fn!spt_datetime_fromepoch(1499243400) = datetime(2017, 7, 5, 8, 30)
 ```
 Returns `true`
-
-
-
-------------------------------------------------------------------------------
-
-
-# Data Type Functions
-
-These functions provide information about the type of the values passed in
-
-
-### SPT_Type_IsNumeric
-
-Returns true if the passed in value is Text that can be interpolated as a number (Integer or Decimal), or is an Integer, a Decimal, a List of Integers, or a List of Decimals.
-
-| Parameter | Description        |
-|-----------|--------------------|
-| value     | The value to check |
-
-#### Example 1 - Text is non-numeric
-```
-fn!spt_type_isnumeric("Bad text")
-```
-Returns `false`
-
-#### Example 2 - Text is of a valid Integer
-```
-fn!spt_type_isnumeric("123")
-```
-Returns `true`
-
-#### Example 3 - Text is of a valid Decimal
-```
-fn!spt_type_isnumeric("4.56")
-```
-Returns `true`
-
-#### Example 4 - Value is an Integer
-```
-fn!spt_type_isnumeric(123)
-```
-Returns `true`
-
-#### Example 5 - Value is a Decimal
-```
-fn!spt_type_isnumeric(4.56)
-```
-Returns `true`
-
-#### Example 6 - Value is a List of Integer
-```
-fn!spt_type_isnumeric({1, 2, 3})
-```
-Returns `true`
-
-#### Example 7 - Value is a List of Decimal
-```
-fn!spt_type_isnumeric({1.1, 2.2, 3.3})
-```
-Returns `true`
-
-#### Example 7 - Value is a List of Text
-```
-fn!spt_type_isnumeric({"one", "two", "three"})
-```
-Returns `false`
-
 
 
 
@@ -515,120 +453,6 @@ Returns `false`
 ##### Example 5 - Passing in `null`
 ```
 fn!spt_list_hasduplicates(null)
-```
-Returns `false`
-
-
-## SPT_List_IsList
-Returns true if the value passed in is a List type. If the passed in value is null, returns false.
-
-| Parameter  | Description        |
-|------------|--------------------|
-| list       | The value to check |
-
-#### Example 1 - Passing in a List of CDT
-```
-a!localVariables(
-  local!listOfCdt: {
-    'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 1, value: "first cdt"),
-    'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 2, value: "second cdt"),
-    'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 3, value: "third cdt"),
-  },
-  fn!spt_list_islist(local!listOfCdt)
-)
-```
-Returns `true`
-
-#### Example 2 - Passing in a List of Integers
-```
-a!localVariables(
-  local!hundredElementList: enumerate(100),
-  fn!spt_list_islist(local!hundredElementList)
-)
-```
-Returns `true`
-
-#### Example 3 - Passing in an empty List
-```
-a!localVariables(
-  local!emptyList: {},
-  fn!spt_list_islist(local!emptyList)
-)
-```
-Returns `true`
-
-#### Example 4 - Passing in a non-List
-```
-a!localVariables(
-  local!stringValue: "stringValue",
-  fn!spt_list_islist(local!stringValue)
-)
-```
-Returns `false`
-
-#### Example 5 - Passing in `null`
-```
-a!localVariables(
-  local!nullValue: null,
-  fn!spt_list_islist(local!nullValue)
-)
-```
-Returns `false`
-
-
-## SPT_List_IsListOfObjects
-Returns true if the value passed in is a List of Dictionaries, Maps, or CDTs. If the passed in value is null, returns false.
-
-| Parameter  | Description       |
-|------------|-------------------|
-| list       | The list to check |
-
-#### Example 1 - Passing in a List of CDT
-```
-a!localVariables(
-  local!listOfCdt: {
-    'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 1, value: "first cdt"),
-    'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 2, value: "second cdt"),
-    'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 3, value: "third cdt"),
-  },
-  fn!spt_list_islistofobjects(local!listOfCdt)
-)
-```
-Returns `true`
-
-#### Example 2 - Passing in a List of Integers
-```
-a!localVariables(
-  local!hundredElementList: enumerate(100),
-  fn!spt_list_islistofobjects(local!hundredElementList)
-)
-```
-Returns `false`
-
-#### Example 3 - Passing in an empty List
-```
-a!localVariables(
-  local!emptyList: {},
-  fn!spt_list_islistofobjects(local!emptyList)
-)
-```
-Returns `false`
-
-#### Example 4 - Passing in a non-List
-```
-a!localVariables(
-  local!stringValue: "stringValue",
-  fn!spt_list_islistofobjects(local!stringValue)
-)
-```
-Returns `false`
-
-#### Example 5 - Passing in `null`
-```
-a!localVariables(
-  local!nullValue: null,
-  fn!spt_list_islistofobjects(local!nullValue)
-)
 ```
 Returns `false`
 
@@ -1064,6 +888,381 @@ Returns `"KMSH"`
 fn!spt_text_getmetaphone("Gomez-Hernandez", true)
 ```
 Returns `"KMSR"`
+
+
+## SPT_Text_ToNumber
+
+Parses the given Text value to an Integer or Decimal. If the value cannot be parsed, or it has additional non-numeric text, returns `null`.
+
+| Parameter | Description                 |
+|-----------|-----------------------------|
+| text      | The text value to be parsed |
+
+#### Example 1 - Text is non-numeric
+```
+fn!spt_text_tonumber("Bad text")
+```
+Returns `null`
+
+#### Example 2 - Text is of a valid Integer
+```
+fn!spt_text_tonumber("123")
+```
+Returns `123`
+
+#### Example 3 - Text is of a valid Decimal
+```
+fn!spt_text_tonumber("4.56")
+```
+Returns `4.56`
+
+
+
+------------------------------------------------------------------------------
+
+
+# Type Functions
+
+These functions provide information about the type of the values passed in.
+
+
+## SPT_Type_IsDecimal
+
+Returns `true` if the passed in value is Text that can be interpolated as a Decimal, or is a Decimal, or a List of Decimals.
+
+| Parameter | Description        |
+|-----------|--------------------|
+| value     | The value to check |
+
+#### Example 1 - Text is non-numeric
+```
+fn!spt_type_isdecimal("Bad text")
+```
+Returns `false`
+
+#### Example 2 - Text is of a valid Integer
+```
+fn!spt_type_isdecimal("123")
+```
+Returns `false`
+
+#### Example 3 - Text is of a valid Decimal
+```
+fn!spt_type_isdecimal("4.56")
+```
+Returns `true`
+
+#### Example 4 - Value is an Integer
+```
+fn!spt_type_isdecimal(123)
+```
+Returns `false`
+
+#### Example 5 - Value is a Decimal
+```
+fn!spt_type_isdecimal(4.56)
+```
+Returns `true`
+
+#### Example 6 - Value is a List of Integer
+```
+fn!spt_type_isdecimal({1, 2, 3})
+```
+Returns `false`
+
+#### Example 7 - Value is a List of Decimal
+```
+fn!spt_type_isdecimal({1.1, 2.2, 3.3})
+```
+Returns `true`
+
+#### Example 8 - Value is a List of Text
+```
+fn!spt_type_isdecimal({"one", "two", "three"})
+```
+Returns `false`
+
+
+## SPT_Type_IsInteger
+
+Returns `true` if the passed in value is Text that can be interpolated as an Integer, or is an Integer, or a List of Integers.
+
+| Parameter | Description        |
+|-----------|--------------------|
+| value     | The value to check |
+
+#### Example 1 - Text is non-numeric
+```
+fn!spt_type_isinteger("Bad text")
+```
+Returns `false`
+
+#### Example 2 - Text is of a valid Integer
+```
+fn!spt_type_isinteger("123")
+```
+Returns `true`
+
+#### Example 3 - Text is of a valid Decimal
+```
+fn!spt_type_isinteger("4.56")
+```
+Returns `false`
+
+#### Example 4 - Value is an Integer
+```
+fn!spt_type_isinteger(123)
+```
+Returns `true`
+
+#### Example 5 - Value is a Decimal
+```
+fn!spt_type_isinteger(4.56)
+```
+Returns `false`
+
+#### Example 6 - Value is a List of Integer
+```
+fn!spt_type_isinteger({1, 2, 3})
+```
+Returns `true`
+
+#### Example 7 - Value is a List of Decimal
+```
+fn!spt_type_isinteger({1.1, 2.2, 3.3})
+```
+Returns `false`
+
+#### Example 8 - Value is a List of Text
+```
+fn!spt_type_isinteger({"one", "two", "three"})
+```
+Returns `false`
+
+
+## SPT_Type_IsList
+Returns true if the value passed in is a List type. If the passed in value is null, returns false.
+
+| Parameter  | Description        |
+|------------|--------------------|
+| list       | The value to check |
+
+#### Example 1 - Passing in a List of CDT
+```
+a!localVariables(
+  local!listOfCdt: {
+    'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 1, value: "first cdt"),
+    'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 2, value: "second cdt"),
+    'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 3, value: "third cdt"),
+  },
+  fn!spt_type_islist(local!listOfCdt)
+)
+```
+Returns `true`
+
+#### Example 2 - Passing in a List of Integers
+```
+a!localVariables(
+  local!hundredElementList: enumerate(100),
+  fn!spt_type_islist(local!hundredElementList)
+)
+```
+Returns `true`
+
+#### Example 3 - Passing in an empty List
+```
+a!localVariables(
+  local!emptyList: {},
+  fn!spt_type_islist(local!emptyList)
+)
+```
+Returns `true`
+
+#### Example 4 - Passing in a non-List
+```
+a!localVariables(
+  local!stringValue: "stringValue",
+  fn!spt_type_islist(local!stringValue)
+)
+```
+Returns `false`
+
+#### Example 5 - Passing in `null`
+```
+a!localVariables(
+  local!nullValue: null,
+  fn!spt_type_islist(local!nullValue)
+)
+```
+Returns `false`
+
+
+## SPT_Type_IsListOfObjects
+Returns true if the value passed in is a List of Dictionaries, Maps, or CDTs. If the passed in value is null, returns false.
+
+| Parameter  | Description       |
+|------------|-------------------|
+| list       | The list to check |
+
+#### Example 1 - Passing in a List of CDT
+```
+a!localVariables(
+  local!listOfCdt: {
+    'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 1, value: "first cdt"),
+    'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 2, value: "second cdt"),
+    'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 3, value: "third cdt"),
+  },
+  fn!spt_type_islistofobjects(local!listOfCdt)
+)
+```
+Returns `true`
+
+#### Example 2 - Passing in a List of Integers
+```
+a!localVariables(
+  local!hundredElementList: enumerate(100),
+  fn!spt_type_islistofobjects(local!hundredElementList)
+)
+```
+Returns `false`
+
+#### Example 3 - Passing in an empty List
+```
+a!localVariables(
+  local!emptyList: {},
+  fn!spt_type_islistofobjects(local!emptyList)
+)
+```
+Returns `false`
+
+#### Example 4 - Passing in a non-List
+```
+a!localVariables(
+  local!stringValue: "stringValue",
+  fn!spt_type_islistofobjects(local!stringValue)
+)
+```
+Returns `false`
+
+#### Example 5 - Passing in `null`
+```
+a!localVariables(
+  local!nullValue: null,
+  fn!spt_type_islistofobjects(local!nullValue)
+)
+```
+Returns `false`
+
+
+## SPT_Type_IsNumeric
+
+Returns `true` if the passed in value is Text that can be interpolated as a number (Integer or Decimal), or is an Integer, a Decimal, a List of Integers, or a List of Decimals.
+
+| Parameter | Description        |
+|-----------|--------------------|
+| value     | The value to check |
+
+#### Example 1 - Text is non-numeric
+```
+fn!spt_type_isnumeric("Bad text")
+```
+Returns `false`
+
+#### Example 2 - Text is of a valid Integer
+```
+fn!spt_type_isnumeric("123")
+```
+Returns `true`
+
+#### Example 3 - Text is of a valid Decimal
+```
+fn!spt_type_isnumeric("4.56")
+```
+Returns `true`
+
+#### Example 4 - Value is an Integer
+```
+fn!spt_type_isnumeric(123)
+```
+Returns `true`
+
+#### Example 5 - Value is a Decimal
+```
+fn!spt_type_isnumeric(4.56)
+```
+Returns `true`
+
+#### Example 6 - Value is a List of Integer
+```
+fn!spt_type_isnumeric({1, 2, 3})
+```
+Returns `true`
+
+#### Example 7 - Value is a List of Decimal
+```
+fn!spt_type_isnumeric({1.1, 2.2, 3.3})
+```
+Returns `true`
+
+#### Example 8 - Value is a List of Text
+```
+fn!spt_type_isnumeric({"one", "two", "three"})
+```
+Returns `false`
+
+
+## SPT_Type_IsObject
+
+Returns `true` if the value passed in is a Dictionary, Map, or CDT.
+
+| Parameter | Description        |
+|-----------|--------------------|
+| value     | The value to check |
+
+#### Example 1 - Null is passed in
+```
+fn!spt_type_isobject(null)
+```
+Returns `false`
+
+#### Example 2 - A Text value is passed in
+```
+fn!spt_type_isobject("ABC")
+```
+Returns `false`
+
+#### Example 3 - Empty list is passed in
+```
+fn!spt_type_isobject({})
+```
+Returns `false`
+
+#### Example 4 - A CDT is passed in
+```
+a!localVariables(
+  local!cdt: 'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 1, value: "a cdt"),
+  fn!spt_type_isobject(local!cdt)
+)
+```
+Returns `true`
+
+#### Example 5 - A Dictionary is passed in
+```
+a!localVariables(
+  local!dict: { id: 1, value: { subValue: "a dict" } },
+  fn!spt_type_isobject(local!dict)
+)
+```
+Returns `true`
+
+#### Example 6 - A Map is passed in
+```
+a!localVariables(
+  local!map: a!map(id: 1, value: a!map(subValue: "a map")),
+  fn!spt_type_isobject(local!map)
+)
+```
+Returns `true`
 
 
 

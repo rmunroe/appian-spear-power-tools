@@ -24,7 +24,7 @@ public class SPT_List_RandomElement {
             @Parameter(required = false) int count,
             @Parameter(required = false) boolean unique
     ) throws Exception {
-        if (!AppianListHelper.isList(ts, list)) return list;
+        if (!AppianTypeHelper.isList(ts, list)) return list;
 
         AppianList inputList = AppianListHelper.getList(ts, list);
         if (inputList == null || inputList.size() == 0) return null;
