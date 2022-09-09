@@ -1414,7 +1414,9 @@ Returns:
 (**Note**: your UUIDs will be unique.)
 
 **Example 2 - Update a List of Dictionary with newly generated UUIDs**
+
 If you need to loop over many objects and add/update UUIDs:
+
 ```REXX
 a!localVariables(
   local!list: {
