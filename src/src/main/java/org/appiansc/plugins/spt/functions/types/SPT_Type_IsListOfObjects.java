@@ -15,8 +15,8 @@ public class SPT_Type_IsListOfObjects {
     @Function
     public boolean spt_type_islistofobjects(
             TypeService ts,
-            @Parameter TypedValue list
+            @Parameter TypedValue value
     ) {
-        return AppianTypeHelper.isListOfObjects(ts, list);
+        return AppianTypeHelper.isListOfObjects(ts, value);
     }
 }

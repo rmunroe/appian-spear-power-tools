@@ -1043,9 +1043,9 @@ Returns `false`
 ## SPT_Type_IsList
 Returns true if the value passed in is a List type. If the passed in value is null, returns false.
 
-| Parameter  | Description        |
-|------------|--------------------|
-| list       | The value to check |
+| Parameter | Description        |
+|-----------|--------------------|
+| value     | The value to check |
 
 #### Example 1 - Passing in a List of CDT
 ```
@@ -1100,9 +1100,9 @@ Returns `false`
 ## SPT_Type_IsListOfObjects
 Returns true if the value passed in is a List of Dictionaries, Maps, or CDTs. If the passed in value is null, returns false.
 
-| Parameter  | Description       |
-|------------|-------------------|
-| list       | The list to check |
+| Parameter | Description        |
+|-----------|--------------------|
+| value     | The value to check |
 
 #### Example 1 - Passing in a List of CDT
 ```

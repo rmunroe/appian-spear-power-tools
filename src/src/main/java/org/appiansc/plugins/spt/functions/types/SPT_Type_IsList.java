@@ -15,8 +15,8 @@ public class SPT_Type_IsList {
     @Function
     public boolean spt_type_islist(
             TypeService ts,
-            @Parameter TypedValue list
+            @Parameter TypedValue value
     ) {
-        return AppianTypeHelper.isList(ts, list);
+        return AppianTypeHelper.isList(ts, value);
     }
 }
