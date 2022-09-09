@@ -7,13 +7,10 @@ import com.appiancorp.suiteapi.type.AppianType;
 import com.appiancorp.suiteapi.type.DatatypeProperties;
 import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
-import org.apache.log4j.Logger;
 import org.appiansc.plugins.spt.AppianTypeConverter;
 
 @ObjectCategory
 public class SPT_Object_ToMap {
-    private static final Logger LOG = Logger.getLogger(SPT_Object_ToMap.class);
-
     @Function
     public TypedValue spt_object_tomap(
             TypeService ts,

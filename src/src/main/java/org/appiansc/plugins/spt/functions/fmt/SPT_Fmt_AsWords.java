@@ -3,7 +3,6 @@ package org.appiansc.plugins.spt.functions.fmt;
 import com.appiancorp.suiteapi.expression.annotations.Function;
 import com.appiancorp.suiteapi.expression.annotations.Parameter;
 import com.appiancorp.suiteapi.type.TypedValue;
-import org.apache.log4j.Logger;
 import pl.allegro.finance.tradukisto.MoneyConverters;
 import pl.allegro.finance.tradukisto.ValueConverters;
 
@@ -11,8 +10,6 @@ import java.math.BigDecimal;
 
 @FmtCategory
 public class SPT_Fmt_AsWords {
-    private static final Logger LOG = Logger.getLogger(SPT_Fmt_AsWords.class);
-
     @Function
     public String spt_fmt_aswords(
             @Parameter TypedValue number,

@@ -9,7 +9,6 @@ import com.appiancorp.suiteapi.type.AppianType;
 import com.appiancorp.suiteapi.type.DatatypeProperties;
 import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
-import org.apache.log4j.Logger;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -21,8 +20,6 @@ import java.util.Objects;
  */
 @SuppressWarnings("unchecked")
 public class AppianTypeConverter {
-    private static final Logger LOG = Logger.getLogger(AppianTypeConverter.class);
-
     private static final List<Long> MAP_OR_DICTIONARY = Arrays.asList((long) AppianType.DICTIONARY, (long) AppianType.MAP);
 
 

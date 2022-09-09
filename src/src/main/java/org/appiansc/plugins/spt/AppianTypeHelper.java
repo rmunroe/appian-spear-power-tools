@@ -1,20 +1,16 @@
 package org.appiansc.plugins.spt;
 
-import com.appiancorp.ps.plugins.typetransformer.AppianObject;
 import com.appiancorp.ps.plugins.typetransformer.AppianTypeFactory;
 import com.appiancorp.suiteapi.type.AppianType;
 import com.appiancorp.suiteapi.type.DatatypeProperties;
 import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
-import org.apache.log4j.Logger;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class AppianTypeHelper {
-    private static final Logger LOG = Logger.getLogger(AppianTypeHelper.class);
-
     private static AppianTypeFactory typeFactory;
 
 
@@ -85,18 +81,6 @@ public class AppianTypeHelper {
         return typeFactory;
     }
 
-    public static AppianObject createDictionary(TypeService ts) {
-        return (AppianObject) getTypeFactory(ts).createElement(AppianType.DICTIONARY);
-    }
-
-    public static TypedValue toMap(TypeService ts, TypedValue dictionary) {
-        return AppianTypeConverter.convert(ts, dictionary, (long) AppianType.MAP);
-    }
-
-    public static TypedValue toMap(TypeService ts, AppianObject dictionary) {
-        return toMap(ts, getTypeFactory(ts).toTypedValue(dictionary));
-    }
-
 
     public static TypedValue removeNullProperties(TypeService ts, TypedValue object, Boolean recursive) {
         LinkedHashMap<TypedValue, TypedValue> objectValue = (LinkedHashMap<TypedValue, TypedValue>) object.getValue();
@@ -125,7 +109,7 @@ public class AppianTypeHelper {
                     newTv.setInstanceType(baseType);
                     newTv.setValue(child);
 
-                    removeNullProperties(ts, newTv, recursive);
+                    removeNullProperties(ts, newTv, true);
 
                     // then retrieve the HashMap and replace the value
                     child = (LinkedHashMap<TypedValue, TypedValue>) newTv.getValue();

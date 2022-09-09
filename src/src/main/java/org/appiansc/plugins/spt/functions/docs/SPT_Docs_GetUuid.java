@@ -9,13 +9,10 @@ import com.appiancorp.suiteapi.expression.annotations.Function;
 import com.appiancorp.suiteapi.expression.annotations.Parameter;
 import com.appiancorp.suiteapi.knowledge.Document;
 import com.appiancorp.suiteapi.knowledge.DocumentDataType;
-import org.apache.log4j.Logger;
 
 
 @DocsCategory
 public class SPT_Docs_GetUuid {
-    private static final Logger LOG = Logger.getLogger(SPT_Docs_GetUuid.class);
-
     @Function
     public String spt_docs_getuuid(
             ContentService cs,

@@ -4,12 +4,9 @@ import com.appiancorp.suiteapi.expression.annotations.Function;
 import com.appiancorp.suiteapi.expression.annotations.Parameter;
 import com.appiancorp.suiteapi.type.AppianType;
 import com.appiancorp.suiteapi.type.TypedValue;
-import org.apache.log4j.Logger;
 
 @TextCategory
 public class SPT_Text_ToNumber {
-    private static final Logger LOG = Logger.getLogger(SPT_Text_ToNumber.class);
-
     @Function
     public TypedValue spt_text_tonumber(
             @Parameter String text

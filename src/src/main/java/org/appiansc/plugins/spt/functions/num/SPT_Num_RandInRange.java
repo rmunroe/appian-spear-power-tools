@@ -4,14 +4,11 @@ import com.appiancorp.suiteapi.expression.annotations.Function;
 import com.appiancorp.suiteapi.expression.annotations.Parameter;
 import com.appiancorp.suiteapi.type.AppianType;
 import com.appiancorp.suiteapi.type.TypedValue;
-import org.apache.log4j.Logger;
 
 import java.util.Random;
 
 @NumCategory
 public class SPT_Num_RandInRange {
-    private static final Logger LOG = Logger.getLogger(SPT_Num_RandInRange.class);
-
     private static final Random random = new Random();
 
 

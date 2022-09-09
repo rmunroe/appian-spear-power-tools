@@ -2,15 +2,12 @@ package org.appiansc.plugins.spt.functions.fmt;
 
 import com.appiancorp.suiteapi.expression.annotations.Function;
 import com.appiancorp.suiteapi.expression.annotations.Parameter;
-import org.apache.log4j.Logger;
 
 import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
 
 @FmtCategory
 public class SPT_Fmt_BytesDisplaySize {
-    private static final Logger LOG = Logger.getLogger(SPT_Fmt_BytesDisplaySize.class);
-
     // From https://stackoverflow.com/questions/3758606/how-can-i-convert-byte-size-into-a-human-readable-format-in-java
 
     public static String humanReadableByteCountSI(long bytes) {
