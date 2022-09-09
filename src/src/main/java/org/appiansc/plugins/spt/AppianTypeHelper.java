@@ -14,6 +14,12 @@ public class AppianTypeHelper {
     private static AppianTypeFactory typeFactory;
 
 
+    /**
+     * Determines whether the given value is an Integer
+     *
+     * @param value the TypedValue to test
+     * @return true if the value is considered an Integer
+     */
     public static boolean isInteger(TypedValue value) {
         if (value.getInstanceType() == AppianType.STRING) {
             // Can we turn it into an Integer and is the value the same as the input when stringified?
@@ -30,6 +36,12 @@ public class AppianTypeHelper {
     }
 
 
+    /**
+     * Determines whether the given value is a Decimal
+     *
+     * @param value the TypedValue to test
+     * @return true if the value is considered a Decimal
+     */
     public static boolean isDecimal(TypedValue value) {
         if (value.getInstanceType() == AppianType.STRING) {
             // Can we turn it into a Decimal and is the value the same as the input when stringified?
@@ -45,11 +57,24 @@ public class AppianTypeHelper {
         }
     }
 
+    /**
+     * Determines whether the given value is numeric
+     *
+     * @param value the TypedValue to test
+     * @return true if the value is considered numeric
+     */
     public static boolean isNumeric(TypedValue value) {
         return isInteger(value) || isDecimal(value);
     }
 
 
+    /**
+     * Determines whether a TypedValue is a CDT, Dictionary, or Map
+     *
+     * @param ts an injected TypeService instance
+     * @param tv the TypedValue to test
+     * @return true if the TypedValue was a CDT, Dictionary, or Map
+     */
     public static boolean isObject(TypeService ts, TypedValue tv) {
         DatatypeProperties props = ts.getDatatypeProperties(tv.getInstanceType());
         return (props.isRecordType() // is CDT
@@ -82,6 +107,14 @@ public class AppianTypeHelper {
     }
 
 
+    /**
+     * Removes all properties with null values (optionally recursively into nested objects)
+     *
+     * @param ts        an injected TypeService instance
+     * @param object    the Dictionary or Map to remove null properties from
+     * @param recursive whether to process nested objects
+     * @return the object without null properties
+     */
     public static TypedValue removeNullProperties(TypeService ts, TypedValue object, Boolean recursive) {
         LinkedHashMap<TypedValue, TypedValue> objectValue = (LinkedHashMap<TypedValue, TypedValue>) object.getValue();
         LinkedHashMap<TypedValue, TypedValue> newValue = new LinkedHashMap<>();

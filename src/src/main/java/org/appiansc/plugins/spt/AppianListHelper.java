@@ -95,6 +95,13 @@ public class AppianListHelper {
         }
     }
 
+    /**
+     * Removes duplicate values from a List
+     *
+     * @param ts   TypeService instance (usually injected)
+     * @param list the List to remove duplicates from
+     * @return the List, sans duplicates
+     */
     public static TypedValue getUniqueListValues(TypeService ts, TypedValue list) {
         AppianTypeFactory typeFactory = AppianTypeHelper.getTypeFactory(ts);
 
