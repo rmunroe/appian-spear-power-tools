@@ -273,9 +273,9 @@ Returns a friendly display size for the given number of bytes. Useful when used 
 
 #### Example 1 - Show the "standard" size for a byte value
 ```REXX
-spt_fmt_bytesdisplaysize(987654321)
+spt_fmt_bytesdisplaysize(203681)
 ```
-Returns `"987.7 MB"`
+Returns `"203.7 kB"`
 
 #### Example 2 - Show the binary-based size for a byte value, retrieved from a Document
 ```REXX
