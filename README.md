@@ -9,12 +9,12 @@ Brought to you by the Strategic Presales Execution and Readiness (SPEaR) Team in
 
 # Introduction
 
-This plugin is the results of over a decade of experience working in the Appian Expression language.  While the Expression language is extremely powerful and capable as-is, there are some edge cases that "power user" Appian Designers may run into that require some sophisticated Expression rules to overcome. We have taken some of these sophisticated Expression rules and reimplemented them as a plugin for ease of use and speed, both in execution and time-to-market.
+This plugin is the results of over a decade of experience working in the Appian Expression language. While the Expression language is extremely powerful and capable as-is, there are some edge cases that "power user" Appian Designers may run into that require some sophisticated Expression rules to overcome. We have taken some of these sophisticated Expression rules and reimplemented them as a plugin for ease of use and speed, both in execution and time-to-market.
 
 
 ## Issues or Feedback
 
-If you encounter any issues with the plugin, please post in the Appian Community's App Market page for this plugin.  Additionally, please let us know if there is any additional functionality you would like to see in this plugin and we will see about getting it added.
+If you encounter any issues with the plugin, please post in the Appian Community's App Market page for this plugin. Additionally, please let us know if there is any additional functionality you would like to see in this plugin and we will see about getting it added.
 
 
 ------------------------------------------------------------------------------
@@ -89,7 +89,7 @@ Returns the number of seconds since the standard base time known as [the epoch](
 | --------- | ------------------------------------------- |
 | dateTime  | The Date and Time to get the epoch time for |
 
-**Example**
+***Example***
 ```REXX
 a!localVariables(
   local!time: datetime(2017, 7, 5, 8, 30),
@@ -109,7 +109,7 @@ Converts [the epoch](https://en.wikipedia.org/wiki/Unix_time) value (the number 
 | --------- | ---------------------------------------------------- |
 | epoch     | The epoch time in seconds to get a Date and Time for |
 
-**Example**
+***Example***
 ```REXX
 spt_datetime_fromepoch(1499243400) = datetime(2017, 7, 5, 8, 30)
 ```
@@ -143,7 +143,7 @@ Returns the UUID for the given Appian Document
 | --------- | ------------------- |
 | document  | The Appian Document |
 
-**Example**
+***Example***
 In this example, we are populating a CDT used to store doc info in a database table with some metadata for quick access, and the provided Document's UUID. This CDT would then be saved to the database for later use.
 ```REXX
 a!localVariables(
@@ -154,7 +154,7 @@ a!localVariables(
 
     docUuid: spt_docs_getuuid(ri!docToSave)
   ),
-  
+
 ...
 ```
 
@@ -168,7 +168,7 @@ Returns the Appian Document that has the given UUID. Returns `null` if no Docume
 | --------- | -------------------------- |
 | uuid      | The Appian Document's UUID |
 
-**Example**
+***Example***
 In this example, we are resolving a Document from its UUID as stored in a database and retrieved as a CDT. For further illustration we are building a display name from the actual, resolved Document.
 ```REXX
 a!localVariables(
@@ -242,19 +242,19 @@ This function requires you specify which converter to use. Typically, for Intege
 * `TURKISH_BANKING_MONEY_VALUE`
 * `UKRAINIAN_BANKING_MONEY_VALUE`
 
-**Example 1 - Integer to English words**
+***Example 1 - Integer to English words***
 ```REXX
 spt_fmt_aswords(123456789, "ENGLISH_INTEGER")
 ```
 Returns: `"one hundred twenty-three million four hundred fifty-six thousand seven hundred eighty-nine"`
 
-**Example 2 - Decimal to US English money words (dollars)**
+***Example 2 - Decimal to US English money words (dollars)***
 ```REXX
 spt_fmt_aswords(123456.78, "AMERICAN_ENGLISH_BANKING_MONEY_VALUE")
 ```
 Returns: `"one hundred twenty-three thousand four hundred fifty-six $ 78/100"`
 
-**Example 3 - Decimal to French money words (euros)**
+***Example 3 - Decimal to French money words (euros)***
 ```REXX
 spt_fmt_aswords(123456.78, "FRENCH_BANKING_MONEY_VALUE")
 ```
@@ -271,17 +271,17 @@ Returns a friendly display size for the given number of bytes. Useful when used 
 | bytes     | The size in bytes to get a display value for (e.g. `"123 KB"`)                         |
 | binary    | If set to true, uses base `1024` instead of `1000` and returns values e.g. `"123 KiB"` |
 
-**Example 1 - Show the "standard" size for a byte value**
+***Example 1 - Show the "standard" size for a byte value***
 ```REXX
 spt_fmt_bytesdisplaysize(203681)
 ```
 Returns `"203.7 kB"`
 
-**Example 2 - Show the binary-based size for a byte value, retrieved from a Document**
+***Example 2 - Show the binary-based size for a byte value, retrieved from a Document***
 ```REXX
 a!localVariables(
   local!docSize: document(cons!SPTT_TEST_IMAGE_FILE, "size"), /* 203681 bytes */
-  
+
   spt_fmt_bytesdisplaysize(local!docSize, true)
 )
 ```
@@ -298,7 +298,7 @@ Returns a text description of the relative duration a given Date and Time was or
 | dateTime  | The Date and Time to describe                                                                                                                                        |
 | locale    | Optional locale abbreviation supported by [the PrettyTime library](https://github.com/ocpsoft/prettytime/tree/master/core/src/main/java/org/ocpsoft/prettytime/i18n) |
 
-**Example 1 - 18 minutes, 30 seconds ago**
+***Example 1 - 18 minutes, 30 seconds ago***
 ```REXX
 a!localVariables(
   local!time: now() - intervalds(0, 18, 30),
@@ -308,7 +308,7 @@ a!localVariables(
 ```
 Returns `"19 minutes ago"`
 
-**Example 2 - 100 days ago**
+***Example 2 - 100 days ago***
 ```REXX
 a!localVariables(
   local!time: now() - 100,
@@ -318,7 +318,7 @@ a!localVariables(
 ```
 Returns `"3 months ago"`
 
-**Example 3 - 100 days ago, but in German**
+***Example 3 - 100 days ago, but in German***
 ```REXX
 a!localVariables(
   local!time: now() - 100,
@@ -358,22 +358,22 @@ _**When an `Any Type` value is provided, this plugin will default to both `null`
 
 For instance if you use [SPT_List_AppendAny](#SPT_List_AppendAny) to append `""` onto a List, instead of an empty string `""` being appended, the value `null` is used. See the example given below.
 
-**Example 1 - Append an Integer on a List of Text**
+***Example 1 - Append an Integer on a List of Text***
 If using the built-in `append()`, Appian would convert `4` to `"4"`.
 ```REXX
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
-  
+
   spt_list_appendany(local!listOfTextString, 4)
 )
 ```
 Returns (List of Variant) `{"one", "two", "three", 4}`
 
-**Example 2 - Empty string is converted to `null`**
+***Example 2 - Empty string is converted to `null`***
 ```REXX
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
-  
+
   spt_list_appendany(local!listOfTextString, "")
 )
 ```
@@ -389,7 +389,7 @@ Returns the element count (including `null` elements) in a List. If the passed i
 | --------- | ----------------- |
 | list      | The List to count |
 
-**Example 1 - Counting `null`**
+***Example 1 - Counting `null`***
 (If using the built-in `count()`, Appian would instead return `1`, which can be very confusing.)
 ```REXX
 a!localVariables(
@@ -400,7 +400,7 @@ a!localVariables(
 ```
 Returns `0`
 
-**Example 2 - Counting a non-List value**
+***Example 2 - Counting a non-List value***
 (If using the built-in `count()`, Appian would instead return `1`, which can be very confusing.)
 ```REXX
 a!localVariables(
@@ -411,7 +411,7 @@ a!localVariables(
 ```
 Returns `0`
 
-**Example 3 - Counting a List**
+***Example 3 - Counting a List***
 ```REXX
 a!localVariables(
   local!hundredElementArray: enumerate(100),
@@ -431,7 +431,7 @@ Returns the first element of the List. Returns `null` if List is `null` or empty
 | --------- | ----------------------- |
 | list      | The List to choose from |
 
-**Example 1 - Getting the first element from a List**
+***Example 1 - Getting the first element from a List***
 ```REXX
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
@@ -441,7 +441,7 @@ a!localVariables(
 ```
 Returns `"one"`
 
-**Example 2 - Getting the first element from a non-List**
+***Example 2 - Getting the first element from a non-List***
 ```REXX
 a!localVariables(
   local!notAnArray: "notAnArray",
@@ -461,7 +461,7 @@ Returns `true` if there are duplicate items in the List. If all items are unique
 | --------- | ----------------- |
 | list      | The List to check |
 
-**Example 1 - List of Integers with duplicate values**
+***Example 1 - List of Integers with duplicate values***
 ```REXX
 a!localVariables(
   local!listOfPrimitive: { 1, 2, 3, 5, 3, 3, 4, 5, 5, 5 },
@@ -471,7 +471,7 @@ a!localVariables(
 ```
 Returns `true`
 
-**Example 2 - List of CDTs with duplicate values**
+***Example 2 - List of CDTs with duplicate values***
 ```REXX
 a!localVariables(
   local!listOfCdt: {
@@ -488,13 +488,13 @@ a!localVariables(
 ```
 Returns `true`
 
-**Example 3 - List of Integers with no duplicates**
+***Example 3 - List of Integers with no duplicates***
 ```REXX
 spt_list_hasduplicates(enumerate(10))
 ```
 Returns `false`
 
-**Example 4 - Passing in a non-List**
+***Example 4 - Passing in a non-List***
 ```REXX
 spt_list_hasduplicates(123)
 ```
@@ -516,7 +516,7 @@ Returns the last element of the List. Returns `null` if List is `null` or empty.
 | --------- | ----------------------- |
 | list      | The List to choose from |
 
-**Example 1 - Grab the last element of a List of Text**
+***Example 1 - Grab the last element of a List of Text***
 ```REXX
 a!localVariables(
   local!listOfTextString: { "one", "two", "three" },
@@ -526,7 +526,7 @@ a!localVariables(
 ```
 Returns `"three"`
 
-**Example 2 - Grab the last element of non-List**
+***Example 2 - Grab the last element of non-List***
 ```REXX
 a!localVariables(
   local!notAnArray: "notAnArray",
@@ -548,7 +548,7 @@ Returns a random element in the provided List. If not a List, returns what was p
 | count     | The number of elements to include (optional; default is 1)                                                                                    |
 | unique    | If selecting multiple, ensure that the elements are unique. Will throw an error if count is greater than the number of elements in the array. |
 
-**Example - Grab several random elements**
+***Example - Grab several random elements***
 ```REXX
 a!localVariables(
   local!listOfMap: {
@@ -559,7 +559,7 @@ a!localVariables(
     a!map(id: 5, value: "fifth map"),
     a!map(id: 6, value: "sixth map"),
   },
-  
+
   a!map(
     one: spt_list_randomelement(local!listOfMap),
     unique3: spt_list_randomelement(local!listOfMap, 3, true),
@@ -582,7 +582,7 @@ Returns the provided List in a randomized order (shuffled). If not a List, retur
 | --------- | --------------------- |
 | list      | The List to randomize |
 
-**Example - Retrieve Map `id` properties in a randomized order **
+***Example - Retrieve Map `id` properties in a randomized order***
 ```REXX
 a!localVariables(
   local!listOfMap: {
@@ -593,7 +593,7 @@ a!localVariables(
     a!map(id: 5, value: "fifth map"),
     a!map(id: 6, value: "sixth map"),
   },
-  
+
   spt_list_randomize(local!listOfMap).id
 )
 ```
@@ -608,7 +608,7 @@ Removes all `null` elements from the given List. If a List of Text is passed in,
 | --------- | ----------------------------- |
 | list      | The List to remove nulls from |
 
-**Example 1 - Remove nulls from a List of Integers**
+***Example 1 - Remove nulls from a List of Integers***
 ```REXX
 a!localVariables(
   local!listOfPrimitive: { 1, null, 2, 3, null, 4, null, 5, null },
@@ -618,7 +618,7 @@ a!localVariables(
 ```
 Returns `{1, 2, 3, 4, 5}`
 
-**Example 2 - Remove nulls from a List of CDTs and retrieve the `id` property**
+***Example 2 - Remove nulls from a List of CDTs and retrieve the `id` property***
 ```REXX
 a!localVariables(
   local!listOfCdt: {
@@ -634,7 +634,7 @@ a!localVariables(
 ```
 Returns `{1, 2, 3}`
 
-**Example 3 - Remove nulls from a List of only `null`**
+***Example 3 - Remove nulls from a List of only `null`***
 ```REXX
 a!localVariables(
   local!justNull: {null},
@@ -644,7 +644,7 @@ a!localVariables(
 ```
 Returns an empty List of Text String (due to how Appian treats `null` internally)
 
-**Example 4 - Remove nulls from a non-List**
+***Example 4 - Remove nulls from a non-List***
 ```REXX
 a!localVariables(
   local!notAList: "one",
@@ -666,7 +666,7 @@ Returns a subset of the provided List, starting with and including `startIndex` 
 | startIndex | The first index to include in the slice                                               |
 | endIndex   | The last index to include in the slice. If omitted, the rest of the List is included. |
 
-**Example 1 - Get elements 10-15 (inclusive)**
+***Example 1 - Get elements 10-15 (inclusive)***
 ```REXX
 a!localVariables(
   local!hundredElementArray: enumerate(100) + 1,
@@ -676,7 +676,7 @@ a!localVariables(
 ```
 Returns `{10, 11, 12, 13, 14, 15}`
 
-**Example 2 - Get element 8 and on **
+***Example 2 - Get element 8 and on***
 ```REXX
 a!localVariables(
   local!remaining: enumerate(10) + 1,
@@ -686,7 +686,7 @@ a!localVariables(
 ```
 Returns `{8, 9, 10}`
 
-**Example 3 - Slice a non-List**
+***Example 3 - Slice a non-List***
 ```REXX
 a!localVariables(
   local!stringValue: "stringValue",
@@ -696,7 +696,7 @@ a!localVariables(
 ```
 Returns `null`
 
-**Example 4 - Slice a `null` value**
+***Example 4 - Slice a `null` value***
 ```REXX
 a!localVariables(
   local!nullValue: null,
@@ -717,7 +717,7 @@ Returns the unique elements found in the provided List. If `list` is null or emp
 | list      | The List to unique                                 |
 | keepNulls | If true, keeps null values (uniqued, so 1 at most) |
 
-**Example - Get only unique values**
+***Example - Get only unique values***
 ```REXX
 a!localVariables(
   local!listOfPrimitive: { 1, 2, 3, 5, 3, 3, 4, 5, 5, 5 },
@@ -750,13 +750,13 @@ Returns random value(s) in the given range. The value type will be either Intege
 | count     | The number of random values to produce (defaults to a single; if set, returns a List) |
 | places    | If returning Decimals, optionally set the number of places to include                 |
 
-**Example 1 - Generate a single Integer**
+***Example 1 - Generate a single Integer***
 ```REXX
 spt_num_randinrange(10, 20)
 ```
 Returns (e.g.) `14`
 
-**Example 2 - Generate 5 Decimals, with 2 decimal places**
+***Example 2 - Generate 5 Decimals, with 2 decimal places***
 ```REXX
 spt_num_randinrange(10.0, 20.0, 5, 2)
 ```
@@ -783,7 +783,7 @@ Removes properties from a Map or Dictionary where the value is `null`. If the pa
 | object    | The object to remove nulls from                                                        |
 | recursive | If true (default), will recurse into nested objects and remove nulls from them as well |
 
-**Example - Remove nulls from a Dictionary**
+***Example - Remove nulls from a Dictionary***
 ```REXX
 a!localVariables(
   local!dictionary: {
@@ -796,7 +796,7 @@ a!localVariables(
       unused: null
     }
   },
-  
+
   spt_object_removenullproperties(local!dictionary)
 )
 ```
@@ -822,7 +822,7 @@ Converts the given object (Map, Dictionary, or CDT) to a Dictionary, including n
 | --------- | ------------------------------------- |
 | object    | The object to convert to a Dictionary |
 
-**Example - Convert a Map (with nested Maps) to a Dictionary**
+***Example - Convert a Map (with nested Maps) to a Dictionary***
 ```REXX
 a!localVariables(
   local!map: a!map(
@@ -875,7 +875,7 @@ Converts the given object (Map, Dictionary, or CDT) to a Map, including nested o
 
 This function can be used to store any dynamic data structure into a Process Variable as a Map. When used in conjunction with `a!fromJson()` it can store the result of a REST service call as a Process Variable without any additional data massaging (see [Example 2](#example-2---deserializing-json-to-a-map)).
 
-**Example 1 - Convert a Dictionary (with nested Dictionaries) to a Map**
+***Example 1 - Convert a Dictionary (with nested Dictionaries) to a Map***
 ```REXX
 a!localVariables(
   local!dict: {
@@ -922,7 +922,7 @@ a!map(
 )
 ```
 
-**Example 2 - Deserializing JSON to a Map**
+***Example 2 - Deserializing JSON to a Map***
 ```REXX
 a!localVariables(
   local!json: "{""id"":123,""value"":""This was JSON, now it's a Map"",""nestedObject"":{""message"":""A nested object, also now a Map""}}",
@@ -962,19 +962,19 @@ Returns the Metaphone value for the given Text value. Alternatively uses Double 
 | text            | The Text to generate a Metaphone value for                |
 | doubleMetaphone | Use Double Metaphone instead (optional; default is false) |
 
-Metaphone is a phonetic algorithm used for matching similar sounding English words and names. This can be used to help create a "fuzzy search" in Appian. 
+Metaphone is a phonetic algorithm used for matching similar sounding English words and names. This can be used to help create a "fuzzy search" in Appian.
 
 Double Metaphone is an improvement upon Metaphone and supports more languages than only English.
 
 See [the Wikipedia Metaphone page](https://en.wikipedia.org/wiki/Metaphone) for more info.
 
-**Example 1 - Get Metaphone for a last name**
+***Example 1 - Get Metaphone for a last name***
 ```REXX
 spt_text_getmetaphone("Gomez-Hernandez")
 ```
 Returns `"KMSH"`
 
-**Example 2 - Get Double Metaphone for a last name**
+***Example 2 - Get Double Metaphone for a last name***
 ```REXX
 spt_text_getmetaphone("Gomez-Hernandez", true)
 ```
@@ -990,19 +990,19 @@ Parses the given Text value to an Integer or Decimal. If the value cannot be par
 | --------- | --------------------------- |
 | text      | The Text value to be parsed |
 
-**Example 1 - Text is non-numeric**
+***Example 1 - Text is non-numeric***
 ```REXX
 spt_text_tonumber("Bad text")
 ```
 Returns `null`
 
-**Example 2 - Text is of a valid Integer**
+***Example 2 - Text is of a valid Integer***
 ```REXX
 spt_text_tonumber("123")
 ```
 Returns `123`
 
-**Example 3 - Text is of a valid Decimal**
+***Example 3 - Text is of a valid Decimal***
 ```REXX
 spt_text_tonumber("4.56")
 ```
@@ -1028,49 +1028,49 @@ Returns `true` if the passed in value is Text that can be interpolated as a Deci
 | --------- | ------------------ |
 | value     | The value to check |
 
-**Example 1 - Text is non-numeric**
+***Example 1 - Text is non-numeric***
 ```REXX
 spt_type_isdecimal("Bad text")
 ```
 Returns `false`
 
-**Example 2 - Text is of a valid Integer**
+***Example 2 - Text is of a valid Integer***
 ```REXX
 spt_type_isdecimal("123")
 ```
 Returns `false`
 
-**Example 3 - Text is of a valid Decimal**
+***Example 3 - Text is of a valid Decimal***
 ```REXX
 spt_type_isdecimal("4.56")
 ```
 Returns `true`
 
-**Example 4 - Value is an Integer**
+***Example 4 - Value is an Integer***
 ```REXX
 spt_type_isdecimal(123)
 ```
 Returns `false`
 
-**Example 5 - Value is a Decimal**
+***Example 5 - Value is a Decimal***
 ```REXX
 spt_type_isdecimal(4.56)
 ```
 Returns `true`
 
-**Example 6 - Value is a List of Integer**
+***Example 6 - Value is a List of Integer***
 ```REXX
 spt_type_isdecimal({1, 2, 3})
 ```
 Returns `false`
 
-**Example 7 - Value is a List of Decimal**
+***Example 7 - Value is a List of Decimal***
 ```REXX
 spt_type_isdecimal({1.1, 2.2, 3.3})
 ```
 Returns `true`
 
-**Example 8 - Value is a List of Text**
+***Example 8 - Value is a List of Text***
 ```REXX
 spt_type_isdecimal({"one", "two", "three"})
 ```
@@ -1086,49 +1086,49 @@ Returns `true` if the passed in value is Text that can be interpolated as an Int
 | --------- | ------------------ |
 | value     | The value to check |
 
-**Example 1 - Text is non-numeric**
+***Example 1 - Text is non-numeric***
 ```REXX
 spt_type_isinteger("Bad text")
 ```
 Returns `false`
 
-**Example 2 - Text is of a valid Integer**
+***Example 2 - Text is of a valid Integer***
 ```REXX
 spt_type_isinteger("123")
 ```
 Returns `true`
 
-**Example 3 - Text is of a valid Decimal**
+***Example 3 - Text is of a valid Decimal***
 ```REXX
 spt_type_isinteger("4.56")
 ```
 Returns `false`
 
-**Example 4 - Value is an Integer**
+***Example 4 - Value is an Integer***
 ```REXX
 spt_type_isinteger(123)
 ```
 Returns `true`
 
-**Example 5 - Value is a Decimal**
+***Example 5 - Value is a Decimal***
 ```REXX
 spt_type_isinteger(4.56)
 ```
 Returns `false`
 
-**Example 6 - Value is a List of Integer**
+***Example 6 - Value is a List of Integer***
 ```REXX
 spt_type_isinteger({1, 2, 3})
 ```
 Returns `true`
 
-**Example 7 - Value is a List of Decimal**
+***Example 7 - Value is a List of Decimal***
 ```REXX
 spt_type_isinteger({1.1, 2.2, 3.3})
 ```
 Returns `false`
 
-**Example 8 - Value is a List of Text**
+***Example 8 - Value is a List of Text***
 ```REXX
 spt_type_isinteger({"one", "two", "three"})
 ```
@@ -1144,7 +1144,7 @@ Returns `true` if the value passed in is a List type. If the passed in value is 
 | --------- | ------------------ |
 | value     | The value to check |
 
-**Example 1 - Passing in a List of CDT**
+***Example 1 - Passing in a List of CDT***
 ```REXX
 a!localVariables(
   local!listOfCdt: {
@@ -1158,7 +1158,7 @@ a!localVariables(
 ```
 Returns `true`
 
-**Example 2 - Passing in a List of Integers**
+***Example 2 - Passing in a List of Integers***
 ```REXX
 a!localVariables(
   local!hundredElementList: enumerate(100),
@@ -1168,7 +1168,7 @@ a!localVariables(
 ```
 Returns `true`
 
-**Example 3 - Passing in an empty List**
+***Example 3 - Passing in an empty List***
 ```REXX
 a!localVariables(
   local!emptyList: {},
@@ -1178,7 +1178,7 @@ a!localVariables(
 ```
 Returns `true`
 
-**Example 4 - Passing in a non-List**
+***Example 4 - Passing in a non-List***
 ```REXX
 a!localVariables(
   local!stringValue: "stringValue",
@@ -1188,7 +1188,7 @@ a!localVariables(
 ```
 Returns `false`
 
-**Example 5 - Passing in `null`**
+***Example 5 - Passing in `null`***
 ```REXX
 a!localVariables(
   local!nullValue: null,
@@ -1208,7 +1208,7 @@ Returns `true` if the value passed in is a List of Dictionaries, Maps, or CDTs. 
 | --------- | ------------------ |
 | value     | The value to check |
 
-**Example 1 - Passing in a List of CDT**
+***Example 1 - Passing in a List of CDT***
 ```REXX
 a!localVariables(
   local!listOfCdt: {
@@ -1222,7 +1222,7 @@ a!localVariables(
 ```
 Returns `true`
 
-**Example 2 - Passing in a List of Integers**
+***Example 2 - Passing in a List of Integers***
 ```REXX
 a!localVariables(
   local!hundredElementList: enumerate(100),
@@ -1232,7 +1232,7 @@ a!localVariables(
 ```
 Returns `false`
 
-**Example 3 - Passing in an empty List**
+***Example 3 - Passing in an empty List***
 ```REXX
 a!localVariables(
   local!emptyList: {},
@@ -1242,7 +1242,7 @@ a!localVariables(
 ```
 Returns `false`
 
-**Example 4 - Passing in a non-List**
+***Example 4 - Passing in a non-List***
 ```REXX
 a!localVariables(
   local!stringValue: "stringValue",
@@ -1252,7 +1252,7 @@ a!localVariables(
 ```
 Returns `false`
 
-**Example 5 - Passing in `null`**
+***Example 5 - Passing in `null`***
 ```REXX
 a!localVariables(
   local!nullValue: null,
@@ -1272,49 +1272,49 @@ Returns `true` if the passed in value is Text that can be interpolated as a numb
 | --------- | ------------------ |
 | value     | The value to check |
 
-**Example 1 - Text is non-numeric**
+***Example 1 - Text is non-numeric***
 ```REXX
 spt_type_isnumeric("Bad text")
 ```
 Returns `false`
 
-**Example 2 - Text is of a valid Integer**
+***Example 2 - Text is of a valid Integer***
 ```REXX
 spt_type_isnumeric("123")
 ```
 Returns `true`
 
-**Example 3 - Text is of a valid Decimal**
+***Example 3 - Text is of a valid Decimal***
 ```REXX
 spt_type_isnumeric("4.56")
 ```
 Returns `true`
 
-**Example 4 - Value is an Integer**
+***Example 4 - Value is an Integer***
 ```REXX
 spt_type_isnumeric(123)
 ```
 Returns `true`
 
-**Example 5 - Value is a Decimal**
+***Example 5 - Value is a Decimal***
 ```REXX
 spt_type_isnumeric(4.56)
 ```
 Returns `true`
 
-**Example 6 - Value is a List of Integer**
+***Example 6 - Value is a List of Integer***
 ```REXX
 spt_type_isnumeric({1, 2, 3})
 ```
 Returns `true`
 
-**Example 7 - Value is a List of Decimal**
+***Example 7 - Value is a List of Decimal***
 ```REXX
 spt_type_isnumeric({1.1, 2.2, 3.3})
 ```
 Returns `true`
 
-**Example 8 - Value is a List of Text**
+***Example 8 - Value is a List of Text***
 ```REXX
 spt_type_isnumeric({"one", "two", "three"})
 ```
@@ -1331,25 +1331,25 @@ Returns `true` if the value passed in is a Dictionary, Map, or CDT.
 | --------- | ------------------ |
 | value     | The value to check |
 
-**Example 1 - `null` is passed in**
+***Example 1 - `null` is passed in***
 ```REXX
 spt_type_isobject(null)
 ```
 Returns `false`
 
-**Example 2 - A Text value is passed in**
+***Example 2 - A Text value is passed in***
 ```REXX
 spt_type_isobject("ABC")
 ```
 Returns `false`
 
-**Example 3 - Empty List is passed in**
+***Example 3 - Empty List is passed in***
 ```REXX
 spt_type_isobject({})
 ```
 Returns `false`
 
-**Example 4 - A CDT is passed in**
+***Example 4 - A CDT is passed in***
 ```REXX
 a!localVariables(
   local!cdt: 'type!{urn:com:appian:types:ABC}ABC_TestCdt'(id: 1, value: "a cdt"),
@@ -1359,7 +1359,7 @@ a!localVariables(
 ```
 Returns `true`
 
-**Example 5 - A Dictionary is passed in**
+***Example 5 - A Dictionary is passed in***
 ```REXX
 a!localVariables(
   local!dict: { id: 1, value: { subValue: "a dict" } },
@@ -1369,11 +1369,11 @@ a!localVariables(
 ```
 Returns `true`
 
-**Example 6 - A Map is passed in**
+***Example 6 - A Map is passed in***
 ```REXX
 a!localVariables(
   local!map: a!map(id: 1, value: a!map(subValue: "a map")),
-  
+
   spt_type_isobject(local!map)
 )
 ```
@@ -1399,7 +1399,7 @@ Creates a List of UUIDs in bulk. Best practice is to know the number of UUIDs to
 | --------- | ------------------------------- |
 | count     | The number of UUIDs to generate |
 
-**Example 1 - Generate 3 UUIDs at once**
+***Example 1 - Generate 3 UUIDs at once***
 ```REXX
 spt_uuid_bulk(3)
 ```
@@ -1413,7 +1413,7 @@ Returns:
 ```
 (**Note**: your UUIDs will be unique.)
 
-**Example 2 - Update a List of Dictionary with newly generated UUIDs**
+***Example 2 - Update a List of Dictionary with newly generated UUIDs***
 If you need to loop over many objects and add/update UUIDs:
 ```REXX
 a!localVariables(
@@ -1424,9 +1424,9 @@ a!localVariables(
     {id: 4, name: "Four"},
     {id: 5, name: "Five"},
   },
-  
+
   local!uuids: spt_uuid_bulk(count(local!list)),
-  
+
   local!updated: a!forEach(
     items: local!list,
     expression: a!update(
@@ -1435,7 +1435,7 @@ a!localVariables(
       local!uuids[fv!index]
     )
   ),
-  
+
   local!updated
 )
 ```
@@ -1481,7 +1481,7 @@ Creates a UUID using the given Text value as a seed. The UUID will always be the
 | --------- | -------------------------------------- |
 | text      | The Text value to create the UUID from |
 
-**Example 1 - Retrieve the unchanging UUID for a Text value**
+***Example 1 - Retrieve the unchanging UUID for a Text value***
 ```REXX
 spt_uuid_fromtext(
   "This will always produce the same UUID unless this text is changed"
@@ -1489,7 +1489,7 @@ spt_uuid_fromtext(
 ```
 Returns: `"af587b80-7ce1-3f19-ba1c-08c8ae551bd0"`
 
-**Example 2 - Use an existing UUID to generate new UUID based on some additional text**
+***Example 2 - Use an existing UUID to generate new UUID based on some additional text***
 ```REXX
 spt_uuid_fromtext(
   concat(
