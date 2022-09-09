@@ -350,7 +350,7 @@ Appends any value to a List without changing the value's type. If the type of th
 | value     | The value to append   |
 
 
-### NOTE: Nulls and Empty Strings
+### Nulls and Empty Strings
 
 Appian converts the `null` value to an empty string `""` when providing the value to a function plugin. It is therefore impossible to tell which value (`null` vs `""`) the user actually meant.
 
