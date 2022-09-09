@@ -28,6 +28,7 @@
   <function key="SPT_List_First" class="org.appiansc.plugins.spt.functions.lists.SPT_List_First"/>
   <function key="SPT_List_HasDuplicates" class="org.appiansc.plugins.spt.functions.lists.SPT_List_HasDuplicates"/>
   <function key="SPT_List_IsList" class="org.appiansc.plugins.spt.functions.lists.SPT_List_IsList"/>
+  <function key="SPT_List_IsListOfObjects" class="org.appiansc.plugins.spt.functions.lists.SPT_List_IsListOfObjects"/>
   <function key="SPT_List_Last" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Last"/>
   <function key="SPT_List_RandomElement" class="org.appiansc.plugins.spt.functions.lists.SPT_List_RandomElement"/>
   <function key="SPT_List_Randomize" class="org.appiansc.plugins.spt.functions.lists.SPT_List_Randomize"/>
@@ -45,6 +46,9 @@
 
   <!-- TEXT FUNCTIONS -->
   <function key="SPT_Text_GetMetaphone" class="org.appiansc.plugins.spt.functions.text.SPT_Text_GetMetaphone"/>
+
+  <!-- TYPE FUNCTIONS -->
+  <function key="SPT_Type_IsNumeric" class="org.appiansc.plugins.spt.functions.datatypes.SPT_Type_IsNumeric"/>
 
   <!-- UTILITY FUNCTIONS -->
   <function key="SPT_Uuid_Bulk" class="org.appiansc.plugins.spt.functions.utilities.SPT_Uuid_Bulk"/>
