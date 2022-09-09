@@ -162,7 +162,7 @@ a!localVariables(
 
 ## SPT_Docs_FromUuid
 
-Returns the Appian Document that has the given UUID. Returns null if no Document is found for the given UUID.
+Returns the Appian Document that has the given UUID. Returns `null` if no Document is found for the given UUID.
 
 | Parameter | Description                |
 | --------- | -------------------------- |
@@ -291,7 +291,7 @@ Returns `"198.9 KiB"`
 
 ## SPT_Fmt_TimeAgo
 
-Returns a text description of the relative duration a given Date and Time was or is from Now.
+Returns a text description of the relative duration a given Date and Time was or is from `now()`.
 
 | Parameter | Description                                                                                                                                                          |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -373,7 +373,7 @@ Returns (List of Variant) `{"one", "two", "three", null}`
 
 ## SPT_List_Count
 
-Returns the element count (including null elements) in a list. If the passed in value is not a list, or the list is null or empty, returns 0.
+Returns the element count (including `null` elements) in a list. If the passed in value is not a List, or the List is `null` or empty, returns `0`.
 
 | Parameter | Description       |
 | --------- | ----------------- |
@@ -415,7 +415,7 @@ Returns `100`
 
 ## SPT_List_First
 
-Returns the first element of the list. Returns null if list is null or empty. If not a List, returns what was passed in.
+Returns the first element of the List. Returns `null` if List is `null` or empty. If not a List, returns what was passed in.
 
 | Parameter | Description             |
 | --------- | ----------------------- |
@@ -445,7 +445,7 @@ Returns `"notAnArray"`
 
 ## SPT_List_HasDuplicates
 
-Returns true if there are duplicate items in the List. If all items are unique, or the value passed in is not a list or the list is null or empty, returns false.
+Returns `true` if there are duplicate items in the List. If all items are unique, or the value passed in is not a List or the List is `null` or empty, returns `false`.
 
 | Parameter | Description       |
 | --------- | ----------------- |
@@ -500,7 +500,7 @@ Returns `false`
 
 ## SPT_List_Last
 
-Returns the last element of the list. Returns null if list is null or empty. If not a List, returns what was passed in.
+Returns the last element of the List. Returns `null` if List is `null` or empty. If not a List, returns what was passed in.
 
 | Parameter | Description             |
 | --------- | ----------------------- |
@@ -530,7 +530,7 @@ Returns `"notAnArray"`
 
 ## SPT_List_RandomElement
 
-Returns a random element in the provided list. If not a List, returns what was passed in.
+Returns a random element in the provided List. If not a List, returns what was passed in.
 
 | Parameter | Description                                                                                                                                   |
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -566,7 +566,7 @@ Returns a Map with:
 
 ## SPT_List_Randomize
 
-Returns the provided list in a randomized order (shuffled). If not a List, returns what was passed in.
+Returns the provided List in a randomized order (shuffled). If not a List, returns what was passed in.
 
 | Parameter | Description           |
 | --------- | --------------------- |
@@ -592,7 +592,7 @@ Returns the List of `id` properties, in random order. E.g. `{2, 3, 6, 4, 1, 5}`
 
 ## SPT_List_RemoveNulls
 
-Removes all null elements from the given list. If a List of Text (string) is passed it, removes empty strings ("") as well. If not a List, returns what was passed in.
+Removes all `null` elements from the given List. If a List of Text is passed in, removes empty strings (`""`) as well. If not a List, returns what was passed in.
 
 | Parameter | Description                   |
 | --------- | ----------------------------- |
@@ -624,7 +624,7 @@ a!localVariables(
 ```
 Returns `{1, 2, 3}`
 
-#### Example 3 - Remove nulls from a List of only null
+#### Example 3 - Remove nulls from a List of only `null`
 ```REXX
 a!localVariables(
   local!justNull: {null},
@@ -648,7 +648,7 @@ Returns `"one"`
 
 ## SPT_List_Slice
 
-Returns a subset of the provided list, starting with and including startIndex and ending with and including endIndex. Returns null if list is not a List type.
+Returns a subset of the provided List, starting with and including `startIndex` and ending with and including `endIndex`. Returns `null` if `list` is not a List type.
 
 | Parameter  | Description                                                                           |
 | ---------- | ------------------------------------------------------------------------------------- |
@@ -700,7 +700,7 @@ Returns `null`
 
 ## SPT_List_Unique
 
-Returns the unique elements found in the provided list. If the list is null or empty, returns null. If not a List, returns what was passed in. By default, null elements are removed but can be kept by setting keepNulls to true.
+Returns the unique elements found in the provided List. If `list` is null or empty, returns `null`. If not a List, returns what was passed in. By default, `null` elements are removed but can be kept by setting `keepNulls` to `true`.
 
 | Parameter | Description                                        |
 | --------- | -------------------------------------------------- |
@@ -731,7 +731,7 @@ These functions are for working with Integers or Decimals.
 
 ## SPT_Num_RandInRange
 
-Returns random value(s) in the given range. The value type will be either Integer or Decimal, determined by the types used for min and max.
+Returns random value(s) in the given range. The value type will be either Integer or Decimal, determined by the types used for `min` and `max`.
 
 | Parameter | Description                                                                           |
 | --------- | ------------------------------------------------------------------------------------- |
@@ -766,7 +766,7 @@ These functions are for working with data structures in Appian, namely Dictionar
 
 ## SPT_Object_RemoveNullProperties
 
-Removes properties from a Map or Dictionary where the value is null. If the passed in value is not a Map or Dictionary an error is thrown.
+Removes properties from a Map or Dictionary where the value is `null`. If the passed in value is not a Map or Dictionary an error is thrown.
 
 | Parameter | Description                                                                            |
 | --------- | -------------------------------------------------------------------------------------- |
@@ -806,7 +806,7 @@ Returns:
 
 ## SPT_Object_ToDictionary
 
-Converts the given object (Map(s), Dictionary(s) or CDT(s)) to a Dictionary, including nested objects (unlike the cast() function). If the passed in value is not a Map, Dictionary, or CDT (or a List of them) an error is thrown.
+Converts the given object (Map, Dictionary, or CDT) to a Dictionary, including nested objects (unlike the `cast()` function). Lists of objects are supported as well. If the passed in value is not a Map, Dictionary, or CDT (or a List of them) an error is thrown.
 
 | Parameter | Description                           |
 | --------- | ------------------------------------- |
@@ -857,13 +857,13 @@ Returns (Dictionary):
 
 ## SPT_Object_ToMap
 
-Converts the given object (Map, Dictionary, or CDT) to a Map, including Lists and nested objects (unlike the `cast()` function). If the passed in value is not a Map, Dictionary, or CDT (or a List of them) an error is thrown.
+Converts the given object (Map, Dictionary, or CDT) to a Map, including nested objects (unlike the `cast()` function). Lists of objects are supported as well. If the passed in value is not a Map, Dictionary, or CDT (or a List of them) an error is thrown.
 
 | Parameter | Description                    |
 | --------- | ------------------------------ |
 | object    | The object to convert to a Map |
 
-This function can be used to store any dynamic data structure into a Process Variable as a Map. When used in conjunction with `a!fromJson()` it can store the result of a REST service call as a PV without any additional data massaging (see example 2).
+This function can be used to store any dynamic data structure into a Process Variable as a Map. When used in conjunction with `a!fromJson()` it can store the result of a REST service call as a Process Variable without any additional data massaging (see [Example 2]()).
 
 #### Example 1 - Convert a Dictionary (with nested Dictionaries) to a Map
 ```REXX
