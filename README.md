@@ -587,7 +587,7 @@ a!localVariables(
   spt_list_randomize(local!listOfMap).id
 )
 ```
-Returns the list of `id` properties, in random order. E.g. `{2, 3, 6, 4, 1, 5}`
+Returns the List of `id` properties, in random order. E.g. `{2, 3, 6, 4, 1, 5}`
 
 
 ## SPT_List_RemoveNulls
@@ -608,7 +608,7 @@ a!localVariables(
 ```
 Returns `{1, 2, 3, 4, 5}`
 
-#### Example 2 - Remove nulls from a List of CDTs
+#### Example 2 - Remove nulls from a List of CDTs and retrieve the `id` property
 ```REXX
 a!localVariables(
   local!listOfCdt: {
@@ -622,7 +622,7 @@ a!localVariables(
   spt_list_removenulls(local!listOfCdt).id
 )
 ```
-Returns the list of `id` properties from non-null elements. E.g. `{1, 2, 3}`
+Returns `{1, 2, 3}`
 
 #### Example 3 - Remove nulls from a List of only null
 ```REXX
