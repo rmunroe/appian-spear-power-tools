@@ -7,17 +7,11 @@ buildscript {
 plugins {
     id 'java'
     id 'groovy'
-    id 'org.owasp.dependencycheck' version '6.5.3'
+    id 'org.owasp.dependencycheck' version '7.1.2'
 }
 
 repositories {
     mavenCentral()
-    maven {
-        url 'https://repo.clojars.org'
-    }
-    maven {
-        url "https://oss.sonatype.org/content/repositories/snapshots/"
-    }
     flatDir {
         dirs 'lib-compile'
     }
@@ -28,7 +22,7 @@ dependencies {
     implementation fileTree(dir: 'lib-include', include: '*.jar')
 
     implementation 'com.github.f4b6a3:uuid-creator:5.1.1'
-    implementation 'org.ocpsoft.prettytime:prettytime:5.0.3.Final'
+    implementation 'org.ocpsoft.prettytime:prettytime:5.0.4.Final'
     implementation 'pl.allegro.finance:tradukisto:1.12.0'
 
     // These are found in Appian's classpath (<APPIAN_HOME>/deployment/web.war/WEB-INF/lib)
