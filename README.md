@@ -14,7 +14,7 @@ This plugin is the results of over a decade of experience working in the Appian 
 
 ## Issues or Feedback
 
-If you encounter any issues with the plugin, please post in the Appian Community's App Market page for this plugin. Additionally, please let us know if there is any additional functionality you would like to see in this plugin and we will see about getting it added.
+If you encounter any issues with the plugin, please post in the [Appian Community's App Market page](https://community.appian.com/b/appmarket/posts/spear-power-tools) for this plugin. Additionally, please let us know if there is any additional functionality you would like to see in this plugin and we will see about getting it added.
 
 
 ------------------------------------------------------------------------------
