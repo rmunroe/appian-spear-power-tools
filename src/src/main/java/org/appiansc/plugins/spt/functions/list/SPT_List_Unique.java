@@ -7,7 +7,7 @@ import com.appiancorp.suiteapi.type.TypedValue;
 import org.appiansc.plugins.spt.AppianListHelper;
 import org.appiansc.plugins.spt.AppianTypeHelper;
 
-@ListCategory
+@SptListCategory
 public class SPT_List_Unique {
     @Function
     public TypedValue spt_list_unique(

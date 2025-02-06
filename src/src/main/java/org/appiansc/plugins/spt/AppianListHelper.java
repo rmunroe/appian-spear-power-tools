@@ -76,7 +76,7 @@ public class AppianListHelper {
         long typeId = element.getTypeId();
         DatatypeProperties props = ts.getDatatypeProperties(typeId);
 
-        if (typeId == 3 && list.getValue().equals("")) {
+        if (typeId == AppianType.STRING && list.getValue().equals("")) {
             // null or empty string passed in, return null
             return null;
 

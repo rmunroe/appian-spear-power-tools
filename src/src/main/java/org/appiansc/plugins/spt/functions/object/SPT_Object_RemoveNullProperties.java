@@ -8,7 +8,7 @@ import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
 import org.appiansc.plugins.spt.AppianTypeHelper;
 
-@ObjectCategory
+@SptObjectCategory
 public class SPT_Object_RemoveNullProperties {
     @Function
     public TypedValue spt_object_removenullproperties(

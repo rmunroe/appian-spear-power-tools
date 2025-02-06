@@ -1,14 +1,14 @@
-package org.appiansc.plugins.spt.functions.num;
+package org.appiansc.plugins.spt.functions.bool;
 
 import com.appiancorp.suiteapi.expression.annotations.Category;
 
 import java.lang.annotation.*;
 
-@Category("NumCategory")
+@Category("SptBooleanCategory")
 @Inherited
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
-public @interface NumCategory {
+public @interface SptBooleanCategory {
 
 }

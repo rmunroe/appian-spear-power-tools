@@ -1,14 +1,14 @@
-package org.appiansc.plugins.spt.functions.list;
+package org.appiansc.plugins.spt.functions.object;
 
 import com.appiancorp.suiteapi.expression.annotations.Category;
 
 import java.lang.annotation.*;
 
-@Category("ListCategory")
+@Category("SptObjectCategory")
 @Inherited
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
-public @interface ListCategory {
+public @interface SptObjectCategory {
 
 }

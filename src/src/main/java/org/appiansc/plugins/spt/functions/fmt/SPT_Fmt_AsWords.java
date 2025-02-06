@@ -8,7 +8,7 @@ import pl.allegro.finance.tradukisto.ValueConverters;
 
 import java.math.BigDecimal;
 
-@FmtCategory
+@SptFmtCategory
 public class SPT_Fmt_AsWords {
     @Function
     public String spt_fmt_aswords(

@@ -1,14 +1,14 @@
-package org.appiansc.plugins.spt.functions.docs;
+package org.appiansc.plugins.spt.functions.uuid;
 
 import com.appiancorp.suiteapi.expression.annotations.Category;
 
 import java.lang.annotation.*;
 
-@Category("DocsCategory")
+@Category("SptUuidCategory")
 @Inherited
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
-public @interface DocsCategory {
+public @interface SptUuidCategory {
 
 }

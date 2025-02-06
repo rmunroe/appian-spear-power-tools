@@ -6,7 +6,7 @@ import com.appiancorp.suiteapi.expression.annotations.Parameter;
 import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
 
-@FmtCategory
+@SptFmtCategory
 public class SPT_Fmt_BytesDisplaySize {
     // From https://stackoverflow.com/questions/3758606/how-can-i-convert-byte-size-into-a-human-readable-format-in-java
 

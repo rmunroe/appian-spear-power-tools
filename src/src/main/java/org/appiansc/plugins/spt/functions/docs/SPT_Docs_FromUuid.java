@@ -7,7 +7,7 @@ import com.appiancorp.suiteapi.knowledge.DocumentDataType;
 import org.apache.log4j.Logger;
 
 
-@DocsCategory
+@SptDocsCategory
 public class SPT_Docs_FromUuid {
     private static final Logger LOG = Logger.getLogger(SPT_Docs_FromUuid.class);
 

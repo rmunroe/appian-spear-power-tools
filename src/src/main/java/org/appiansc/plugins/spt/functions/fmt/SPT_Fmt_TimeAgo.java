@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 import java.util.Locale;
 
 
-@FmtCategory
+@SptFmtCategory
 public class SPT_Fmt_TimeAgo {
     @Function
     public String spt_fmt_timeago(

@@ -9,7 +9,7 @@ import com.appiancorp.suiteapi.type.TypeService;
 import com.appiancorp.suiteapi.type.TypedValue;
 import org.appiansc.plugins.spt.AppianTypeConverter;
 
-@ObjectCategory
+@SptObjectCategory
 public class SPT_Object_ToDictionary {
     @Function
     public TypedValue spt_object_todictionary(
@@ -19,10 +19,10 @@ public class SPT_Object_ToDictionary {
         DatatypeProperties props = ts.getDatatypeProperties(object.getInstanceType());
         if (!props.isRecordType()   // CDT
                 && !(props.isListType() && ts.getDatatypeProperties(props.getTypeof()).isRecordType()) // List of CDT
-                && object.getInstanceType() != (long) AppianType.MAP
-                && object.getInstanceType() != (long) AppianType.LIST_OF_MAP
-                && object.getInstanceType() != (long) AppianType.DICTIONARY
-                && object.getInstanceType() != (long) AppianType.LIST_OF_DICTIONARY)
+                && object.getInstanceType() != AppianType.MAP
+                && object.getInstanceType() != AppianType.LIST_OF_MAP
+                && object.getInstanceType() != AppianType.DICTIONARY
+                && object.getInstanceType() != AppianType.LIST_OF_DICTIONARY)
             throw new UnsupportedTypeException("Only Maps, Dictionaries, and CDTs are supported");
 
         return AppianTypeConverter.convert(ts, object, (long) AppianType.DICTIONARY);

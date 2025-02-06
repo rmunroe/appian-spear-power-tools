@@ -5,7 +5,7 @@ import com.appiancorp.suiteapi.expression.annotations.Parameter;
 import com.appiancorp.suiteapi.type.AppianType;
 import com.appiancorp.suiteapi.type.TypedValue;
 
-@TextCategory
+@SptTextCategory
 public class SPT_Text_ToNumber {
     @Function
     public TypedValue spt_text_tonumber(

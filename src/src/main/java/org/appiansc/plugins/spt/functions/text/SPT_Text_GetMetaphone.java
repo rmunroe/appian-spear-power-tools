@@ -5,7 +5,7 @@ import com.appiancorp.suiteapi.expression.annotations.Parameter;
 import org.apache.commons.codec.language.DoubleMetaphone;
 import org.apache.commons.codec.language.Metaphone;
 
-@TextCategory
+@SptTextCategory
 public class SPT_Text_GetMetaphone {
     @Function
     public String spt_text_getmetaphone(

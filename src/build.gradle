@@ -1,13 +1,14 @@
-buildscript {
-    dependencies {
-        classpath 'org.hidetake:gradle-ssh-plugin:2.10.1'
-    }
-}
+//buildscript {
+//    dependencies {
+//        classpath 'org.hidetake:gradle-ssh-plugin:2.10.1'
+//    }
+//}
 
 plugins {
     id 'java'
     id 'groovy'
-    id 'org.owasp.dependencycheck' version '7.1.2'
+    id 'org.owasp.dependencycheck' version '7.3.0'
+    id 'org.hidetake.ssh' version '2.11.2'
 }
 
 repositories {
@@ -21,7 +22,7 @@ dependencies {
     compileOnly fileTree(dir: 'lib-compile', include: '*.jar')
     implementation fileTree(dir: 'lib-include', include: '*.jar')
 
-    implementation 'com.github.f4b6a3:uuid-creator:5.1.1'
+    implementation 'com.github.f4b6a3:uuid-creator:5.1.2'
     implementation 'org.ocpsoft.prettytime:prettytime:5.0.4.Final'
     implementation 'pl.allegro.finance:tradukisto:1.12.0'
 
@@ -29,6 +30,7 @@ dependencies {
     compileOnly 'org.apache.logging.log4j:log4j-1.2-api:2.17.1'
     compileOnly 'commons-codec:commons-codec:1.13'
     compileOnly 'commons-io:commons-io:2.9.0'
+    compileOnly 'com.google.guava:guava:31.1-jre'
 }
 
 
@@ -63,5 +65,26 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 
-// If this shows as an error in IntelliJ, simply ignore
 version = new groovy.xml.XmlSlurper().parse(file('src/main/resources/appian-plugin.xml')).'plugin-info'.version
+
+
+remotes {
+    appian {
+        host = '10.0.0.26'
+        user = 'appian'
+        password = 'appian'
+    }
+}
+
+task deployToVm {
+    group = 'install'
+    dependsOn jar
+
+    doLast {
+        ssh.run {
+            session(remotes.appian) {
+                put from: "$projectDir/build/libs/${rootProject.name}-${version}.jar", into: '/opt/appian/23.2/_admin/plugins/'
+            }
+        }
+    }
+}

@@ -1,11 +1,11 @@
-package org.appiansc.plugins.spt.functions.utilities;
+package org.appiansc.plugins.spt.functions.uuid;
 
 import com.appiancorp.suiteapi.expression.annotations.Function;
 import com.appiancorp.suiteapi.expression.annotations.Parameter;
 
 import java.util.UUID;
 
-@UuidCategory
+@SptUuidCategory
 public class SPT_Uuid_Bulk {
     @Function
     public String[] spt_uuid_bulk(@Parameter Long count) {

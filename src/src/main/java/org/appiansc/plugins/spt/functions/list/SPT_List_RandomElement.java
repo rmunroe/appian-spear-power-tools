@@ -11,7 +11,7 @@ import org.appiansc.plugins.spt.AppianTypeHelper;
 
 import java.util.Collections;
 
-@ListCategory
+@SptListCategory
 public class SPT_List_RandomElement {
     @Function
     public TypedValue spt_list_randomelement(

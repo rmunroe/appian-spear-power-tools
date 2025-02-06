@@ -1,14 +1,14 @@
-package org.appiansc.plugins.spt.functions.types;
+package org.appiansc.plugins.spt.functions.docs;
 
 import com.appiancorp.suiteapi.expression.annotations.Category;
 
 import java.lang.annotation.*;
 
-@Category("TypeCategory")
+@Category("SptDocsCategory")
 @Inherited
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
-public @interface TypeCategory {
+public @interface SptDocsCategory {
 
 }

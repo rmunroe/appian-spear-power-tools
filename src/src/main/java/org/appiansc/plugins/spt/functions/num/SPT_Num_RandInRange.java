@@ -7,7 +7,7 @@ import com.appiancorp.suiteapi.type.TypedValue;
 
 import java.util.Random;
 
-@NumCategory
+@SptNumCategory
 public class SPT_Num_RandInRange {
     private static final Random random = new Random();
 

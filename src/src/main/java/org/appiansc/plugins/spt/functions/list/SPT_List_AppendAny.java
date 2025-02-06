@@ -12,7 +12,7 @@ import org.appiansc.plugins.spt.AppianTypeHelper;
 
 import java.util.Objects;
 
-@ListCategory
+@SptListCategory
 public class SPT_List_AppendAny {
     @Function
     public TypedValue spt_list_appendany(

@@ -4,11 +4,11 @@ import com.appiancorp.suiteapi.expression.annotations.Category;
 
 import java.lang.annotation.*;
 
-@Category("TextCategory")
+@Category("SptTextCategory")
 @Inherited
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
-public @interface TextCategory {
+public @interface SptTextCategory {
 
 }

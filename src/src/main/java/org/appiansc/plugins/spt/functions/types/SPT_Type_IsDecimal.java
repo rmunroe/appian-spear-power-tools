@@ -6,7 +6,7 @@ import com.appiancorp.suiteapi.type.TypedValue;
 import org.appiansc.plugins.spt.AppianTypeHelper;
 
 
-@TypeCategory
+@SptTypeCategory
 public class SPT_Type_IsDecimal {
     @Function
     public Boolean spt_type_isdecimal(

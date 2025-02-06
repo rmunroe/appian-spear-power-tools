@@ -7,7 +7,7 @@ import com.appiancorp.suiteapi.expression.annotations.Parameter;
 import java.sql.Timestamp;
 
 
-@DateTimeCategory
+@SptDateTimeCategory
 public class SPT_DateTime_FromEpoch {
     @Function
     public Timestamp spt_datetime_fromepoch(

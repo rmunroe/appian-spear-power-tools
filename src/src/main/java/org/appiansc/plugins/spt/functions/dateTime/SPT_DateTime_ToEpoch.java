@@ -7,7 +7,7 @@ import com.appiancorp.suiteapi.type.TypeService;
 import java.sql.Timestamp;
 
 
-@DateTimeCategory
+@SptDateTimeCategory
 public class SPT_DateTime_ToEpoch {
     @Function
     public Long spt_datetime_toepoch(
